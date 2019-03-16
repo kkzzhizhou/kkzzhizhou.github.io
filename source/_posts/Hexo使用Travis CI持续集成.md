@@ -43,7 +43,7 @@ tags: [Travis CI,Hexo]
 
 ### 3. 获取Pesonal Access Token
 
-- 在GitHub个人账户 `Setting/ Developer settings/ Personal access tokens`下，新建一个Token，然后在Travis CI配置中，Environment Variables，添加生成的Token。
+- 在GitHub个人账户 `Setting/ Developer settings/ Personal access tokens`下，新建一个Token，然后在Travis CI配置中，Environment Variables，添加生成的Token。
 
 权限配置如下图所示:
 
