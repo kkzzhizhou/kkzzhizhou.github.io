@@ -5,8 +5,9 @@ categories: []
 date: 2019-03-16 17:14:42
 create: 2018-03-31 10:19:47
 ---
-## 1. RSS Feed
-### 添加百度/谷歌/本地 自定义站点内容搜索
+## 1. [Travis CI持续集成](https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
+
+## 2. RSS Feed
 
 - 安装插件`hexo-generator-feed`
 
@@ -29,9 +30,38 @@ create: 2018-03-31 10:19:47
   limit: 20
   ```
 
-## 2. [Travis CI持续集成](https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
+- ### 修改主题配置，添加如下配置
 
-## 3. 全文搜索
+  ```
+  rss: /atom.xml
+  ```
+
+## 3. ==站内全文搜索==
+
+- 安装 `hexo-generator-searchdb`，在站点的根目录下执行以下命令：
+
+  ```
+  $ npm install hexo-generator-searchdb --save
+  ```
+
+- 编辑 站点配置文件，新增以下内容到任意位置：
+
+  ```
+  search:
+    path: search.xml
+    field: post
+    format: html
+    limit: 10000
+  ```
+
+- 编辑 主题配置文件，启用本地搜索功能：
+
+  ```
+  # Local search
+  local_search:
+    enable: true
+  ```
+
 ## 4. 文章按更新时间排序
 ### 要修改的内容
 
