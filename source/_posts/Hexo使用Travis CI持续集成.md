@@ -3,7 +3,6 @@ title: Hexo使用Travis CI持续集成
 date: 2019-03-16 16:23:44
 create: 2019-03-16 16:23:44
 tags: [Travis CI,Hexo]
-
 ---
 
 ## 使用CI之前:
@@ -43,7 +42,7 @@ tags: [Travis CI,Hexo]
 
 ### 3. 获取Pesonal Access Token
 
-- 在GitHub个人账户 `Setting/ Developer settings/ Personal access tokens`下，新建一个Token，然后在Travis CI配置中，Environment Variables，添加生成的Token。
+- 在GitHub个人账户 `Setting/ Developer settings/ Personal access tokens`下，新建一个Token，然后在Travis CI配置中，Environment Variables，添加生成的Token。
 
 权限配置如下图所示:
 
