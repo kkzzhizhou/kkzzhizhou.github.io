@@ -370,7 +370,7 @@
                 
               
 
-              <time title="创建时间：2019-03-16 17:14:42 / 修改时间：18:14:44" itemprop="dateCreated datePublished" datetime="2019-03-16T17:14:42+08:00">2019-03-16</time>
+              <time title="创建时间：2019-03-16 17:14:42 / 修改时间：18:30:17" itemprop="dateCreated datePublished" datetime="2019-03-16T17:14:42+08:00">2019-03-16</time>
             
 
             
@@ -410,15 +410,28 @@
 
       
         
-          <h2 id="1-RSS-Feed"><a href="#1-RSS-Feed" class="headerlink" title="1. RSS Feed"></a>1. RSS Feed</h2><h3 id="添加百度-谷歌-本地-自定义站点内容搜索"><a href="#添加百度-谷歌-本地-自定义站点内容搜索" class="headerlink" title="添加百度/谷歌/本地 自定义站点内容搜索"></a>添加百度/谷歌/本地 自定义站点内容搜索</h3><ul>
+          <h2 id="1-Travis-CI持续集成"><a href="#1-Travis-CI持续集成" class="headerlink" title="1. Travis CI持续集成"></a>1. <a href="https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">Travis CI持续集成</a></h2><h2 id="2-RSS-Feed"><a href="#2-RSS-Feed" class="headerlink" title="2. RSS Feed"></a>2. RSS Feed</h2><ul>
 <li><p>安装插件<code>hexo-generator-feed</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>修改站点配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">path: atom.xml</span><br><span class="line">limit: 20</span><br></pre></td></tr></table></figure>
 </li>
+<li><h3 id="修改主题配置，添加如下配置"><a href="#修改主题配置，添加如下配置" class="headerlink" title="修改主题配置，添加如下配置"></a>修改主题配置，添加如下配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rss: /atom.xml</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h2 id="2-Travis-CI持续集成"><a href="#2-Travis-CI持续集成" class="headerlink" title="2. Travis CI持续集成"></a>2. <a href="https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">Travis CI持续集成</a></h2><h2 id="3-全文搜索"><a href="#3-全文搜索" class="headerlink" title="3. 全文搜索"></a>3. 全文搜索</h2><h2 id="4-文章按更新时间排序"><a href="#4-文章按更新时间排序" class="headerlink" title="4. 文章按更新时间排序"></a>4. 文章按更新时间排序</h2><h3 id="要修改的内容"><a href="#要修改的内容" class="headerlink" title="要修改的内容"></a>要修改的内容</h3><ul>
+<h2 id="3-站内全文搜索"><a href="#3-站内全文搜索" class="headerlink" title="3. ==站内全文搜索=="></a>3. ==站内全文搜索==</h2><ul>
+<li><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 站点配置文件，新增以下内容到任意位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 主题配置文件，启用本地搜索功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-文章按更新时间排序"><a href="#4-文章按更新时间排序" class="headerlink" title="4. 文章按更新时间排序"></a>4. 文章按更新时间排序</h2><h3 id="要修改的内容"><a href="#要修改的内容" class="headerlink" title="要修改的内容"></a>要修改的内容</h3><ul>
 <li><p><code>/node_modules/hexo-generator-index/index.js</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order_by: &apos;-date&apos;</span><br></pre></td></tr></table></figure>
 <p>修改为</p>
@@ -540,7 +553,7 @@
                 
               
 
-              <time title="创建时间：2019-03-16 16:23:44 / 修改时间：18:14:44" itemprop="dateCreated datePublished" datetime="2019-03-16T16:23:44+08:00">2019-03-16</time>
+              <time title="创建时间：2019-03-16 16:23:44 / 修改时间：18:30:17" itemprop="dateCreated datePublished" datetime="2019-03-16T16:23:44+08:00">2019-03-16</time>
             
 
             

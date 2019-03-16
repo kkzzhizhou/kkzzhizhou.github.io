@@ -98,18 +98,18 @@
 
 
 
-  <meta name="description" content="1. RSS Feed添加百度/谷歌/本地 自定义站点内容搜索 安装插件hexo-generator-feed 1npm install hexo-generator-feed --save  修改站点配置 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Fee">
+  <meta name="description" content="1. Travis CI持续集成2. RSS Feed 安装插件hexo-generator-feed 1npm install hexo-generator-feed --save  修改站点配置 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed At">
 <meta name="keywords" content="Hexo,Next">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+Next功能及个性化配置">
 <meta property="og:url" content="http://kkzzhizhou.github.io/2019/03/16/Hexo+Next功能及个性化配置/index.html">
 <meta property="og:site_name" content="zzz部落格">
-<meta property="og:description" content="1. RSS Feed添加百度/谷歌/本地 自定义站点内容搜索 安装插件hexo-generator-feed 1npm install hexo-generator-feed --save  修改站点配置 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Fee">
+<meta property="og:description" content="1. Travis CI持续集成2. RSS Feed 安装插件hexo-generator-feed 1npm install hexo-generator-feed --save  修改站点配置 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed At">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T10:14:44.507Z">
+<meta property="og:updated_time" content="2019-03-16T10:30:17.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Next功能及个性化配置">
-<meta name="twitter:description" content="1. RSS Feed添加百度/谷歌/本地 自定义站点内容搜索 安装插件hexo-generator-feed 1npm install hexo-generator-feed --save  修改站点配置 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Fee">
+<meta name="twitter:description" content="1. Travis CI持续集成2. RSS Feed 安装插件hexo-generator-feed 1npm install hexo-generator-feed --save  修改站点配置 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed At">
 
 
 
@@ -369,7 +369,7 @@
                 
               
 
-              <time title="创建时间：2019-03-16 17:14:42 / 修改时间：18:14:44" itemprop="dateCreated datePublished" datetime="2019-03-16T17:14:42+08:00">2019-03-16</time>
+              <time title="创建时间：2019-03-16 17:14:42 / 修改时间：18:30:17" itemprop="dateCreated datePublished" datetime="2019-03-16T17:14:42+08:00">2019-03-16</time>
             
 
             
@@ -408,15 +408,28 @@
       
 
       
-        <h2 id="1-RSS-Feed"><a href="#1-RSS-Feed" class="headerlink" title="1. RSS Feed"></a>1. RSS Feed</h2><h3 id="添加百度-谷歌-本地-自定义站点内容搜索"><a href="#添加百度-谷歌-本地-自定义站点内容搜索" class="headerlink" title="添加百度/谷歌/本地 自定义站点内容搜索"></a>添加百度/谷歌/本地 自定义站点内容搜索</h3><ul>
+        <h2 id="1-Travis-CI持续集成"><a href="#1-Travis-CI持续集成" class="headerlink" title="1. Travis CI持续集成"></a>1. <a href="https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">Travis CI持续集成</a></h2><h2 id="2-RSS-Feed"><a href="#2-RSS-Feed" class="headerlink" title="2. RSS Feed"></a>2. RSS Feed</h2><ul>
 <li><p>安装插件<code>hexo-generator-feed</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>修改站点配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">path: atom.xml</span><br><span class="line">limit: 20</span><br></pre></td></tr></table></figure>
 </li>
+<li><h3 id="修改主题配置，添加如下配置"><a href="#修改主题配置，添加如下配置" class="headerlink" title="修改主题配置，添加如下配置"></a>修改主题配置，添加如下配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rss: /atom.xml</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h2 id="2-Travis-CI持续集成"><a href="#2-Travis-CI持续集成" class="headerlink" title="2. Travis CI持续集成"></a>2. <a href="https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">Travis CI持续集成</a></h2><h2 id="3-全文搜索"><a href="#3-全文搜索" class="headerlink" title="3. 全文搜索"></a>3. 全文搜索</h2><h2 id="4-文章按更新时间排序"><a href="#4-文章按更新时间排序" class="headerlink" title="4. 文章按更新时间排序"></a>4. 文章按更新时间排序</h2><h3 id="要修改的内容"><a href="#要修改的内容" class="headerlink" title="要修改的内容"></a>要修改的内容</h3><ul>
+<h2 id="3-站内全文搜索"><a href="#3-站内全文搜索" class="headerlink" title="3. ==站内全文搜索=="></a>3. ==站内全文搜索==</h2><ul>
+<li><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 站点配置文件，新增以下内容到任意位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 主题配置文件，启用本地搜索功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-文章按更新时间排序"><a href="#4-文章按更新时间排序" class="headerlink" title="4. 文章按更新时间排序"></a>4. 文章按更新时间排序</h2><h3 id="要修改的内容"><a href="#要修改的内容" class="headerlink" title="要修改的内容"></a>要修改的内容</h3><ul>
 <li><p><code>/node_modules/hexo-generator-index/index.js</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order_by: &apos;-date&apos;</span><br></pre></td></tr></table></figure>
 <p>修改为</p>
@@ -712,7 +725,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-RSS-Feed"><span class="nav-number">1.</span> <span class="nav-text">1. RSS Feed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加百度-谷歌-本地-自定义站点内容搜索"><span class="nav-number">1.1.</span> <span class="nav-text">添加百度/谷歌/本地 自定义站点内容搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Travis-CI持续集成"><span class="nav-number">2.</span> <span class="nav-text">2. Travis CI持续集成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-全文搜索"><span class="nav-number">3.</span> <span class="nav-text">3. 全文搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-文章按更新时间排序"><span class="nav-number">4.</span> <span class="nav-text">4. 文章按更新时间排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要修改的内容"><span class="nav-number">4.1.</span> <span class="nav-text">要修改的内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-修改标签样式"><span class="nav-number">5.</span> <span class="nav-text">5. 修改标签样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Fork-me-on-github"><span class="nav-number">6.</span> <span class="nav-text">6. Fork me on github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-代码高亮"><span class="nav-number">7.</span> <span class="nav-text">7. 代码高亮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-顶部加载条"><span class="nav-number">8.</span> <span class="nav-text">8. 顶部加载条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-文章阅读次数"><span class="nav-number">9.</span> <span class="nav-text">9. 文章阅读次数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Travis-CI持续集成"><span class="nav-number">1.</span> <span class="nav-text">1. Travis CI持续集成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-RSS-Feed"><span class="nav-number">2.</span> <span class="nav-text">2. RSS Feed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改主题配置，添加如下配置"><span class="nav-number">2.1.</span> <span class="nav-text">修改主题配置，添加如下配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-站内全文搜索"><span class="nav-number">3.</span> <span class="nav-text">3. ==站内全文搜索==</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-文章按更新时间排序"><span class="nav-number">4.</span> <span class="nav-text">4. 文章按更新时间排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要修改的内容"><span class="nav-number">4.1.</span> <span class="nav-text">要修改的内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-修改标签样式"><span class="nav-number">5.</span> <span class="nav-text">5. 修改标签样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Fork-me-on-github"><span class="nav-number">6.</span> <span class="nav-text">6. Fork me on github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-代码高亮"><span class="nav-number">7.</span> <span class="nav-text">7. 代码高亮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-顶部加载条"><span class="nav-number">8.</span> <span class="nav-text">8. 顶部加载条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-文章阅读次数"><span class="nav-number">9.</span> <span class="nav-text">9. 文章阅读次数</span></a></li></ol></div>
             
 
           </div>
