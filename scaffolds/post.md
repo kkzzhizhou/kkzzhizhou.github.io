@@ -1,5 +1,14 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+create: {{ date }}
+tags: []
 ---
+## 
+
+
+
+......
+<!-- more --> 
+
+
