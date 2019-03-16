@@ -5,16 +5,20 @@
   
 
   
-  <title>分类 | Hexo</title>
+  <title>Thunderbird Portable 60.0+开机自启动并最小化到系统托盘 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="更新历史 2018-8-31：第一个版本  问题描述 便携应用设置为开机启动时会自动打开主界面 Thunderbird 60.0官方并不支持最小化到系统托盘 Thunderbird 第三方最小化到系统托盘的插件如FireTray，最多支持到54.X，在最新版的Thunderbird中并不可用。  可行解决方案：AHK，全称AutoHotkey1234567891011121314151617181">
+<meta name="keywords" content="Thunderbird Minimize,AHK应用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Thunderbird Portable 60.0+开机自启动并最小化到系统托盘">
+<meta property="og:url" content="http://yoursite.com/2018/08/31/Thunderbird Portable 60.0开机自启动并最小化到系统托盘/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="更新历史 2018-8-31：第一个版本  问题描述 便携应用设置为开机启动时会自动打开主界面 Thunderbird 60.0官方并不支持最小化到系统托盘 Thunderbird 第三方最小化到系统托盘的插件如FireTray，最多支持到54.X，在最新版的Thunderbird中并不可用。  可行解决方案：AHK，全称AutoHotkey1234567891011121314151617181">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T07:37:05.918Z">
+<meta property="og:updated_time" content="2018-08-31T15:28:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
+<meta name="twitter:title" content="Thunderbird Portable 60.0+开机自启动并最小化到系统托盘">
+<meta name="twitter:description" content="更新历史 2018-8-31：第一个版本  问题描述 便携应用设置为开机启动时会自动打开主界面 Thunderbird 60.0官方并不支持最小化到系统托盘 Thunderbird 第三方最小化到系统托盘的插件如FireTray，最多支持到54.X，在最新版的Thunderbird中并不可用。  可行解决方案：AHK，全称AutoHotkey1234567891011121314151617181">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Thunderbird Portable 60.0开机自启动并最小化到系统托盘" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/categories/index.html" class="article-date">
-  <time datetime="2019-03-16T07:37:05.918Z" itemprop="datePublished">2019-03-16</time>
+    <a href="/2018/08/31/Thunderbird Portable 60.0开机自启动并最小化到系统托盘/" class="article-date">
+  <time datetime="2018-08-31T15:28:36.000Z" itemprop="datePublished">2018-08-31</time>
 </a>
     
   </div>
@@ -75,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      分类
+      Thunderbird Portable 60.0+开机自启动并最小化到系统托盘
     </h1>
   
 
@@ -83,17 +87,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><ul>
+<li>2018-8-31：第一个版本</li>
+</ul>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ol>
+<li>便携应用设置为开机启动时会自动打开主界面</li>
+<li>Thunderbird 60.0官方并不支持最小化到系统托盘</li>
+<li>Thunderbird 第三方最小化到系统托盘的插件如FireTray，最多支持到54.X，在最新版的Thunderbird中并不可用。</li>
+</ol>
+<h2 id="可行解决方案：AHK，全称AutoHotkey"><a href="#可行解决方案：AHK，全称AutoHotkey" class="headerlink" title="可行解决方案：AHK，全称AutoHotkey"></a>可行解决方案：AHK，全称AutoHotkey</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">;=====================================================================</span><br><span class="line">;                 Thunderbird Portable 60.0+ Tray</span><br><span class="line">;                            Author:zzz</span><br><span class="line">;                           date:2018-8-31</span><br><span class="line">;             使用方法：将AHK放在ThunderbirdPortable.exe目录中运行</span><br><span class="line">;               理论上支持所有Thunderbird版本，包括以后发布的版本</span><br><span class="line">;---------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">#NoEnv</span><br><span class="line">SendMode Input  </span><br><span class="line">SetWorkingDir %A_ScriptDir%  </span><br><span class="line">DllCall(&quot;kernel32.dll\SetProcessShutdownParameters&quot;, UInt, 0x4FF, UInt, 0)</span><br><span class="line">#SingleInstance ignore</span><br><span class="line">menu,tray,icon,App\AppInfo\appicon.ico</span><br><span class="line">;title must contain</span><br><span class="line">SetTitleMatchMode, 2</span><br><span class="line"></span><br><span class="line">Run, ThunderbirdPortable.exe</span><br><span class="line">WinWait, ahk_exe Thunderbird.exe</span><br><span class="line">;WinMinimize, ahk_exe Thunderbird.exe</span><br><span class="line">WinHide, ahk_exe Thunderbird.exe</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">OnExit, ExitSub</span><br><span class="line"></span><br><span class="line">OnMessage(0x404, &quot;AHK_NOTIFYICON&quot;)</span><br><span class="line">OnMessage(0x11, &quot;WM_QUERYENDSESSION&quot;) </span><br><span class="line">AHK_NOTIFYICON(wParam, lParam)</span><br><span class="line">&#123;</span><br><span class="line">    if (lParam = 0x202) ; WM_LBUTTONUP</span><br><span class="line">	&#123;</span><br><span class="line">		WinShow, - Mozilla Thunderbird</span><br><span class="line">		WinActivate, - Mozilla Thunderbird</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">WM_QUERYENDSESSION(wParam, lParam)</span><br><span class="line">&#123;</span><br><span class="line">  ENDSESSION_LOGOFF = 0x80000000</span><br><span class="line">  Process,Close,Thunderbird.exe</span><br><span class="line">  Process,WaitClose,ThunderbirdPortable.exe</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ProcessExist(Name)&#123;</span><br><span class="line">	Process,Exist,%Name%</span><br><span class="line">	return Errorlevel</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Loop</span><br><span class="line">&#123;</span><br><span class="line">	If !ProcessExist(&quot;thunderbird.exe&quot;)</span><br><span class="line">	&#123;</span><br><span class="line">		ExitApp</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	WinGet, winState, MinMax, ahk_exe thunderbird.exe</span><br><span class="line">	if (winState = -1) &#123;</span><br><span class="line">		WinHide, - Mozilla Thunderbird</span><br><span class="line">	&#125;</span><br><span class="line">   </span><br><span class="line">	sleep 500</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ExitSub:</span><br><span class="line">WinClose,ahk_exe thunderbird.exe</span><br><span class="line">Process,close,Thunderbird.exe</span><br><span class="line">ExitApp</span><br></pre></td></tr></table></figure>
+<a id="more"></a> 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/categories/index.html" data-id="cjtb6hy3f0003korocc1th9by" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/31/Thunderbird Portable 60.0开机自启动并最小化到系统托盘/" data-id="cjtb6hy45000lkoro06wldpgu" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AHK应用/">AHK应用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Thunderbird-Minimize/">Thunderbird Minimize</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2018/08/31/便携绿色软件实现开机后台自启以及文件关联思路/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          便携绿色软件实现开机后台自启以及文件关联思路
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/31/Windows同步阅读Kindle个人文档的可行方案/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Windows同步阅读Kindle个人文档的可行方案</div>
+    </a>
+  
+</nav>
+
   
 </article>
 

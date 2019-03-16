@@ -5,16 +5,20 @@
   
 
   
-  <title>分类 | Hexo</title>
+  <title>VHD技术应用实例：Windows双系统最佳方案 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="技术简介VHD是一种虚拟磁盘文件格式，我们可以将系统安装在VHD中，直接从VHD文件启动操作系统。这种启动方式的特点：  无制作难度，也不必单独拿一个分区来装系统，对原系统无影响，卸载也很方便。 同样使用虚拟磁盘装系统，但虚拟机安装性能大打折扣。使用此法可以获得与物理机安装几无差别的性能体验。不过，Win10的快速启动机制需要在实体机中安装才能正常运作（VHD中不能休眠），所以此法不适合想要体验快">
+<meta name="keywords" content="vhd">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VHD技术应用实例：Windows双系统最佳方案">
+<meta property="og:url" content="http://yoursite.com/2017/05/07/VHD技术应用实例：Windows双系统最佳方案/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="技术简介VHD是一种虚拟磁盘文件格式，我们可以将系统安装在VHD中，直接从VHD文件启动操作系统。这种启动方式的特点：  无制作难度，也不必单独拿一个分区来装系统，对原系统无影响，卸载也很方便。 同样使用虚拟磁盘装系统，但虚拟机安装性能大打折扣。使用此法可以获得与物理机安装几无差别的性能体验。不过，Win10的快速启动机制需要在实体机中安装才能正常运作（VHD中不能休眠），所以此法不适合想要体验快">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T07:37:05.918Z">
+<meta property="og:updated_time" content="2017-05-07T00:00:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
+<meta name="twitter:title" content="VHD技术应用实例：Windows双系统最佳方案">
+<meta name="twitter:description" content="技术简介VHD是一种虚拟磁盘文件格式，我们可以将系统安装在VHD中，直接从VHD文件启动操作系统。这种启动方式的特点：  无制作难度，也不必单独拿一个分区来装系统，对原系统无影响，卸载也很方便。 同样使用虚拟磁盘装系统，但虚拟机安装性能大打折扣。使用此法可以获得与物理机安装几无差别的性能体验。不过，Win10的快速启动机制需要在实体机中安装才能正常运作（VHD中不能休眠），所以此法不适合想要体验快">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-VHD技术应用实例：Windows双系统最佳方案" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/categories/index.html" class="article-date">
-  <time datetime="2019-03-16T07:37:05.918Z" itemprop="datePublished">2019-03-16</time>
+    <a href="/2017/05/07/VHD技术应用实例：Windows双系统最佳方案/" class="article-date">
+  <time datetime="2017-05-07T00:00:00.000Z" itemprop="datePublished">2017-05-07</time>
 </a>
     
   </div>
@@ -75,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      分类
+      VHD技术应用实例：Windows双系统最佳方案
     </h1>
   
 
@@ -83,17 +87,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="技术简介"><a href="#技术简介" class="headerlink" title="技术简介"></a>技术简介</h2><p>VHD是一种<strong>虚拟磁盘文件格式</strong>，我们可以将系统安装在VHD中，直接从VHD文件启动操作系统。这种启动方式的特点：</p>
+<ul>
+<li>无制作难度，也不必单独拿一个分区来装系统，对原系统无影响，卸载也很方便。</li>
+<li>同样使用虚拟磁盘装系统，但虚拟机安装性能大打折扣。使用此法可以获得与物理机安装几无差别的性能体验。不过，Win10的快速启动机制需要在实体机中安装才能正常运作（VHD中不能休眠），<strong>所以此法不适合想要体验快速启动的朋友。</strong></li>
+<li>管理起来比较方便，只需删掉虚拟磁盘和启动菜单即可卸载。卸载方法最后还有提到</li>
+<li><strong>读写可分离，可以实现秒备份和秒还原。</strong></li>
+</ul>
+<p><strong>注意</strong>：此法只适用于在Windows7/8/8.1/10，Windows Server 2008 R2，WinPE 3.0系统下操作，可安装32位或64位。<br><a id="more"></a> </p>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><ol>
+<li>到 <a href="http://www.itellyou.cn" target="_blank" rel="noopener">www.itellyou.cn</a> 下载windows 安装镜像，用ultraiso虚拟光驱加载。</li>
+<li>下载 <strong>VHD OneKey</strong> 制作工具。</li>
+<li>打开VHD_OneKey，对照下图，先创建VHD，并将系统映像灌输到VHD。</li>
+</ol>
+<p>参数说明：<br>VHD的位置可以为电脑硬盘上任意位置，但注意所在分区文件系统一定要是NTFS，整个过程不会影响分区中的其他文件；<br>VHD的格式可设为动态扩展；<br>VHD的大小自己看需要设置，建议最大容量不小于40G。对于动态类型的磁盘此处大小为限定最大容量，实际大小为安装后所有文件所占大小，随着文件数量增多会不断变大，即所谓动态的意思。但请注意，一定要保证分区有足够的剩余空间（剩余空间要大于设定的VHD大小），否则无法正常启动；<br>装入VHD的WIM位置选择挂载的镜像中sources下的install.wim文件；<br>映像号选择1；<br>设置好后，点确定。在弹出的确认窗口中点“是”。VHD创建后将自动挂载，系统若弹出对话框提示“格式化后才可用”，不用格式化，取消即可。等待进度达到100%并出现完成提示。</p>
+<ol start="4">
+<li>添加启动菜单</li>
+</ol>
+<p>点击“挂载VHD/VHDX”。弹出“只读挂载”提示时点“确定”。<br>挂载成功后，点击“向BCD中添加VHD/VHDX 项目”即可。<br>添加完成后就可以重启了！<br>完成上面的步骤正常情况下是没有问题的。如果你从VHD启动时提示winload错误，可以手动添加启动菜单：先按照上图所示挂载VHD。挂载成功后你就能在“计算机”或“这台电脑”中看到一个新的盘，比如是Z盘。以管理员身份运行cmd，输入下面的命令，回车创建启动菜单即可。</p>
+<h2 id="卸载方法"><a href="#卸载方法" class="headerlink" title="卸载方法"></a>卸载方法</h2><p>回到你原来的系统中，执行下面两个操作：<br>1、删除菜单。按Win+R组合快捷键（Win即Windows徽标键）打开运行，输入 msconfig ，点“确定”，打开“系统配置”。在这里删除Win10预览版的启动菜单。<br>2、删除VHD文件。</p>
+<h2 id="调整VHD空间大小"><a href="#调整VHD空间大小" class="headerlink" title="调整VHD空间大小"></a>调整VHD空间大小</h2><ol>
+<li>使用Bootice-磁盘管理-VHD信息-调整大小</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/categories/index.html" data-id="cjtb6hy3f0003korocc1th9by" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/05/07/VHD技术应用实例：Windows双系统最佳方案/" data-id="cjtb6hy4a000skorov6hd9z95" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vhd/">vhd</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2017/07/03/RSS订阅和阅读简明教程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          RSS订阅和阅读简明教程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/13/Resilio Sync 资源密钥,无限试用，站点分享/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Resilio Sync 资源密钥,无限试用，站点分享</div>
+    </a>
+  
+</nav>
+
   
 </article>
 

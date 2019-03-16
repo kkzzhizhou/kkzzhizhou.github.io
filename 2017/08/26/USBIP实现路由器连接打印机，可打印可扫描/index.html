@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>USBIP实现路由器连接打印机，可打印可扫描 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言众所周知，智能路由器的USB接口能够连接打印机，让没有网络功能的路由器实现网络打印。可惜的是，打印机连接路由器后提只能打印不能扫描，这很不方便。在寻找中发现一项USB over IP 技术（又称 USB over Ethernet 或者 USB over Internet），这个技术能够解决以上的问题，并能扩展出不少应用场景。">
+<meta name="keywords" content="usbip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="USBIP实现路由器连接打印机，可打印可扫描">
+<meta property="og:url" content="http://yoursite.com/2017/08/26/USBIP实现路由器连接打印机，可打印可扫描/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言众所周知，智能路由器的USB接口能够连接打印机，让没有网络功能的路由器实现网络打印。可惜的是，打印机连接路由器后提只能打印不能扫描，这很不方便。在寻找中发现一项USB over IP 技术（又称 USB over Ethernet 或者 USB over Internet），这个技术能够解决以上的问题，并能扩展出不少应用场景。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-08-26T00:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="USBIP实现路由器连接打印机，可打印可扫描">
+<meta name="twitter:description" content="前言众所周知，智能路由器的USB接口能够连接打印机，让没有网络功能的路由器实现网络打印。可惜的是，打印机连接路由器后提只能打印不能扫描，这很不方便。在寻找中发现一项USB over IP 技术（又称 USB over Ethernet 或者 USB over Internet），这个技术能够解决以上的问题，并能扩展出不少应用场景。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-USBIP实现路由器连接打印机，可打印可扫描" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/26/USBIP实现路由器连接打印机，可打印可扫描/" class="article-date">
+  <time datetime="2017-08-26T00:00:00.000Z" itemprop="datePublished">2017-08-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Router/">Router</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      USBIP实现路由器连接打印机，可打印可扫描
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，智能路由器的USB接口能够连接打印机，让没有网络功能的路由器实现网络打印。可惜的是，打印机连接路由器后提只能打印不能扫描，这很不方便。在寻找中发现一项<strong>USB over IP</strong> 技术（又称 USB over Ethernet 或者 USB over Internet），这个技术能够解决以上的问题，并能扩展出不少应用场景。<br><a id="more"></a> </p>
+<h2 id="USB-over-IP简介"><a href="#USB-over-IP简介" class="headerlink" title="USB over IP简介"></a>USB over IP简介</h2><p>按照<a href="http://usbip.sourceforge.net/" target="_blank" rel="noopener">官网</a>的描述，这个技术解决的问题是跨设备跨平台通过网络共享同一个USB设备。简单的理解就是，USB设备接在你的电脑上，我通过网络设备就是访问到该USB设备，就好像这个USB设备直接接在我的电脑上一样。</p>
+<p>相关视频教程：<br><a href="https://www.youtube.com/watch?v=vGBWZzXx2KM" target="_blank" rel="noopener">youtube:USB over Ethernet: Share USB devices over Ethernet</a></p>
+<h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><p>路由器：优酷土豆YK-L1(<strong>CPU：mt7620a，路由器配置软件源只跟CPU有关</strong>)<br>路由器操作系统：Pandorabox（<strong>基于openwrt 14.09 Barrier Breaker</strong> ）<br>打印机：三星SCX-3400系列（打印扫描复印一体机）<br>Windows平台：Win10</p>
+<h2 id="步骤简介"><a href="#步骤简介" class="headerlink" title="步骤简介"></a>步骤简介</h2><ol>
+<li>让路由器刷上基于openwrt的固件（如pandarobox）。<a href="http://downloads.pandorabox.com.cn/pandorabox/" target="_blank" rel="noopener">下载地址</a><br> 注：如果路由器还没有刷Uboot，请先刷Uboot，再通过Uboot刷Openwrt固件。</li>
+<li><p>配置Pandorabox软件源，在<strong>系统–软件包–配置</strong>中填入后提交<br> <strong>注：此软件源适用于mt7620a/n路由器，如果你的路由器不是此CPU，请自行查找软件源。</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext /var/opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line">src/gz r2_base http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/base</span></span><br><span class="line">src/gz r2_management http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/management</span></span><br><span class="line">src/gz r2_oldpackages http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/oldpackages</span></span><br><span class="line">src/gz r2_packages http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/packages</span></span><br><span class="line">src/gz r2_routing http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/routing</span></span><br><span class="line">src/gz r2_telephony http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/telephony</span></span><br><span class="line">src/gz r2_oldpackages2 http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/mt7620_old/packages</span></span><br><span class="line">src/gz <span class="number">16.10</span>_base http:<span class="comment">//downloads.pandorabox.com.cn/pandorabox/packages/mt7620/packages/base</span></span><br><span class="line">src/gz <span class="number">16.10</span>_luci http:<span class="comment">//downloads.pandorabox.com.cn/pandorabox/packages/mt7620/packages/luci</span></span><br><span class="line">src/gz <span class="number">16.10</span>_packages http:<span class="comment">//downloads.pandorabox.com.cn/pandorabox/packages/mt7620/packages/packages</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用putty连接路由器，<a href="https://jingyan.baidu.com/article/90808022f011c5fd91c80f91.html" target="_blank" rel="noopener">使用教程</a>。<strong>注：用户名：root，密码默认是admin</strong></p>
+</li>
+<li><p>在路由器上安装USBIP软件包。<a href="https://wiki.openwrt.org/doc/howto/usb.iptunnel" target="_blank" rel="noopener">英文教程</a>，<a href="http://www.madox.net/blog/2013/01/04/tl-wr703n-example-project-3-wireless-3d-printing-or-2d-printing-or-just-simply-wireless-usb/" target="_blank" rel="noopener">英文教程2</a><br> 注：<strong>在使用过程中会报错：error: please load usbip-core.ko and usbip-host.ko!</strong><br> 解决方法：终端输入</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insmod /<span class="class"><span class="keyword">lib</span>/<span class="title">modules</span>/3.2.0-24-<span class="title">generic</span>/<span class="title">kernel</span>/<span class="title">drivers</span>/<span class="title">staging</span>/<span class="title">usbip</span>/<span class="title">usbip</span>-<span class="title">core</span>.<span class="title">ko</span> </span></span><br><span class="line">insmod /<span class="class"><span class="keyword">lib</span>/<span class="title">modules</span>/3.2.0-24-<span class="title">generic</span>/<span class="title">kernel</span>/<span class="title">drivers</span>/<span class="title">staging</span>/<span class="title">usbip</span>/<span class="title">usbip</span>-<span class="title">host</span>.<span class="title">ko</span></span></span><br></pre></td></tr></table></figure>
+<p>安装测试成功后可接相关指令放入<strong>系统-启动项-本地启动脚本</strong>添加命令后提交。</p>
+</li>
+<li>以上步骤已经把路由器端的软件安装配置好了，测试是否正常工作的方法是看以下命令是否正常运行</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">usbip list -l</span><br><span class="line">usbipd -D &amp; usbip bind -<span class="selector-tag">b</span> <span class="number">1</span>-<span class="number">1</span></span><br><span class="line">netstat -alpt |grep usbipd</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>以下步骤是在Windows平台上操作。下载usbip_windows_v0.2.0.0_signed<a href="https://sourceforge.net/projects/usbip/" target="_blank" rel="noopener">usbip下载</a></li>
+<li>解压后安装驱动，打开设备管理员–选择此电–操作–添加过时硬件–从磁盘中安装。<br> <strong>注：如果无法正常安装，请用管理员权限打开命令行输入：bcdedit /set testsigning on</strong></li>
+<li><p>安装成功能，用bat命令行（批处理运行）usbip.exe程序（<strong>该程序没有用户界面，只有命令行。</strong>），在解压路径中打开命令行，输入以下命令：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">usbip -h <span class="comment">//查看帮助</span></span><br><span class="line">usbip -l <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">//查看路由器上连接的USB设备</span></span><br><span class="line">usbip -<span class="selector-tag">a</span> <span class="number">192.168</span>.<span class="number">1.1</span> <span class="number">1</span>-<span class="number">1</span>  <span class="comment">//连接到路由器的BUS 1-1</span></span><br></pre></td></tr></table></figure>
+<p> <strong>注：可能遇到的问题：</strong><br> usbip err: usbip_network.c: 121 (usbip_recv_op_common) recv op_common,-1 usbip err:     usbip_windows.c: 756 (query_interface0) recv op_common<br> usbip err: usbip_windows.c: 829 (attach_device) cannot find device</p>
+<p> 解决方法：下载这个去BUG版本的usbip程序。<a href="https://www.dropbox.com/s/oox021z1d7zblmu/usbip.zip?dl=0" target="_blank" rel="noopener">下载地址</a></p>
+</li>
+<li><p>已经以上步骤连接成功后就可以正常使用了。连接成功提示如下：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new usb device attached to usbvbus port <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p> 成功后，电脑会自动安装相应的驱动程序。Enjoy!</p>
+</li>
+</ol>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>除了以上共享打印机，扫描仪，还可以共享摄像头，共享3G无线网卡实现多人分享上网。<br><a href="http://www.wikidrv.cn/index.php?m=content&amp;c=index&amp;a=show&amp;catid=14&amp;id=116" target="_blank" rel="noopener">相关介绍</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/26/USBIP实现路由器连接打印机，可打印可扫描/" data-id="cjtb6hy48000qkorocrekt6f5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/usbip/">usbip</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/10/09/中国联通广东地区SSR云免流教程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          中国联通广东地区SSR云免流教程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/03/RSS订阅和阅读简明教程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">RSS订阅和阅读简明教程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Router/">Router</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web技术/">Web技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AHK应用/">AHK应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dell-3443/">Dell-3443</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Cloud-Platform/">Google Cloud Platform</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDMI-Audio/">HDMI Audio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hackintosh/">Hackintosh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Keyboard-Maestro应用/">Keyboard Maestro应用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kinlde个人文档/">Kinlde个人文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS-Bug/">MacOS_Bug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Portable/">Portable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PortableApps/">PortableApps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Resilio-Sync/">Resilio Sync</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSR/">SSR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thunderbird-Minimize/">Thunderbird Minimize</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-U盘/">Ubuntu U盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu-便携/">Ubuntu 便携</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPS/">VPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js脚本/">js脚本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mame/">mame</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rss/">rss</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/usbip/">usbip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vhd/">vhd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/云免流/">云免流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/信息聚合，效率生活/">信息聚合，效率生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多功能U盘/">多功能U盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓/">安卓</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开机后台自启/">开机后台自启</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/效率工具/">效率工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/效率生活/">效率生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件关联/">文件关联</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/服务器/">服务器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/桌面系统/">桌面系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器插件/">浏览器插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度网盘/">百度网盘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/福利/">福利</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/街机/">街机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记账/">记账</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/输入法技巧/">输入法技巧</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/静态博客/">静态博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AHK应用/" style="font-size: 15px;">AHK应用</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Dell-3443/" style="font-size: 10px;">Dell-3443</a> <a href="/tags/Google-Cloud-Platform/" style="font-size: 10px;">Google Cloud Platform</a> <a href="/tags/HDMI-Audio/" style="font-size: 10px;">HDMI Audio</a> <a href="/tags/Hackintosh/" style="font-size: 20px;">Hackintosh</a> <a href="/tags/Keyboard-Maestro应用/" style="font-size: 10px;">Keyboard Maestro应用</a> <a href="/tags/Kinlde个人文档/" style="font-size: 10px;">Kinlde个人文档</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MacOS-Bug/" style="font-size: 10px;">MacOS_Bug</a> <a href="/tags/Portable/" style="font-size: 10px;">Portable</a> <a href="/tags/PortableApps/" style="font-size: 10px;">PortableApps</a> <a href="/tags/Resilio-Sync/" style="font-size: 10px;">Resilio Sync</a> <a href="/tags/SSR/" style="font-size: 10px;">SSR</a> <a href="/tags/Thunderbird-Minimize/" style="font-size: 10px;">Thunderbird Minimize</a> <a href="/tags/Ubuntu-U盘/" style="font-size: 10px;">Ubuntu U盘</a> <a href="/tags/Ubuntu-便携/" style="font-size: 10px;">Ubuntu 便携</a> <a href="/tags/VPS/" style="font-size: 15px;">VPS</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/js脚本/" style="font-size: 10px;">js脚本</a> <a href="/tags/mame/" style="font-size: 10px;">mame</a> <a href="/tags/rss/" style="font-size: 10px;">rss</a> <a href="/tags/usbip/" style="font-size: 10px;">usbip</a> <a href="/tags/vhd/" style="font-size: 10px;">vhd</a> <a href="/tags/云免流/" style="font-size: 10px;">云免流</a> <a href="/tags/信息聚合，效率生活/" style="font-size: 10px;">信息聚合，效率生活</a> <a href="/tags/多功能U盘/" style="font-size: 10px;">多功能U盘</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/开机后台自启/" style="font-size: 10px;">开机后台自启</a> <a href="/tags/效率工具/" style="font-size: 10px;">效率工具</a> <a href="/tags/效率生活/" style="font-size: 15px;">效率生活</a> <a href="/tags/文件关联/" style="font-size: 10px;">文件关联</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/桌面系统/" style="font-size: 10px;">桌面系统</a> <a href="/tags/浏览器插件/" style="font-size: 10px;">浏览器插件</a> <a href="/tags/百度网盘/" style="font-size: 10px;">百度网盘</a> <a href="/tags/福利/" style="font-size: 10px;">福利</a> <a href="/tags/街机/" style="font-size: 10px;">街机</a> <a href="/tags/记账/" style="font-size: 10px;">记账</a> <a href="/tags/输入法技巧/" style="font-size: 10px;">输入法技巧</a> <a href="/tags/静态博客/" style="font-size: 10px;">静态博客</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/11/改造CapsLock为Hyperkey/">改造CapsLock为Hyperkey</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/06/折腾Ubuntu-16-04，从美化到常用软件安装/">折腾Ubuntu 16.04，从美化到常用软件安装</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/03/全平台挂载网络硬盘到本地的方法总结/">全平台挂载网络硬盘到本地的方法总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/02/全平台百度网盘高速下载方法总结/">全平台百度网盘高速下载方法总结</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/02/Tampermonkey脚本推荐（不定期更新）/">Tampermonkey脚本推荐（不定期更新）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

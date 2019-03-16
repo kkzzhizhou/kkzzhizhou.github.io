@@ -5,16 +5,20 @@
   
 
   
-  <title>分类 | Hexo</title>
+  <title>Hexo+Next博客个性化配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="使用的主题：NexT1. 全文搜索添加百度/谷歌/本地 自定义站点内容搜索安装hexo-generator-searchdb 1npm install hexo-generator-searchdb --save 在站点的 _config.yml中增加 12345search:  path: search.xml  field: post  format: html  limit: 10000 2">
+<meta name="keywords" content="Blog,静态博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Next博客个性化配置">
+<meta property="og:url" content="http://yoursite.com/2018/03/31/Hexo-Next博客个性化配置/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用的主题：NexT1. 全文搜索添加百度/谷歌/本地 自定义站点内容搜索安装hexo-generator-searchdb 1npm install hexo-generator-searchdb --save 在站点的 _config.yml中增加 12345search:  path: search.xml  field: post  format: html  limit: 10000 2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T07:37:05.918Z">
+<meta property="og:updated_time" content="2018-07-07T19:23:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
+<meta name="twitter:title" content="Hexo+Next博客个性化配置">
+<meta name="twitter:description" content="使用的主题：NexT1. 全文搜索添加百度/谷歌/本地 自定义站点内容搜索安装hexo-generator-searchdb 1npm install hexo-generator-searchdb --save 在站点的 _config.yml中增加 12345search:  path: search.xml  field: post  format: html  limit: 10000 2">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -61,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Hexo-Next博客个性化配置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/categories/index.html" class="article-date">
-  <time datetime="2019-03-16T07:37:05.918Z" itemprop="datePublished">2019-03-16</time>
+    <a href="/2018/03/31/Hexo-Next博客个性化配置/" class="article-date">
+  <time datetime="2018-03-31T10:19:47.000Z" itemprop="datePublished">2018-03-31</time>
 </a>
     
   </div>
@@ -75,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      分类
+      Hexo+Next博客个性化配置
     </h1>
   
 
@@ -83,17 +87,68 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="使用的主题：NexT"><a href="#使用的主题：NexT" class="headerlink" title="使用的主题：NexT"></a>使用的主题：NexT</h2><h2 id="1-全文搜索"><a href="#1-全文搜索" class="headerlink" title="1. 全文搜索"></a>1. 全文搜索</h2><h3 id="添加百度-谷歌-本地-自定义站点内容搜索"><a href="#添加百度-谷歌-本地-自定义站点内容搜索" class="headerlink" title="添加百度/谷歌/本地 自定义站点内容搜索"></a>添加百度/谷歌/本地 自定义站点内容搜索</h3><p>安装<code>hexo-generator-searchdb</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<p>在站点的 _config.yml中增加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+<h2 id="2-多平台同步"><a href="#2-多平台同步" class="headerlink" title="2. 多平台同步"></a>2. 多平台同步</h2><h3 id="2-1-将本地博客同步到bitbucket上"><a href="#2-1-将本地博客同步到bitbucket上" class="headerlink" title="2.1 将本地博客同步到bitbucket上"></a>2.1 将本地博客同步到bitbucket上</h3><p>原理很简单，将blog整个目录除了public文件夹之外的所有文件通过Git方式上传至bitbucket。</p>
+<h3 id="2-2-从bitbucket恢复数据"><a href="#2-2-从bitbucket恢复数据" class="headerlink" title="2.2 从bitbucket恢复数据"></a>2.2 从bitbucket恢复数据</h3><p>同理，恢复时只需要同步到数据即可。</p>
+<h2 id="3-显示feed链接"><a href="#3-显示feed链接" class="headerlink" title="3. 显示feed链接"></a>3. 显示feed链接</h2><p>打开主题的 <code>_config.yml</code> 中，将 <code>rss</code> 字段设置为：</p>
+<ol>
+<li><p><code>rss: false</code>，这将会禁用Feed链接。</p>
+</li>
+<li><p><code>rss:</code>，当值为空的时候，默认会使用站点的 Feed 链接。在此之前需要使用 <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a> 插件生成 Feed。</p>
+<p>依照 <code>hexo-generator-feed</code> 插件的安装说明进行 Feed 生成，当配件配置完毕后，主题将自动显示 Feed 链接。</p>
+</li>
+<li><p><code>rss: http://your-feed-url</code>，指定特定的链接地址，适用于已经烧制过 Feed 的情形。</p>
+</li>
+</ol>
+<h2 id="4-文章按更新时间排序"><a href="#4-文章按更新时间排序" class="headerlink" title="4. 文章按更新时间排序"></a>4. 文章按更新时间排序</h2><h3 id="要修改的内容"><a href="#要修改的内容" class="headerlink" title="要修改的内容"></a>要修改的内容</h3><ul>
+<li><p><code>/node_modules/hexo-generator-index/index.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order_by: &apos;-date&apos;</span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order_by: &apos;-updated&apos;</span><br></pre></td></tr></table></figure>
+<p>这样的话就<strong>只</strong>按 Front-matter 中的<code>updated</code>排序了，因此所有文章的 Front-matter 中都必须要有<code>updated</code>，已发布的文章可以手动修改或者找方法批量将 <code>data</code>换成<code>updated</code>，对于将来的文章，只要做如下修改：</p>
+<ul>
+<li><code>/scaffolds/post.md</code></li>
+</ul>
+<p>在<code>date</code>后加入一行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">updated: &#123;&#123; date &#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a> 
+<h2 id="5-修改标签样式"><a href="#5-修改标签样式" class="headerlink" title="5. 修改标签样式"></a>5. 修改标签样式</h2><h2 id="6-Fork-me-on-github"><a href="#6-Fork-me-on-github" class="headerlink" title="6. Fork me on github"></a>6. Fork me on github</h2><h2 id="7-代码高亮"><a href="#7-代码高亮" class="headerlink" title="7. 代码高亮"></a>7. 代码高亮</h2><h2 id="8-顶部加载条"><a href="#8-顶部加载条" class="headerlink" title="8. 顶部加载条"></a>8. 顶部加载条</h2><h2 id="9-文章阅读次数"><a href="#9-文章阅读次数" class="headerlink" title="9. 文章阅读次数"></a>9. 文章阅读次数</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/categories/index.html" data-id="cjtb6hy3f0003korocc1th9by" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/31/Hexo-Next博客个性化配置/" data-id="cjtb6hy3m0009korozw0ws098" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/静态博客/">静态博客</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2018/04/01/黑苹果HD5500开机第二屏花屏解决方案/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          黑苹果HD5500开机第二屏花屏解决方案
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/30/Dell-3443-黑苹果-10.13.6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Dell-3443-黑苹果-10.13.6</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
