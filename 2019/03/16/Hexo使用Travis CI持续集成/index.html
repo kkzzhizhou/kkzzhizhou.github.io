@@ -111,7 +111,7 @@
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1g14q2myqp8j31h30ni77d.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1g14qg5wp5vj30dy061t9c.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1g14qmvlh1oj31cx0u011z.jpg">
-<meta property="og:updated_time" content="2019-03-16T09:54:27.470Z">
+<meta property="og:updated_time" content="2019-03-16T10:14:44.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo使用Travis CI持续集成">
 <meta name="twitter:description" content="使用CI之前: 使用命令行安装hexo环境 还需要敲几个命令：hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d  使用CI之后 使用HexoClient直接编辑一键发布  CI 为何物 CI（Continuous Integration）—— 持续集成。  其实光从名字其实能大致知道CI做了什么事情。硬件领域有集成模块、集成电路，软件领域也有集成概念：项">
@@ -375,7 +375,7 @@
                 
               
 
-              <time title="创建时间：2019-03-16 16:23:44 / 修改时间：17:54:27" itemprop="dateCreated datePublished" datetime="2019-03-16T16:23:44+08:00">2019-03-16</time>
+              <time title="创建时间：2019-03-16 16:23:44 / 修改时间：18:14:44" itemprop="dateCreated datePublished" datetime="2019-03-16T16:23:44+08:00">2019-03-16</time>
             
 
             
@@ -953,6 +953,19 @@
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
       
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
 
       $.ajax({
         url: path,
@@ -987,6 +1000,8 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
                 
                 var contentInLowerCase = content.toLowerCase();
                 var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
@@ -1113,7 +1128,7 @@
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('1');
+                  var upperBound = parseInt('-1');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }

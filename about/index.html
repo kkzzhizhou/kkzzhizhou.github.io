@@ -105,7 +105,7 @@
 <meta property="og:site_name" content="zzz部落格">
 <meta property="og:description" content="一个喜欢折腾的极客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T09:54:27.470Z">
+<meta property="og:updated_time" content="2019-03-16T10:14:44.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="zzz部落格">
 <meta name="twitter:description" content="一个喜欢折腾的极客">
@@ -768,6 +768,19 @@
       $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
       
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
 
       $.ajax({
         url: path,
@@ -802,6 +815,8 @@
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
                 
                 var contentInLowerCase = content.toLowerCase();
                 var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
@@ -928,7 +943,7 @@
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('1');
+                  var upperBound = parseInt('-1');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }
