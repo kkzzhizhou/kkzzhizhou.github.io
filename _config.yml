@@ -84,6 +84,13 @@ type: atom
 path: atom.xml
 limit: 20
 
+#微搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
