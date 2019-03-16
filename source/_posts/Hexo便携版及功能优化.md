@@ -1,9 +1,11 @@
 ---
 title: Hexo便携版及功能优化
+tags:
+  - Portable
+categories:
+  - Hexo
+toc: false
 date: 2018-07-07 10:21:16
-updated: 2018-07-07 10:21:16
-categories: 博客
-tags: Portable
 ---
 
 Hexo作为一种静态博客，重新配置可以说是相当的繁琐，于是有了Hexo便携版（感谢@比特萌信息技术提供的HEXO Portable），现在官网已经打不开（截至2018-7-7），幸好我做了安装包备份。以下的教程将对Hexo Portable这个软件做进一步的优化处理。
@@ -127,4 +129,3 @@ start git-bash "%cd%\..\support\script\onekey.sh"
 cls
 goto menu
 ```
-

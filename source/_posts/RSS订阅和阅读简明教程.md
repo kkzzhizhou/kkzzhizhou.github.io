@@ -1,10 +1,13 @@
 ---
 title: RSS订阅和阅读简明教程
-date: 2017-7-3
-updated: 2018-9-3 18:18:37
-tags: [rss,信息聚合，效率生活]
-categories: Web技术
+tags:
+  - rss
+  - 信息聚合，效率生活
+categories: []
+toc: false
+date: 2017-07-03 00:00:00
 ---
+
 ## 更新日志
 
 - 2018-9-3：

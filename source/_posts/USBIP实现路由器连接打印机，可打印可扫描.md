@@ -1,10 +1,13 @@
 ---
 title: USBIP实现路由器连接打印机，可打印可扫描
-date: 2017-8-26
-updated: 2017-8-26
-categories: Router
-tags: usbip
+tags:
+  - usbip
+categories:
+  - openwrt
+toc: false
+date: 2017-08-26 00:00:00
 ---
+
 ## 前言
 众所周知，智能路由器的USB接口能够连接打印机，让没有网络功能的路由器实现网络打印。可惜的是，打印机连接路由器后提只能打印不能扫描，这很不方便。在寻找中发现一项**USB over IP** 技术（又称 USB over Ethernet 或者 USB over Internet），这个技术能够解决以上的问题，并能扩展出不少应用场景。
 <!-- more --> 
