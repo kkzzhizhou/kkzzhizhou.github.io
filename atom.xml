@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kkzzhizhou.github.io/"/>
-  <updated>2018-03-31T02:19:47.000Z</updated>
+  <updated>2019-04-10T10:36:06.296Z</updated>
   <id>http://kkzzhizhou.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Travis CI，同步跨平台写博客方案</title>
+    <link href="http://kkzzhizhou.github.io/post/91c3f927.html"/>
+    <id>http://kkzzhizhou.github.io/post/91c3f927.html</id>
+    <published>2019-04-09T13:37:28.000Z</published>
+    <updated>2019-04-10T10:36:06.296Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Travis-CI说明"><a href="#Travis-CI说明" class="headerlink" title="Travis CI说明"></a>Travis CI说明</h2><p>新建Source分支用于存储源文件，Master分支用于存储生成的网站文件</p><h2 id="全新的电脑写博客"><a href="#全新的电脑写博客" class="headerlink" title="全新的电脑写博客"></a>全新的电脑写博客</h2><ul><li><p>下载安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，<a href="https://github.com/gaoyoubo/hexo-client/releases" target="_blank" rel="noopener">HexoClient</a>，<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a></p></li><li><p>运行Git Bash</p></li><li><p>添加Nodejs环境配置</p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch ~<span class="string">/.bash_profile</span></span><br><span class="line">vi ~<span class="string">/.bash_profile</span></span><br></pre></td></tr></table></figure></li><li><p>添加以下内容到.bash_profile文件中，保存退出</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="comment"># 添加环境变量</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:/c/Program\ Files/nodejs</span><br></pre></td></tr></table></figure></li><li><p>运行以下命令刷新环境变量</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></li><li><p>下载安装SourceTree并登录</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">-b</span> source https://github.com/kkzzhizhou/kkzzhizhou.github.io</span><br></pre></td></tr></table></figure></li><li><p>下载安装SourceTree并登录</p></li><li><p>打开本地仓库kkzzhizhou.github.io</p></li><li><p>修改后进行提交即可</p></li></ul><h2 id="已经配置的电脑写博客"><a href="#已经配置的电脑写博客" class="headerlink" title="已经配置的电脑写博客"></a>已经配置的电脑写博客</h2><ul><li>使用Source同步更改</li><li>修改后进行提交即可</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Travis-CI说明&quot;&gt;&lt;a href=&quot;#Travis-CI说明&quot; class=&quot;headerlink&quot; title=&quot;Travis CI说明&quot;&gt;&lt;/a&gt;Travis CI说明&lt;/h2&gt;&lt;p&gt;新建Source分支用于存储源文件，Master分支用于存储生成的网
+      
+    
+    </summary>
+    
+    
+      <category term="git应用,博客" scheme="http://kkzzhizhou.github.io/tags/git%E5%BA%94%E7%94%A8-%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo+Next功能及个性化配置</title>
@@ -681,33 +704,6 @@
       <category term="Hackintosh" scheme="http://kkzzhizhou.github.io/tags/Hackintosh/"/>
     
       <category term="HDMI Audio" scheme="http://kkzzhizhou.github.io/tags/HDMI-Audio/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GCP安装配置Hexo全过程</title>
-    <link href="http://kkzzhizhou.github.io/post/2f07c9ad.html"/>
-    <id>http://kkzzhizhou.github.io/post/2f07c9ad.html</id>
-    <published>2018-01-19T16:00:00.000Z</published>
-    <updated>2018-02-19T16:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ol><li>从2016年建立个人博客开始使用Wordpress，了解Wordpress强大的同时，也认识到Wordpress的繁琐，最烦恼的是数据库文章的问题，比如说Wordpress文章ID不连续，在使用Google Cloud Platform后数据库时不时无法连接。</li><li>相比于Wordpress,Hexo属于静态博客，所有源数据都放在本地，生成网站数据后发布到网上，虽然过程相对繁琐，但访问速度快，使用Github Pages后相当于无限流量。</li></ol><a id="more"></a> <h2 id="搭建Hexo博客"><a href="#搭建Hexo博客" class="headerlink" title="搭建Hexo博客"></a>搭建Hexo博客</h2><h3 id="1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接"><a href="#1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接" class="headerlink" title="1. 登录Google Cloud Platform（即GCP）:Compute Engine(链接)"></a>1. 登录Google Cloud Platform（即GCP）:<a href="https://console.cloud.google.com/compute/" target="_blank" rel="noopener">Compute Engine(链接)</a></h3><h3 id="2-创建实例"><a href="#2-创建实例" class="headerlink" title="2. 创建实例"></a>2. 创建实例</h3><p><img src="https://lh3.googleusercontent.com/-a2kyWhScN3A/WnVEhy1joAI/AAAAAAAAdVQ/p_PpNPaTgHQ0rQ7AJGvwuVuus_Ypvq7uACHMYCw/s0/chrome_2018-02-03_13-10-52.png" alt="创建实例-1"><br><img src="https://lh3.googleusercontent.com/-qpZOKb-hbgs/WnVRI0Y5QYI/AAAAAAAAdWE/vkbLgkEe6ZAX1ELUObE1ZK1j_2jUMpJGACHMYCw/s0/chrome_2018-02-03_14-05-07.png" alt="创建实例-2"></p><p>拉到最下面确认创建新实例，创建后自动启动实例：</p><p><img src="https://lh3.googleusercontent.com/--9_R0T4NiW0/WnVGbZ-7V9I/AAAAAAAAdVk/WMCOGu37ftUY2llV0qVTXrIyStBo1tl0wCHMYCw/s0/chrome_2018-02-03_13-19-25.png" alt="实例创建成功"></p><p>启用实例的SSH：</p><p><img src="https://lh3.googleusercontent.com/-EXobSRnOyRE/WnVHPZrSpSI/AAAAAAAAdVw/CNCATdG_ATYOjgN5ATL6mY_vEKkOYtKQACHMYCw/s0/chrome_2018-02-03_13-22-57.png" alt="登录VPS"></p><p><img src="https://lh3.googleusercontent.com/-rJH8zuJdLh8/WnVHhYqej3I/AAAAAAAAdV0/8sKFGDl2A5Ej4s8tgwprl2plTgwND0xtQCHMYCw/s0/chrome_2018-02-03_13-24-02.png" alt="登录成功"></p><ol><li><p>使用sudo passwd设置Root密码</p><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd <span class="comment">//设置Root密码</span></span><br></pre></td></tr></table></figure></li><li><p>通过sudo su命令切换到root用户</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su <span class="comment">//切换到root用户</span></span><br></pre></td></tr></table></figure></li><li><p>修改SSH配置文件/etc/ssh/sshd_config</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config <span class="comment">//编辑文件</span></span><br></pre></td></tr></table></figure></li><li><p>找到PermitRootLogin和PasswordAuthentication</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LoginGraceTime <span class="number">120</span></span><br><span class="line">PermitRootLogin yes <span class="comment">//默认为no，需要开启root用户访问改为yes</span></span><br><span class="line">StrictModes yes</span><br><span class="line">PasswordAuthentication yes <span class="comment">//默认为no，改为yes开启密码登陆</span></span><br></pre></td></tr></table></figure></li><li><p>重启SSH服务使修改生效，Ubuntu同样适用</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></li></ol><h3 id="3-查看当前Git版本"><a href="#3-查看当前Git版本" class="headerlink" title="3. 查看当前Git版本"></a>3. 查看当前Git版本</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --verison</span><br></pre></td></tr></table></figure><h3 id="4-安装Node-js"><a href="#4-安装Node-js" class="headerlink" title="4. 安装Node.js"></a>4. 安装Node.js</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs -y</span><br><span class="line">sudo apt-get install npm -y</span><br></pre></td></tr></table></figure><h3 id="5-安装Hexo"><a href="#5-安装Hexo" class="headerlink" title="5. 安装Hexo"></a>5. 安装Hexo</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><h4 id="5-1-配置Hexo"><a href="#5-1-配置Hexo" class="headerlink" title="5.1 配置Hexo"></a>5.1 配置Hexo</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 进入想要存放博客的文件夹</span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><p><em>报错：npm WARN optional Skipping failed optional dependency /chokidar/fsevents:<br>npm WARN notsup Not compatible with your operating system or architecture: <a href="mailto:fsevents@1.1.3" target="_blank" rel="noopener">fsevents@1.1.3</a><br>原因：fsevent是mac osx系统的，你是在win或者Linux下使用了 所以会有警告，忽略即可</em></p><h4 id="5-2-安装主题"><a href="#5-2-安装主题" class="headerlink" title="5.2 安装主题"></a>5.2 安装主题</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 进入主题文件夹themes</span><br><span class="line">git clone https:<span class="comment">//github.com/theme-next/hexo-theme-next</span></span><br><span class="line"># 修改配置文件_config.yml，在theme字段中填入：hexo-theme-next即可</span><br><span class="line">vi _config.yml</span><br></pre></td></tr></table></figure><h3 id="5-3-启动Hexo"><a href="#5-3-启动Hexo" class="headerlink" title="5.3 启动Hexo"></a>5.3 启动Hexo</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br><span class="line"># 启动后在浏览器的地址栏填入：ip:4000即可启动</span><br></pre></td></tr></table></figure><h2 id="在Windows下写作"><a href="#在Windows下写作" class="headerlink" title="在Windows下写作"></a>在Windows下写作</h2><h3 id="使用MarkdownPad-2-Pro"><a href="#使用MarkdownPad-2-Pro" class="headerlink" title="使用MarkdownPad 2 Pro"></a>使用MarkdownPad 2 Pro</h3><p><img src="https://lh3.googleusercontent.com/-nenDps21_yE/Wovf1wKs8MI/AAAAAAAAdes/3OUK8YqxctYUAVwWKSqPAo303P7jVh9jgCHMYCw/s0/2018-02-20_16-44-04.png" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;从2016年建立个人博客开始使用Wordpress，了解Wordpress强大的同时，也认识到Wordpress的繁琐，最烦恼的是数据库文章的问题，比如说Wordpress文章ID不连续，在使用Google Cloud Platform后数据库时不时无法连接。&lt;/li&gt;
-&lt;li&gt;相比于Wordpress,Hexo属于静态博客，所有源数据都放在本地，生成网站数据后发布到网上，虽然过程相对繁琐，但访问速度快，使用Github Pages后相当于无限流量。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="VPS" scheme="http://kkzzhizhou.github.io/tags/VPS/"/>
-    
-      <category term="Google Cloud Platform" scheme="http://kkzzhizhou.github.io/tags/Google-Cloud-Platform/"/>
-    
-      <category term="服务器" scheme="http://kkzzhizhou.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
