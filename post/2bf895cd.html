@@ -484,26 +484,12 @@
 <p>这篇文章针对我个人的使用情况，解决从美化到软件安装的各种需求。</p>
 <p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg" alt></p>
 <p>……<br><a id="more"></a> </p>
-<h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><h3 id="安装主题：Arc-GTK"><a href="#安装主题：Arc-GTK" class="headerlink" title="安装主题：Arc GTK"></a>安装主题：Arc GTK</h3><pre><code class="bash">sudo sh -c &quot;echo &#39;deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /&#39; &gt;&gt; /etc/apt/sources.list.d/arc-theme.list&quot;
-wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key
-sudo apt-key add - &lt; Release.key
-sudo apt update
-sudo apt install arc-theme
-</code></pre>
-<h3 id="安装图标：papirus-icon-theme-gtk"><a href="#安装图标：papirus-icon-theme-gtk" class="headerlink" title="安装图标：papirus-icon-theme-gtk"></a>安装图标：papirus-icon-theme-gtk</h3><pre><code class="bash">sudo add-apt-repository ppa:varlesh-l/papirus-pack
-sudo apt update
-sudo apt install papirus-gtk-icon-theme
-</code></pre>
-<h3 id="应用主题图标：Unity-Tweak-Tool"><a href="#应用主题图标：Unity-Tweak-Tool" class="headerlink" title="应用主题图标：Unity-Tweak-Tool"></a>应用主题图标：Unity-Tweak-Tool</h3><pre><code class="bash">sudo apt update
-sudo apt install Unity-Tweak-Tool
-</code></pre>
+<h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><h3 id="安装主题：Arc-GTK"><a href="#安装主题：Arc-GTK" class="headerlink" title="安装主题：Arc GTK"></a>安装主题：Arc GTK</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">"echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' &gt;&gt; /etc/apt/sources.list.d/arc-theme.list"</span></span><br><span class="line">wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key</span><br><span class="line">sudo apt-key add - &lt; Release.key</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install arc-theme</span><br></pre></td></tr></table></figure>
+<h3 id="安装图标：papirus-icon-theme-gtk"><a href="#安装图标：papirus-icon-theme-gtk" class="headerlink" title="安装图标：papirus-icon-theme-gtk"></a>安装图标：papirus-icon-theme-gtk</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:varlesh<span class="_">-l</span>/papirus-pack</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install papirus-gtk-icon-theme</span><br></pre></td></tr></table></figure>
+<h3 id="应用主题图标：Unity-Tweak-Tool"><a href="#应用主题图标：Unity-Tweak-Tool" class="headerlink" title="应用主题图标：Unity-Tweak-Tool"></a>应用主题图标：Unity-Tweak-Tool</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install Unity-Tweak-Tool</span><br></pre></td></tr></table></figure>
 <h2 id="常用软件安装"><a href="#常用软件安装" class="headerlink" title="常用软件安装"></a>常用软件安装</h2><p>不喜欢Ubuntu Gnome桌面，比较喜欢Unity桌面，对于我当前使用的软件来说兼容性相当好。</p>
-<h3 id="运行Windows软件：deepin-wine-ubuntu"><a href="#运行Windows软件：deepin-wine-ubuntu" class="headerlink" title="运行Windows软件：deepin-wine-ubuntu"></a>运行Windows软件：<a href="https://github.com/wszqkzqk/deepin-wine-ubuntu" target="_blank" rel="noopener">deepin-wine-ubuntu</a></h3><pre><code>cd ~
-git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git deepin-wine-ubuntu
-cd deepin-wine-ubuntu
-chmod +x ./install
-./install.sh
-</code></pre><p>可解决下列日常软件安装需求：</p>
+<h3 id="运行Windows软件：deepin-wine-ubuntu"><a href="#运行Windows软件：deepin-wine-ubuntu" class="headerlink" title="运行Windows软件：deepin-wine-ubuntu"></a>运行Windows软件：<a href="https://github.com/wszqkzqk/deepin-wine-ubuntu" target="_blank" rel="noopener">deepin-wine-ubuntu</a></h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~</span><br><span class="line">git clone http<span class="variable">s:</span>//gitee.<span class="keyword">com</span>/wszqkzqk/deepin-wine-<span class="keyword">for</span>-ubuntu.git deepin-wine-ubuntu</span><br><span class="line"><span class="keyword">cd</span> deepin-wine-ubuntu</span><br><span class="line">chmod +<span class="keyword">x</span> ./install</span><br><span class="line">./install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<p>可解决下列日常软件安装需求：</p>
 <ul>
 <li><p>QQ</p>
 </li>
@@ -514,64 +500,21 @@ chmod +x ./install
 <li>迅雷极速版</li>
 <li>阿里旺旺</li>
 </ul>
-<h3 id="全局搜索：Albert"><a href="#全局搜索：Albert" class="headerlink" title="全局搜索：Albert"></a>全局搜索：Albert</h3><pre><code class="bash">sudo add-apt-repository ppa:nilarimogard/webupd8
-sudo apt update
-sudo apt install albert
-</code></pre>
+<h3 id="全局搜索：Albert"><a href="#全局搜索：Albert" class="headerlink" title="全局搜索：Albert"></a>全局搜索：Albert</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:nilarimogard/webupd8</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install albert</span><br></pre></td></tr></table></figure>
 <h3 id="网络工具：electron-ssr"><a href="#网络工具：electron-ssr" class="headerlink" title="网络工具：electron-ssr"></a>网络工具：<a href="https://github.com/erguotou520/electron-ssr/releases" target="_blank" rel="noopener">electron-ssr</a></h3><h3 id="音乐播放器：网易云音乐"><a href="#音乐播放器：网易云音乐" class="headerlink" title="音乐播放器：网易云音乐"></a>音乐播放器：<a href="https://music.163.com/#/download" target="_blank" rel="noopener">网易云音乐</a></h3><h3 id="浏览器：Chrome"><a href="#浏览器：Chrome" class="headerlink" title="浏览器：Chrome"></a>浏览器：<a href="https://www.google.com/intl/zh-CN_ALL/chrome/" target="_blank" rel="noopener">Chrome</a></h3><h3 id="输入法：Fictx-可安装五笔输入法"><a href="#输入法：Fictx-可安装五笔输入法" class="headerlink" title="输入法：Fictx(可安装五笔输入法)"></a>输入法：Fictx(可安装五笔输入法)</h3><p>系统自带，安装五笔输入法方式如下：</p>
-<pre><code class="bash">sudo apt install fcitx-table-wubi
-</code></pre>
-<h3 id="Markdown写作：Typora"><a href="#Markdown写作：Typora" class="headerlink" title="Markdown写作：Typora"></a>Markdown写作：<a href="https://typora.io/#download" target="_blank" rel="noopener">Typora</a></h3><h3 id="代码编辑：Sublime-Text-3"><a href="#代码编辑：Sublime-Text-3" class="headerlink" title="代码编辑：Sublime Text 3"></a>代码编辑：<a href="https://www.sublimetext.com/3" target="_blank" rel="noopener">Sublime Text 3</a></h3><h3 id="下载工具：uGET"><a href="#下载工具：uGET" class="headerlink" title="下载工具：uGET"></a>下载工具：uGET</h3><pre><code class="bash">sudo apt install uget
-</code></pre>
-<h3 id="剪贴板增强：copyq"><a href="#剪贴板增强：copyq" class="headerlink" title="剪贴板增强：copyq"></a>剪贴板增强：copyq</h3><pre><code class="bash">sudo add-apt-repository ppa:hluk/copyq
-sudo apt-get update
-sudo apt install copyq
-</code></pre>
-<h3 id="邮件，日历，联系人，任务：Thunderbird"><a href="#邮件，日历，联系人，任务：Thunderbird" class="headerlink" title="邮件，日历，联系人，任务：Thunderbird"></a>邮件，日历，联系人，任务：Thunderbird</h3><pre><code class="bash">sudo apt install thunderbird
-</code></pre>
-<h3 id="截图工具：Shutter"><a href="#截图工具：Shutter" class="headerlink" title="截图工具：Shutter"></a>截图工具：Shutter</h3><pre><code class="bash">sudo apt install thunderbird
-</code></pre>
-<h3 id="虚拟机：VMware-Workstation"><a href="#虚拟机：VMware-Workstation" class="headerlink" title="虚拟机：VMware Workstation"></a>虚拟机：VMware Workstation</h3><pre><code># 下载最新版VMware Workstation：
-wget https://www.vmware.com/go/getworkstation-linux
-# 增加可以执行权限并执行
-chmod +x getworkstation-linux
-sudo ./getworkstation-linux
-# 之后进入图形安装界面
-</code></pre><h4 id="安装过程报错：无法在模块路径中找到主题引擎：“murrine”，解决方法"><a href="#安装过程报错：无法在模块路径中找到主题引擎：“murrine”，解决方法" class="headerlink" title="安装过程报错：无法在模块路径中找到主题引擎：“murrine”，解决方法"></a>安装过程报错：无法在模块路径中找到主题引擎：“murrine”，<a href="https://blog.csdn.net/yzf0011/article/details/75215609?locationNum=10&amp;fps=1" target="_blank" rel="noopener">解决方法</a></h4><h3 id="系统备份还原：TimeShift"><a href="#系统备份还原：TimeShift" class="headerlink" title="系统备份还原：TimeShift"></a>系统备份还原：TimeShift</h3><pre><code class="bash">sudo apt-add-repository -y ppa:teejee2008/ppa
-sudo apt update
-sudo apt install timeshift
-</code></pre>
-<h3 id="硬盘分区工具：Gparted"><a href="#硬盘分区工具：Gparted" class="headerlink" title="硬盘分区工具：Gparted"></a>硬盘分区工具：Gparted</h3><pre><code class="bash">sudo apt-get install gparted
-</code></pre>
-<h3 id="文件-文件夹比较工具：meld"><a href="#文件-文件夹比较工具：meld" class="headerlink" title="文件/文件夹比较工具：meld"></a>文件/文件夹比较工具：meld</h3><pre><code class="bash">sudo apt-get install meld
-</code></pre>
-<h3 id="办公软件：WPS-Office"><a href="#办公软件：WPS-Office" class="headerlink" title="办公软件：WPS Office"></a>办公软件：<a href="http://wps-community.org/downloads" target="_blank" rel="noopener">WPS Office</a></h3><h3 id="状态栏显示天气：优客天气"><a href="#状态栏显示天气：优客天气" class="headerlink" title="状态栏显示天气：优客天气"></a>状态栏显示天气：<a href="http://www.ubuntukylin.com/application/show.php?lang=cn&amp;id=270" target="_blank" rel="noopener">优客天气</a></h3><h3 id="启动项管理：gnome-session-properties（系统自带）"><a href="#启动项管理：gnome-session-properties（系统自带）" class="headerlink" title="启动项管理：gnome-session-properties（系统自带）"></a>启动项管理：gnome-session-properties（系统自带）</h3><h3 id="状态栏显示网速：indicator-netspeed-unity"><a href="#状态栏显示网速：indicator-netspeed-unity" class="headerlink" title="状态栏显示网速：indicator-netspeed-unity"></a>状态栏显示网速：indicator-netspeed-unity</h3><pre><code class="bash">sudo apt-add-repository ppa:fixnix/netspeed
-sudo apt-get update
-sudo apt-get install indicator-netspeed-unity
-# 启动
-indicator-netspeed-unity &amp;
-</code></pre>
-<h3 id="阻止系统休眠：Caffeine"><a href="#阻止系统休眠：Caffeine" class="headerlink" title="阻止系统休眠：Caffeine"></a>阻止系统休眠：Caffeine</h3><pre><code class="bash">sudo add-apt-repository ppa:caffeine-developers/ppa
-sudo apt-get update
-sudo apt-get install caffeine
-</code></pre>
-<h2 id="系统自定义设置"><a href="#系统自定义设置" class="headerlink" title="系统自定义设置"></a>系统自定义设置</h2><h3 id="取消输入sudo需要密码"><a href="#取消输入sudo需要密码" class="headerlink" title="取消输入sudo需要密码"></a>取消输入sudo需要密码</h3><pre><code class="bash">sudo gedit /etc/sudoers
-# 只要在%sudo ALL=(ALL:ALL) ALL下面添加一行
-username  ALL=(ALL) NOPASSWD: ALL
-</code></pre>
-<h3 id="tty终端显示中文"><a href="#tty终端显示中文" class="headerlink" title="tty终端显示中文"></a>tty终端显示中文</h3><pre><code class="bash"># 首先安装fbterm
-sudo apt-get install fbterm
-
-sudo gpasswd -a YOUR_USERNAME video
-sudo setcap &#39;cap_sys_tty_config+ep&#39; /usr/bin/fbterm
-# 修改.profile，并添加以下内容
-vi ~/.profile
-# 如果在tty下就执行fbtrem
-if [ &quot;$TERM&quot; = &quot;linux&quot; ]; then
-  # exec fbterm
-  LC_CTYPE=zh_CN.UTF-8 exec fbterm
-fi
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install fcitx-table-wubi</span><br></pre></td></tr></table></figure>
+<h3 id="Markdown写作：Typora"><a href="#Markdown写作：Typora" class="headerlink" title="Markdown写作：Typora"></a>Markdown写作：<a href="https://typora.io/#download" target="_blank" rel="noopener">Typora</a></h3><h3 id="代码编辑：Sublime-Text-3"><a href="#代码编辑：Sublime-Text-3" class="headerlink" title="代码编辑：Sublime Text 3"></a>代码编辑：<a href="https://www.sublimetext.com/3" target="_blank" rel="noopener">Sublime Text 3</a></h3><h3 id="下载工具：uGET"><a href="#下载工具：uGET" class="headerlink" title="下载工具：uGET"></a>下载工具：uGET</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install uget</span><br></pre></td></tr></table></figure>
+<h3 id="剪贴板增强：copyq"><a href="#剪贴板增强：copyq" class="headerlink" title="剪贴板增强：copyq"></a>剪贴板增强：copyq</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:hluk/copyq</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt install copyq</span><br></pre></td></tr></table></figure>
+<h3 id="邮件，日历，联系人，任务：Thunderbird"><a href="#邮件，日历，联系人，任务：Thunderbird" class="headerlink" title="邮件，日历，联系人，任务：Thunderbird"></a>邮件，日历，联系人，任务：Thunderbird</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install thunderbird</span><br></pre></td></tr></table></figure>
+<h3 id="截图工具：Shutter"><a href="#截图工具：Shutter" class="headerlink" title="截图工具：Shutter"></a>截图工具：Shutter</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install thunderbird</span><br></pre></td></tr></table></figure>
+<h3 id="虚拟机：VMware-Workstation"><a href="#虚拟机：VMware-Workstation" class="headerlink" title="虚拟机：VMware Workstation"></a>虚拟机：VMware Workstation</h3><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 下载最新版VMware Workstation：</span></span><br><span class="line">wget https:<span class="comment">//www.vmware.com/go/getworkstation-linux</span></span><br><span class="line"><span class="meta"># 增加可以执行权限并执行</span></span><br><span class="line">chmod +x getworkstation-linux</span><br><span class="line">sudo ./getworkstation-linux</span><br><span class="line"><span class="meta"># 之后进入图形安装界面</span></span><br></pre></td></tr></table></figure>
+<h4 id="安装过程报错：无法在模块路径中找到主题引擎：“murrine”，解决方法"><a href="#安装过程报错：无法在模块路径中找到主题引擎：“murrine”，解决方法" class="headerlink" title="安装过程报错：无法在模块路径中找到主题引擎：“murrine”，解决方法"></a>安装过程报错：无法在模块路径中找到主题引擎：“murrine”，<a href="https://blog.csdn.net/yzf0011/article/details/75215609?locationNum=10&amp;fps=1" target="_blank" rel="noopener">解决方法</a></h4><h3 id="系统备份还原：TimeShift"><a href="#系统备份还原：TimeShift" class="headerlink" title="系统备份还原：TimeShift"></a>系统备份还原：TimeShift</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-add-repository -y ppa:teejee2008/ppa</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install timeshift</span><br></pre></td></tr></table></figure>
+<h3 id="硬盘分区工具：Gparted"><a href="#硬盘分区工具：Gparted" class="headerlink" title="硬盘分区工具：Gparted"></a>硬盘分区工具：Gparted</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gparted</span><br></pre></td></tr></table></figure>
+<h3 id="文件-文件夹比较工具：meld"><a href="#文件-文件夹比较工具：meld" class="headerlink" title="文件/文件夹比较工具：meld"></a>文件/文件夹比较工具：meld</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install meld</span><br></pre></td></tr></table></figure>
+<h3 id="办公软件：WPS-Office"><a href="#办公软件：WPS-Office" class="headerlink" title="办公软件：WPS Office"></a>办公软件：<a href="http://wps-community.org/downloads" target="_blank" rel="noopener">WPS Office</a></h3><h3 id="状态栏显示天气：优客天气"><a href="#状态栏显示天气：优客天气" class="headerlink" title="状态栏显示天气：优客天气"></a>状态栏显示天气：<a href="http://www.ubuntukylin.com/application/show.php?lang=cn&amp;id=270" target="_blank" rel="noopener">优客天气</a></h3><h3 id="启动项管理：gnome-session-properties（系统自带）"><a href="#启动项管理：gnome-session-properties（系统自带）" class="headerlink" title="启动项管理：gnome-session-properties（系统自带）"></a>启动项管理：gnome-session-properties（系统自带）</h3><h3 id="状态栏显示网速：indicator-netspeed-unity"><a href="#状态栏显示网速：indicator-netspeed-unity" class="headerlink" title="状态栏显示网速：indicator-netspeed-unity"></a>状态栏显示网速：indicator-netspeed-unity</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-add-repository ppa:fixnix/netspeed</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install indicator-netspeed-unity</span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">indicator-netspeed-unity &amp;</span><br></pre></td></tr></table></figure>
+<h3 id="阻止系统休眠：Caffeine"><a href="#阻止系统休眠：Caffeine" class="headerlink" title="阻止系统休眠：Caffeine"></a>阻止系统休眠：Caffeine</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:caffeine-developers/ppa</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install caffeine</span><br></pre></td></tr></table></figure>
+<h2 id="系统自定义设置"><a href="#系统自定义设置" class="headerlink" title="系统自定义设置"></a>系统自定义设置</h2><h3 id="取消输入sudo需要密码"><a href="#取消输入sudo需要密码" class="headerlink" title="取消输入sudo需要密码"></a>取消输入sudo需要密码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/sudoers</span><br><span class="line"><span class="comment"># 只要在%sudo ALL=(ALL:ALL) ALL下面添加一行</span></span><br><span class="line">username  ALL=(ALL) NOPASSWD: ALL</span><br></pre></td></tr></table></figure>
+<h3 id="tty终端显示中文"><a href="#tty终端显示中文" class="headerlink" title="tty终端显示中文"></a>tty终端显示中文</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先安装fbterm</span></span><br><span class="line">sudo apt-get install fbterm</span><br><span class="line"></span><br><span class="line">sudo gpasswd -a YOUR_USERNAME video</span><br><span class="line">sudo <span class="built_in">setcap</span> <span class="string">'cap_sys_tty_config+ep'</span> /usr/bin/fbterm</span><br><span class="line"><span class="comment"># 修改.profile，并添加以下内容</span></span><br><span class="line">vi ~/.profile</span><br><span class="line"><span class="comment"># 如果在tty下就执行fbtrem</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$TERM</span>"</span> = <span class="string">"linux"</span> ]; <span class="keyword">then</span></span><br><span class="line">  <span class="comment"># exec fbterm</span></span><br><span class="line">  LC_CTYPE=zh_CN.UTF-8 <span class="built_in">exec</span> fbterm</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -693,7 +636,7 @@ fi
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -815,9 +758,7 @@ fi
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -376,192 +376,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kkzzhizhou.github.io/post/91c3f927.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzz">
-      <meta itemprop="description" content="清醒时处世，迷茫时读书">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzz部落格">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/post/91c3f927.html" class="post-title-link" itemprop="url">使用Travis CI，同步跨平台写博客方案</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-09 21:37:28" itemprop="dateCreated datePublished" datetime="2019-04-09T21:37:28+08:00">2019-04-09</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-10 17:40:19" itemprop="dateModified" datetime="2019-04-10T17:40:19+08:00">2019-04-10</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Travis-CI说明"><a href="#Travis-CI说明" class="headerlink" title="Travis CI说明"></a>Travis CI说明</h2><p>新建Source分支用于存储源文件，Master分支用于存储生成的网站文件</p>
-<h2 id="全新的电脑写博客"><a href="#全新的电脑写博客" class="headerlink" title="全新的电脑写博客"></a>全新的电脑写博客</h2><ul>
-<li><p>下载安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，<a href="https://github.com/gaoyoubo/hexo-client/releases" target="_blank" rel="noopener">HexoClient</a>，<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a></p>
-</li>
-<li><p>运行Git Bash</p>
-</li>
-<li><p>添加Nodejs环境配置</p>
-<pre><code>touch ~/.bash_profile
-vi ~/.bash_profile
-</code></pre></li>
-<li><p>添加以下内容到.bash_profile文件中，保存退出</p>
-<pre><code>#! /bin/bash
-# 添加环境变量
-PATH=$PATH:/c/Program\ Files/nodejs
-</code></pre></li>
-<li><p>运行以下命令刷新环境变量</p>
-<pre><code>source ~/.bash_profile
-</code></pre></li>
-<li><p>下载安装SourceTree并登录</p>
-<pre><code>git clone -b source https://github.com/kkzzhizhou/kkzzhizhou.github.io
-</code></pre></li>
-<li><p>下载安装SourceTree并登录</p>
-</li>
-<li><p>打开本地仓库kkzzhizhou.github.io</p>
-</li>
-<li><p>修改后进行提交即可</p>
-</li>
-</ul>
-<h2 id="已经配置的电脑写博客"><a href="#已经配置的电脑写博客" class="headerlink" title="已经配置的电脑写博客"></a>已经配置的电脑写博客</h2><ul>
-<li>使用Source同步更改</li>
-<li>修改后进行提交即可</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kkzzhizhou.github.io/post/e473457b.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -661,63 +475,45 @@ PATH=$PATH:/c/Program\ Files/nodejs
         
           <h2 id="Travis-CI持续集成"><a href="#Travis-CI持续集成" class="headerlink" title="Travis CI持续集成"></a><a href="https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">Travis CI持续集成</a></h2><h2 id="RSS-Feed"><a href="#RSS-Feed" class="headerlink" title="RSS Feed"></a>RSS Feed</h2><ul>
 <li><p>安装插件<code>hexo-generator-feed</code></p>
-<pre><code>npm install hexo-generator-feed --save
-</code></pre></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>修改站点配置</p>
-<pre><code># Extensions
-## Plugins: http://hexo.io/plugins/
-#RSS订阅
-plugin:
-- hexo-generator-feed
-#Feed Atom
-feed:
-type: atom
-path: atom.xml
-limit: 20
-</code></pre></li>
-<li><h3 id="修改主题配置，添加如下配置"><a href="#修改主题配置，添加如下配置" class="headerlink" title="修改主题配置，添加如下配置"></a>修改主题配置，添加如下配置</h3><pre><code>rss: /atom.xml
-</code></pre></li>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Extensions</span></span><br><span class="line"><span class="meta">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta">#RSS订阅</span></span><br><span class="line"><span class="symbol">plugin:</span></span><br><span class="line">- hexo-generator-feed</span><br><span class="line"><span class="meta">#Feed Atom</span></span><br><span class="line"><span class="symbol">feed:</span></span><br><span class="line"><span class="symbol">type:</span> atom</span><br><span class="line"><span class="symbol">path:</span> atom.xml</span><br><span class="line"><span class="symbol">limit:</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="修改主题配置，添加如下配置"><a href="#修改主题配置，添加如下配置" class="headerlink" title="修改主题配置，添加如下配置"></a>修改主题配置，添加如下配置</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">rss:</span> /atom.xml</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="站内全文搜索"><a href="#站内全文搜索" class="headerlink" title="站内全文搜索"></a>站内全文搜索</h2><ul>
 <li><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
-<pre><code>$ npm install hexo-generator-searchdb --save
-</code></pre></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>编辑 站点配置文件，新增以下内容到任意位置：</p>
-<pre><code>search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-</code></pre></li>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">  path:</span> search.xml</span><br><span class="line"><span class="symbol">  field:</span> post</span><br><span class="line"><span class="symbol">  format:</span> html</span><br><span class="line"><span class="symbol">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>编辑 主题配置文件，启用本地搜索功能：</p>
-<pre><code># Local search
-local_search:
-  enable: true
-</code></pre></li>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="文章按更新时间排序"><a href="#文章按更新时间排序" class="headerlink" title="文章按更新时间排序"></a>文章按更新时间排序</h2><h3 id="要修改的内容"><a href="#要修改的内容" class="headerlink" title="要修改的内容"></a>要修改的内容</h3><ul>
 <li><p><code>/node_modules/hexo-generator-index/index.js</code></p>
-<pre><code>order_by: &#39;-date&#39;
-</code></pre><p>修改为</p>
-<pre><code>order_by: &#39;-updated&#39;
-</code></pre><p>这样的话就<strong>只</strong>按 Front-matter 中的<code>updated</code>排序了，因此所有文章的 Front-matter 中都必须要有<code>updated</code>，已发布的文章可以手动修改或者找方法批量将 <code>data</code>换成<code>updated</code>，对于将来的文章，只要做如下修改：</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order<span class="number">_</span><span class="meta">by</span>: <span class="string">'-date'</span></span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order<span class="number">_</span><span class="meta">by</span>: <span class="string">'-updated'</span></span><br></pre></td></tr></table></figure>
+<p>这样的话就<strong>只</strong>按 Front-matter 中的<code>updated</code>排序了，因此所有文章的 Front-matter 中都必须要有<code>updated</code>，已发布的文章可以手动修改或者找方法批量将 <code>data</code>换成<code>updated</code>，对于将来的文章，只要做如下修改：</p>
 <ul>
 <li><code>/scaffolds/post.md</code></li>
 </ul>
 <p>在<code>date</code>后加入一行</p>
-<pre><code>updated: {{ date }}
-</code></pre></li>
+<figure class="highlight twig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">updated: </span><span class="template-variable">&#123;&#123; <span class="name">date</span> &#125;&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="Hexo链接持久化"><a href="#Hexo链接持久化" class="headerlink" title="Hexo链接持久化"></a>Hexo链接持久化</h2><ul>
 <li><p>安装<code>hexo-abbrlink</code>这个插件</p>
-<pre><code>npm install hexo-abbrlink --save
-</code></pre></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-abbrlink <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>站点配置文件里:</p>
-<pre><code>permalink: post/:abbrlink.html
-abbrlink:
-  alg: crc32  # 算法：crc16(default) and crc32
-  rep: hex    # 进制：dec(default) and hex
-</code></pre></li>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">permalink:</span> post/:abbrlink.html</span><br><span class="line"><span class="symbol">abbrlink:</span></span><br><span class="line"><span class="symbol">  alg:</span> <span class="keyword">crc32</span>  # 算法：crc16(<span class="meta">default</span>) <span class="keyword">and</span> <span class="keyword">crc32</span></span><br><span class="line"><span class="symbol">  rep:</span> hex    # 进制：<span class="keyword">dec</span>(<span class="meta">default</span>) <span class="keyword">and</span> hex</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id><a href="#" class="headerlink" title></a>
           <!--noindex-->
@@ -893,51 +689,11 @@ abbrlink:
 <li><strong>CI_TOKEN的值为上步获得的Token</strong></li>
 </ul>
 <p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1g14q2myqp8j31h30ni77d.jpg" alt="image-20190316163717457"></p>
-<h3 id="5-新建Source分支"><a href="#5-新建Source分支" class="headerlink" title="5. 新建Source分支"></a>5. 新建Source分支</h3><pre><code>git clone https://github.com/kkzzhizhou/kkzzhizhou.github.io //换成你自己的博客仓库
-git checkout source //新建source分支,保留如下图所示的源文件
-</code></pre><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1g14qg5wp5vj30dy061t9c.jpg" alt="image-20190316165017295"></p>
-<h3 id="6-Source分支下新建-travis-yml文件"><a href="#6-Source分支下新建-travis-yml文件" class="headerlink" title="6. Source分支下新建.travis.yml文件"></a>6. Source分支下新建.travis.yml文件</h3><pre><code>language: node_js
-node_js: stable
-cache:
-  directories:
-    - node_modules
-
-# S: Build Lifecycle
-install:
-  - npm install
-
-
-#before_script:
- # - npm install -g gulp
-
-script:
-  - hexo clean &amp;&amp; hexo g
-
-after_script:
-  - git clone https://${GH_REF} .deploy_git
-  - cd .deploy_git
-  - git checkout master
-  - cd ../
-  - mv .deploy_git/.git/ ./public/
-  - cd ./public
-  - git init
-  - git config user.name &quot;zzz&quot; //修改成你自己的用户名
-  - git config user.email &quot;806508401@qq.com&quot; //修改成你自己的邮箱
-  - git add .
-  - git commit -m &quot;:memo:Update by Travis CI&quot;
-  - git push --force --quiet &quot;https://${CI_TOKEN}@${GH_REF}&quot; master:master
-# E: Build LifeCycle
-
-branches:
-  only:
-    - source
-env:
- global:
-   - GH_REF: github.com/kkzzhizhou/kkzzhizhou.github.io.git //修改成你自己的仓库
-</code></pre><h3 id="7-上传至Source分支"><a href="#7-上传至Source分支" class="headerlink" title="7. 上传至Source分支"></a>7. 上传至Source分支</h3><pre><code>git add .
-git commit -m &quot;hexo-source-upload&quot;
-git push origin source //推送到远程仓库
-</code></pre><h3 id="8-使用HexoClient愉快写Blog了"><a href="#8-使用HexoClient愉快写Blog了" class="headerlink" title="8. 使用HexoClient愉快写Blog了"></a>8. 使用HexoClient愉快写Blog了</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g14qmvlh1oj31cx0u011z.jpg" alt="image.png"></p>
+<h3 id="5-新建Source分支"><a href="#5-新建Source分支" class="headerlink" title="5. 新建Source分支"></a>5. 新建Source分支</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/kkzzhizhou/</span>kkzzhizhou.github.io <span class="regexp">//</span>换成你自己的博客仓库</span><br><span class="line">git checkout source <span class="regexp">//</span>新建source分支,保留如下图所示的源文件</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1g14qg5wp5vj30dy061t9c.jpg" alt="image-20190316165017295"></p>
+<h3 id="6-Source分支下新建-travis-yml文件"><a href="#6-Source分支下新建-travis-yml文件" class="headerlink" title="6. Source分支下新建.travis.yml文件"></a>6. Source分支下新建.travis.yml文件</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">language:</span> node_js</span><br><span class="line"><span class="symbol">node_js:</span> stable</span><br><span class="line"><span class="symbol">cache:</span></span><br><span class="line"><span class="symbol">  directories:</span></span><br><span class="line">    - node_modules</span><br><span class="line"></span><br><span class="line"><span class="meta"># S: Build Lifecycle</span></span><br><span class="line"><span class="symbol">install:</span></span><br><span class="line">  - npm install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#before_script:</span></span><br><span class="line"> <span class="meta"># - npm install -g gulp</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">script:</span></span><br><span class="line">  - hexo clean &amp;&amp; hexo g</span><br><span class="line"></span><br><span class="line"><span class="symbol">after_script:</span></span><br><span class="line">  - git clone https:<span class="comment">//$&#123;GH_REF&#125; .deploy_git</span></span><br><span class="line">  - cd .deploy_git</span><br><span class="line">  - git checkout master</span><br><span class="line">  - cd ../</span><br><span class="line">  - mv .deploy_git/.git/ .<span class="meta-keyword">/public/</span></span><br><span class="line">  - cd ./public</span><br><span class="line">  - git init</span><br><span class="line">  - git config user.name <span class="string">"zzz"</span> <span class="comment">//修改成你自己的用户名</span></span><br><span class="line">  - git config user.email <span class="string">"806508401@qq.com"</span> <span class="comment">//修改成你自己的邮箱</span></span><br><span class="line">  - git add .</span><br><span class="line">  - git commit -m <span class="string">":memo:Update by Travis CI"</span></span><br><span class="line">  - git push --force --quiet <span class="string">"https://$&#123;CI_TOKEN&#125;@$&#123;GH_REF&#125;"</span> master:master</span><br><span class="line"><span class="meta"># E: Build LifeCycle</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">branches:</span></span><br><span class="line"><span class="symbol">  only:</span></span><br><span class="line">    - source</span><br><span class="line"><span class="symbol">env:</span></span><br><span class="line"><span class="symbol"> global:</span></span><br><span class="line">   - GH_REF: github.com<span class="meta-keyword">/kkzzhizhou/</span>kkzzhizhou.github.io.git <span class="comment">//修改成你自己的仓库</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-上传至Source分支"><a href="#7-上传至Source分支" class="headerlink" title="7. 上传至Source分支"></a>7. 上传至Source分支</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"hexo-source-upload"</span></span><br><span class="line">git <span class="keyword">push</span> origin <span class="keyword">source</span> <span class="comment">//推送到远程仓库</span></span><br></pre></td></tr></table></figure>
+<h3 id="8-使用HexoClient愉快写Blog了"><a href="#8-使用HexoClient愉快写Blog了" class="headerlink" title="8. 使用HexoClient愉快写Blog了"></a>8. 使用HexoClient愉快写Blog了</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g14qmvlh1oj31cx0u011z.jpg" alt="image.png"></p>
 <p>……<br>
           <!--noindex-->
           
@@ -2110,6 +1866,159 @@ git push origin source //推送到远程仓库
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kkzzhizhou.github.io/post/88303a7b.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="清醒时处世，迷茫时读书">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/post/88303a7b.html" class="post-title-link" itemprop="url">Mac下清歌五笔输入法快速输入日期时间的方法</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-02 00:18:54 / 修改时间：01:11:54" itemprop="dateCreated datePublished" datetime="2018-09-02T00:18:54+08:00">2018-09-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-09-02：清歌五笔输入法自带快速输入日期时间的方法</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Windows平台下，用搜狗五笔输入法快速输入时间日期星期很舒服，一到Mac平台，Mac版搜狗五笔输入法却不提供同样的功能，实在是郁闷至极，最终发现了清歌五笔输入法能够快速输入时间日期（虽然不能快速输入星期），很赞。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>清歌输入法提供用户词库功能，如下图所示。</p>
+<p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1fuujrh1dgaj20d90jf769.jpg" alt="Mac下清歌五笔输入法快速输入日期时间的方法"></p>
+<p>本文到此结束。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/post/88303a7b.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2158,7 +2067,7 @@ git push origin source //推送到远程仓库
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2280,9 +2189,7 @@ git push origin source //推送到远程仓库
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

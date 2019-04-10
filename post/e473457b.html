@@ -98,18 +98,18 @@
 
 
 
-  <meta name="description" content="Travis CI持续集成RSS Feed 安装插件hexo-generator-feed npm install hexo-generator-feed --save  修改站点配置 # Extensions ## Plugins: http://hexo.io/plugins/ #RSS订阅 plugin: - hexo-generator-feed #Feed Atom feed: type">
+  <meta name="description" content="Travis CI持续集成RSS Feed 安装插件hexo-generator-feed 1npm install hexo-generator-feed --save  修改站点配置 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed Atomfeed">
 <meta name="keywords" content="Hexo,Next">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+Next功能及个性化配置">
 <meta property="og:url" content="http://kkzzhizhou.github.io/post/e473457b.html">
 <meta property="og:site_name" content="zzz部落格">
-<meta property="og:description" content="Travis CI持续集成RSS Feed 安装插件hexo-generator-feed npm install hexo-generator-feed --save  修改站点配置 # Extensions ## Plugins: http://hexo.io/plugins/ #RSS订阅 plugin: - hexo-generator-feed #Feed Atom feed: type">
+<meta property="og:description" content="Travis CI持续集成RSS Feed 安装插件hexo-generator-feed 1npm install hexo-generator-feed --save  修改站点配置 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed Atomfeed">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-03-31T02:19:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Next功能及个性化配置">
-<meta name="twitter:description" content="Travis CI持续集成RSS Feed 安装插件hexo-generator-feed npm install hexo-generator-feed --save  修改站点配置 # Extensions ## Plugins: http://hexo.io/plugins/ #RSS订阅 plugin: - hexo-generator-feed #Feed Atom feed: type">
+<meta name="twitter:description" content="Travis CI持续集成RSS Feed 安装插件hexo-generator-feed 1npm install hexo-generator-feed --save  修改站点配置 12345678910# Extensions## Plugins: http://hexo.io/plugins/#RSS订阅plugin:- hexo-generator-feed#Feed Atomfeed">
 
 
 
@@ -473,63 +473,45 @@
       
         <h2 id="Travis-CI持续集成"><a href="#Travis-CI持续集成" class="headerlink" title="Travis CI持续集成"></a><a href="https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">Travis CI持续集成</a></h2><h2 id="RSS-Feed"><a href="#RSS-Feed" class="headerlink" title="RSS Feed"></a>RSS Feed</h2><ul>
 <li><p>安装插件<code>hexo-generator-feed</code></p>
-<pre><code>npm install hexo-generator-feed --save
-</code></pre></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>修改站点配置</p>
-<pre><code># Extensions
-## Plugins: http://hexo.io/plugins/
-#RSS订阅
-plugin:
-- hexo-generator-feed
-#Feed Atom
-feed:
-type: atom
-path: atom.xml
-limit: 20
-</code></pre></li>
-<li><h3 id="修改主题配置，添加如下配置"><a href="#修改主题配置，添加如下配置" class="headerlink" title="修改主题配置，添加如下配置"></a>修改主题配置，添加如下配置</h3><pre><code>rss: /atom.xml
-</code></pre></li>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Extensions</span></span><br><span class="line"><span class="meta">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta">#RSS订阅</span></span><br><span class="line"><span class="symbol">plugin:</span></span><br><span class="line">- hexo-generator-feed</span><br><span class="line"><span class="meta">#Feed Atom</span></span><br><span class="line"><span class="symbol">feed:</span></span><br><span class="line"><span class="symbol">type:</span> atom</span><br><span class="line"><span class="symbol">path:</span> atom.xml</span><br><span class="line"><span class="symbol">limit:</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="修改主题配置，添加如下配置"><a href="#修改主题配置，添加如下配置" class="headerlink" title="修改主题配置，添加如下配置"></a>修改主题配置，添加如下配置</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">rss:</span> /atom.xml</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="站内全文搜索"><a href="#站内全文搜索" class="headerlink" title="站内全文搜索"></a>站内全文搜索</h2><ul>
 <li><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p>
-<pre><code>$ npm install hexo-generator-searchdb --save
-</code></pre></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>编辑 站点配置文件，新增以下内容到任意位置：</p>
-<pre><code>search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-</code></pre></li>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">  path:</span> search.xml</span><br><span class="line"><span class="symbol">  field:</span> post</span><br><span class="line"><span class="symbol">  format:</span> html</span><br><span class="line"><span class="symbol">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>编辑 主题配置文件，启用本地搜索功能：</p>
-<pre><code># Local search
-local_search:
-  enable: true
-</code></pre></li>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="文章按更新时间排序"><a href="#文章按更新时间排序" class="headerlink" title="文章按更新时间排序"></a>文章按更新时间排序</h2><h3 id="要修改的内容"><a href="#要修改的内容" class="headerlink" title="要修改的内容"></a>要修改的内容</h3><ul>
 <li><p><code>/node_modules/hexo-generator-index/index.js</code></p>
-<pre><code>order_by: &#39;-date&#39;
-</code></pre><p>修改为</p>
-<pre><code>order_by: &#39;-updated&#39;
-</code></pre><p>这样的话就<strong>只</strong>按 Front-matter 中的<code>updated</code>排序了，因此所有文章的 Front-matter 中都必须要有<code>updated</code>，已发布的文章可以手动修改或者找方法批量将 <code>data</code>换成<code>updated</code>，对于将来的文章，只要做如下修改：</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order<span class="number">_</span><span class="meta">by</span>: <span class="string">'-date'</span></span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order<span class="number">_</span><span class="meta">by</span>: <span class="string">'-updated'</span></span><br></pre></td></tr></table></figure>
+<p>这样的话就<strong>只</strong>按 Front-matter 中的<code>updated</code>排序了，因此所有文章的 Front-matter 中都必须要有<code>updated</code>，已发布的文章可以手动修改或者找方法批量将 <code>data</code>换成<code>updated</code>，对于将来的文章，只要做如下修改：</p>
 <ul>
 <li><code>/scaffolds/post.md</code></li>
 </ul>
 <p>在<code>date</code>后加入一行</p>
-<pre><code>updated: {{ date }}
-</code></pre></li>
+<figure class="highlight twig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">updated: </span><span class="template-variable">&#123;&#123; <span class="name">date</span> &#125;&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="Hexo链接持久化"><a href="#Hexo链接持久化" class="headerlink" title="Hexo链接持久化"></a>Hexo链接持久化</h2><ul>
 <li><p>安装<code>hexo-abbrlink</code>这个插件</p>
-<pre><code>npm install hexo-abbrlink --save
-</code></pre></li>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-abbrlink <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>站点配置文件里:</p>
-<pre><code>permalink: post/:abbrlink.html
-abbrlink:
-  alg: crc32  # 算法：crc16(default) and crc32
-  rep: hex    # 进制：dec(default) and hex
-</code></pre></li>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">permalink:</span> post/:abbrlink.html</span><br><span class="line"><span class="symbol">abbrlink:</span></span><br><span class="line"><span class="symbol">  alg:</span> <span class="keyword">crc32</span>  # 算法：crc16(<span class="meta">default</span>) <span class="keyword">and</span> <span class="keyword">crc32</span></span><br><span class="line"><span class="symbol">  rep:</span> hex    # 进制：<span class="keyword">dec</span>(<span class="meta">default</span>) <span class="keyword">and</span> hex</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id><a href="#" class="headerlink" title></a><a id="more"></a></h2>
       
@@ -578,10 +560,6 @@ abbrlink:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/post/91c3f927.html" rel="prev" title="使用Travis CI，同步跨平台写博客方案">
-                使用Travis CI，同步跨平台写博客方案 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -652,7 +630,7 @@ abbrlink:
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -774,9 +752,7 @@ abbrlink:
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

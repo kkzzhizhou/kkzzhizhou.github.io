@@ -492,20 +492,11 @@
 <ol start="5">
 <li><p>之后就到了最关键的步骤了：安装完成之后请不要启动Ubuntu启动，先进入Ubuntu Live中。</p>
 <p>5.1 安装grub-efi，打开终端输入</p>
-<pre><code class="bash">sudo -s
-apt-get install grub-efi
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">apt-get install grub-efi</span><br></pre></td></tr></table></figure>
 <p>5.2 挂载U盘中的EFI分区和Ubuntu系统分区</p>
-<pre><code class="bash"># 查看U盘挂载目录，一般是/dev/sda
-df -l
-mkdir /mnt/EFI
-mkdir /mnt/Ubuntu
-mount /dev/sda1/ /mnt/EFI
-mount /dev/sda2 /mnt/Ubuntu
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看U盘挂载目录，一般是/dev/sda</span></span><br><span class="line">df -l</span><br><span class="line">mkdir /mnt/EFI</span><br><span class="line">mkdir /mnt/Ubuntu</span><br><span class="line">mount /dev/sda1/ /mnt/EFI</span><br><span class="line">mount /dev/sda2 /mnt/Ubuntu</span><br></pre></td></tr></table></figure>
 <p>5.3 安装EFI便捷启动到EFI分区</p>
-<pre><code class="bash">grub-install --target=x86_64-efi --root-directory=/mnt/EFI/ --efi-directory=/mnt/EFI/Boot
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-install --target=x86_64-efi --root-directory=/mnt/EFI/ --efi-directory=/mnt/EFI/Boot</span><br></pre></td></tr></table></figure>
 <p>5.4 将系统启动文件/mnt/Ubuntu/boot/grub.cfg复制到/mnt/EFI/boot目录下</p>
 <p>5.5 如果便携启动失败，可以尝试启动到系统后安装Grub Customizer，删除启动项后保存，再重复第五部分即可。</p>
 </li>
@@ -631,7 +622,7 @@ mount /dev/sda2 /mnt/Ubuntu
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -753,9 +744,7 @@ mount /dev/sda2 /mnt/Ubuntu
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
