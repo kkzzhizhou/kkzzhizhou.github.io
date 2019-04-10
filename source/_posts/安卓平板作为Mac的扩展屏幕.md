@@ -7,7 +7,7 @@ updated: 2018-04-04 12:17:41
 ---
 我有一台闲置的安卓的平板，想作为我的黑苹果的扩展屏幕，在网上寻找到一些解决方法如下：
 
-## 1. Twomon
+## Twomon
 ![](https://lh3.googleusercontent.com/-tq3sumuJU1A/WsXhdHKP9nI/AAAAAAAAdoM/7B_7Zp3eBlcBXwc3R4PdlwGmha_wd5-1wCHMYCw/I/15229177462162.jpg)
 
 - 官网：http://www.easynlight.com/en/twomonusb/
@@ -19,7 +19,7 @@ updated: 2018-04-04 12:17:41
 - 存在问题：安卓破解版的需要核心破解才能使用。
 - 结论：推荐使用
 
-## 2. iDisplay
+## iDisplay
 - 官网：https://getidisplay.com/
 - 支持的客户端：Mac,Win,Android,iOS，其中，Android和iOS端需要付费购买
 - 安卓破解版：https://apko.org/apps/idisplay-v4-3-0-apk/
@@ -28,7 +28,7 @@ updated: 2018-04-04 12:17:41
 - 其他功能：支持触屏。显示还可以。
 - 结论：如果的同时使用ipad和Mac,推荐使用。Android和Mac不推荐使用。
 
-## 3. Wired XDisplay
+## Wired XDisplay
 
 - 官网：https://www.splashtop.com/wiredxdisplay
 - 支持的客户端：Mac,Win,Android,iOS，其中，Android和iOS端需要付费购买

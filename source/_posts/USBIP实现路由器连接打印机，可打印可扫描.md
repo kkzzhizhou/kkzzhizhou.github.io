@@ -4,9 +4,9 @@ tags:
   - usbip
 categories:
   - openwrt
-toc: false
 abbrlink: bd0d1da
 date: 2017-08-26 00:00:00
+updated: 2017-08-26 00:00:00
 ---
 
 ## 前言
@@ -77,24 +77,24 @@ usbip -a 192.168.1.1 1-1  //连接到路由器的BUS 1-1
 	usbip err: usbip_windows.c: 829 (attach_device) cannot find device
 	
 	解决方法：下载这个去BUG版本的usbip程序。[下载地址][8]
-	
+
 9. 已经以上步骤连接成功后就可以正常使用了。连接成功提示如下：
 ``` stylus
 new usb device attached to usbvbus port 1
 ```
 	成功后，电脑会自动安装相应的驱动程序。Enjoy!
-	
+
 ## 应用场景
 除了以上共享打印机，扫描仪，还可以共享摄像头，共享3G无线网卡实现多人分享上网。
 [相关介绍][9]
 
 
-  [1]: http://usbip.sourceforge.net/
-  [2]: https://www.youtube.com/watch?v=vGBWZzXx2KM
-  [3]: http://downloads.pandorabox.com.cn/pandorabox/
-  [4]: https://jingyan.baidu.com/article/90808022f011c5fd91c80f91.html
-  [5]: https://wiki.openwrt.org/doc/howto/usb.iptunnel
-  [6]: http://www.madox.net/blog/2013/01/04/tl-wr703n-example-project-3-wireless-3d-printing-or-2d-printing-or-just-simply-wireless-usb/
-  [7]: https://sourceforge.net/projects/usbip/
-  [8]: https://www.dropbox.com/s/oox021z1d7zblmu/usbip.zip?dl=0
-  [9]: http://www.wikidrv.cn/index.php?m=content&c=index&a=show&catid=14&id=116
+[1]: http://usbip.sourceforge.net/
+[2]: https://www.youtube.com/watch?v=vGBWZzXx2KM
+[3]: http://downloads.pandorabox.com.cn/pandorabox/
+[4]: https://jingyan.baidu.com/article/90808022f011c5fd91c80f91.html
+[5]: https://wiki.openwrt.org/doc/howto/usb.iptunnel
+[6]: http://www.madox.net/blog/2013/01/04/tl-wr703n-example-project-3-wireless-3d-printing-or-2d-printing-or-just-simply-wireless-usb/
+[7]: https://sourceforge.net/projects/usbip/
+[8]: https://www.dropbox.com/s/oox021z1d7zblmu/usbip.zip?dl=0
+[9]: http://www.wikidrv.cn/index.php?m=content&c=index&a=show&catid=14&id=116

@@ -4,30 +4,12 @@ tags:
   - Portable
 categories:
   - Hexo
-toc: false
 abbrlink: bc7075a1
 date: 2018-07-07 10:21:16
+updated: 2019-4-10 17:24:11
 ---
 
 Hexo作为一种静态博客，重新配置可以说是相当的繁琐，于是有了Hexo便携版（感谢@比特萌信息技术提供的HEXO Portable），现在官网已经打不开（截至2018-7-7），幸好我做了安装包备份。以下的教程将对Hexo Portable这个软件做进一步的优化处理。
-
-## 整合多个批处理
-
-原来的：
-
-![origin](https://lh3.googleusercontent.com/-mi8ZUeN5ACc/W0AmN2HfPtI/AAAAAAAAeXE/7NJyeH4d0moG8RHSAgPxlUjyteYfliMlACHMYCw/s0/explorer_2018-07-07_10-32-14.jpg)
-
-处理后：
-
-![hexo_bat](https://lh3.googleusercontent.com/-31dt0w4QU78/W0AmvKhh9bI/AAAAAAAAeXM/Rpq4HpuiLTkvh2knyaWx7O8-E9IbYjfoQCHMYCw/s0/cmd_2018-07-07_10-34-36.jpg)
-
-并在打开批处理时同时打开文章所在的文件夹：
-
-`start %cd%\source\_posts `
-
-......
-
-<!-- more --> 
 
 ## 添加新功能
 

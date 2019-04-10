@@ -6,11 +6,11 @@ tags:
 categories: []
 abbrlink: e473457b
 date: 2019-03-16 17:14:42
-create: 2018-03-31 10:19:47
+updated: 2018-03-31 10:19:47
 ---
-## 1. [Travis CI持续集成](https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
+##  [Travis CI持续集成](https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
 
-## 2. RSS Feed
+## RSS Feed
 
 - 安装插件`hexo-generator-feed`
 
@@ -39,7 +39,7 @@ create: 2018-03-31 10:19:47
   rss: /atom.xml
   ```
 
-## 3. ==站内全文搜索==
+## 站内全文搜索
 
 - 安装 `hexo-generator-searchdb`，在站点的根目录下执行以下命令：
 
@@ -65,7 +65,7 @@ create: 2018-03-31 10:19:47
     enable: true
   ```
 
-## 4. 文章按更新时间排序
+## 文章按更新时间排序
 ### 要修改的内容
 
 - `/node_modules/hexo-generator-index/index.js`
@@ -90,7 +90,7 @@ create: 2018-03-31 10:19:47
   updated: {{ date }}
   ```
 
-## 5. Hexo链接持久化
+## Hexo链接持久化
 
 -  安装`hexo-abbrlink`这个插件
 
