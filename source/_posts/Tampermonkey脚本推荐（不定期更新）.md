@@ -1,6 +1,9 @@
 ---
 title: Tampermonkey脚本推荐（不定期更新）
-tags: [效率生活,js脚本]
+tags:
+  - 效率生活
+  - js脚本
+abbrlink: aeaeede9
 date: 2018-09-02 23:37:55
 updated: 2018-09-02 23:37:55
 ---

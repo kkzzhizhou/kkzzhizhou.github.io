@@ -1,8 +1,11 @@
 ---
 title: 中国联通广东地区SSR云免流教程
-date:  2017-10-9
+date: 2017-10-9
 updated: 2018-4-5
-tags: [云免流,SSR]
+tags:
+  - 云免流
+  - SSR
+abbrlink: 6d2c2152
 ---
 
 ## 更新日志 ##

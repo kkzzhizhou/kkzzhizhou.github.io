@@ -1,8 +1,11 @@
 ---
 title: Hexo使用Travis CI持续集成
+tags:
+  - Travis CI
+  - Hexo
+abbrlink: ef84c7f5
 date: 2019-03-16 16:23:44
 create: 2019-03-16 16:23:44
-tags: [Travis CI,Hexo]
 ---
 
 ## 使用CI之前:

@@ -1,6 +1,9 @@
 ---
 title: 折腾Ubuntu 16.04，从美化到常用软件安装
-tags: [Linux,桌面系统]
+tags:
+  - Linux
+  - 桌面系统
+abbrlink: 2bf895cd
 date: 2018-09-06 23:19:01
 updated: 2018-09-07 18:44:01
 ---

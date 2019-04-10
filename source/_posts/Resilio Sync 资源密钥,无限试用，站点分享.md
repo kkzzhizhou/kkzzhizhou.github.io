@@ -1,8 +1,9 @@
 ---
-title: Resilio Sync 资源密钥,无限试用，站点分享
+title: 'Resilio Sync 资源密钥,无限试用，站点分享'
 date: 2017-4-13
 updated: 2017-4-13
 tags: Resilio Sync
+abbrlink: 8360b7e3
 ---
 
 原文链接： http://www.zzz1224.com/?p=221 转载请注明出处。

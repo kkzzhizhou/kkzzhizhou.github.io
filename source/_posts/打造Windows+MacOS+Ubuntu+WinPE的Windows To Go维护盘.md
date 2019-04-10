@@ -1,8 +1,9 @@
 ---
 title: 打造Windows+Mac OS X+Ubuntu+PE的Windows To Go维护U盘
-date: 2017-12-16
-updated: 2017-12-16
 tags: 多功能U盘
+abbrlink: ef6c93b6
+date: 2017-12-16 00:00:00
+updated: 2017-12-16 00:00:00
 ---
   作为一个极客，随便带一个维护PE的U盘是必需的。然而在很多时候，仅仅有一个PE，难以完成复杂的需求。我手头上有一个128G的Windows To Go U盘，想为别人安装Ubuntu时，必须要拿另外一个U盘全盘格式化后写入，麻烦，而且也浪费资源。所以这次写一篇关于U盘多启动的文章，实现标题的中效果。
   

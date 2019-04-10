@@ -2,7 +2,10 @@
 title: 黑苹果HD5500核显输出HDMI音频
 date: 2018-3-30
 updated: 2018-4-1
-tags: [Hackintosh,HDMI Audio]
+tags:
+  - Hackintosh
+  - HDMI Audio
+abbrlink: 9053bcbc
 ---
 ## 驱动原理
 1. 注入的ID可以是16160002或者是16260006

@@ -2,7 +2,11 @@
 title: GCP安装配置Hexo全过程
 date: 2018-1-20
 updated: 2018-2-20
-tags: [VPS,Google Cloud Platform,服务器]
+tags:
+  - VPS
+  - Google Cloud Platform
+  - 服务器
+abbrlink: 2f07c9ad
 ---
 ## 原因
 1. 从2016年建立个人博客开始使用Wordpress，了解Wordpress强大的同时，也认识到Wordpress的繁琐，最烦恼的是数据库文章的问题，比如说Wordpress文章ID不连续，在使用Google Cloud Platform后数据库时不时无法连接。

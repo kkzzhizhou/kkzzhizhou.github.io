@@ -1,7 +1,10 @@
 ---
 title: Hexo+Next功能及个性化配置
-tags: [Hexo,Next]
+tags:
+  - Hexo
+  - Next
 categories: []
+abbrlink: e473457b
 date: 2019-03-16 17:14:42
 create: 2018-03-31 10:19:47
 ---
@@ -87,15 +90,21 @@ create: 2018-03-31 10:19:47
   updated: {{ date }}
   ```
 
-## 5. 修改标签样式
+## 5. Hexo链接持久化
 
-## 6. Fork me on github
+-  安装`hexo-abbrlink`这个插件
 
-## 7. 代码高亮
+  ```
+  npm install hexo-abbrlink --save
+  ```
 
-## 8. 顶部加载条
+- 站点配置文件里:
 
-## 9. 文章阅读次数
+  ```
+  permalink: post/:abbrlink.html
+  abbrlink:
+    alg: crc32  # 算法：crc16(default) and crc32
+    rep: hex    # 进制：dec(default) and hex
+  ```
 
-......
-<!-- more --> 
+## <!-- more --> 

@@ -1,8 +1,11 @@
 ---
 title: 解决使用第三方输入法在LaunchPad中无法切换中英文
+tags:
+  - MacOS_Bug
+  - Keyboard Maestro应用
+abbrlink: 2d59f42c
 date: 2018-09-02 00:20:30
 updated: 2018-09-02 00:20:30
-tags: [MacOS_Bug,Keyboard Maestro应用]
 ---
 
 ## 更新历史

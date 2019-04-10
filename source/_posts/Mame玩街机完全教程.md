@@ -2,7 +2,10 @@
 title: Mame玩街机完全教程
 date: 2017-4-5
 updated: 2017-4-5
-tags: [mame,街机]
+tags:
+  - mame
+  - 街机
+abbrlink: 8b4333c2
 ---
 
 ## 更新日志 ##

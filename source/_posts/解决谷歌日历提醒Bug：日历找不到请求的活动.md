@@ -1,8 +1,9 @@
 ---
 title: 解决谷歌日历提醒Bug：日历找不到请求的活动
+tags: 安卓
+abbrlink: f1dfe6ee
 date: 2018-04-02 16:13:47
 updated: 2018-04-02 16:13:47
-tags: 安卓
 ---
 
 ## bug描述

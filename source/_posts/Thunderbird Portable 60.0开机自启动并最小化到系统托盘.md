@@ -1,8 +1,11 @@
 ---
 title: Thunderbird Portable 60.0+开机自启动并最小化到系统托盘
+tags:
+  - Thunderbird Minimize
+  - AHK应用
+abbrlink: ddc7f777
 date: 2018-08-31 15:28:36
 updated: 2018-08-31 15:28:36
-tags: [Thunderbird Minimize,AHK应用]
 ---
 
 ## 更新历史

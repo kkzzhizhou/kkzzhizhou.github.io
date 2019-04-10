@@ -1,6 +1,9 @@
 ---
 title: UEFI下实现Ubuntu To Go
-tags: [Ubuntu U盘,Ubuntu 便携]
+tags:
+  - Ubuntu U盘
+  - Ubuntu 便携
+abbrlink: be2f0191
 date: 2018-09-02 10:00:53
 updated: 2018-09-02 10:00:53
 ---

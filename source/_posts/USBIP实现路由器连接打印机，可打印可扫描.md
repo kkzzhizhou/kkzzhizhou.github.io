@@ -5,6 +5,7 @@ tags:
 categories:
   - openwrt
 toc: false
+abbrlink: bd0d1da
 date: 2017-08-26 00:00:00
 ---
 

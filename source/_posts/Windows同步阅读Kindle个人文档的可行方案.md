@@ -1,8 +1,12 @@
 ---
 title: Windows同步阅读Kindle个人文档的可行方案
-date: 2018-8-31 14:49:35
-updated: 2018-8-31 14:49:41
-tags: [Kinlde个人文档,Windows,AHK应用]
+tags:
+  - Kinlde个人文档
+  - Windows
+  - AHK应用
+abbrlink: d9a27f8c
+date: 2018-08-31 14:49:35
+updated: 2018-08-31 14:49:41
 ---
 
 ## 更新历史

@@ -3,6 +3,7 @@ title: VHD技术应用实例：Windows双系统最佳方案
 date: 2017-5-7
 updated: 2017-5-7
 tags: vhd
+abbrlink: 3bf0328c
 ---
 ## 技术简介
 VHD是一种**虚拟磁盘文件格式**，我们可以将系统安装在VHD中，直接从VHD文件启动操作系统。这种启动方式的特点：
