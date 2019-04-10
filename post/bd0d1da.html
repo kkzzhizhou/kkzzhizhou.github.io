@@ -479,28 +479,47 @@
 <h2 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h2><p>路由器：优酷土豆YK-L1(<strong>CPU：mt7620a，路由器配置软件源只跟CPU有关</strong>)<br>路由器操作系统：Pandorabox（<strong>基于openwrt 14.09 Barrier Breaker</strong> ）<br>打印机：三星SCX-3400系列（打印扫描复印一体机）<br>Windows平台：Win10</p>
 <h2 id="步骤简介"><a href="#步骤简介" class="headerlink" title="步骤简介"></a>步骤简介</h2><ol>
 <li>让路由器刷上基于openwrt的固件（如pandarobox）。<a href="http://downloads.pandorabox.com.cn/pandorabox/" target="_blank" rel="noopener">下载地址</a><br> 注：如果路由器还没有刷Uboot，请先刷Uboot，再通过Uboot刷Openwrt固件。</li>
-<li><p>配置Pandorabox软件源，在<strong>系统–软件包–配置</strong>中填入后提交<br> <strong>注：此软件源适用于mt7620a/n路由器，如果你的路由器不是此CPU，请自行查找软件源。</strong></p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">dest root /</span><br><span class="line">dest ram /tmp</span><br><span class="line">lists_dir ext /var/opkg-lists</span><br><span class="line">option overlay_root /overlay</span><br><span class="line">src/gz r2_base http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/base</span></span><br><span class="line">src/gz r2_management http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/management</span></span><br><span class="line">src/gz r2_oldpackages http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/oldpackages</span></span><br><span class="line">src/gz r2_packages http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/packages</span></span><br><span class="line">src/gz r2_routing http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/routing</span></span><br><span class="line">src/gz r2_telephony http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/packages/telephony</span></span><br><span class="line">src/gz r2_oldpackages2 http:<span class="comment">//downloads.openwrt.org.cn/PandoraBox/ralink/mt7620_old/packages</span></span><br><span class="line">src/gz <span class="number">16.10</span>_base http:<span class="comment">//downloads.pandorabox.com.cn/pandorabox/packages/mt7620/packages/base</span></span><br><span class="line">src/gz <span class="number">16.10</span>_luci http:<span class="comment">//downloads.pandorabox.com.cn/pandorabox/packages/mt7620/packages/luci</span></span><br><span class="line">src/gz <span class="number">16.10</span>_packages http:<span class="comment">//downloads.pandorabox.com.cn/pandorabox/packages/mt7620/packages/packages</span></span><br></pre></td></tr></table></figure>
+<li>配置Pandorabox软件源，在<strong>系统–软件包–配置</strong>中填入后提交<br> <strong>注：此软件源适用于mt7620a/n路由器，如果你的路由器不是此CPU，请自行查找软件源。</strong><pre><code class="stylus">dest root /
+dest ram /tmp
+lists_dir ext /var/opkg-lists
+option overlay_root /overlay
+src/gz r2_base http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/base
+src/gz r2_management http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/management
+src/gz r2_oldpackages http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/oldpackages
+src/gz r2_packages http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/packages
+src/gz r2_routing http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/routing
+src/gz r2_telephony http://downloads.openwrt.org.cn/PandoraBox/ralink/packages/telephony
+src/gz r2_oldpackages2 http://downloads.openwrt.org.cn/PandoraBox/ralink/mt7620_old/packages
+src/gz 16.10_base http://downloads.pandorabox.com.cn/pandorabox/packages/mt7620/packages/base
+src/gz 16.10_luci http://downloads.pandorabox.com.cn/pandorabox/packages/mt7620/packages/luci
+src/gz 16.10_packages http://downloads.pandorabox.com.cn/pandorabox/packages/mt7620/packages/packages
+</code></pre>
 </li>
-<li><p>使用putty连接路由器，<a href="https://jingyan.baidu.com/article/90808022f011c5fd91c80f91.html" target="_blank" rel="noopener">使用教程</a>。<strong>注：用户名：root，密码默认是admin</strong></p>
-</li>
-<li><p>在路由器上安装USBIP软件包。<a href="https://wiki.openwrt.org/doc/howto/usb.iptunnel" target="_blank" rel="noopener">英文教程</a>，<a href="http://www.madox.net/blog/2013/01/04/tl-wr703n-example-project-3-wireless-3d-printing-or-2d-printing-or-just-simply-wireless-usb/" target="_blank" rel="noopener">英文教程2</a><br> 注：<strong>在使用过程中会报错：error: please load usbip-core.ko and usbip-host.ko!</strong><br> 解决方法：终端输入</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insmod /<span class="class"><span class="keyword">lib</span>/<span class="title">modules</span>/3.2.0-24-<span class="title">generic</span>/<span class="title">kernel</span>/<span class="title">drivers</span>/<span class="title">staging</span>/<span class="title">usbip</span>/<span class="title">usbip</span>-<span class="title">core</span>.<span class="title">ko</span> </span></span><br><span class="line">insmod /<span class="class"><span class="keyword">lib</span>/<span class="title">modules</span>/3.2.0-24-<span class="title">generic</span>/<span class="title">kernel</span>/<span class="title">drivers</span>/<span class="title">staging</span>/<span class="title">usbip</span>/<span class="title">usbip</span>-<span class="title">host</span>.<span class="title">ko</span></span></span><br></pre></td></tr></table></figure>
-<p>安装测试成功后可接相关指令放入<strong>系统-启动项-本地启动脚本</strong>添加命令后提交。</p>
-</li>
+<li>使用putty连接路由器，<a href="https://jingyan.baidu.com/article/90808022f011c5fd91c80f91.html" target="_blank" rel="noopener">使用教程</a>。<strong>注：用户名：root，密码默认是admin</strong></li>
+<li>在路由器上安装USBIP软件包。<a href="https://wiki.openwrt.org/doc/howto/usb.iptunnel" target="_blank" rel="noopener">英文教程</a>，<a href="http://www.madox.net/blog/2013/01/04/tl-wr703n-example-project-3-wireless-3d-printing-or-2d-printing-or-just-simply-wireless-usb/" target="_blank" rel="noopener">英文教程2</a><br> 注：<strong>在使用过程中会报错：error: please load usbip-core.ko and usbip-host.ko!</strong><br> 解决方法：终端输入<pre><code class="crystal"> insmod /lib/modules/3.2.0-24-generic/kernel/drivers/staging/usbip/usbip-core.ko 
+ insmod /lib/modules/3.2.0-24-generic/kernel/drivers/staging/usbip/usbip-host.ko
+</code></pre>
+安装测试成功后可接相关指令放入<strong>系统-启动项-本地启动脚本</strong>添加命令后提交。</li>
 <li>以上步骤已经把路由器端的软件安装配置好了，测试是否正常工作的方法是看以下命令是否正常运行</li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">usbip list -l</span><br><span class="line">usbipd -D &amp; usbip bind -<span class="selector-tag">b</span> <span class="number">1</span>-<span class="number">1</span></span><br><span class="line">netstat -alpt |grep usbipd</span><br></pre></td></tr></table></figure>
+<pre><code class="stylus">usbip list -l
+usbipd -D &amp; usbip bind -b 1-1
+netstat -alpt |grep usbipd
+</code></pre>
 <ol start="6">
 <li>以下步骤是在Windows平台上操作。下载usbip_windows_v0.2.0.0_signed<a href="https://sourceforge.net/projects/usbip/" target="_blank" rel="noopener">usbip下载</a></li>
 <li>解压后安装驱动，打开设备管理员–选择此电–操作–添加过时硬件–从磁盘中安装。<br> <strong>注：如果无法正常安装，请用管理员权限打开命令行输入：bcdedit /set testsigning on</strong></li>
 <li><p>安装成功能，用bat命令行（批处理运行）usbip.exe程序（<strong>该程序没有用户界面，只有命令行。</strong>），在解压路径中打开命令行，输入以下命令：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">usbip -h <span class="comment">//查看帮助</span></span><br><span class="line">usbip -l <span class="number">192.168</span>.<span class="number">1.1</span> <span class="comment">//查看路由器上连接的USB设备</span></span><br><span class="line">usbip -<span class="selector-tag">a</span> <span class="number">192.168</span>.<span class="number">1.1</span> <span class="number">1</span>-<span class="number">1</span>  <span class="comment">//连接到路由器的BUS 1-1</span></span><br></pre></td></tr></table></figure>
+<pre><code class="stylus">usbip -h //查看帮助
+usbip -l 192.168.1.1 //查看路由器上连接的USB设备
+usbip -a 192.168.1.1 1-1  //连接到路由器的BUS 1-1
+</code></pre>
 <p> <strong>注：可能遇到的问题：</strong><br> usbip err: usbip_network.c: 121 (usbip_recv_op_common) recv op_common,-1 usbip err:     usbip_windows.c: 756 (query_interface0) recv op_common<br> usbip err: usbip_windows.c: 829 (attach_device) cannot find device</p>
 <p> 解决方法：下载这个去BUG版本的usbip程序。<a href="https://www.dropbox.com/s/oox021z1d7zblmu/usbip.zip?dl=0" target="_blank" rel="noopener">下载地址</a></p>
 </li>
 <li><p>已经以上步骤连接成功后就可以正常使用了。连接成功提示如下：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new usb device attached to usbvbus port <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<pre><code class="stylus">new usb device attached to usbvbus port 1
+</code></pre>
 <p> 成功后，电脑会自动安装相应的驱动程序。Enjoy!</p>
 </li>
 </ol>
@@ -624,7 +643,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -746,7 +765,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -512,7 +512,15 @@
 <li>如果你想使用Xshell，你需要在PuttyGen中导出为另一种Key格式（OpenSSH key）</li>
 </ol>
 <p><img src="https://lh3.googleusercontent.com/-PUVbkxdxJHA/WjZ2kxJRC6I/AAAAAAAAc84/SmGdweSQunsp0F09x_JKYnyDCOvBQQgyACHMYCw/s0/2017-12-17_21-52-21.png" alt="openssh key"></p>
-<h3 id="搭建云免流SSR，一键安装BBR加速，Gost-UDP转TCP-，LNMP，"><a href="#搭建云免流SSR，一键安装BBR加速，Gost-UDP转TCP-，LNMP，" class="headerlink" title="搭建云免流SSR，一键安装BBR加速，Gost(UDP转TCP)，LNMP，"></a>搭建云免流SSR，一键安装BBR加速，Gost(UDP转TCP)，LNMP，</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 一键安装云免流SSR和Gost，适用于中国联通</span><br><span class="line">wget http:<span class="comment">//cdn.yunmaopt.cc/jiaoben.sh &amp;&amp; bash jiaoben.sh</span></span><br><span class="line"># 一键安装最新内核并开启 BBR 脚本</span><br><span class="line">wget --no-check-certificate https:<span class="comment">//github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x ./bbr.sh&amp;&amp;bash bbr.sh</span></span><br><span class="line">./bbr.sh</span><br><span class="line"># 一键安装LNMP，如果无法使用screen命令，请使用yum install screen</span><br><span class="line">screen -S lnmp</span><br><span class="line">wget -c http:<span class="comment">//soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; cd lnmp1.4 &amp;&amp; ./install.sh lnmp</span></span><br></pre></td></tr></table></figure>
+<h3 id="搭建云免流SSR，一键安装BBR加速，Gost-UDP转TCP-，LNMP，"><a href="#搭建云免流SSR，一键安装BBR加速，Gost-UDP转TCP-，LNMP，" class="headerlink" title="搭建云免流SSR，一键安装BBR加速，Gost(UDP转TCP)，LNMP，"></a>搭建云免流SSR，一键安装BBR加速，Gost(UDP转TCP)，LNMP，</h3><pre><code class="stylus"># 一键安装云免流SSR和Gost，适用于中国联通
+wget http://cdn.yunmaopt.cc/jiaoben.sh &amp;&amp; bash jiaoben.sh
+# 一键安装最新内核并开启 BBR 脚本
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh &amp;&amp; chmod +x ./bbr.sh&amp;&amp;bash bbr.sh
+./bbr.sh
+# 一键安装LNMP，如果无法使用screen命令，请使用yum install screen
+screen -S lnmp
+wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz &amp;&amp; tar zxf lnmp1.4.tar.gz &amp;&amp; cd lnmp1.4 &amp;&amp; ./install.sh lnmp
+</code></pre>
 
       
     </div>
@@ -634,7 +642,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -756,7 +764,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

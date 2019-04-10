@@ -581,7 +581,12 @@
 <li>Tuxera NTFS</li>
 </ul>
 <h4 id="7-如何彻底删除Clover中多余的启动项：FileVault和Prebooter"><a href="#7-如何彻底删除Clover中多余的启动项：FileVault和Prebooter" class="headerlink" title="7. 如何彻底删除Clover中多余的启动项：FileVault和Prebooter"></a>7. 如何彻底删除Clover中多余的启动项：FileVault和Prebooter</h4><p>在终端中使用命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看硬盘分区</span></span><br><span class="line">diskutil list</span><br><span class="line"><span class="comment"># 找到并挂载Prebooter所在的分区号，比如disk1s1</span></span><br><span class="line">diskutil mount disk1s1</span><br><span class="line"><span class="comment"># 进入/Volume/Prebooter，删除目录下的文件夹即可</span></span><br></pre></td></tr></table></figure>
+<pre><code class="bash"># 查看硬盘分区
+diskutil list
+# 找到并挂载Prebooter所在的分区号，比如disk1s1
+diskutil mount disk1s1
+# 进入/Volume/Prebooter，删除目录下的文件夹即可
+</code></pre>
 <h2 id="无解"><a href="#无解" class="headerlink" title="无解"></a>无解</h2><ol>
 <li>独立显卡（使用optimus技术的显卡无法驱动）</li>
 <li>PowerNap</li>
@@ -715,7 +720,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -837,7 +842,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

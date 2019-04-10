@@ -488,13 +488,22 @@
 <a id="more"></a> 
 <h2 id="免流教程"><a href="#免流教程" class="headerlink" title="免流教程"></a>免流教程</h2><ol>
 <li>首先，你得有一台VPS，<del>带宽建议大于100M</del>，如果需要免流顺带科学上网，可以考虑购买国外的VPS。</li>
-<li><p>用SSH软件（如xshell,putty等）登录VPS。执行一键安装脚本</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http:<span class="comment">//cdn.yunmaopt.cc/jiaoben.sh &amp;&amp; bash jiaoben.sh</span></span><br></pre></td></tr></table></figure>
+<li>用SSH软件（如xshell,putty等）登录VPS。执行一键安装脚本<pre><code class="stylus">wget http://cdn.yunmaopt.cc/jiaoben.sh &amp;&amp; bash jiaoben.sh
+</code></pre>
 </li>
-<li><p>在提示界面中安装<strong>SSR一键安装</strong>，端口选择<strong>443</strong></p>
-</li>
+<li>在提示界面中安装<strong>SSR一键安装</strong>，端口选择<strong>443</strong></li>
 <li>在提示界面中安装 <strong>Gost一键安装</strong>，密码和端口自定义。</li>
-<li>手机端使用SSR时，正常配置SSR连接，还需要在混淆插件（OSBF为http_simple）下配置混淆参数为<del>aop.gd10010.cn</del>  <strong>ylsh.gd10010.cn</strong>，配置SSR为<strong>全局模式以及UDP转发</strong>。<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SSR+关键配置如下（其余参数默认即可）：</span><br><span class="line">服务器：填写服务器IP地址</span><br><span class="line">远程端口：<span class="number">443</span></span><br><span class="line">密码：SSR密码</span><br><span class="line">加密方式：chacha20</span><br><span class="line">协议：auth_sha1_v4</span><br><span class="line">混淆方式：http_simple</span><br><span class="line">混淆参数：ylsh.gd10010.cn</span><br><span class="line">UDP代理方式：通过TCP转发</span><br><span class="line">UDP代理规则：全局代理</span><br></pre></td></tr></table></figure>
+<li>手机端使用SSR时，正常配置SSR连接，还需要在混淆插件（OSBF为http_simple）下配置混淆参数为<del>aop.gd10010.cn</del>  <strong>ylsh.gd10010.cn</strong>，配置SSR为<strong>全局模式以及UDP转发</strong>。<pre><code class="lsl">SSR+关键配置如下（其余参数默认即可）：
+服务器：填写服务器IP地址
+远程端口：443
+密码：SSR密码
+加密方式：chacha20
+协议：auth_sha1_v4
+混淆方式：http_simple
+混淆参数：ylsh.gd10010.cn
+UDP代理方式：通过TCP转发
+UDP代理规则：全局代理
+</code></pre>
 </li>
 </ol>
 <h2 id="共享SSR网络（需Root）"><a href="#共享SSR网络（需Root）" class="headerlink" title="共享SSR网络（需Root）"></a>共享SSR网络（需Root）</h2><p>在使用官方的SSR免流时，启用手机热点，其他设备是无法正常上网的。<br>需要使用<strong>ssrscriptn</strong>这款软件来进行SSR连接。<br><img src="https://lh3.googleusercontent.com/-MleBy9zkIhw/WowHTKvTcGI/AAAAAAAAdfA/wWVGarjsxnkCo0YtRi-7Rl_KpsOPX8dAQCHMYCw/s0/2018-02-20_19-32-25.png" alt="ssr+"></p>
@@ -619,7 +628,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -741,7 +750,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

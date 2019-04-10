@@ -490,11 +490,51 @@
 <li><strong>CI_TOKEN的值为上步获得的Token</strong></li>
 </ul>
 <p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1g14q2myqp8j31h30ni77d.jpg" alt="image-20190316163717457"></p>
-<h3 id="5-新建Source分支"><a href="#5-新建Source分支" class="headerlink" title="5. 新建Source分支"></a>5. 新建Source分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/kkzzhizhou/kkzzhizhou.github.io //换成你自己的博客仓库</span><br><span class="line">git checkout source //新建source分支,保留如下图所示的源文件</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1g14qg5wp5vj30dy061t9c.jpg" alt="image-20190316165017295"></p>
-<h3 id="6-Source分支下新建-travis-yml文件"><a href="#6-Source分支下新建-travis-yml文件" class="headerlink" title="6. Source分支下新建.travis.yml文件"></a>6. Source分支下新建.travis.yml文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">language: node_js</span><br><span class="line">node_js: stable</span><br><span class="line">cache:</span><br><span class="line">  directories:</span><br><span class="line">    - node_modules</span><br><span class="line"></span><br><span class="line"># S: Build Lifecycle</span><br><span class="line">install:</span><br><span class="line">  - npm install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#before_script:</span><br><span class="line"> # - npm install -g gulp</span><br><span class="line"></span><br><span class="line">script:</span><br><span class="line">  - hexo clean &amp;&amp; hexo g</span><br><span class="line"></span><br><span class="line">after_script:</span><br><span class="line">  - git clone https://$&#123;GH_REF&#125; .deploy_git</span><br><span class="line">  - cd .deploy_git</span><br><span class="line">  - git checkout master</span><br><span class="line">  - cd ../</span><br><span class="line">  - mv .deploy_git/.git/ ./public/</span><br><span class="line">  - cd ./public</span><br><span class="line">  - git init</span><br><span class="line">  - git config user.name &quot;zzz&quot; //修改成你自己的用户名</span><br><span class="line">  - git config user.email &quot;806508401@qq.com&quot; //修改成你自己的邮箱</span><br><span class="line">  - git add .</span><br><span class="line">  - git commit -m &quot;:memo:Update by Travis CI&quot;</span><br><span class="line">  - git push --force --quiet &quot;https://$&#123;CI_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:master</span><br><span class="line"># E: Build LifeCycle</span><br><span class="line"></span><br><span class="line">branches:</span><br><span class="line">  only:</span><br><span class="line">    - source</span><br><span class="line">env:</span><br><span class="line"> global:</span><br><span class="line">   - GH_REF: github.com/kkzzhizhou/kkzzhizhou.github.io.git //修改成你自己的仓库</span><br></pre></td></tr></table></figure>
-<h3 id="7-上传至Source分支"><a href="#7-上传至Source分支" class="headerlink" title="7. 上传至Source分支"></a>7. 上传至Source分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;hexo-source-upload&quot;</span><br><span class="line">git push origin source //推送到远程仓库</span><br></pre></td></tr></table></figure>
-<h3 id="8-使用HexoClient愉快写Blog了"><a href="#8-使用HexoClient愉快写Blog了" class="headerlink" title="8. 使用HexoClient愉快写Blog了"></a>8. 使用HexoClient愉快写Blog了</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g14qmvlh1oj31cx0u011z.jpg" alt="image.png"></p>
+<h3 id="5-新建Source分支"><a href="#5-新建Source分支" class="headerlink" title="5. 新建Source分支"></a>5. 新建Source分支</h3><pre><code>git clone https://github.com/kkzzhizhou/kkzzhizhou.github.io //换成你自己的博客仓库
+git checkout source //新建source分支,保留如下图所示的源文件
+</code></pre><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1g14qg5wp5vj30dy061t9c.jpg" alt="image-20190316165017295"></p>
+<h3 id="6-Source分支下新建-travis-yml文件"><a href="#6-Source分支下新建-travis-yml文件" class="headerlink" title="6. Source分支下新建.travis.yml文件"></a>6. Source分支下新建.travis.yml文件</h3><pre><code>language: node_js
+node_js: stable
+cache:
+  directories:
+    - node_modules
+
+# S: Build Lifecycle
+install:
+  - npm install
+
+
+#before_script:
+ # - npm install -g gulp
+
+script:
+  - hexo clean &amp;&amp; hexo g
+
+after_script:
+  - git clone https://${GH_REF} .deploy_git
+  - cd .deploy_git
+  - git checkout master
+  - cd ../
+  - mv .deploy_git/.git/ ./public/
+  - cd ./public
+  - git init
+  - git config user.name &quot;zzz&quot; //修改成你自己的用户名
+  - git config user.email &quot;806508401@qq.com&quot; //修改成你自己的邮箱
+  - git add .
+  - git commit -m &quot;:memo:Update by Travis CI&quot;
+  - git push --force --quiet &quot;https://${CI_TOKEN}@${GH_REF}&quot; master:master
+# E: Build LifeCycle
+
+branches:
+  only:
+    - source
+env:
+ global:
+   - GH_REF: github.com/kkzzhizhou/kkzzhizhou.github.io.git //修改成你自己的仓库
+</code></pre><h3 id="7-上传至Source分支"><a href="#7-上传至Source分支" class="headerlink" title="7. 上传至Source分支"></a>7. 上传至Source分支</h3><pre><code>git add .
+git commit -m &quot;hexo-source-upload&quot;
+git push origin source //推送到远程仓库
+</code></pre><h3 id="8-使用HexoClient愉快写Blog了"><a href="#8-使用HexoClient愉快写Blog了" class="headerlink" title="8. 使用HexoClient愉快写Blog了"></a>8. 使用HexoClient愉快写Blog了</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g14qmvlh1oj31cx0u011z.jpg" alt="image.png"></p>
 <p>……<br><a id="more"></a> </p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章:"></a>参考文章:</h2><ol>
 <li><p><a href="https://palmer.arkstack.cn/2018/01/Travis%20CI%E5%8A%A9%E5%8A%9BBlog%E6%8C%81%E7%BB%AD%E8%BE%93%E5%87%BA/" target="_blank" rel="noopener">Travis CI助力Blog持续输出</a></p>
@@ -625,7 +665,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -747,7 +787,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

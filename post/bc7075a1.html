@@ -492,7 +492,92 @@
         <p>Hexo作为一种静态博客，重新配置可以说是相当的繁琐，于是有了Hexo便携版（感谢@比特萌信息技术提供的HEXO Portable），现在官网已经打不开（截至2018-7-7），幸好我做了安装包备份。以下的教程将对Hexo Portable这个软件做进一步的优化处理。</p>
 <h2 id="添加新功能"><a href="#添加新功能" class="headerlink" title="添加新功能"></a>添加新功能</h2><h3 id="1-将源文件备份到bitbucket私有仓库"><a href="#1-将源文件备份到bitbucket私有仓库" class="headerlink" title="1. 将源文件备份到bitbucket私有仓库"></a>1. 将源文件备份到bitbucket私有仓库</h3><p><code>start git-bash &quot;%cd%\..\support\script\Backup.sh&quot;</code></p>
 <h3 id="2-从bitbucket恢复到本地"><a href="#2-从bitbucket恢复到本地" class="headerlink" title="2. 从bitbucket恢复到本地"></a>2. 从bitbucket恢复到本地</h3><p><code>start git-bash &quot;%cd%\..\support\script\Restore.sh&quot;</code></p>
-<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">@echo off &amp; title Hexo(zzz脚本)</span><br><span class="line">mode con cols=50 lines=25</span><br><span class="line">color 2F</span><br><span class="line">cd blog</span><br><span class="line">::打开批处理同时打开文章所在的文件夹</span><br><span class="line">start %cd%\source\_posts</span><br><span class="line">echo 正在初始化...</span><br><span class="line">set path=%path%;%cd%\..\support\git\bin\;%cd%\..\support\nodejs\;%cd%\..\blog\node_modules\.bin;%cd%\..\support\nodejs\node_modules\.bin;%cd%\..\support\git\</span><br><span class="line">:Menu</span><br><span class="line">cls</span><br><span class="line">@ echo.</span><br><span class="line">@ echo.    ==================目录====================</span><br><span class="line">@ echo.     </span><br><span class="line">@ echo.          1. 配置Github部署</span><br><span class="line">@ echo.</span><br><span class="line">@ echo.          2. 配置基本信息</span><br><span class="line">@ echo.  </span><br><span class="line">@ echo.          3. 启动命令行</span><br><span class="line">@ echo.  </span><br><span class="line">@ echo.          4. 创建新文章</span><br><span class="line">@ echo.         </span><br><span class="line">@ echo.          5. 生成并本地测试</span><br><span class="line">@ echo.       </span><br><span class="line">@ echo.          6. 生成并部署</span><br><span class="line">@ echo.        </span><br><span class="line">@ echo.          7. 重置配置文件</span><br><span class="line">@ echo.     </span><br><span class="line">@ echo.          8. 从bitbucket中恢复数据</span><br><span class="line">@ echo.</span><br><span class="line">@ echo.          9. 备份到bitbucket</span><br><span class="line">@ echo.</span><br><span class="line">@ echo.          10. 一键生成部署同步</span><br><span class="line">@ echo.</span><br><span class="line">@ echo.    ==========================================</span><br><span class="line">@ echo.</span><br><span class="line">set /p xj= 输入数字按回车：</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;1&quot; Goto Setup</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;2&quot; Goto Basic</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;3&quot; Goto Term</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;4&quot; Goto New</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;5&quot; Goto GenerateAndServer</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;6&quot; Goto GenerateAndDelpoy</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;7&quot; Goto Reset</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;8&quot; Goto Restore</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;9&quot; Goto Backup</span><br><span class="line">if /i &quot;%xj%&quot;==&quot;10&quot; Goto Onekey</span><br><span class="line">@ echo.</span><br><span class="line">echo 　　　  选择无效...请重新输入...</span><br><span class="line">ping -n 2 127.1&gt;nul</span><br><span class="line">goto menu</span><br><span class="line">:Setup</span><br><span class="line">start git-bash &quot;%cd%\..\support\script\deploy.sh&quot;</span><br><span class="line">goto menu</span><br><span class="line">:Basic</span><br><span class="line">start git-bash &quot;%cd%\..\support\script\configSet.sh&quot;</span><br><span class="line">goto menu</span><br><span class="line">:Term</span><br><span class="line">start git-bash &quot;%cd%\..\support\script\start.sh&quot;</span><br><span class="line">goto menu</span><br><span class="line">:New</span><br><span class="line">start git-bash &quot;%cd%\..\support\script\newPost.sh&quot;</span><br><span class="line">goto menu</span><br><span class="line">:GenerateAndServer</span><br><span class="line">start git-bash &quot;%cd%\..\support\script\generateAndServer.sh&quot;</span><br><span class="line">goto menu</span><br><span class="line">:GenerateAndDelpoy</span><br><span class="line">start git-bash &quot;%cd%\..\support\script\generateAndDelpoy.sh&quot;</span><br><span class="line">goto menu</span><br><span class="line">:Reset</span><br><span class="line">del %cd%\_config.yml</span><br><span class="line">copy %cd%\..\support\backup\_config.yml _config.yml</span><br><span class="line">:Restore</span><br><span class="line">cd ..</span><br><span class="line">rd /s /q blog</span><br><span class="line">md blog</span><br><span class="line">cd blog</span><br><span class="line">start git-bash &quot;%cd%\..\support\script\Restore.sh&quot;</span><br><span class="line">goto menu</span><br><span class="line">:Backup</span><br><span class="line">start git-bash &quot;%cd%\..\support\script\backup.sh&quot;</span><br><span class="line">goto menu</span><br><span class="line">:Onekey</span><br><span class="line">start git-bash &quot;%cd%\..\support\script\onekey.sh&quot;</span><br><span class="line">cls</span><br><span class="line">goto menu</span><br></pre></td></tr></table></figure>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><pre><code>@echo off &amp; title Hexo(zzz脚本)
+mode con cols=50 lines=25
+color 2F
+cd blog
+::打开批处理同时打开文章所在的文件夹
+start %cd%\source\_posts
+echo 正在初始化...
+set path=%path%;%cd%\..\support\git\bin\;%cd%\..\support\nodejs\;%cd%\..\blog\node_modules\.bin;%cd%\..\support\nodejs\node_modules\.bin;%cd%\..\support\git\
+:Menu
+cls
+@ echo.
+@ echo.    ==================目录====================
+@ echo.     
+@ echo.          1. 配置Github部署
+@ echo.
+@ echo.          2. 配置基本信息
+@ echo.  
+@ echo.          3. 启动命令行
+@ echo.  
+@ echo.          4. 创建新文章
+@ echo.         
+@ echo.          5. 生成并本地测试
+@ echo.       
+@ echo.          6. 生成并部署
+@ echo.        
+@ echo.          7. 重置配置文件
+@ echo.     
+@ echo.          8. 从bitbucket中恢复数据
+@ echo.
+@ echo.          9. 备份到bitbucket
+@ echo.
+@ echo.          10. 一键生成部署同步
+@ echo.
+@ echo.    ==========================================
+@ echo.
+set /p xj= 输入数字按回车：
+if /i &quot;%xj%&quot;==&quot;1&quot; Goto Setup
+if /i &quot;%xj%&quot;==&quot;2&quot; Goto Basic
+if /i &quot;%xj%&quot;==&quot;3&quot; Goto Term
+if /i &quot;%xj%&quot;==&quot;4&quot; Goto New
+if /i &quot;%xj%&quot;==&quot;5&quot; Goto GenerateAndServer
+if /i &quot;%xj%&quot;==&quot;6&quot; Goto GenerateAndDelpoy
+if /i &quot;%xj%&quot;==&quot;7&quot; Goto Reset
+if /i &quot;%xj%&quot;==&quot;8&quot; Goto Restore
+if /i &quot;%xj%&quot;==&quot;9&quot; Goto Backup
+if /i &quot;%xj%&quot;==&quot;10&quot; Goto Onekey
+@ echo.
+echo 　　　  选择无效...请重新输入...
+ping -n 2 127.1&gt;nul
+goto menu
+:Setup
+start git-bash &quot;%cd%\..\support\script\deploy.sh&quot;
+goto menu
+:Basic
+start git-bash &quot;%cd%\..\support\script\configSet.sh&quot;
+goto menu
+:Term
+start git-bash &quot;%cd%\..\support\script\start.sh&quot;
+goto menu
+:New
+start git-bash &quot;%cd%\..\support\script\newPost.sh&quot;
+goto menu
+:GenerateAndServer
+start git-bash &quot;%cd%\..\support\script\generateAndServer.sh&quot;
+goto menu
+:GenerateAndDelpoy
+start git-bash &quot;%cd%\..\support\script\generateAndDelpoy.sh&quot;
+goto menu
+:Reset
+del %cd%\_config.yml
+copy %cd%\..\support\backup\_config.yml _config.yml
+:Restore
+cd ..
+rd /s /q blog
+md blog
+cd blog
+start git-bash &quot;%cd%\..\support\script\Restore.sh&quot;
+goto menu
+:Backup
+start git-bash &quot;%cd%\..\support\script\backup.sh&quot;
+goto menu
+:Onekey
+start git-bash &quot;%cd%\..\support\script\onekey.sh&quot;
+cls
+goto menu
+</code></pre>
       
     </div>
 
@@ -611,7 +696,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -733,7 +818,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
