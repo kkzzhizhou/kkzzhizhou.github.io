@@ -51,5 +51,16 @@ tags: git应用,博客
 
 ## 已经配置的电脑写博客
 
-- 使用Source同步更改
-- 修改后进行提交即可
+强制拉取所有更新到本地，放弃所有本地修改
+
+```
+git fetch --all
+git reset --hard origin/source
+git pull
+```
+
+## SourceTree发布文章
+
+- 暂存所有，填写Commit之后提交即可
+
+![](https://ws1.sinaimg.cn/large/d22ff2eegy1g1z5r6rvojj20xe0m8dgw.jpg)
