@@ -107,4 +107,23 @@ updated: 2018-03-31 10:19:47
     rep: hex    # 进制：dec(default) and hex
   ```
 
+## 赞赏
+
+- 获取微信，支付宝收款二维码
+
+- 找到主题 配置文件
+
+  ```
+  # Rewrad
+  reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+  wechatpay: 图片链接或图片相对路径
+  alipay: 图片链接或图片相对路径
+  ```
+
+## 社交图标
+
+Next主题使用的Fontawesome版本需要升级才能支持QQ和微信等社交图标。
+
+
+
 ## <!-- more --> 

@@ -192,11 +192,13 @@ site_state: true
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/kkzzhizhou || github
-  E-Mail: mailto:kkzzhizhou@gmail.com || envelope
-  #Weibo: https://weibo.com/yourname || weibo
+  Gmail: mailto:kkzzhizhou@gmail.com || envelope
+  Weibo: https://weibo.com/kkzzhizhou || weibo
   #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
-  #FB Page: https://www.facebook.com/yourname || facebook
+  Twitter: https://twitter.com/joy_zhizhou || twitter
+  FB Page: https://www.facebook.com/people/Zhizhou-Zheng/100011444763724 || facebook
+  QQ: 
+  Wechat: 
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
@@ -205,7 +207,7 @@ social:
 
 social_icons:
   enable: true
-  icons_only: false
+  icons_only: true
   transition: false
 
 # Blog rolls
