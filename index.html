@@ -376,6 +376,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kkzzhizhou.github.io/post/ce9f0e67.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="清醒时处世，迷茫时读书">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/post/ce9f0e67.html" class="post-title-link" itemprop="url">使用OneDrive实时同步Ditto剪贴板数据（WebDav）</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-30 15:41:29 / 修改时间：15:41:32" itemprop="dateCreated datePublished" datetime="2019-04-30T15:41:29+08:00">2019-04-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近将常用的绿色软件放到Onedrive中同步，方便在自己的多个Windows设备使用。遇到一个比较棘手的问题，使用Ditto时会锁定数据库文件，此时OneDrive显示文件在使用中，无法同步。</p>
+<p>解决方法：使用WebDav连接OneDrive</p>
+<p>OneDrive使用WebDav的方法：</p>
+<ol>
+<li>访问 <a href="http://onedrive.com/" target="_blank" rel="noopener">OneDrive.com</a> ，点击进入任何一个你的文件夹。</li>
+<li>看浏览器上面的地址栏，“cid”后面的一串完整的数字加大写的英文字母叫 special ID（如下图）。</li>
+<li>你的入口链接就是： special ID（如我的就是<a href="https://d.docs.live.net/F399A8134684152B），账号密码就是你微软账号的账号密码" target="_blank" rel="noopener">https://d.docs.live.net/F399A8134684152B），账号密码就是你微软账号的账号密码</a><ul>
+<li>如果你有<strong>开启两步验证</strong>功能，那么需要在<a href="https://account.live.com/proofs/AppPassword?mkt=en-us" target="_blank" rel="noopener">这里去获得一个生成的应用密码</a></li>
+<li>另外要注意的，OneDrive 的 WebDav 接口如同坚果云的一样，传输的文件大小限制在100M以下。</li>
+</ul>
+</li>
+<li>在资源管理器界面中，选择映射网络驱动器，在文件夹一栏，填入上一步得到的地址，点击完成，耐心等候，输入账号密码即可，之后可以将这个映射得到的盘符当作本地磁盘进行使用</li>
+</ol>
+<p>连接后如下图所示，打开即为你网盘的文件</p>
+<p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1g2kpigh93sj20ed051mx7.jpg" alt></p>
+<p>Ditto设置如下图所示，数据库使用WebDav路径即可完美解决数据同步问题</p>
+<p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1g2kpnvgzmpj20ic02t3yf.jpg" alt></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kkzzhizhou.github.io/post/91c3f927.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -438,7 +597,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-15 08:44:16" itemprop="dateModified" datetime="2019-04-15T08:44:16+08:00">2019-04-15</time>
+                <time title="修改时间：2019-05-01 10:46:55" itemprop="dateModified" datetime="2019-05-01T10:46:55+08:00">2019-05-01</time>
               
             
           </span>
@@ -1904,166 +2063,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kkzzhizhou.github.io/post/2d59f42c.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzz">
-      <meta itemprop="description" content="清醒时处世，迷茫时读书">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzz部落格">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/post/2d59f42c.html" class="post-title-link" itemprop="url">解决使用第三方输入法在LaunchPad中无法切换中英文</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-02 00:20:30" itemprop="dateCreated datePublished" datetime="2018-09-02T00:20:30+08:00">2018-09-02</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><ul>
-<li>2018年09月02日：利用Keyboard Maestro解决问题</li>
-</ul>
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>第三方输入法（如搜狗拼音输入法，清歌五笔输入法等）在Launchpad中无法使用Shift按键切换中英文输入，而是在Launchpad中显示烦人的输入框。</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
-<li>在Keyboard Maestro中新建一个Macros</li>
-<li>触发方式设置为Hot Key Trigger，条件为打开Launchpad的快捷键</li>
-<li>程序如下图所示</li>
-</ol>
-<p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1fuujeecmvyj20ey0c3gn5.jpg" alt="程序截图"></p>
-<p>本文到此结束。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/post/2d59f42c.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2107,7 +2111,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2231,7 +2235,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2296,24 +2302,6 @@
                     
                   
                   <a href="https://www.facebook.com/people/Zhizhou-Zheng/100011444763724" title="FB Page &rarr; https://www.facebook.com/people/Zhizhou-Zheng/100011444763724" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/" title="QQ &rarr; "><i class="fa fa-fw fa-globe"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="/" title="Wechat &rarr; "><i class="fa fa-fw fa-globe"></i></a>
                 </span>
               
             </div>
