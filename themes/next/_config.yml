@@ -197,8 +197,6 @@ social:
   #Google: https://plus.google.com/yourname || google
   Twitter: https://twitter.com/joy_zhizhou || twitter
   FB Page: https://www.facebook.com/people/Zhizhou-Zheng/100011444763724 || facebook
-  QQ: 
-  Wechat: 
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
@@ -358,8 +356,8 @@ wechat_subscriber:
 reward:
   enable: true
   comment: 如果你觉得文章对你有帮助，您的支持将鼓励我继续创作！
-  wechatpay: https://ws1.sinaimg.cn/large/d22ff2eely1g1z5kn3qxoj20fk0fkdg8.jpg
-  alipay: https://ws1.sinaimg.cn/large/d22ff2eely1g1z5obt0h2j20gs0gs0v6.jpg
+  wechatpay: /images/wechatpay.png
+  alipay: /images/Alipay.jpg
   #bitcoin: /images/bitcoin.jpg
 
 # Related popular posts
