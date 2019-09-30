@@ -5,9 +5,9 @@
   <subtitle>分享我的知识和见解</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://kkzzhizhou.github.io/"/>
+  <link href="http://blog.andyz.me/"/>
   <updated>2019-04-30T07:41:32.000Z</updated>
-  <id>http://kkzzhizhou.github.io/</id>
+  <id>http://blog.andyz.me/</id>
   
   <author>
     <name>zzz</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>使用OneDrive实时同步Ditto剪贴板数据（WebDav）</title>
-    <link href="http://kkzzhizhou.github.io/post/ce9f0e67.html"/>
-    <id>http://kkzzhizhou.github.io/post/ce9f0e67.html</id>
+    <link href="http://blog.andyz.me/post/ce9f0e67.html"/>
+    <id>http://blog.andyz.me/post/ce9f0e67.html</id>
     <published>2019-04-30T07:41:29.000Z</published>
     <updated>2019-04-30T07:41:32.000Z</updated>
     
@@ -37,16 +37,16 @@
     </summary>
     
     
-      <category term="跨设备工作" scheme="http://kkzzhizhou.github.io/tags/%E8%B7%A8%E8%AE%BE%E5%A4%87%E5%B7%A5%E4%BD%9C/"/>
+      <category term="跨设备工作" scheme="http://blog.andyz.me/tags/%E8%B7%A8%E8%AE%BE%E5%A4%87%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
     <title>使用Travis CI，同步跨平台写博客方案</title>
-    <link href="http://kkzzhizhou.github.io/post/91c3f927.html"/>
-    <id>http://kkzzhizhou.github.io/post/91c3f927.html</id>
+    <link href="http://blog.andyz.me/post/91c3f927.html"/>
+    <id>http://blog.andyz.me/post/91c3f927.html</id>
     <published>2019-04-09T13:37:28.000Z</published>
-    <updated>2019-09-30T08:58:38.706Z</updated>
+    <updated>2019-09-30T09:00:32.093Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Travis-CI说明"><a href="#Travis-CI说明" class="headerlink" title="Travis CI说明"></a>Travis CI说明</h2><p>新建Source分支用于存储源文件，Master分支用于存储生成的网站文件</p><h2 id="全新的电脑写博客"><a href="#全新的电脑写博客" class="headerlink" title="全新的电脑写博客"></a>全新的电脑写博客</h2><ul><li><p>下载安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，<a href="https://github.com/gaoyoubo/hexo-client/releases" target="_blank" rel="noopener">HexoClient</a>，<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a></p></li><li><p>运行Git Bash</p></li><li><p>添加Nodejs环境配置</p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch ~<span class="string">/.bash_profile</span></span><br><span class="line">vi ~<span class="string">/.bash_profile</span></span><br></pre></td></tr></table></figure></li><li><p>添加以下内容到.bash_profile文件中，保存退出</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="comment"># 添加环境变量</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:/c/Program\ Files/nodejs</span><br></pre></td></tr></table></figure></li><li><p>运行以下命令刷新环境变量</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></li><li><p>下载安装SourceTree并登录</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">-b</span> source https://github.com/kkzzhizhou/kkzzhizhou.github.io</span><br></pre></td></tr></table></figure></li><li><p>下载安装SourceTree并登录</p></li><li><p>打开本地仓库kkzzhizhou.github.io</p></li><li><p>修改后进行提交即可</p></li></ul><h2 id="已经配置的电脑写博客"><a href="#已经配置的电脑写博客" class="headerlink" title="已经配置的电脑写博客"></a>已经配置的电脑写博客</h2><p>强制拉取所有更新到本地，放弃所有本地修改</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch <span class="comment">--all</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard origin/source</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><h2 id="SourceTree发布文章"><a href="#SourceTree发布文章" class="headerlink" title="SourceTree发布文章"></a>SourceTree发布文章</h2><ul><li>暂存所有，填写Commit之后提交即可</li></ul><p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1g1z5r6rvojj20xe0m8dgw.jpg" alt></p>]]></content>
     
@@ -60,22 +60,22 @@
     </summary>
     
     
-      <category term="git应用,博客" scheme="http://kkzzhizhou.github.io/tags/git%E5%BA%94%E7%94%A8-%E5%8D%9A%E5%AE%A2/"/>
+      <category term="git应用,博客" scheme="http://blog.andyz.me/tags/git%E5%BA%94%E7%94%A8-%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>Hexo+Next功能及个性化配置</title>
-    <link href="http://kkzzhizhou.github.io/post/e473457b.html"/>
-    <id>http://kkzzhizhou.github.io/post/e473457b.html</id>
+    <link href="http://blog.andyz.me/post/e473457b.html"/>
+    <id>http://blog.andyz.me/post/e473457b.html</id>
     <published>2019-03-16T09:14:42.000Z</published>
     <updated>2018-03-31T02:19:47.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Travis-CI持续集成"><a href="#Travis-CI持续集成" class="headerlink" title="Travis CI持续集成"></a><a href="https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/">Travis CI持续集成</a></h2><h2 id="RSS-Feed"><a href="#RSS-Feed" class="headerlink" title="RSS Feed"></a>RSS Feed</h2><ul><li><p>安装插件<code>hexo-generator-feed</code></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span><br></pre></td></tr></table></figure></li><li><p>修改站点配置</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Extensions</span></span><br><span class="line"><span class="meta">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta">#RSS订阅</span></span><br><span class="line"><span class="symbol">plugin:</span></span><br><span class="line">- hexo-generator-feed</span><br><span class="line"><span class="meta">#Feed Atom</span></span><br><span class="line"><span class="symbol">feed:</span></span><br><span class="line"><span class="symbol">type:</span> atom</span><br><span class="line"><span class="symbol">path:</span> atom.xml</span><br><span class="line"><span class="symbol">limit:</span> <span class="number">20</span></span><br></pre></td></tr></table></figure></li><li><h3 id="修改主题配置，添加如下配置"><a href="#修改主题配置，添加如下配置" class="headerlink" title="修改主题配置，添加如下配置"></a>修改主题配置，添加如下配置</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">rss:</span> /atom.xml</span><br></pre></td></tr></table></figure></li></ul><h2 id="站内全文搜索"><a href="#站内全文搜索" class="headerlink" title="站内全文搜索"></a>站内全文搜索</h2><ul><li><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure></li><li><p>编辑 站点配置文件，新增以下内容到任意位置：</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">  path:</span> search.xml</span><br><span class="line"><span class="symbol">  field:</span> post</span><br><span class="line"><span class="symbol">  format:</span> html</span><br><span class="line"><span class="symbol">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure></li><li><p>编辑 主题配置文件，启用本地搜索功能：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li></ul><h2 id="文章按更新时间排序"><a href="#文章按更新时间排序" class="headerlink" title="文章按更新时间排序"></a>文章按更新时间排序</h2><h3 id="要修改的内容"><a href="#要修改的内容" class="headerlink" title="要修改的内容"></a>要修改的内容</h3><ul><li><p><code>/node_modules/hexo-generator-index/index.js</code></p><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order<span class="number">_</span><span class="meta">by</span>: <span class="string">'-date'</span></span><br></pre></td></tr></table></figure><p>修改为</p><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order<span class="number">_</span><span class="meta">by</span>: <span class="string">'-updated'</span></span><br></pre></td></tr></table></figure><p>这样的话就<strong>只</strong>按 Front-matter 中的<code>updated</code>排序了，因此所有文章的 Front-matter 中都必须要有<code>updated</code>，已发布的文章可以手动修改或者找方法批量将 <code>data</code>换成<code>updated</code>，对于将来的文章，只要做如下修改：</p><ul><li><code>/scaffolds/post.md</code></li></ul><p>在<code>date</code>后加入一行</p><figure class="highlight twig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">updated: </span><span class="template-variable">&#123;&#123; <span class="name">date</span> &#125;&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure></li></ul><h2 id="Hexo链接持久化"><a href="#Hexo链接持久化" class="headerlink" title="Hexo链接持久化"></a>Hexo链接持久化</h2><ul><li><p>安装<code>hexo-abbrlink</code>这个插件</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-abbrlink <span class="comment">--save</span></span><br></pre></td></tr></table></figure></li><li><p>站点配置文件里:</p><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">permalink:</span> post/:abbrlink.html</span><br><span class="line"><span class="symbol">abbrlink:</span></span><br><span class="line"><span class="symbol">  alg:</span> <span class="keyword">crc32</span>  # 算法：crc16(<span class="meta">default</span>) <span class="keyword">and</span> <span class="keyword">crc32</span></span><br><span class="line"><span class="symbol">  rep:</span> hex    # 进制：<span class="keyword">dec</span>(<span class="meta">default</span>) <span class="keyword">and</span> hex</span><br></pre></td></tr></table></figure></li></ul><h2 id="赞赏"><a href="#赞赏" class="headerlink" title="赞赏"></a>赞赏</h2><ul><li><p>获取微信，支付宝收款二维码</p></li><li><p>找到主题 配置文件</p><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Rewrad</span></span><br><span class="line"><span class="symbol">reward_comment:</span> 坚持原创技术分享，您的支持将鼓励我继续创作！</span><br><span class="line"><span class="symbol">wechatpay:</span> 图片链接或图片相对路径</span><br><span class="line"><span class="symbol">alipay:</span> 图片链接或图片相对路径</span><br></pre></td></tr></table></figure></li></ul><h2 id="社交图标"><a href="#社交图标" class="headerlink" title="社交图标"></a>社交图标</h2><p>Next主题使用的Fontawesome版本需要升级才能支持QQ和微信等社交图标。</p><h2 id><a href="#" class="headerlink" title></a><a id="more"></a></h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="Travis-CI持续集成"><a href="#Travis-CI持续集成" class="headerlink" title="Travis CI持续集成"></a><a href="https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" target="_blank" rel="noopener">Travis CI持续集成</a></h2><h2 id="RSS-Feed"><a href="#RSS-Feed" class="headerlink" title="RSS Feed"></a>RSS Feed</h2><ul><li><p>安装插件<code>hexo-generator-feed</code></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-feed <span class="comment">--save</span></span><br></pre></td></tr></table></figure></li><li><p>修改站点配置</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Extensions</span></span><br><span class="line"><span class="meta">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta">#RSS订阅</span></span><br><span class="line"><span class="symbol">plugin:</span></span><br><span class="line">- hexo-generator-feed</span><br><span class="line"><span class="meta">#Feed Atom</span></span><br><span class="line"><span class="symbol">feed:</span></span><br><span class="line"><span class="symbol">type:</span> atom</span><br><span class="line"><span class="symbol">path:</span> atom.xml</span><br><span class="line"><span class="symbol">limit:</span> <span class="number">20</span></span><br></pre></td></tr></table></figure></li><li><h3 id="修改主题配置，添加如下配置"><a href="#修改主题配置，添加如下配置" class="headerlink" title="修改主题配置，添加如下配置"></a>修改主题配置，添加如下配置</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">rss:</span> /atom.xml</span><br></pre></td></tr></table></figure></li></ul><h2 id="站内全文搜索"><a href="#站内全文搜索" class="headerlink" title="站内全文搜索"></a>站内全文搜索</h2><ul><li><p>安装 <code>hexo-generator-searchdb</code>，在站点的根目录下执行以下命令：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure></li><li><p>编辑 站点配置文件，新增以下内容到任意位置：</p><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">search:</span></span><br><span class="line"><span class="symbol">  path:</span> search.xml</span><br><span class="line"><span class="symbol">  field:</span> post</span><br><span class="line"><span class="symbol">  format:</span> html</span><br><span class="line"><span class="symbol">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure></li><li><p>编辑 主题配置文件，启用本地搜索功能：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></li></ul><h2 id="文章按更新时间排序"><a href="#文章按更新时间排序" class="headerlink" title="文章按更新时间排序"></a>文章按更新时间排序</h2><h3 id="要修改的内容"><a href="#要修改的内容" class="headerlink" title="要修改的内容"></a>要修改的内容</h3><ul><li><p><code>/node_modules/hexo-generator-index/index.js</code></p><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order<span class="number">_</span><span class="meta">by</span>: <span class="string">'-date'</span></span><br></pre></td></tr></table></figure><p>修改为</p><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order<span class="number">_</span><span class="meta">by</span>: <span class="string">'-updated'</span></span><br></pre></td></tr></table></figure><p>这样的话就<strong>只</strong>按 Front-matter 中的<code>updated</code>排序了，因此所有文章的 Front-matter 中都必须要有<code>updated</code>，已发布的文章可以手动修改或者找方法批量将 <code>data</code>换成<code>updated</code>，对于将来的文章，只要做如下修改：</p><ul><li><code>/scaffolds/post.md</code></li></ul><p>在<code>date</code>后加入一行</p><figure class="highlight twig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">updated: </span><span class="template-variable">&#123;&#123; <span class="name">date</span> &#125;&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure></li></ul><h2 id="Hexo链接持久化"><a href="#Hexo链接持久化" class="headerlink" title="Hexo链接持久化"></a>Hexo链接持久化</h2><ul><li><p>安装<code>hexo-abbrlink</code>这个插件</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-abbrlink <span class="comment">--save</span></span><br></pre></td></tr></table></figure></li><li><p>站点配置文件里:</p><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">permalink:</span> post/:abbrlink.html</span><br><span class="line"><span class="symbol">abbrlink:</span></span><br><span class="line"><span class="symbol">  alg:</span> <span class="keyword">crc32</span>  # 算法：crc16(<span class="meta">default</span>) <span class="keyword">and</span> <span class="keyword">crc32</span></span><br><span class="line"><span class="symbol">  rep:</span> hex    # 进制：<span class="keyword">dec</span>(<span class="meta">default</span>) <span class="keyword">and</span> hex</span><br></pre></td></tr></table></figure></li></ul><h2 id="赞赏"><a href="#赞赏" class="headerlink" title="赞赏"></a>赞赏</h2><ul><li><p>获取微信，支付宝收款二维码</p></li><li><p>找到主题 配置文件</p><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Rewrad</span></span><br><span class="line"><span class="symbol">reward_comment:</span> 坚持原创技术分享，您的支持将鼓励我继续创作！</span><br><span class="line"><span class="symbol">wechatpay:</span> 图片链接或图片相对路径</span><br><span class="line"><span class="symbol">alipay:</span> 图片链接或图片相对路径</span><br></pre></td></tr></table></figure></li></ul><h2 id="社交图标"><a href="#社交图标" class="headerlink" title="社交图标"></a>社交图标</h2><p>Next主题使用的Fontawesome版本需要升级才能支持QQ和微信等社交图标。</p><h2 id><a href="#" class="headerlink" title></a><a id="more"></a></h2>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Travis-CI持续集成&quot;&gt;&lt;a href=&quot;#Travis-CI持续集成&quot; class=&quot;headerlink&quot; title=&quot;Travis CI持续集成&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/&quot;&gt;Travis CI持续集成&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;RSS-Feed&quot;&gt;&lt;a href=&quot;#RSS-Feed&quot; class=&quot;headerlink&quot; title=&quot;RSS Feed&quot;&gt;&lt;/a&gt;RSS Feed&lt;/h2&gt;&lt;ul&gt;
+      &lt;h2 id=&quot;Travis-CI持续集成&quot;&gt;&lt;a href=&quot;#Travis-CI持续集成&quot; class=&quot;headerlink&quot; title=&quot;Travis CI持续集成&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Travis CI持续集成&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;RSS-Feed&quot;&gt;&lt;a href=&quot;#RSS-Feed&quot; class=&quot;headerlink&quot; title=&quot;RSS Feed&quot;&gt;&lt;/a&gt;RSS Feed&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;安装插件&lt;code&gt;hexo-generator-feed&lt;/code&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; hexo-generator-feed &lt;span class=&quot;comment&quot;&gt;--save&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
@@ -130,16 +130,16 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://kkzzhizhou.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.andyz.me/tags/Hexo/"/>
     
-      <category term="Next" scheme="http://kkzzhizhou.github.io/tags/Next/"/>
+      <category term="Next" scheme="http://blog.andyz.me/tags/Next/"/>
     
   </entry>
   
   <entry>
     <title>Hexo使用Travis CI持续集成</title>
-    <link href="http://kkzzhizhou.github.io/post/ef84c7f5.html"/>
-    <id>http://kkzzhizhou.github.io/post/ef84c7f5.html</id>
+    <link href="http://blog.andyz.me/post/ef84c7f5.html"/>
+    <id>http://blog.andyz.me/post/ef84c7f5.html</id>
     <published>2019-03-16T08:23:44.000Z</published>
     <updated>2019-03-16T08:23:44.000Z</updated>
     
@@ -186,16 +186,16 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://kkzzhizhou.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.andyz.me/tags/Hexo/"/>
     
-      <category term="Travis CI" scheme="http://kkzzhizhou.github.io/tags/Travis-CI/"/>
+      <category term="Travis CI" scheme="http://blog.andyz.me/tags/Travis-CI/"/>
     
   </entry>
   
   <entry>
     <title>折腾Ubuntu 16.04，从美化到常用软件安装</title>
-    <link href="http://kkzzhizhou.github.io/post/2bf895cd.html"/>
-    <id>http://kkzzhizhou.github.io/post/2bf895cd.html</id>
+    <link href="http://blog.andyz.me/post/2bf895cd.html"/>
+    <id>http://blog.andyz.me/post/2bf895cd.html</id>
     <published>2018-09-06T15:19:01.000Z</published>
     <updated>2018-09-07T10:44:01.000Z</updated>
     
@@ -218,16 +218,16 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://kkzzhizhou.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.andyz.me/tags/Linux/"/>
     
-      <category term="桌面系统" scheme="http://kkzzhizhou.github.io/tags/%E6%A1%8C%E9%9D%A2%E7%B3%BB%E7%BB%9F/"/>
+      <category term="桌面系统" scheme="http://blog.andyz.me/tags/%E6%A1%8C%E9%9D%A2%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>全平台挂载网络硬盘到本地的方法总结</title>
-    <link href="http://kkzzhizhou.github.io/post/2045f71f.html"/>
-    <id>http://kkzzhizhou.github.io/post/2045f71f.html</id>
+    <link href="http://blog.andyz.me/post/2045f71f.html"/>
+    <id>http://blog.andyz.me/post/2045f71f.html</id>
     <published>2018-09-02T16:08:21.000Z</published>
     <updated>2018-09-02T16:08:21.000Z</updated>
     
@@ -253,8 +253,8 @@
   
   <entry>
     <title>全平台百度网盘高速下载方法总结</title>
-    <link href="http://kkzzhizhou.github.io/post/3fbaade5.html"/>
-    <id>http://kkzzhizhou.github.io/post/3fbaade5.html</id>
+    <link href="http://blog.andyz.me/post/3fbaade5.html"/>
+    <id>http://blog.andyz.me/post/3fbaade5.html</id>
     <published>2018-09-02T15:50:58.000Z</published>
     <updated>2018-09-02T15:50:58.000Z</updated>
     
@@ -276,14 +276,14 @@
     </summary>
     
     
-      <category term="百度网盘" scheme="http://kkzzhizhou.github.io/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/"/>
+      <category term="百度网盘" scheme="http://blog.andyz.me/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/"/>
     
   </entry>
   
   <entry>
     <title>Tampermonkey脚本推荐（不定期更新）</title>
-    <link href="http://kkzzhizhou.github.io/post/aeaeede9.html"/>
-    <id>http://kkzzhizhou.github.io/post/aeaeede9.html</id>
+    <link href="http://blog.andyz.me/post/aeaeede9.html"/>
+    <id>http://blog.andyz.me/post/aeaeede9.html</id>
     <published>2018-09-02T15:37:55.000Z</published>
     <updated>2018-09-02T15:37:55.000Z</updated>
     
@@ -316,16 +316,16 @@
     </summary>
     
     
-      <category term="效率生活" scheme="http://kkzzhizhou.github.io/tags/%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+      <category term="效率生活" scheme="http://blog.andyz.me/tags/%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="js脚本" scheme="http://kkzzhizhou.github.io/tags/js%E8%84%9A%E6%9C%AC/"/>
+      <category term="js脚本" scheme="http://blog.andyz.me/tags/js%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   
   <entry>
     <title>Chrome插件推荐（不定期更新）</title>
-    <link href="http://kkzzhizhou.github.io/post/bb8f2e1e.html"/>
-    <id>http://kkzzhizhou.github.io/post/bb8f2e1e.html</id>
+    <link href="http://blog.andyz.me/post/bb8f2e1e.html"/>
+    <id>http://blog.andyz.me/post/bb8f2e1e.html</id>
     <published>2018-09-02T15:29:47.000Z</published>
     <updated>2018-09-02T15:29:47.000Z</updated>
     
@@ -357,16 +357,16 @@
     </summary>
     
     
-      <category term="效率生活" scheme="http://kkzzhizhou.github.io/tags/%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+      <category term="效率生活" scheme="http://blog.andyz.me/tags/%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="浏览器插件" scheme="http://kkzzhizhou.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
+      <category term="浏览器插件" scheme="http://blog.andyz.me/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>UEFI下实现Ubuntu To Go</title>
-    <link href="http://kkzzhizhou.github.io/post/be2f0191.html"/>
-    <id>http://kkzzhizhou.github.io/post/be2f0191.html</id>
+    <link href="http://blog.andyz.me/post/be2f0191.html"/>
+    <id>http://blog.andyz.me/post/be2f0191.html</id>
     <published>2018-09-02T02:00:53.000Z</published>
     <updated>2018-09-02T02:00:53.000Z</updated>
     
@@ -394,16 +394,16 @@
     </summary>
     
     
-      <category term="Ubuntu U盘" scheme="http://kkzzhizhou.github.io/tags/Ubuntu-U%E7%9B%98/"/>
+      <category term="Ubuntu U盘" scheme="http://blog.andyz.me/tags/Ubuntu-U%E7%9B%98/"/>
     
-      <category term="Ubuntu 便携" scheme="http://kkzzhizhou.github.io/tags/Ubuntu-%E4%BE%BF%E6%90%BA/"/>
+      <category term="Ubuntu 便携" scheme="http://blog.andyz.me/tags/Ubuntu-%E4%BE%BF%E6%90%BA/"/>
     
   </entry>
   
   <entry>
     <title>解决使用第三方输入法在LaunchPad中无法切换中英文</title>
-    <link href="http://kkzzhizhou.github.io/post/2d59f42c.html"/>
-    <id>http://kkzzhizhou.github.io/post/2d59f42c.html</id>
+    <link href="http://blog.andyz.me/post/2d59f42c.html"/>
+    <id>http://blog.andyz.me/post/2d59f42c.html</id>
     <published>2018-09-01T16:20:30.000Z</published>
     <updated>2018-09-01T16:20:30.000Z</updated>
     
@@ -426,16 +426,16 @@
     </summary>
     
     
-      <category term="MacOS_Bug" scheme="http://kkzzhizhou.github.io/tags/MacOS-Bug/"/>
+      <category term="MacOS_Bug" scheme="http://blog.andyz.me/tags/MacOS-Bug/"/>
     
-      <category term="Keyboard Maestro应用" scheme="http://kkzzhizhou.github.io/tags/Keyboard-Maestro%E5%BA%94%E7%94%A8/"/>
+      <category term="Keyboard Maestro应用" scheme="http://blog.andyz.me/tags/Keyboard-Maestro%E5%BA%94%E7%94%A8/"/>
     
   </entry>
   
   <entry>
     <title>Mac下清歌五笔输入法快速输入日期时间的方法</title>
-    <link href="http://kkzzhizhou.github.io/post/88303a7b.html"/>
-    <id>http://kkzzhizhou.github.io/post/88303a7b.html</id>
+    <link href="http://blog.andyz.me/post/88303a7b.html"/>
+    <id>http://blog.andyz.me/post/88303a7b.html</id>
     <published>2018-09-01T16:18:54.000Z</published>
     <updated>2018-09-01T17:11:54.000Z</updated>
     
@@ -452,14 +452,14 @@
     </summary>
     
     
-      <category term="输入法技巧" scheme="http://kkzzhizhou.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95%E6%8A%80%E5%B7%A7/"/>
+      <category term="输入法技巧" scheme="http://blog.andyz.me/tags/%E8%BE%93%E5%85%A5%E6%B3%95%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
   <entry>
     <title>便携绿色软件实现开机后台自启以及文件关联思路</title>
-    <link href="http://kkzzhizhou.github.io/post/6c0b1b27.html"/>
-    <id>http://kkzzhizhou.github.io/post/6c0b1b27.html</id>
+    <link href="http://blog.andyz.me/post/6c0b1b27.html"/>
+    <id>http://blog.andyz.me/post/6c0b1b27.html</id>
     <published>2018-08-31T12:40:08.000Z</published>
     <updated>2018-08-31T12:40:08.000Z</updated>
     
@@ -491,18 +491,18 @@
     </summary>
     
     
-      <category term="PortableApps" scheme="http://kkzzhizhou.github.io/tags/PortableApps/"/>
+      <category term="PortableApps" scheme="http://blog.andyz.me/tags/PortableApps/"/>
     
-      <category term="开机后台自启" scheme="http://kkzzhizhou.github.io/tags/%E5%BC%80%E6%9C%BA%E5%90%8E%E5%8F%B0%E8%87%AA%E5%90%AF/"/>
+      <category term="开机后台自启" scheme="http://blog.andyz.me/tags/%E5%BC%80%E6%9C%BA%E5%90%8E%E5%8F%B0%E8%87%AA%E5%90%AF/"/>
     
-      <category term="文件关联" scheme="http://kkzzhizhou.github.io/tags/%E6%96%87%E4%BB%B6%E5%85%B3%E8%81%94/"/>
+      <category term="文件关联" scheme="http://blog.andyz.me/tags/%E6%96%87%E4%BB%B6%E5%85%B3%E8%81%94/"/>
     
   </entry>
   
   <entry>
     <title>Thunderbird Portable 60.0+开机自启动并最小化到系统托盘</title>
-    <link href="http://kkzzhizhou.github.io/post/ddc7f777.html"/>
-    <id>http://kkzzhizhou.github.io/post/ddc7f777.html</id>
+    <link href="http://blog.andyz.me/post/ddc7f777.html"/>
+    <id>http://blog.andyz.me/post/ddc7f777.html</id>
     <published>2018-08-31T07:28:36.000Z</published>
     <updated>2018-08-31T07:28:36.000Z</updated>
     
@@ -523,16 +523,16 @@
     </summary>
     
     
-      <category term="Thunderbird Minimize" scheme="http://kkzzhizhou.github.io/tags/Thunderbird-Minimize/"/>
+      <category term="Thunderbird Minimize" scheme="http://blog.andyz.me/tags/Thunderbird-Minimize/"/>
     
-      <category term="AHK应用" scheme="http://kkzzhizhou.github.io/tags/AHK%E5%BA%94%E7%94%A8/"/>
+      <category term="AHK应用" scheme="http://blog.andyz.me/tags/AHK%E5%BA%94%E7%94%A8/"/>
     
   </entry>
   
   <entry>
     <title>Windows同步阅读Kindle个人文档的可行方案</title>
-    <link href="http://kkzzhizhou.github.io/post/d9a27f8c.html"/>
-    <id>http://kkzzhizhou.github.io/post/d9a27f8c.html</id>
+    <link href="http://blog.andyz.me/post/d9a27f8c.html"/>
+    <id>http://blog.andyz.me/post/d9a27f8c.html</id>
     <published>2018-08-31T06:49:35.000Z</published>
     <updated>2018-08-31T06:49:41.000Z</updated>
     
@@ -556,18 +556,18 @@
     </summary>
     
     
-      <category term="AHK应用" scheme="http://kkzzhizhou.github.io/tags/AHK%E5%BA%94%E7%94%A8/"/>
+      <category term="AHK应用" scheme="http://blog.andyz.me/tags/AHK%E5%BA%94%E7%94%A8/"/>
     
-      <category term="Kinlde个人文档" scheme="http://kkzzhizhou.github.io/tags/Kinlde%E4%B8%AA%E4%BA%BA%E6%96%87%E6%A1%A3/"/>
+      <category term="Kinlde个人文档" scheme="http://blog.andyz.me/tags/Kinlde%E4%B8%AA%E4%BA%BA%E6%96%87%E6%A1%A3/"/>
     
-      <category term="Windows" scheme="http://kkzzhizhou.github.io/tags/Windows/"/>
+      <category term="Windows" scheme="http://blog.andyz.me/tags/Windows/"/>
     
   </entry>
   
   <entry>
     <title>Hexo便携版及功能优化</title>
-    <link href="http://kkzzhizhou.github.io/post/bc7075a1.html"/>
-    <id>http://kkzzhizhou.github.io/post/bc7075a1.html</id>
+    <link href="http://blog.andyz.me/post/bc7075a1.html"/>
+    <id>http://blog.andyz.me/post/bc7075a1.html</id>
     <published>2018-07-07T02:21:16.000Z</published>
     <updated>2019-04-10T09:24:11.000Z</updated>
     
@@ -582,17 +582,17 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://kkzzhizhou.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.andyz.me/categories/Hexo/"/>
     
     
-      <category term="Portable" scheme="http://kkzzhizhou.github.io/tags/Portable/"/>
+      <category term="Portable" scheme="http://blog.andyz.me/tags/Portable/"/>
     
   </entry>
   
   <entry>
     <title>安卓平板作为Mac的扩展屏幕</title>
-    <link href="http://kkzzhizhou.github.io/post/602e271b.html"/>
-    <id>http://kkzzhizhou.github.io/post/602e271b.html</id>
+    <link href="http://blog.andyz.me/post/602e271b.html"/>
+    <id>http://blog.andyz.me/post/602e271b.html</id>
     <published>2018-04-04T04:17:41.000Z</published>
     <updated>2018-04-04T04:17:41.000Z</updated>
     
@@ -633,14 +633,14 @@
     </summary>
     
     
-      <category term="效率工具" scheme="http://kkzzhizhou.github.io/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
+      <category term="效率工具" scheme="http://blog.andyz.me/tags/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>解决谷歌日历提醒Bug：日历找不到请求的活动</title>
-    <link href="http://kkzzhizhou.github.io/post/f1dfe6ee.html"/>
-    <id>http://kkzzhizhou.github.io/post/f1dfe6ee.html</id>
+    <link href="http://blog.andyz.me/post/f1dfe6ee.html"/>
+    <id>http://blog.andyz.me/post/f1dfe6ee.html</id>
     <published>2018-04-02T08:13:47.000Z</published>
     <updated>2018-04-02T08:13:47.000Z</updated>
     
@@ -653,14 +653,14 @@
     </summary>
     
     
-      <category term="安卓" scheme="http://kkzzhizhou.github.io/tags/%E5%AE%89%E5%8D%93/"/>
+      <category term="安卓" scheme="http://blog.andyz.me/tags/%E5%AE%89%E5%8D%93/"/>
     
   </entry>
   
   <entry>
     <title>黑苹果HD5500开机第二屏花屏解决方案</title>
-    <link href="http://kkzzhizhou.github.io/post/8c447dcc.html"/>
-    <id>http://kkzzhizhou.github.io/post/8c447dcc.html</id>
+    <link href="http://blog.andyz.me/post/8c447dcc.html"/>
+    <id>http://blog.andyz.me/post/8c447dcc.html</id>
     <published>2018-04-01T11:59:16.000Z</published>
     <updated>2018-04-01T11:59:16.000Z</updated>
     
@@ -681,14 +681,14 @@
     </summary>
     
     
-      <category term="Hackintosh" scheme="http://kkzzhizhou.github.io/tags/Hackintosh/"/>
+      <category term="Hackintosh" scheme="http://blog.andyz.me/tags/Hackintosh/"/>
     
   </entry>
   
   <entry>
     <title>Dell-3443-黑苹果-10.13.6</title>
-    <link href="http://kkzzhizhou.github.io/post/ddf2eee4.html"/>
-    <id>http://kkzzhizhou.github.io/post/ddf2eee4.html</id>
+    <link href="http://blog.andyz.me/post/ddf2eee4.html"/>
+    <id>http://blog.andyz.me/post/ddf2eee4.html</id>
     <published>2018-03-29T16:00:00.000Z</published>
     <updated>2018-09-12T03:07:44.000Z</updated>
     
@@ -706,9 +706,9 @@
     </summary>
     
     
-      <category term="Hackintosh" scheme="http://kkzzhizhou.github.io/tags/Hackintosh/"/>
+      <category term="Hackintosh" scheme="http://blog.andyz.me/tags/Hackintosh/"/>
     
-      <category term="Dell-3443" scheme="http://kkzzhizhou.github.io/tags/Dell-3443/"/>
+      <category term="Dell-3443" scheme="http://blog.andyz.me/tags/Dell-3443/"/>
     
   </entry>
   
