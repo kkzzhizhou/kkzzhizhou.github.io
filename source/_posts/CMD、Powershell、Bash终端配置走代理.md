@@ -5,7 +5,7 @@ updated: 2019-10-11
 author: zzz
 ---
 
-### CMD
+## CMD
 
 ```
 ;; 设置代理(其中sock5可以设置为http，https)
@@ -53,7 +53,7 @@ export http_proxy="http://127.0.0.1:1080"
 export https_proxy="http://127.0.0.1:1080"
 ```
 
-### 注意：
+## 注意：
 
 如果代理服务器需要登陆，这时可以直接把用户名和密码写进去
 
