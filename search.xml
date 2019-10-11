@@ -9,6 +9,11 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[CMD、Powershell、Bash终端配置走代理]]></title>
+    <url>%2Fpost%2F37a5cb72.html</url>
+    <content type="text"><![CDATA[CMD123456;; 设置代理(其中sock5可以设置为http，https)set http_proxy="sock5://127.0.0.1:1080"set https_proxy="sock5://127.0.0.1:1080";; 清除代理设置set http_proxy=set https_proxy= Powershell123456789101112131415161718192021222324# NOTE: registry keys for IE 8, may vary for other versions$regPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings'# 清除代理设置function Clear-Proxy&#123; Set-ItemProperty -Path $regPath -Name ProxyEnable -Value 0 Set-ItemProperty -Path $regPath -Name ProxyServer -Value '' Set-ItemProperty -Path $regPath -Name ProxyOverride -Value '' [Environment]::SetEnvironmentVariable('http_proxy', $null, 'User') [Environment]::SetEnvironmentVariable('https_proxy', $null, 'User')&#125;# 设置代理function Set-Proxy&#123; $proxy = 'sock5://127.0.0.1:1080' Set-ItemProperty -Path $regPath -Name ProxyEnable -Value 1 Set-ItemProperty -Path $regPath -Name ProxyServer -Value $proxy Set-ItemProperty -Path $regPath -Name ProxyOverride -Value '&lt;local&gt;' [Environment]::SetEnvironmentVariable('http_proxy', $proxy, 'User') [Environment]::SetEnvironmentVariable('https_proxy', $proxy, 'User')&#125; Bash123export ALL_PROXY="socks5://127.0.0.1:1080"export http_proxy="http://127.0.0.1:1080"export https_proxy="http://127.0.0.1:1080" 注意：如果代理服务器需要登陆，这时可以直接把用户名和密码写进去 1http_proxy=http://userName:password@proxyAddress:port]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[使用Travis CI，同步跨平台写博客方案]]></title>
     <url>%2Fpost%2F91c3f927.html</url>
     <content type="text"><![CDATA[Travis CI说明新建Source分支用于存储源文件，Master分支用于存储生成的网站文件 全新的电脑写博客 下载安装Git，HexoClient，Node.js 运行Git Bash 添加Nodejs环境配置 12touch ~/.bash_profilevi ~/.bash_profile 添加以下内容到.bash_profile文件中，保存退出 123#! /bin/bash# 添加环境变量PATH=$PATH:/c/Program\ Files/nodejs 运行以下命令刷新环境变量 1source ~/.bash_profile 下载安装SourceTree并登录 1git clone -b source https://github.com/kkzzhizhou/kkzzhizhou.github.io 下载安装SourceTree并登录 打开本地仓库kkzzhizhou.github.io 修改后进行提交即可 已经配置的电脑写博客强制拉取所有更新到本地，放弃所有本地修改 123git fetch --allgit reset --hard origin/sourcegit pull SourceTree发布文章 暂存所有，填写Commit之后提交即可]]></content>
