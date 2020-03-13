@@ -106,12 +106,12 @@
 <meta property="og:site_name" content="zzz部落格">
 <meta property="og:description" content="更新历史2018-9-7：  完善文章细节：常用软件安装方法 增加Ubuntu自定义设置  2018-9-6：分享Ubuntu 16.04的美化以及安装常用软件 前言根据2018年2月桌面操作系统市场占比(下图)，Linux虽拥有众多桌面版本分支，如Ubuntu，Deepin，Kubuntu等，却仅仅占桌面操作系统全球市场份额的1.46%。 这其中原因有很多，对于个人的选择来说，影响最大是两个因素">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg">
+<meta property="og:image" content="http://blog.ziiyc.com/pic/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg">
 <meta property="og:updated_time" content="2018-09-07T10:44:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="折腾Ubuntu 16.04，从美化到常用软件安装">
 <meta name="twitter:description" content="更新历史2018-9-7：  完善文章细节：常用软件安装方法 增加Ubuntu自定义设置  2018-9-6：分享Ubuntu 16.04的美化以及安装常用软件 前言根据2018年2月桌面操作系统市场占比(下图)，Linux虽拥有众多桌面版本分支，如Ubuntu，Deepin，Kubuntu等，却仅仅占桌面操作系统全球市场份额的1.46%。 这其中原因有很多，对于个人的选择来说，影响最大是两个因素">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg">
+<meta name="twitter:image" content="http://blog.ziiyc.com/pic/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg">
 
 
 
@@ -482,7 +482,7 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>根据2018年2月桌面操作系统市场占比(下图)，Linux虽拥有众多桌面版本分支，如Ubuntu，Deepin，Kubuntu等，却仅仅占桌面操作系统全球市场份额的1.46%。</p>
 <p>这其中原因有很多，对于个人的选择来说，影响最大是两个因素，一是使用界面，二是软件数量和质量。</p>
 <p>这篇文章针对我个人的使用情况，解决从美化到软件安装的各种需求。</p>
-<p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg" alt></p>
+<p><img src="/pic/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg" alt></p>
 <p>……<br><a id="more"></a> </p>
 <h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><h3 id="安装主题：Arc-GTK"><a href="#安装主题：Arc-GTK" class="headerlink" title="安装主题：Arc GTK"></a>安装主题：Arc GTK</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">"echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' &gt;&gt; /etc/apt/sources.list.d/arc-theme.list"</span></span><br><span class="line">wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key</span><br><span class="line">sudo apt-key add - &lt; Release.key</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install arc-theme</span><br></pre></td></tr></table></figure>
 <h3 id="安装图标：papirus-icon-theme-gtk"><a href="#安装图标：papirus-icon-theme-gtk" class="headerlink" title="安装图标：papirus-icon-theme-gtk"></a>安装图标：papirus-icon-theme-gtk</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:varlesh<span class="_">-l</span>/papirus-pack</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install papirus-gtk-icon-theme</span><br></pre></td></tr></table></figure>

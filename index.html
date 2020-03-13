@@ -476,9 +476,9 @@
 <li>在资源管理器界面中，选择映射网络驱动器，在文件夹一栏，填入上一步得到的地址，点击完成，耐心等候，输入账号密码即可，之后可以将这个映射得到的盘符当作本地磁盘进行使用</li>
 </ol>
 <p>连接后如下图所示，打开即为你网盘的文件</p>
-<p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1g2kpigh93sj20ed051mx7.jpg" alt></p>
+<p><img src="/pic/d22ff2eegy1g2kpigh93sj20ed051mx7.jpg" alt></p>
 <p>Ditto设置如下图所示，数据库使用WebDav路径即可完美解决数据同步问题</p>
-<p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1g2kpnvgzmpj20ic02t3yf.jpg" alt></p>
+<p><img src="/pic/d22ff2eegy1g2kpnvgzmpj20ic02t3yf.jpg" alt></p>
 
           
         
@@ -756,7 +756,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-13 15:54:15" itemprop="dateModified" datetime="2020-03-13T15:54:15+08:00">2020-03-13</time>
+                <time title="修改时间：2020-03-13 16:26:52" itemprop="dateModified" datetime="2020-03-13T16:26:52+08:00">2020-03-13</time>
               
             
           </span>
@@ -822,7 +822,6 @@
 <h2 id="SourceTree发布文章"><a href="#SourceTree发布文章" class="headerlink" title="SourceTree发布文章"></a>SourceTree发布文章</h2><ul>
 <li>暂存所有，填写Commit之后提交即可</li>
 </ul>
-<p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1g1z5r6rvojj20xe0m8dgw.jpg" alt></p>
 
           
         
@@ -1190,22 +1189,17 @@
 <h3 id="2-打开链接"><a href="#2-打开链接" class="headerlink" title="2. 打开链接"></a>2. 打开<a href="https://travis-ci.org/account/repositories" target="_blank" rel="noopener">链接</a></h3><ul>
 <li>勾上你的blog repo (这里我勾上了<code>kkzzhizhou.github.io</code>)，点击小齿轮，进入配置页。</li>
 </ul>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g14pz0ojjpj30t40j80ul.jpg" alt="image-20190316163339901"></p>
 <h3 id="3-获取Pesonal-Access-Token"><a href="#3-获取Pesonal-Access-Token" class="headerlink" title="3. 获取Pesonal Access Token"></a>3. 获取Pesonal Access Token</h3><ul>
 <li>在GitHub个人账户 <code>Setting/ Developer settings/ Personal access tokens</code>下，新建一个Token，然后在Travis CI配置中，Environment Variables，添加生成的Token。</li>
 </ul>
 <p>权限配置如下图所示:</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g14q5m1lyrj30sc0cl0up.jpg" alt="img"></p>
 <h3 id="4-参考我本页面的配置"><a href="#4-参考我本页面的配置" class="headerlink" title="4. 参考我本页面的配置"></a>4. 参考我本页面的配置</h3><ul>
 <li><strong>CI_TOKEN的值为上步获得的Token</strong></li>
 </ul>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1g14q2myqp8j31h30ni77d.jpg" alt="image-20190316163717457"></p>
-<h3 id="5-新建Source分支"><a href="#5-新建Source分支" class="headerlink" title="5. 新建Source分支"></a>5. 新建Source分支</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/kkzzhizhou/</span>kkzzhizhou.github.io <span class="regexp">//</span>换成你自己的博客仓库</span><br><span class="line">git checkout source <span class="regexp">//</span>新建source分支,保留如下图所示的源文件</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1g14qg5wp5vj30dy061t9c.jpg" alt="image-20190316165017295"></p>
+<h3 id="5-新建Source分支"><a href="#5-新建Source分支" class="headerlink" title="5. 新建Source分支"></a>5. 新建Source分支</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/kkzzhizhou/</span>kkzzhizhou.github.io <span class="regexp">//</span>换成你自己的博客仓库</span><br><span class="line">git checkout source <span class="regexp">//</span>新建source分支</span><br></pre></td></tr></table></figure>
 <h3 id="6-Source分支下新建-travis-yml文件"><a href="#6-Source分支下新建-travis-yml文件" class="headerlink" title="6. Source分支下新建.travis.yml文件"></a>6. Source分支下新建.travis.yml文件</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">language:</span> node_js</span><br><span class="line"><span class="symbol">node_js:</span> stable</span><br><span class="line"><span class="symbol">cache:</span></span><br><span class="line"><span class="symbol">  directories:</span></span><br><span class="line">    - node_modules</span><br><span class="line"></span><br><span class="line"><span class="meta"># S: Build Lifecycle</span></span><br><span class="line"><span class="symbol">install:</span></span><br><span class="line">  - npm install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#before_script:</span></span><br><span class="line"> <span class="meta"># - npm install -g gulp</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">script:</span></span><br><span class="line">  - hexo clean &amp;&amp; hexo g</span><br><span class="line"></span><br><span class="line"><span class="symbol">after_script:</span></span><br><span class="line">  - git clone https:<span class="comment">//$&#123;GH_REF&#125; .deploy_git</span></span><br><span class="line">  - cd .deploy_git</span><br><span class="line">  - git checkout master</span><br><span class="line">  - cd ../</span><br><span class="line">  - mv .deploy_git/.git/ .<span class="meta-keyword">/public/</span></span><br><span class="line">  - cd ./public</span><br><span class="line">  - git init</span><br><span class="line">  - git config user.name <span class="string">"zzz"</span> <span class="comment">//修改成你自己的用户名</span></span><br><span class="line">  - git config user.email <span class="string">"806508401@qq.com"</span> <span class="comment">//修改成你自己的邮箱</span></span><br><span class="line">  - git add .</span><br><span class="line">  - git commit -m <span class="string">":memo:Update by Travis CI"</span></span><br><span class="line">  - git push --force --quiet <span class="string">"https://$&#123;CI_TOKEN&#125;@$&#123;GH_REF&#125;"</span> master:master</span><br><span class="line"><span class="meta"># E: Build LifeCycle</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">branches:</span></span><br><span class="line"><span class="symbol">  only:</span></span><br><span class="line">    - source</span><br><span class="line"><span class="symbol">env:</span></span><br><span class="line"><span class="symbol"> global:</span></span><br><span class="line">   - GH_REF: github.com<span class="meta-keyword">/kkzzhizhou/</span>kkzzhizhou.github.io.git <span class="comment">//修改成你自己的仓库</span></span><br></pre></td></tr></table></figure>
 <h3 id="7-上传至Source分支"><a href="#7-上传至Source分支" class="headerlink" title="7. 上传至Source分支"></a>7. 上传至Source分支</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"hexo-source-upload"</span></span><br><span class="line">git <span class="keyword">push</span> origin <span class="keyword">source</span> <span class="comment">//推送到远程仓库</span></span><br></pre></td></tr></table></figure>
-<h3 id="8-使用HexoClient愉快写Blog了"><a href="#8-使用HexoClient愉快写Blog了" class="headerlink" title="8. 使用HexoClient愉快写Blog了"></a>8. 使用HexoClient愉快写Blog了</h3><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g14qmvlh1oj31cx0u011z.jpg" alt="image.png"></p>
-<p>……<br>
+<h3 id="8-使用HexoClient愉快写Blog了"><a href="#8-使用HexoClient愉快写Blog了" class="headerlink" title="8. 使用HexoClient愉快写Blog了"></a>8. 使用HexoClient愉快写Blog了</h3><p>……<br>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1375,7 +1369,7 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>根据2018年2月桌面操作系统市场占比(下图)，Linux虽拥有众多桌面版本分支，如Ubuntu，Deepin，Kubuntu等，却仅仅占桌面操作系统全球市场份额的1.46%。</p>
 <p>这其中原因有很多，对于个人的选择来说，影响最大是两个因素，一是使用界面，二是软件数量和质量。</p>
 <p>这篇文章针对我个人的使用情况，解决从美化到软件安装的各种需求。</p>
-<p><img src="https://ws1.sinaimg.cn/large/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg" alt></p>
+<p><img src="/pic/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg" alt></p>
 <p>……<br>
           <!--noindex-->
           
