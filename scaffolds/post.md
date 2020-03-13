@@ -1,15 +1,16 @@
 ---
 title: {{ title }}
 date: {{ date }}
-create: {{ date }}
+updated: {{ date }}
+tags:
+categories:
 comments: true
-tags: []
+abbrlink: 
 ---
-## 
-
 
 
 ......
 <!-- more --> 
+
 
 
