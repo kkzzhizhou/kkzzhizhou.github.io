@@ -5,7 +5,7 @@ updated: 2019-4-14 14:2:43
 author: zzz
 tags: AHK,Hotkey
 categories: 效率提升
-
+abbrlink: 805d4157
 ---
 
 ## 最开始的想法

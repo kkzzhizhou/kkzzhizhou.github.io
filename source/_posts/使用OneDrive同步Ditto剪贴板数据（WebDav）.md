@@ -3,6 +3,7 @@ title: 使用OneDrive实时同步Ditto剪贴板数据（WebDav）
 date: 2019-4-30 15:41:29
 updated: 2019-4-30 15:41:32
 tags: 跨设备工作
+abbrlink: ce9f0e67
 ---
 
 最近将常用的绿色软件放到Onedrive中同步，方便在自己的多个Windows设备使用。遇到一个比较棘手的问题，使用Ditto时会锁定数据库文件，此时OneDrive显示文件在使用中，无法同步。

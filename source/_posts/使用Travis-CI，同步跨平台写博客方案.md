@@ -4,6 +4,7 @@ author: zzz
 date: 2019-4-9 21:37:28
 update: 2019-4-9 21:37:34
 tags: git应用,博客
+abbrlink: 91c3f927
 ---
 
 ## Travis CI说明

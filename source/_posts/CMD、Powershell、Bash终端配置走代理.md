@@ -3,6 +3,7 @@ title: CMD、Powershell、Bash终端配置走代理
 date: 2019-4-19 10:12:6
 updated: 2019-10-11
 author: zzz
+abbrlink: 37a5cb72
 ---
 
 ## CMD
