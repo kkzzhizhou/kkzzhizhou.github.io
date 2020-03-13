@@ -10,7 +10,7 @@ abbrlink: Synchronize-Portable-External-Hard-Drive-With-NAS
 
 ## 实现效果
 
-![实现效果][/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png]
+![实现效果](/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png)
 
 ## 需求
 
@@ -27,10 +27,7 @@ abbrlink: Synchronize-Portable-External-Hard-Drive-With-NAS
 - 即使移动硬盘在一段时间内不使用（比如说，不接任何设备闲置几天），重新接入网络能继续与NAS中的文件夹进行同步
 
 ## 可行解决方案：SyncTrayzor(Syncthing GUI)
-
-......
 <!-- more --> 
-
 ## 实现方式
 
 1. 下载SyncTrayzor Portable版本，解压放置在移动硬盘根目录，命名为Syncthing(可以改成任何你想到的名字)
