@@ -9,9 +9,47 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[推荐跨平台PDF,网页标注-Weave]]></title>
+    <url>%2Fpost%2F44641126.html</url>
+    <content type="text"><![CDATA[准备工具 安卓平板（电容屏） Yandex浏览器（从Google Play下载，需科学上网） Weava Highlighter（从Chrome Webstore下载安装，需科学上网） 电容笔（主动式体验更好些，更接近笔的体验，需要充电） 使用方法网页文字颜色标注 选中一段文字，这时候并不会出现Weava的标注工具 在网页任意位置滑动就会出现标注工具，如下图所示 标注和浏览器菜单重叠的解决方法 在出现标注工具后，将页面向上滑动即可，如下图所示 网页文字添加注释 在颜色标注后，只需要再次点击该文字就会出现添加注释，如下图所示 为不同的颜色添加颜色注释 在文字标注界面选择设置按钮即可 使用效果]]></content>
+      <categories>
+        <category>效率工具</category>
+      </categories>
+      <tags>
+        <tag>阅读辅助</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CMD、Powershell、Bash终端配置走代理]]></title>
     <url>%2Fpost%2F37a5cb72.html</url>
     <content type="text"><![CDATA[CMD123456;; 设置代理(其中sock5可以设置为http，https)set http_proxy="sock5://127.0.0.1:1080"set https_proxy="sock5://127.0.0.1:1080";; 清除代理设置set http_proxy=set https_proxy= Powershell123456789101112131415161718192021222324# NOTE: registry keys for IE 8, may vary for other versions$regPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings'# 清除代理设置function Clear-Proxy&#123; Set-ItemProperty -Path $regPath -Name ProxyEnable -Value 0 Set-ItemProperty -Path $regPath -Name ProxyServer -Value '' Set-ItemProperty -Path $regPath -Name ProxyOverride -Value '' [Environment]::SetEnvironmentVariable('http_proxy', $null, 'User') [Environment]::SetEnvironmentVariable('https_proxy', $null, 'User')&#125;# 设置代理function Set-Proxy&#123; $proxy = 'sock5://127.0.0.1:1080' Set-ItemProperty -Path $regPath -Name ProxyEnable -Value 1 Set-ItemProperty -Path $regPath -Name ProxyServer -Value $proxy Set-ItemProperty -Path $regPath -Name ProxyOverride -Value '&lt;local&gt;' [Environment]::SetEnvironmentVariable('http_proxy', $proxy, 'User') [Environment]::SetEnvironmentVariable('https_proxy', $proxy, 'User')&#125; Bash123export ALL_PROXY="socks5://127.0.0.1:1080"export http_proxy="http://127.0.0.1:1080"export https_proxy="http://127.0.0.1:1080" 注意：如果代理服务器需要登陆，这时可以直接把用户名和密码写进去 1http_proxy=http://userName:password@proxyAddress:port]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows代码编辑器选择(VSCode,Notepad++,Sublime Text 3)]]></title>
+    <url>%2Fpost%2F987409d2.html</url>
+    <content type="text"><![CDATA[Windows平台VSCode优点： 界面美观 扩展强大 代码高亮 启动速度快 缺点： AHK中文无法对齐 Alt多选需要在设置中设置为Ctrl/Command，体验极差 Notepad++缺点： 界面不美观 文件不能自动关联 Sublime Text 3缺点： Windows不支持Alt多选 闭源]]></content>
+      <categories>
+        <category>工具选择</category>
+      </categories>
+      <tags>
+        <tag>Editor</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[AutoHotkey在热键体验不好的地方总结]]></title>
+    <url>%2Fpost%2F805d4157.html</url>
+    <content type="text"><![CDATA[最开始的想法 长按字母键打开常用应用，不影响字母输入 长按鼠标中键打开指定应用，不影响鼠标中键原有功能 双击Alt唤醒Wox，不影响Alt原有功能 失败后的备选方案 使用RShift + 字母打开常用应用 使用Wgesture，定义按下鼠标右键+单击鼠标左键打开指定应用（已实现） 使用Capslock + F发送Alt+Space，实现唤醒Wox（已实现） 意外收获发现火萤酱快捷键能够设置双击Alt来唤醒，这就说明用其他语言能够完美的实现双击热键。 无效例子1：长按字母键影响输入来源：仅长按单键执行功能，不影响短按示例 123456789101112;示例代码$t:: KeyWait, t If (A_TimeSinceThisHotkey &gt; 300) SetTimer, mainp, -1 Else SendInput, % GetKeyState("CapsLock", "T") ? "T" : "t"Returnmainp: Run, http://www.baidu.comReturn 从功能上我们是希望达到以下效果： 当单击时，输入小写字母t，如果有大写锁定，则输入大写字母T 当长按时，执行打开百度的操作 但实际这有许多体验很差的地方，比如： 当我打字比较快的时候，输入tf，结果输入的是ft，是因为t需要等待时间处理才会输出。 在对以上代码改造后123456789101112;在对以上代码改造后$MButton:: KeyWait, MButton If (A_TimeSinceThisHotkey &gt; 300) SetTimer, mainp, -1 Else Click, MReturnmainp: Send, &#123;F3&#125;Return 这代码不能正常工作，我希望长按中键时打开指定应用，单击时执行中键原来的功能，结果是长按鼠标中键能打开指定应用，但无法正常使用鼠标中键 无效例子2：按键双击检测 来源:热键的次数与时长- AutoHotkey Community 12345678910;修改原来的RControl为LAltintInterval := 500 ; 若两次连击在这个时间间隔中，则视为双击。~LAlt::if (A_PriorHotkey &lt;&gt; "~LAlt" or A_TimeSincePriorHotkey &gt; intInterval)&#123; KeyWait, LAlt return&#125;MsgBox, 您双击了左边的 LAlt 键。return 功能是希望双击左边的Alt执行打开，但问题是在编辑器长按Alt多选会出现鬼畜现象，影响Alt多行编辑的使用。 12345678910111213141516171819202122232425262728;修改原来的#c为LAltLAlt::if (intCount &gt; 0) ; SetTimer 已经启动，这里记录键击。&#123; intCount += 1 return&#125;intCount = 1SetTimer, KeyWinC, 400 ; 在 400 毫秒内等待更多的键击。returnKeyWinC:SetTimer, KeyWinC, offif (intCount = 1) ; 此键按下了一次。&#123; Run, m:\&#125;else if (intCount = 2) ; 此键按下了两次。&#123; Run, m:\multimedia&#125;else if (intCount &gt; 2)&#123; MsgBox, 连击了三次或更多。&#125;intCount = 0return 运行后会使用原来的Alt功能失效，比如Alt+Tab无法使用。]]></content>
+      <categories>
+        <category>效率提升</category>
+      </categories>
+      <tags>
+        <tag>AHK,Hotkey</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[定制属于自己的跨平台使用快捷键（Windows,MacOS,Linux)]]></title>
+    <url>%2Fpost%2Ff69873ff.html</url>
+    <content type="text"><![CDATA[Windows使用到的工具：AutoHotkeyMacOS使用到的工具：Karabiner ElementsLinux使用到的工具：Lua 快捷键 Windows MacOS Linux F1 通知中心（Ctrl+A) 通知中心（未定义） 无 F2 重命名 重命名 重命名 F3 AltTab-Terminator 默认 / F4 PicGo上传图片（Ctrl+Shift+P） PicGo上传图片（Command+Shift+P） / F5 刷新 刷新 F6 上一曲 上一曲 上一曲 F7 播放/暂停 播放/暂停 播放/暂停 F8 下一曲 下一曲 下一曲 F9 ShareX截图 Snipaste截图 / F10 ShareX录屏 / / F11 显示桌面（Ctrl+D) 显示桌面（F11) / F12 Web Development(Chrome) Web Development(Chrome) / Capslock +hjkl 上下左右 上下左右 / Capslock +nm,. Home/End/PgUp/PgDn Home/End/PgUp/PgDn / Capslock+uiop 左/右删除 左/右删除 Capslock+t cmd terminal Alt+Capslock+t msys2 ? Capslock+g Chrome Chrome Alt+Capslock+g ? ? Double Click Alt Wox Alfred / Capslock+q Alt+F4 Command+Q / Alt+Capslock+q / / / Capslock+w Ctrl+W Command+W Alt+Capslock+w 上一个桌面 Command+E / Capslock+e Typora Command+M Alt+Capslock+e VSCode 退出全屏？ Capslock+a ? moom+ Alt+Capslock+a ? ? Capslock+s 下一个标签 下一个标签 Alt+Capslock+s 上一个标签 ？ Capslock+d ? Dash Alt+Capslock+d ? ? Capslock+v {shift}+{insert} ? Alt+Capslcok+v ? ? Capslock+c {ctrl}+{insert} ? Alt+Capslcok+c ? ? Capslock+f ctrl+f command+f Alt+Capslock+f ? ? Capslock+r !#^+r(滴答清单) ? Alt+Capslock+r ? ? RShift+q QQ RShift+w Wechat Alt+Rshift+q QQEIM Alt+RShift+w 企业微信 Rshift+d Alt+RShift+d 鼠标手势 右键+左键 任务管理器 B]]></content>
   </entry>
   <entry>
     <title><![CDATA[使用Travis CI，同步跨平台写博客方案]]></title>

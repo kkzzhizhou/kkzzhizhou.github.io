@@ -376,6 +376,652 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/bc7075a1.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="将所见所闻整理并分享">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/post/bc7075a1.html" class="post-title-link" itemprop="url">Hexo便携版及功能优化</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-07 10:21:16" itemprop="dateCreated datePublished" datetime="2018-07-07T10:21:16+08:00">2018-07-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-10 17:24:11" itemprop="dateModified" datetime="2019-04-10T17:24:11+08:00">2019-04-10</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Hexo作为一种静态博客，重新配置可以说是相当的繁琐，于是有了Hexo便携版（感谢@比特萌信息技术提供的HEXO Portable），现在官网已经打不开（截至2018-7-7），幸好我做了安装包备份。以下的教程将对Hexo Portable这个软件做进一步的优化处理。</p>
+<h2 id="添加新功能"><a href="#添加新功能" class="headerlink" title="添加新功能"></a>添加新功能</h2><h3 id="1-将源文件备份到bitbucket私有仓库"><a href="#1-将源文件备份到bitbucket私有仓库" class="headerlink" title="1. 将源文件备份到bitbucket私有仓库"></a>1. 将源文件备份到bitbucket私有仓库</h3><p><code>start git-bash &quot;%cd%\..\support\script\Backup.sh&quot;</code></p>
+<h3 id="2-从bitbucket恢复到本地"><a href="#2-从bitbucket恢复到本地" class="headerlink" title="2. 从bitbucket恢复到本地"></a>2. 从bitbucket恢复到本地</h3><p><code>start git-bash &quot;%cd%\..\support\script\Restore.sh&quot;</code></p>
+<h3 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h3><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off &amp; <span class="built_in">title</span> Hexo(zzz脚本)</span><br><span class="line"><span class="built_in">mode</span> <span class="built_in">con</span> cols=<span class="number">50</span> lines=<span class="number">25</span></span><br><span class="line"><span class="built_in">color</span> <span class="number">2</span>F</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">::打开批处理同时打开文章所在的文件夹</span><br><span class="line"><span class="built_in">start</span> <span class="variable">%cd%</span>\source\_posts</span><br><span class="line"><span class="built_in">echo</span> 正在初始化...</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">path</span>=<span class="variable">%path%</span>;<span class="variable">%cd%</span>\..\support\git\bin\;<span class="variable">%cd%</span>\..\support\nodejs\;<span class="variable">%cd%</span>\..\blog\node_modules\.bin;<span class="variable">%cd%</span>\..\support\nodejs\node_modules\.bin;<span class="variable">%cd%</span>\..\support\git\</span><br><span class="line">:Menu</span><br><span class="line"><span class="built_in">cls</span></span><br><span class="line">@ <span class="built_in">echo</span>.</span><br><span class="line">@ <span class="built_in">echo</span>.    ==================目录====================</span><br><span class="line">@ <span class="built_in">echo</span>.     </span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">1</span>. 配置Github部署</span><br><span class="line">@ <span class="built_in">echo</span>.</span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">2</span>. 配置基本信息</span><br><span class="line">@ <span class="built_in">echo</span>.  </span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">3</span>. 启动命令行</span><br><span class="line">@ <span class="built_in">echo</span>.  </span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">4</span>. 创建新文章</span><br><span class="line">@ <span class="built_in">echo</span>.         </span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">5</span>. 生成并本地测试</span><br><span class="line">@ <span class="built_in">echo</span>.       </span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">6</span>. 生成并部署</span><br><span class="line">@ <span class="built_in">echo</span>.        </span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">7</span>. 重置配置文件</span><br><span class="line">@ <span class="built_in">echo</span>.     </span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">8</span>. 从bitbucket中恢复数据</span><br><span class="line">@ <span class="built_in">echo</span>.</span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">9</span>. 备份到bitbucket</span><br><span class="line">@ <span class="built_in">echo</span>.</span><br><span class="line">@ <span class="built_in">echo</span>.          <span class="number">10</span>. 一键生成部署同步</span><br><span class="line">@ <span class="built_in">echo</span>.</span><br><span class="line">@ <span class="built_in">echo</span>.    ==========================================</span><br><span class="line">@ <span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">set</span> /p xj= 输入数字按回车：</span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">1</span>" <span class="keyword">Goto</span> Setup</span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">2</span>" <span class="keyword">Goto</span> Basic</span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">3</span>" <span class="keyword">Goto</span> Term</span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">4</span>" <span class="keyword">Goto</span> New</span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">5</span>" <span class="keyword">Goto</span> GenerateAndServer</span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">6</span>" <span class="keyword">Goto</span> GenerateAndDelpoy</span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">7</span>" <span class="keyword">Goto</span> Reset</span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">8</span>" <span class="keyword">Goto</span> <span class="built_in">Restore</span></span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">9</span>" <span class="keyword">Goto</span> Backup</span><br><span class="line"><span class="keyword">if</span> /i "<span class="variable">%xj%</span>"=="<span class="number">10</span>" <span class="keyword">Goto</span> Onekey</span><br><span class="line">@ <span class="built_in">echo</span>.</span><br><span class="line"><span class="built_in">echo</span> 　　　  选择无效...请重新输入...</span><br><span class="line"><span class="built_in">ping</span> -n <span class="number">2</span> <span class="number">127</span>.<span class="number">1</span>&gt;<span class="built_in">nul</span></span><br><span class="line"><span class="keyword">goto</span> menu</span><br><span class="line">:Setup</span><br><span class="line"><span class="built_in">start</span> git-bash "<span class="variable">%cd%</span>\..\support\script\deploy.sh"</span><br><span class="line"><span class="keyword">goto</span> menu</span><br><span class="line">:Basic</span><br><span class="line"><span class="built_in">start</span> git-bash "<span class="variable">%cd%</span>\..\support\script\configSet.sh"</span><br><span class="line"><span class="keyword">goto</span> menu</span><br><span class="line">:Term</span><br><span class="line"><span class="built_in">start</span> git-bash "<span class="variable">%cd%</span>\..\support\script\<span class="built_in">start</span>.sh"</span><br><span class="line"><span class="keyword">goto</span> menu</span><br><span class="line">:New</span><br><span class="line"><span class="built_in">start</span> git-bash "<span class="variable">%cd%</span>\..\support\script\newPost.sh"</span><br><span class="line"><span class="keyword">goto</span> menu</span><br><span class="line">:GenerateAndServer</span><br><span class="line"><span class="built_in">start</span> git-bash "<span class="variable">%cd%</span>\..\support\script\generateAndServer.sh"</span><br><span class="line"><span class="keyword">goto</span> menu</span><br><span class="line">:GenerateAndDelpoy</span><br><span class="line"><span class="built_in">start</span> git-bash "<span class="variable">%cd%</span>\..\support\script\generateAndDelpoy.sh"</span><br><span class="line"><span class="keyword">goto</span> menu</span><br><span class="line">:Reset</span><br><span class="line"><span class="built_in">del</span> <span class="variable">%cd%</span>\_config.yml</span><br><span class="line"><span class="built_in">copy</span> <span class="variable">%cd%</span>\..\support\backup\_config.yml _config.yml</span><br><span class="line">:<span class="built_in">Restore</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">rd</span> /s /q blog</span><br><span class="line"><span class="built_in">md</span> blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line"><span class="built_in">start</span> git-bash "<span class="variable">%cd%</span>\..\support\script\<span class="built_in">Restore</span>.sh"</span><br><span class="line"><span class="keyword">goto</span> menu</span><br><span class="line">:Backup</span><br><span class="line"><span class="built_in">start</span> git-bash "<span class="variable">%cd%</span>\..\support\script\backup.sh"</span><br><span class="line"><span class="keyword">goto</span> menu</span><br><span class="line">:Onekey</span><br><span class="line"><span class="built_in">start</span> git-bash "<span class="variable">%cd%</span>\..\support\script\onekey.sh"</span><br><span class="line"><span class="built_in">cls</span></span><br><span class="line"><span class="keyword">goto</span> menu</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/602e271b.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="将所见所闻整理并分享">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/post/602e271b.html" class="post-title-link" itemprop="url">安卓平板作为Mac的扩展屏幕</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-04 12:17:41" itemprop="dateCreated datePublished" datetime="2018-04-04T12:17:41+08:00">2018-04-04</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>我有一台闲置的安卓的平板，想作为我的黑苹果的扩展屏幕，在网上寻找到一些解决方法如下：</p>
+<h2 id="Twomon"><a href="#Twomon" class="headerlink" title="Twomon"></a>Twomon</h2><p><img src="https://lh3.googleusercontent.com/-tq3sumuJU1A/WsXhdHKP9nI/AAAAAAAAdoM/7B_7Zp3eBlcBXwc3R4PdlwGmha_wd5-1wCHMYCw/I/15229177462162.jpg" alt></p>
+<ul>
+<li>官网：<a href="http://www.easynlight.com/en/twomonusb/" target="_blank" rel="noopener">http://www.easynlight.com/en/twomonusb/</a></li>
+<li>支持的客户端：Mac,Win,Android,iOS，其中，Android和iOS端需要付费购买</li>
+<li>安卓破解版：<a href="https://apk4free.net/twomon-usb-usb-monitor/" target="_blank" rel="noopener">https://apk4free.net/twomon-usb-usb-monitor/</a></li>
+<li>安卓端安装的版本为TwomonUSB，另外一个版本是TwomonAir（不建议用在平板和手机上，作为扩展屏幕延迟会很高）</li>
+<li>测试结果：1080P输出的情况下，CPU占用在5%到40%之间浮动，不操作的情况下，CPU占用在5%到20%之间，内存战胜200MB</li>
+<li>其他功能：支持触屏（非常方便），鼠标响应速度很快。</li>
+<li>存在问题：安卓破解版的需要核心破解才能使用。</li>
+<li>结论：推荐使用</li>
+</ul>
+<h2 id="iDisplay"><a href="#iDisplay" class="headerlink" title="iDisplay"></a>iDisplay</h2><ul>
+<li>官网：<a href="https://getidisplay.com/" target="_blank" rel="noopener">https://getidisplay.com/</a></li>
+<li>支持的客户端：Mac,Win,Android,iOS，其中，Android和iOS端需要付费购买</li>
+<li>安卓破解版：<a href="https://apko.org/apps/idisplay-v4-3-0-apk/" target="_blank" rel="noopener">https://apko.org/apps/idisplay-v4-3-0-apk/</a></li>
+<li>注意：安卓版本连接Mac时仅支持无线方式。</li>
+<li>测试结果：2K分辨率下，无线连接鼠标稍有卡顿，使用时不跟手，应该是无线原因导致的。</li>
+<li>其他功能：支持触屏。显示还可以。</li>
+<li>结论：如果的同时使用ipad和Mac,推荐使用。Android和Mac不推荐使用。</li>
+</ul>
+<h2 id="Wired-XDisplay"><a href="#Wired-XDisplay" class="headerlink" title="Wired XDisplay"></a>Wired XDisplay</h2><ul>
+<li>官网：<a href="https://www.splashtop.com/wiredxdisplay" target="_blank" rel="noopener">https://www.splashtop.com/wiredxdisplay</a></li>
+<li>支持的客户端：Mac,Win,Android,iOS，其中，Android和iOS端需要付费购买</li>
+<li>安卓破解版：<a href="https://apkdom.com/hl-cn/apk/221125-splashtop-wired-xdisplay-free-apk-1.0.0.10/" target="_blank" rel="noopener">https://apkdom.com/hl-cn/apk/221125-splashtop-wired-xdisplay-free-apk-1.0.0.10/</a></li>
+<li>连接方式：USB或者无线</li>
+<li>测试结果：USB连接情况下，鼠标有些飘，能用，但体验一般。</li>
+<li>结论：如果Twomon不能够使用的情况下（比如说安卓客户端打不开），可以考虑这种方案。</li>
+</ul>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/post/602e271b.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/f1dfe6ee.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="将所见所闻整理并分享">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/post/f1dfe6ee.html" class="post-title-link" itemprop="url">解决谷歌日历提醒Bug：日历找不到请求的活动</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-02 16:13:47" itemprop="dateCreated datePublished" datetime="2018-04-02T16:13:47+08:00">2018-04-02</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="bug描述"><a href="#bug描述" class="headerlink" title="bug描述"></a>bug描述</h2><p>今天解决一件非常恼人的问题，问题删除谷歌日历中的提醒，提醒日历找不到请求的活动。如图所示，在手机无法删除。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/post/f1dfe6ee.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/8c447dcc.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="将所见所闻整理并分享">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/post/8c447dcc.html" class="post-title-link" itemprop="url">黑苹果HD5500开机第二屏花屏解决方案</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-04-01 19:59:16" itemprop="dateCreated datePublished" datetime="2018-04-01T19:59:16+08:00">2018-04-01</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>我的电脑是i5-5200U(HD5500),注入的ID为16260006。每次开机第二屏就会闪屏，8个苹果。</p>
+<h2 id="具体症状"><a href="#具体症状" class="headerlink" title="具体症状"></a>具体症状</h2><ol>
+<li>在开启CSM兼容模式时，开机第二屏会8个苹果一闪而过，不影响正常使用，但看着很烦。</li>
+<li>在关闭CSM兼容模式时，即纯UEFI模式时，开机直接花屏，屏幕分为15个竖直片段，显示很模糊。进入系统后，按睡眠后唤醒就正常。或者合盖后打开，显示正常。</li>
+</ol>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li>打开Clover\Graphics,勾选Inject Intel,并注入ID:16260006，</li>
+<li>现时在Clover\Graphics勾选注入EDID(下面提取修改的EDID)。</li>
+</ol>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/post/8c447dcc.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/ddf2eee4.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1408,704 +2054,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/6d2c2152.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzz">
-      <meta itemprop="description" content="将所见所闻整理并分享">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzz部落格">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/post/6d2c2152.html" class="post-title-link" itemprop="url">中国联通广东地区SSR云免流教程</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-10-09 00:00:00" itemprop="dateCreated datePublished" datetime="2017-10-09T00:00:00+08:00">2017-10-09</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-04-05 00:00:00" itemprop="dateModified" datetime="2018-04-05T00:00:00+08:00">2018-04-05</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
-<li>2018-4-5： 使用参数<strong>short.weixin.qq.com</strong>使用的是微信定向流量</li>
-<li>2018-3-30：免流参数<strong>ylsh.gd10010.cn</strong>失效</li>
-<li>2018-2-20：更新注意事项,配置参数,ssrscriptn使用方法</li>
-<li>2018-1-11：免流参数<strong>ylsh.gd10010.cn</strong>可用</li>
-<li>2017-11-7：免流参数<strong>aop.gd10010.cn</strong>失效</li>
-</ul>
-<h2 id="免流原理"><a href="#免流原理" class="headerlink" title="免流原理"></a>免流原理</h2><p>运营商为了给客户提供方便，提供了一些优惠政策，如：接收彩信、登陆掌厅免除流量费以及免收取流量费的其他业务。<br>运营商的计费系统为了区分用户使用的是免流量业务还是正常访问互联网会把这些免流服务的网址加入到白名单，这些白名单中的网址就是我们平常所说的免流IP了，当计费系统检测到用户访问的是白名单中的网址或接收彩信时就不会进行扣费。 </p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li><strong>如果服务器长时间高速免流下载，联通会采取封IP的措施，切记</strong></li>
-<li><strong>此次分享是中国联通免流的教程，中国移动，中国电信不可用</strong></li>
-</ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/post/6d2c2152.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/bd0d1da.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzz">
-      <meta itemprop="description" content="将所见所闻整理并分享">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzz部落格">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/post/bd0d1da.html" class="post-title-link" itemprop="url">USBIP实现路由器连接打印机，可打印可扫描</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2017-08-26T00:00:00+08:00">2017-08-26</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/openwrt/" itemprop="url" rel="index"><span itemprop="name">openwrt</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，智能路由器的USB接口能够连接打印机，让没有网络功能的路由器实现网络打印。可惜的是，打印机连接路由器后提只能打印不能扫描，这很不方便。在寻找中发现一项<strong>USB over IP</strong> 技术（又称 USB over Ethernet 或者 USB over Internet），这个技术能够解决以上的问题，并能扩展出不少应用场景。<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/post/bd0d1da.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/9c4ec956.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzz">
-      <meta itemprop="description" content="将所见所闻整理并分享">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzz部落格">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/post/9c4ec956.html" class="post-title-link" itemprop="url">RSS订阅和阅读简明教程</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-07-03 00:00:00" itemprop="dateCreated datePublished" datetime="2017-07-03T00:00:00+08:00">2017-07-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-03-13 16:26:52" itemprop="dateModified" datetime="2020-03-13T16:26:52+08:00">2020-03-13</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
-<li>2018-9-3：<ul>
-<li>更新图片为国内图床</li>
-<li>更新比较完美的微博RSS订阅的方法：方法三</li>
-<li>完善微信公众号全文RSS订阅的方法：irreader+feed43</li>
-<li>更新Twitter全文RSS订阅的方法：twitrss.me</li>
-<li>更新irreader的简述</li>
-</ul>
-</li>
-<li>2018-8-27：更新irreader(一款本地播客，RSS阅读工具)</li>
-<li>2018-8-20：更新制作RSS Feed的方法</li>
-<li>2018-8-8：更改排版，更新提供全文输出RSS的网站，增加提供RSS生成制作的网站</li>
-<li>2018-7-7：更新RSSHub中大部分主流网站，重新排版文章，删除过时和错误的方法。</li>
-<li>2017-7-3：更新全文输出网站freefullrss</li>
-</ul>
-<h2 id="RSS是什么？"><a href="#RSS是什么？" class="headerlink" title="RSS是什么？"></a>RSS是什么？</h2><p><img src="/pic/d22ff2eely1fuwihyhsj3j20qo0dcaby.jpg" alt></p>
-<blockquote>
-<p>RSS是一种内容信息聚合技术。简单点讲，你可以订阅自己关心的内容，例如博客，视频网站，知乎，简书，微信公众号，播客，门户网站等，当内容更新时自动同步到阅读器中，最终所有信息汇总到一个应用里查看阅读。</p>
-</blockquote>
-<h2 id="在线RSS阅读软件：inoreader"><a href="#在线RSS阅读软件：inoreader" class="headerlink" title="在线RSS阅读软件：inoreader"></a>在线RSS阅读软件：<a href="http://www.inoreader.com/" target="_blank" rel="noopener">inoreader</a></h2><p>推荐指数：⭐️⭐️⭐️⭐️</p>
-<p>一款类似Google Reader的RSS阅读器，阅读器支持平台包括Web,Android,iOS。</p>
-<p>接近两年的使用inoreader，让人深刻的意识到inoreader在阅读体验上很是糟糕。</p>
-<h2 id="本地RSS阅读软件：irreader"><a href="#本地RSS阅读软件：irreader" class="headerlink" title="本地RSS阅读软件：irreader"></a>本地RSS阅读软件：<a href="http://irreader.netqon.com/" target="_blank" rel="noopener">irreader</a></h2><p>推荐指数：⭐️⭐️⭐️⭐️</p>
-<p>适用于以下的场景：</p>
-<ol>
-<li>有些订阅源在inoreader阅读无法全文输出，不方便。比如：<a href="http://www.dayanzai.me/feed" target="_blank" rel="noopener">http://www.dayanzai.me/feed</a></li>
-<li>有些订阅源虽然是即使全文输出，但图片反盗链。比如：<a href="http://www.ixiqi.com/feed" target="_blank" rel="noopener">http://www.ixiqi.com/feed</a></li>
-<li>有些想订阅的源却不提供订阅地址，比如：<a href="http://www.macbl.com/" target="_blank" rel="noopener">http://www.macbl.com/</a></li>
-<li>使用inoreader免费版用户有广告</li>
-<li>使用Inoreader时阅读区域无法调整</li>
-<li>使用inoreader没有阅读模式</li>
-<li>想要一边看RSS一边收听播客</li>
-</ol>
-<p>以上的场景irreader通过以下方式完美的解决：</p>
-<ol>
-<li>irreader直接模拟浏览器打开链接，全文输出完美，排版优秀，图片正常加载。</li>
-<li><strong>irreader支持订阅HTML静态地址。</strong></li>
-<li>irreader内置Adblock，自动过滤网页广告和弹窗。</li>
-<li>相比inoreader至多一半的屏幕用于阅读文章，irreader阅读区域最多能占到屏幕的4/5</li>
-<li>irreader内置阅读模式插件</li>
-<li>irreader内置播客订阅</li>
-</ol>
-<p>存在的不足：</p>
-<ol>
-<li>缺少同步功能</li>
-<li>缺少信息过滤功能</li>
-</ol>
-<p>总结：作为inoreader的长期使用者，深知inoreader的种种不足，现在有了irreader，用来弥补inoreader，再合适不过了。</p>
-<h2 id="RSS订阅工具：RSSHub"><a href="#RSS订阅工具：RSSHub" class="headerlink" title="RSS订阅工具：RSSHub"></a>RSS订阅工具：<a href="https://docs.rsshub.app/" target="_blank" rel="noopener">RSSHub</a></h2><p>推荐指数：⭐️⭐️⭐️⭐️⭐️</p>
-<p>网站集成了主流网站的订阅方式，很强大。</p>
-<p>当然这网站也不是万能的，有特殊需求的需要自己制作RSS Feed。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/post/9c4ec956.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/3bf0328c.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzz">
-      <meta itemprop="description" content="将所见所闻整理并分享">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzz部落格">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/post/3bf0328c.html" class="post-title-link" itemprop="url">VHD技术应用实例：Windows双系统最佳方案</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-05-07 00:00:00" itemprop="dateCreated datePublished" datetime="2017-05-07T00:00:00+08:00">2017-05-07</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="技术简介"><a href="#技术简介" class="headerlink" title="技术简介"></a>技术简介</h2><p>VHD是一种<strong>虚拟磁盘文件格式</strong>，我们可以将系统安装在VHD中，直接从VHD文件启动操作系统。这种启动方式的特点：</p>
-<ul>
-<li>无制作难度，也不必单独拿一个分区来装系统，对原系统无影响，卸载也很方便。</li>
-<li>同样使用虚拟磁盘装系统，但虚拟机安装性能大打折扣。使用此法可以获得与物理机安装几无差别的性能体验。不过，Win10的快速启动机制需要在实体机中安装才能正常运作（VHD中不能休眠），<strong>所以此法不适合想要体验快速启动的朋友。</strong></li>
-<li>管理起来比较方便，只需删掉虚拟磁盘和启动菜单即可卸载。卸载方法最后还有提到</li>
-<li><strong>读写可分离，可以实现秒备份和秒还原。</strong></li>
-</ul>
-<p><strong>注意</strong>：此法只适用于在Windows7/8/8.1/10，Windows Server 2008 R2，WinPE 3.0系统下操作，可安装32位或64位。<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/post/3bf0328c.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2154,7 +2102,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2175,7 +2123,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2280,7 +2234,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">44</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
