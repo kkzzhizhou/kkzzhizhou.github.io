@@ -376,6 +376,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/Synchronize-Portable-External-Hard-Drive-With-NAS.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="将所见所闻整理并分享">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/post/Synchronize-Portable-External-Hard-Drive-With-NAS.html" class="post-title-link" itemprop="url">syncthing实现移动硬盘便携同步至NAS</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-13 17:22:17" itemprop="dateCreated datePublished" datetime="2020-03-13T17:22:17+08:00">2020-03-13</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p>![实现效果][/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png]</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>一台黑群晖NAS设备和一个移动硬盘实现在资料自动同步</p>
+<p>先说说传统方式有几种：</p>
+<ul>
+<li>将移动硬盘插入NAS的USB接口，并使用群晖应用USB Copy进行备份(注意：这种方式只能备份至移动硬盘，不能将移动硬盘上的更改同步到NAS中)</li>
+<li>将移动硬盘插入局域网中的Windows设备，并使用samba挂载NAS文件夹，使用类似GoodSync，AllwaySync，SyncFolders等同步软件进行同步。</li>
+</ul>
+<p>我的需求：</p>
+<ul>
+<li>移动硬盘接入任何Windows设备中，在有网络的情况下（可以是局域网，可以是公网），都能直接与NAS中的文件夹进行同步。</li>
+<li>即使移动硬盘在一段时间内不使用（比如说，不接任何设备闲置几天），重新接入网络能继续与NAS中的文件夹进行同步</li>
+</ul>
+<h2 id="可行解决方案：SyncTrayzor-Syncthing-GUI"><a href="#可行解决方案：SyncTrayzor-Syncthing-GUI" class="headerlink" title="可行解决方案：SyncTrayzor(Syncthing GUI)"></a>可行解决方案：SyncTrayzor(Syncthing GUI)</h2><p>……<br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/post/Synchronize-Portable-External-Hard-Drive-With-NAS.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/ce9f0e67.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1806,7 +1963,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-03-13 16:57:08" itemprop="dateModified" datetime="2020-03-13T16:57:08+08:00">2020-03-13</time>
+                <time title="修改时间：2020-03-13 17:48:42" itemprop="dateModified" datetime="2020-03-13T17:48:42+08:00">2020-03-13</time>
               
             
           </span>
@@ -2298,177 +2455,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/2bf895cd.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zzz">
-      <meta itemprop="description" content="将所见所闻整理并分享">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzz部落格">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/post/2bf895cd.html" class="post-title-link" itemprop="url">折腾Ubuntu 16.04，从美化到常用软件安装</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-06 23:19:01" itemprop="dateCreated datePublished" datetime="2018-09-06T23:19:01+08:00">2018-09-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-07 18:44:01" itemprop="dateModified" datetime="2018-09-07T18:44:01+08:00">2018-09-07</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-9-7：</p>
-<ul>
-<li>完善文章细节：常用软件安装方法</li>
-<li>增加Ubuntu自定义设置</li>
-</ul>
-<p>2018-9-6：分享Ubuntu 16.04的美化以及安装常用软件</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>根据2018年2月桌面操作系统市场占比(下图)，Linux虽拥有众多桌面版本分支，如Ubuntu，Deepin，Kubuntu等，却仅仅占桌面操作系统全球市场份额的1.46%。</p>
-<p>这其中原因有很多，对于个人的选择来说，影响最大是两个因素，一是使用界面，二是软件数量和质量。</p>
-<p>这篇文章针对我个人的使用情况，解决从美化到软件安装的各种需求。</p>
-<p><img src="/pic/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg" alt></p>
-<p>……<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/post/2bf895cd.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2517,7 +2503,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
