@@ -25,15 +25,13 @@
     <content type="text"><![CDATA[CMD123456;; 设置代理(其中sock5可以设置为http，https)set http_proxy="sock5://127.0.0.1:1080"set https_proxy="sock5://127.0.0.1:1080";; 清除代理设置set http_proxy=set https_proxy= Powershell123456789101112131415161718192021222324# NOTE: registry keys for IE 8, may vary for other versions$regPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings'# 清除代理设置function Clear-Proxy&#123; Set-ItemProperty -Path $regPath -Name ProxyEnable -Value 0 Set-ItemProperty -Path $regPath -Name ProxyServer -Value '' Set-ItemProperty -Path $regPath -Name ProxyOverride -Value '' [Environment]::SetEnvironmentVariable('http_proxy', $null, 'User') [Environment]::SetEnvironmentVariable('https_proxy', $null, 'User')&#125;# 设置代理function Set-Proxy&#123; $proxy = 'sock5://127.0.0.1:1080' Set-ItemProperty -Path $regPath -Name ProxyEnable -Value 1 Set-ItemProperty -Path $regPath -Name ProxyServer -Value $proxy Set-ItemProperty -Path $regPath -Name ProxyOverride -Value '&lt;local&gt;' [Environment]::SetEnvironmentVariable('http_proxy', $proxy, 'User') [Environment]::SetEnvironmentVariable('https_proxy', $proxy, 'User')&#125; Bash123export ALL_PROXY="socks5://127.0.0.1:1080"export http_proxy="http://127.0.0.1:1080"export https_proxy="http://127.0.0.1:1080" 注意：如果代理服务器需要登陆，这时可以直接把用户名和密码写进去 1http_proxy=http://userName:password@proxyAddress:port]]></content>
   </entry>
   <entry>
-    <title><![CDATA[Windows代码编辑器选择(VSCode,Notepad++,Sublime Text 3)]]></title>
+    <title><![CDATA[Windows代码编辑器选择-VSCode]]></title>
     <url>%2Fpost%2F987409d2.html</url>
     <content type="text"><![CDATA[Windows平台VSCode优点： 界面美观 扩展强大 代码高亮 启动速度快 缺点： AHK中文无法对齐 Alt多选需要在设置中设置为Ctrl/Command，体验极差 Notepad++缺点： 界面不美观 文件不能自动关联 Sublime Text 3缺点： Windows不支持Alt多选 闭源]]></content>
       <categories>
-        <category>工具选择</category>
+        <category>效率工具</category>
+        <category>代码编辑器</category>
       </categories>
-      <tags>
-        <tag>Editor</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[AutoHotkey在热键体验不好的地方总结]]></title>
@@ -100,7 +98,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Tampermonkey脚本推荐（不定期更新）]]></title>
+    <title><![CDATA[Tampermonkey脚本推荐]]></title>
     <url>%2Fpost%2Faeaeede9.html</url>
     <content type="text"><![CDATA[更新历史2018-9-2：介绍我使用过的js脚本 脚本清单 百度网盘直接下载助手 直链加速版 说明：百度网盘提取直链，配合IDM下载 百度贴吧：不登录即可看贴 网盘自动填写提取密码 闲鱼搜索框显示 iqiyi-player-switch 说明：爱奇艺flash播放器与html5播放器随意切换，改善html5播放器播放体验。 一键VIP视频解析、去广告（全网）,一站式音乐搜索下载 2018-08-31 可用 本文结束。]]></content>
       <tags>
@@ -109,7 +107,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Chrome插件推荐（不定期更新）]]></title>
+    <title><![CDATA[Chrome插件推荐]]></title>
     <url>%2Fpost%2Fbb8f2e1e.html</url>
     <content type="text"><![CDATA[更新历史2018-9-3：添加网页截图工具：Fireshot 2018-9-2：介绍我当前使用的Chrome插件 插件列表 Lastpass：在线密码管理器 Tampermonkey：js脚本管理器 广告净化器：广告过滤，特色功能是过滤视频广告。 云盘万能钥匙：自动获取并填写百度网盘密码（类似WiFi万能钥匙） Adblock：用于去除广告净化器不能很好过滤的广告。 Gitzip for github：双击文件或者文件夹下载Github文件 Extension Manager (aka switcher)：快速关闭无用插件，无需进入扩展管理关闭。 Fireshot：网页截图，支持长截图，只需截图时滚动鼠标即可。 本文结束。]]></content>
       <tags>
@@ -154,7 +152,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Thunderbird Portable 60.0+开机自启动并最小化到系统托盘]]></title>
+    <title><![CDATA[Thunderbird Portable开机自启动并最小化到系统托盘]]></title>
     <url>%2Fpost%2Fddc7f777.html</url>
     <content type="text"><![CDATA[更新历史 2018-8-31：第一个版本 问题描述 便携应用设置为开机启动时会自动打开主界面 Thunderbird 60.0官方并不支持最小化到系统托盘 Thunderbird 第三方最小化到系统托盘的插件如FireTray，最多支持到54.X，在最新版的Thunderbird中并不可用。 可行解决方案：AHK，全称AutoHotkey123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566;=====================================================================; Thunderbird Portable 60.0+ Tray; Author:zzz; date:2018-8-31; 使用方法：将AHK放在ThunderbirdPortable.exe目录中运行; 理论上支持所有Thunderbird版本，包括以后发布的版本;---------------------------------------------------------------------#NoEnvSendMode Input SetWorkingDir %A_ScriptDir% DllCall("kernel32.dll\SetProcessShutdownParameters", UInt, 0x4FF, UInt, 0)#SingleInstance ignoremenu,tray,icon,App\AppInfo\appicon.ico;title must containSetTitleMatchMode, 2Run, ThunderbirdPortable.exeWinWait, ahk_exe Thunderbird.exe;WinMinimize, ahk_exe Thunderbird.exeWinHide, ahk_exe Thunderbird.exeOnExit, ExitSubOnMessage(0x404, "AHK_NOTIFYICON")OnMessage(0x11, "WM_QUERYENDSESSION") AHK_NOTIFYICON(wParam, lParam)&#123; if (lParam = 0x202) ; WM_LBUTTONUP &#123; WinShow, - Mozilla Thunderbird WinActivate, - Mozilla Thunderbird &#125;&#125;WM_QUERYENDSESSION(wParam, lParam)&#123; ENDSESSION_LOGOFF = 0x80000000 Process,Close,Thunderbird.exe Process,WaitClose,ThunderbirdPortable.exe&#125;ProcessExist(Name)&#123; Process,Exist,%Name% return Errorlevel&#125;Loop&#123; If !ProcessExist("thunderbird.exe") &#123; ExitApp &#125; WinGet, winState, MinMax, ahk_exe thunderbird.exe if (winState = -1) &#123; WinHide, - Mozilla Thunderbird &#125; sleep 500&#125;ExitSub:WinClose,ahk_exe thunderbird.exeProcess,close,Thunderbird.exeExitApp]]></content>
       <tags>

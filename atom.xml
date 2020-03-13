@@ -91,11 +91,11 @@
   </entry>
   
   <entry>
-    <title>Windows代码编辑器选择(VSCode,Notepad++,Sublime Text 3)</title>
+    <title>Windows代码编辑器选择-VSCode</title>
     <link href="http://blog.ziiyc.com/post/987409d2.html"/>
     <id>http://blog.ziiyc.com/post/987409d2.html</id>
     <published>2019-04-14T07:12:00.000Z</published>
-    <updated>2019-04-14T07:12:03.000Z</updated>
+    <updated>2020-03-13T08:37:45.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h3><p>优点：</p><ul><li>界面美观</li><li>扩展强大</li><li>代码高亮</li><li>启动速度快</li></ul><p>缺点：</p><ul><li>AHK中文无法对齐</li><li>Alt多选需要在设置中设置为Ctrl/Command，体验极差</li></ul><h3 id="Notepad"><a href="#Notepad" class="headerlink" title="Notepad++"></a>Notepad++</h3><p>缺点：</p><ul><li>界面不美观</li><li>文件不能自动关联</li></ul><h3 id="Sublime-Text-3"><a href="#Sublime-Text-3" class="headerlink" title="Sublime Text 3"></a>Sublime Text 3</h3><p>缺点：</p><ul><li>Windows不支持Alt多选</li><li>闭源</li></ul>]]></content>
     
@@ -108,10 +108,10 @@
     
     </summary>
     
-      <category term="工具选择" scheme="http://blog.ziiyc.com/categories/%E5%B7%A5%E5%85%B7%E9%80%89%E6%8B%A9/"/>
+      <category term="效率工具" scheme="http://blog.ziiyc.com/categories/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/"/>
     
+      <category term="代码编辑器" scheme="http://blog.ziiyc.com/categories/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
-      <category term="Editor" scheme="http://blog.ziiyc.com/tags/Editor/"/>
     
   </entry>
   
@@ -168,7 +168,7 @@
     <link href="http://blog.ziiyc.com/post/91c3f927.html"/>
     <id>http://blog.ziiyc.com/post/91c3f927.html</id>
     <published>2019-04-09T13:37:28.000Z</published>
-    <updated>2020-03-13T08:32:00.991Z</updated>
+    <updated>2020-03-13T08:57:08.879Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Travis-CI说明"><a href="#Travis-CI说明" class="headerlink" title="Travis CI说明"></a>Travis CI说明</h2><p>新建Source分支用于存储源文件，Master分支用于存储生成的网站文件</p><h2 id="全新的电脑写博客"><a href="#全新的电脑写博客" class="headerlink" title="全新的电脑写博客"></a>全新的电脑写博客</h2><ul><li><p>下载安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，<a href="https://github.com/gaoyoubo/hexo-client/releases" target="_blank" rel="noopener">HexoClient</a>，<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a></p></li><li><p>运行Git Bash</p></li><li><p>添加Nodejs环境配置</p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch ~<span class="string">/.bash_profile</span></span><br><span class="line">vi ~<span class="string">/.bash_profile</span></span><br></pre></td></tr></table></figure></li><li><p>添加以下内容到.bash_profile文件中，保存退出</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="comment"># 添加环境变量</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:/c/Program\ Files/nodejs</span><br></pre></td></tr></table></figure></li><li><p>运行以下命令刷新环境变量</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></li><li><p>下载安装SourceTree并登录</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">-b</span> source https://github.com/kkzzhizhou/kkzzhizhou.github.io</span><br></pre></td></tr></table></figure></li><li><p>下载安装SourceTree并登录</p></li><li><p>打开本地仓库kkzzhizhou.github.io</p></li><li><p>修改后进行提交即可</p></li></ul><h2 id="已经配置的电脑写博客"><a href="#已经配置的电脑写博客" class="headerlink" title="已经配置的电脑写博客"></a>已经配置的电脑写博客</h2><p>强制拉取所有更新到本地，放弃所有本地修改</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git fetch <span class="comment">--all</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard origin/source</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><h2 id="SourceTree发布文章"><a href="#SourceTree发布文章" class="headerlink" title="SourceTree发布文章"></a>SourceTree发布文章</h2><ul><li>暂存所有，填写Commit之后提交即可</li></ul>]]></content>
     
@@ -398,7 +398,7 @@
   </entry>
   
   <entry>
-    <title>Tampermonkey脚本推荐（不定期更新）</title>
+    <title>Tampermonkey脚本推荐</title>
     <link href="http://blog.ziiyc.com/post/aeaeede9.html"/>
     <id>http://blog.ziiyc.com/post/aeaeede9.html</id>
     <published>2018-09-02T15:37:55.000Z</published>
@@ -440,7 +440,7 @@
   </entry>
   
   <entry>
-    <title>Chrome插件推荐（不定期更新）</title>
+    <title>Chrome插件推荐</title>
     <link href="http://blog.ziiyc.com/post/bb8f2e1e.html"/>
     <id>http://blog.ziiyc.com/post/bb8f2e1e.html</id>
     <published>2018-09-02T15:29:47.000Z</published>
@@ -617,7 +617,7 @@
   </entry>
   
   <entry>
-    <title>Thunderbird Portable 60.0+开机自启动并最小化到系统托盘</title>
+    <title>Thunderbird Portable开机自启动并最小化到系统托盘</title>
     <link href="http://blog.ziiyc.com/post/ddc7f777.html"/>
     <id>http://blog.ziiyc.com/post/ddc7f777.html</id>
     <published>2018-08-31T07:28:36.000Z</published>
