@@ -8,6 +8,10 @@ comments: true
 abbrlink: Synchronize-Portable-External-Hard-Drive-With-NAS
 ---
 
+## 实现效果
+
+![实现效果][/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png]
+
 ## 需求
 
 一台黑群晖NAS设备和一个移动硬盘实现在资料自动同步
