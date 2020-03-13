@@ -24,7 +24,7 @@ updated: 2018-09-07 18:44:01
 
 这篇文章针对我个人的使用情况，解决从美化到软件安装的各种需求。
 
-![](https://ws1.sinaimg.cn/large/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg)
+![](/pic/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg)
 
 ......
 <!-- more --> 

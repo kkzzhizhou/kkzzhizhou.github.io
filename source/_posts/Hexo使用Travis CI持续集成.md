@@ -39,9 +39,6 @@ updated: 2019-03-16 16:23:44
 
 - 勾上你的blog repo (这里我勾上了`kkzzhizhou.github.io`)，点击小齿轮，进入配置页。
 
-![image-20190316163339901](https://ws3.sinaimg.cn/large/006tKfTcly1g14pz0ojjpj30t40j80ul.jpg)
-
-
 
 ### 3. 获取Pesonal Access Token
 
@@ -49,23 +46,16 @@ updated: 2019-03-16 16:23:44
 
 权限配置如下图所示:
 
-![img](https://ws1.sinaimg.cn/large/006tKfTcgy1g14q5m1lyrj30sc0cl0up.jpg)
-
 ### 4. 参考我本页面的配置
 
 - **CI_TOKEN的值为上步获得的Token**
-
-![image-20190316163717457](https://ws4.sinaimg.cn/large/006tKfTcgy1g14q2myqp8j31h30ni77d.jpg)
 
 ### 5. 新建Source分支
 
 ```
 git clone https://github.com/kkzzhizhou/kkzzhizhou.github.io //换成你自己的博客仓库
-git checkout source //新建source分支,保留如下图所示的源文件
+git checkout source //新建source分支
 ```
-
-![image-20190316165017295](https://ws2.sinaimg.cn/large/006tKfTcgy1g14qg5wp5vj30dy061t9c.jpg)
-
 
 
 ### 6. Source分支下新建.travis.yml文件
@@ -120,8 +110,6 @@ git push origin source //推送到远程仓库
 ```
 
 ### 8. 使用HexoClient愉快写Blog了
-
-![image.png](https://ws3.sinaimg.cn/large/006tKfTcgy1g14qmvlh1oj31cx0u011z.jpg)
 
 ......
 <!-- more --> 

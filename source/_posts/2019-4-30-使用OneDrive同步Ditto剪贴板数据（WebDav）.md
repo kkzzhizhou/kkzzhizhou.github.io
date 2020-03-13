@@ -20,8 +20,8 @@ OneDrive使用WebDav的方法：
 
 连接后如下图所示，打开即为你网盘的文件
 
-![](https://ws1.sinaimg.cn/large/d22ff2eegy1g2kpigh93sj20ed051mx7.jpg)
+![](/pic/d22ff2eegy1g2kpigh93sj20ed051mx7.jpg)
 
 Ditto设置如下图所示，数据库使用WebDav路径即可完美解决数据同步问题
 
-![](https://ws1.sinaimg.cn/large/d22ff2eegy1g2kpnvgzmpj20ic02t3yf.jpg)
+![](/pic/d22ff2eegy1g2kpnvgzmpj20ic02t3yf.jpg)

@@ -22,7 +22,7 @@ updated: 2018-09-02 00:20:30
 2. 触发方式设置为Hot Key Trigger，条件为打开Launchpad的快捷键
 3. 程序如下图所示
 
-![程序截图](https://ws1.sinaimg.cn/large/d22ff2eegy1fuujeecmvyj20ey0c3gn5.jpg)
+![程序截图](/pic/d22ff2eegy1fuujeecmvyj20ey0c3gn5.jpg)
 
 本文到此结束。
 

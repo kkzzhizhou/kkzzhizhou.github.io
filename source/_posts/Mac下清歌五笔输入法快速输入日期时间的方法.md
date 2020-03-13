@@ -19,7 +19,7 @@ updated: 2018-09-02 01:11:54
 
 清歌输入法提供用户词库功能，如下图所示。
 
-![Mac下清歌五笔输入法快速输入日期时间的方法](https://ws1.sinaimg.cn/large/d22ff2eegy1fuujrh1dgaj20d90jf769.jpg)
+![Mac下清歌五笔输入法快速输入日期时间的方法](/pic/d22ff2eegy1fuujrh1dgaj20d90jf769.jpg)
 
 本文到此结束。
 

@@ -62,5 +62,3 @@ git pull
 ## SourceTree发布文章
 
 - 暂存所有，填写Commit之后提交即可
-
-![](https://ws1.sinaimg.cn/large/d22ff2eegy1g1z5r6rvojj20xe0m8dgw.jpg)
