@@ -1,5 +1,5 @@
 ---
-title：AutoHotkey在热键体验不好的地方总结
+title: AutoHotkey在热键体验不好的地方总结
 date: 2019-4-14 14:2:39
 updated: 2019-4-14 14:2:43
 author: zzz

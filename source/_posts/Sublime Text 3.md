@@ -1,5 +1,5 @@
 ---
-title：Windows代码编辑器选择(VSCode,Notepad++,Sublime Text 3)
+title: Windows代码编辑器选择(VSCode,Notepad++,Sublime Text 3)
 date: 2019-4-14 15:12:0
 updated: 2019-4-14 15:12:3
 author: zzz
