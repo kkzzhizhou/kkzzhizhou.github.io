@@ -356,9 +356,9 @@ wechat_subscriber:
 reward:
   enable: true
   comment: 如果你觉得文章对你有帮助，您的支持将鼓励我继续创作！
-  wechatpay: /images/wechatpay.png
-  alipay: /images/Alipay.jpg
-  #bitcoin: /images/bitcoin.jpg
+  wechatpay: /pic/wechatpay.png
+  alipay: /pic/Alipay.jpg
+  #bitcoin: /pic/bitcoin.jpg
 
 # Related popular posts
 # Dependencies: https://github.com/tea3/hexo-related-popular-posts
