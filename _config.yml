@@ -4,8 +4,8 @@
 
 # Site
 title: zzz部落格
-subtitle: 分享我的知识和见解
-description: 清醒时处世，迷茫时读书
+subtitle: 知识服务于生活
+description: 将所见所闻整理并分享
 keywords:
 author: zzz
 language: zh-CN
@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.andyz.me
+url: http://blog.ziiyc.com
 root: /
 # permalink: :year/:month/:day/:title/
 # permalink_defaults:

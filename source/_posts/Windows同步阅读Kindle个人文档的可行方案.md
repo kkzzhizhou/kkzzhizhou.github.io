@@ -1,5 +1,5 @@
 ---
-title: Windows同步阅读Kindle个人文档的可行方案
+title: Windows同步阅读Kindle个人文档方案
 tags:
   - Kinlde个人文档
   - Windows
