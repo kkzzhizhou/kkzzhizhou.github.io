@@ -461,6 +461,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">8 分钟</span>
+              
+            </div>
+          
 
           
 
@@ -507,7 +535,7 @@
 <figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">;修改原来的RControl为LAlt</span></span><br><span class="line">intInterval := <span class="number">500</span> <span class="comment">; 若两次连击在这个时间间隔中，则视为双击。</span></span><br><span class="line"><span class="title">~LAlt::</span></span><br><span class="line">if (<span class="built_in">A_PriorHotkey</span> &lt;&gt; <span class="string">"~LAlt"</span> <span class="literal">or</span> <span class="built_in">A_TimeSincePriorHotkey</span> &gt; intInterval)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">    KeyWait,</span> LAlt</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">MsgBox,</span> 您双击了左边的 LAlt 键。</span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></figure>
 
 <p>功能是希望双击左边的Alt执行打开，但问题是在编辑器长按Alt多选会出现鬼畜现象，影响Alt多行编辑的使用。</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">;修改原来的<span class="meta">#c为LAlt</span></span><br><span class="line">LAlt::</span><br><span class="line"><span class="keyword">if</span> (intCount &gt; <span class="number">0</span>) ; SetTimer 已经启动，这里记录键击。</span><br><span class="line">&#123;</span><br><span class="line">    intCount += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">intCount = <span class="number">1</span></span><br><span class="line">SetTimer, KeyWinC, <span class="number">400</span> ; 在 <span class="number">400</span> 毫秒内等待更多的键击。</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">KeyWinC:</span><br><span class="line">SetTimer, KeyWinC, off</span><br><span class="line"><span class="keyword">if</span> (intCount = <span class="number">1</span>) ; 此键按下了一次。</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">Run</span>, m:\</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (intCount = <span class="number">2</span>) ; 此键按下了两次。</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">Run</span>, m:\multimedia</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (intCount &gt; <span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">    MsgBox, 连击了三次或更多。</span><br><span class="line">&#125;</span><br><span class="line">intCount = <span class="number">0</span></span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">;修改原来的#c为LAlt</span><br><span class="line">LAlt::</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">int</span>Count &gt; <span class="number">0</span>) ; SetTimer 已经启动，这里记录键击。</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span>Count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span>Count = <span class="number">1</span></span><br><span class="line">SetTimer, KeyWinC, <span class="number">400</span> ; 在 <span class="number">400</span> 毫秒内等待更多的键击。</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">KeyWinC:</span><br><span class="line">SetTimer, KeyWinC, off</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">int</span>Count = <span class="number">1</span>) ; 此键按下了一次。</span><br><span class="line">&#123;</span><br><span class="line">    Run, m:\</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">int</span>Count = <span class="number">2</span>) ; 此键按下了两次。</span><br><span class="line">&#123;</span><br><span class="line">    Run, m:\multimedia</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">int</span>Count &gt; <span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">    MsgBox, 连击了三次或更多。</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">int</span>Count = <span class="number">0</span></span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></figure>
 
 <p>运行后会使用原来的Alt功能失效，比如Alt+Tab无法使用。</p>
 
@@ -916,7 +944,21 @@
   <span class="author" itemprop="copyrightHolder">zzz</span>
 
   
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">76k</span>
+  
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">1:09</span>
   
 </div>
 
