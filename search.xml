@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Scoop-Windows包管理器教程</title>
+    <url>/post/scoop-tutorial.html</url>
+    <content><![CDATA[<h2 id="安装Scoop"><a href="#安装Scoop" class="headerlink" title="安装Scoop"></a>安装Scoop</h2><p><a href="https://scoop.sh/" target="_blank" rel="noopener">Scoop官网</a></p>
+<p><a href="https://github.com/lukesampson/scoop" target="_blank" rel="noopener">Scoop-Github</a></p>
+<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># 打开Powershell(非管理员)</span></span><br><span class="line">Set-ExecutionPolicy RemoteSigned -scope CurrentUser</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta"># 自定义Scoop安装目录</span></span><br><span class="line">$env:SCOOP=<span class="string">'D:\Scoop'</span></span><br><span class="line">[Environment]::SetEnvironmentVariable(<span class="string">'SCOOP'</span>, $env:SCOOP, <span class="string">'User'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 安装Scoop命令</span></span><br><span class="line">Invoke-Expression (New-<span class="built_in">Object</span> System.Net.WebClient).DownloadString(<span class="string">'https://get.scoop.sh'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 或者</span></span><br><span class="line">iwr -useb <span class="keyword">get</span>.scoop.sh | iex</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用Scoop安装卸载软件"><a href="#使用Scoop安装卸载软件" class="headerlink" title="使用Scoop安装卸载软件"></a>使用Scoop安装卸载软件</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">scoop <span class="keyword">install</span> <span class="number">7</span>zip git-<span class="keyword">with</span>-openssh</span><br><span class="line">scoop <span class="keyword">uninstall</span> <span class="number">7</span>zip git-<span class="keyword">with</span>-openssh</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用Scoop添加移除仓库"><a href="#使用Scoop添加移除仓库" class="headerlink" title="使用Scoop添加移除仓库"></a>使用Scoop添加移除仓库</h2><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"># 查看仓库列表</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span>list</span><br><span class="line"># 查看推荐仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span>known</span><br><span class="line"># 添加推荐仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>extras</span><br><span class="line"># 添加第三方仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>[<span class="keyword">bucket-name] </span>[git-repo]</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>zapps https://github.com/kkzzhizhou/scoop-zapps</span><br><span class="line"># 移除仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span>rm [<span class="keyword">bucket-name]</span></span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">bucket </span>rm extras</span><br></pre></td></tr></table></figure>
+
+<h2 id="自建软件仓库"><a href="#自建软件仓库" class="headerlink" title="自建软件仓库"></a>自建软件仓库</h2><p><a href="https://github.com/lukesampson/scoop/wiki" target="_blank" rel="noopener">官方教程</a></p>
+<h2 id="合并多个软件仓库"><a href="#合并多个软件仓库" class="headerlink" title="合并多个软件仓库"></a>合并多个软件仓库</h2><p><a href="../attachments/28090.sh">mergebucket.sh</a></p>
+<h2 id="软件仓库自动更新"><a href="#软件仓库自动更新" class="headerlink" title="软件仓库自动更新"></a>软件仓库自动更新</h2><p><a href="https://github.com/ScoopInstaller/Excavator" target="_blank" rel="noopener">Excavator</a></p>
+<h3 id="使用Docker自动更新"><a href="#使用Docker自动更新" class="headerlink" title="使用Docker自动更新"></a>使用Docker自动更新</h3><ul>
+<li><p>修改项目bin\auto-pr.ps1中是项目名称</p>
+</li>
+<li><p>新建docker-compose.yml文件，内容如下：</p>
+  <figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">version:</span> <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">services:</span></span><br><span class="line"><span class="symbol">  bucket:</span></span><br><span class="line"><span class="symbol">    image:</span> r15ch13/excavator:latest</span><br><span class="line"><span class="symbol">    deploy:</span></span><br><span class="line"><span class="symbol">      mode:</span> global <span class="meta"># creates only one container</span></span><br><span class="line"><span class="symbol">    volumes:</span></span><br><span class="line">      - <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/scoop/</span>.ssh:<span class="meta-keyword">/root/</span>.ssh</span><br><span class="line">      - <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/scoop/</span>log:<span class="meta-keyword">/root/</span>log</span><br><span class="line"><span class="symbol">    environment:</span></span><br><span class="line"><span class="symbol">      GIT_USERNAME:</span> <span class="string">"xxx"</span></span><br><span class="line"><span class="symbol">      GIT_EMAIL:</span> <span class="string">"xxx@gmail.com"</span></span><br><span class="line"><span class="symbol">      BUCKET:</span> <span class="string">"xxx/xxx"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改environment中的变量</p>
+</li>
+<li><p>修改volumes中.ssh映射目录，将私钥放入.ssh目录中</p>
+</li>
+<li><p>启动Docker</p>
+  <figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">screen </span>-S <span class="keyword">scoop</span></span><br><span class="line"><span class="keyword">docker-compose </span>up</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>包管理器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>syncthing实现移动硬盘便携同步至NAS</title>
     <url>/post/Synchronize-Portable-External-Hard-Drive-With-NAS.html</url>
     <content><![CDATA[<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p><img src="/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png" alt="实现效果"></p>
@@ -1237,7 +1271,7 @@
   </entry>
   <entry>
     <title>RSS订阅和阅读简明教程</title>
-    <url>/post/9c4ec956.html</url>
+    <url>/post/rss-tutorial.html</url>
     <content><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
 <li>2018-9-3：<ul>
 <li>更新图片为国内图床</li>
