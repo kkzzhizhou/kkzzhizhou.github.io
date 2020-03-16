@@ -4,7 +4,7 @@ tags:
   - Kinlde个人文档
   - Windows
   - AHK应用
-abbrlink: d9a27f8c
+abbrlink: windows-read-kindle-documents
 date: 2018-08-31 14:49:35
 updated: 2018-08-31 14:49:41
 ---

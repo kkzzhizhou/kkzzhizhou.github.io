@@ -1,14 +1,22 @@
 ---
 title: 使用OneDrive实时同步Ditto剪贴板数据（WebDav）
 date: 2019-4-30 15:41:29
-updated: 2019-4-30 15:41:32
-tags: 跨设备工作
-abbrlink: ce9f0e67
+updated: 2020-3-16 14:45:32
+tags: webdav应用
+abbrlink: onedrive-sync-ditto
 ---
+
+## 问题
 
 最近将常用的绿色软件放到Onedrive中同步，方便在自己的多个Windows设备使用。遇到一个比较棘手的问题，使用Ditto时会锁定数据库文件，此时OneDrive显示文件在使用中，无法同步。
 
-解决方法：使用WebDav连接OneDrive
+<!-- more --> 
+
+## 解决方法
+
+使用WebDav连接OneDrive
+
+## 步骤
 
 OneDrive使用WebDav的方法：
 
@@ -21,8 +29,8 @@ OneDrive使用WebDav的方法：
 
 连接后如下图所示，打开即为你网盘的文件
 
-![](/pic/d22ff2eegy1g2kpigh93sj20ed051mx7.jpg)
+![](/pic/onedrive-sync-ditto-1.jpg)
 
 Ditto设置如下图所示，数据库使用WebDav路径即可完美解决数据同步问题
 
-![](/pic/d22ff2eegy1g2kpnvgzmpj20ic02t3yf.jpg)
+![](/pic/onedrive-sync-ditto-2.jpg)

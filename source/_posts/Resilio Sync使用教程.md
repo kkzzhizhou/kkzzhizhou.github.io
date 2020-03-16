@@ -1,39 +1,36 @@
 ---
-title: Resilio Sync 资源密钥,无限试用，站点分享
+title: Resilio Sync使用教程
 date: 2017-4-13
 updated: 2017-4-13
 tags: Resilio Sync
-abbrlink: 8360b7e3
+abbrlink: resilio-sync-tutorial
 ---
 
-原文链接： http://www.zzz1224.com/?p=221 转载请注明出处。
+## 问题
 
-**2017-7-20号更新：**
-BT sync在因为某些已知原因导致**无法获取追踪器列表**，**没有可用的跟踪程序连接**，**无法链接设备**等问题。
-解决方法如下：
-手机和电脑端同时安装**Resilio Sync 2.4.5**版本即可，同时如果还出现上述问题，可在Windows上添加一行hosts：
-<!-- more --> 
-``` css
-37.187.125.45 config.getsync.com config.resilio.com
-```
+无法获取追踪器列表，没有可用的跟踪程序连接，无法链接设备
 
+<!-- more -->
 
-**关于Sync的用途，查看编程随想博主文章[【扫盲 BT Sync——不仅是同步利器，而且是【分布式】网盘】][1]**
+## 解决方法
+
+科学上网-大陆白名单
+
 ## Resilio Sync 使用教程
 
 1. 下载安装包：https://download-cdn.resilio.com/stable/windows64/Resilio-Sync_x64.exe
 2. 如下图所示，按下一步
 
-![安装][2]
+![安装](/pic/resilio-sync-tutorial-1.png)
 3. 安装成功后，如下图所示
 
-![安装成功][3]
+![安装成功](/pic/resilio-sync-tutorial-2.png)
 
 4. 添加密钥
 
-![添加密钥][4]
+![添加密钥](/pic/resilio-sync-tutorial-3.png)
 
-![选择性同步][5]
+![选择性同步](/pic/resilio-sync-tutorial-4.png)
 **PS:选择性同步仅同步你想要同步的文件，关闭的情况下同步所有的文件**
 5. 选择保存路径，文件就可以自己同步。
 
@@ -94,10 +91,3 @@ BZ7VZSMPAORFQ2FP5PSJK4P2PAND6WD66    网友荐书
  - 知乎问答：https://www.zhihu.com/question/21517918
  - BT资源导航：http://wherebt.com/ btsync：http://btsync.space/
  - BTSync中文发布站：https://btsync.org/
-
-
-[1]: https://program-think.blogspot.com/2015/01/BitTorrent-Sync.html
-[2]: https://lh3.googleusercontent.com/-EEWS9NlpDO4/Wje2OQafxvI/AAAAAAAAc_A/W6SoCTGzRDQgX5PVh7-PB6G824HNaXaQgCHMYCw/s0/2017-12-18_20-36-12.png
-[3]: https://lh3.googleusercontent.com/-8M0cW1mqEzA/Wje2OfXVgoI/AAAAAAAAc-4/M4AvVvtBpJ4vYKaFuqBOfEwmCevtRTUgwCHMYCw/s0/2017-12-18_20-36-12.png
-[4]: https://lh3.googleusercontent.com/-8FXU7_rVqtw/Wje2OSMgGYI/AAAAAAAAc_E/GnEWZp6v--coMjrBiysEJGnX02w-tRq4gCHMYCw/s0/2017-12-18_20-36-12.png
-[5]: https://lh3.googleusercontent.com/-0xaesNdr4No/Wje2OSNB6II/AAAAAAAAc-8/koib3b_CYd8mDF3JwpoDx68qN3JI0xregCHMYCw/s0/2017-12-18_20-36-12.png

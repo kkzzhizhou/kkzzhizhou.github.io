@@ -3,7 +3,7 @@ title: Hexo使用Travis CI持续集成
 tags:
   - Travis CI
   - Hexo
-abbrlink: ef84c7f5
+abbrlink: hexo-with-travis-ci
 date: 2019-03-16 16:23:44
 updated: 2019-03-16 16:23:44
 ---
@@ -16,6 +16,8 @@ updated: 2019-03-16 16:23:44
 ## 使用CI之后
 
 - 使用HexoClient直接编辑一键发布
+
+<!-- more --> 
 
 ## CI 为何物
 
@@ -111,8 +113,6 @@ git push origin source //推送到远程仓库
 
 ### 8. 使用HexoClient愉快写Blog了
 
-......
-<!-- more --> 
 
 ## 参考文章:
 

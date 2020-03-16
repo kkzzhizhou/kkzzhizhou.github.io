@@ -5,7 +5,7 @@ updated: 2019-4-14 14:2:43
 author: zzz
 tags: AHK,Hotkey
 categories: 效率提升
-abbrlink: 805d4157
+abbrlink: fuck-ahk
 ---
 
 ## 最开始的想法
@@ -19,6 +19,8 @@ abbrlink: 805d4157
 - 使用RShift + 字母打开常用应用
 - 使用Wgesture，定义按下鼠标右键+单击鼠标左键打开指定应用（已实现）
 - 使用Capslock + F发送Alt+Space，实现唤醒Wox（已实现）
+
+<!-- more --> 
 
 ## 意外收获
 

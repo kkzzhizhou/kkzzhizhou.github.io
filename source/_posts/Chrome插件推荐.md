@@ -3,7 +3,7 @@ title: Chrome插件推荐
 tags:
   - 效率生活
   - 浏览器插件
-abbrlink: bb8f2e1e
+abbrlink: chrome-plugin
 date: 2018-09-02 23:29:47
 updated: 2018-09-02 23:29:47
 ---
@@ -12,6 +12,8 @@ updated: 2018-09-02 23:29:47
 2018-9-3：添加网页截图工具：Fireshot
 
 2018-9-2：介绍我当前使用的Chrome插件
+
+<!-- more --> 
 
 ## 插件列表
 

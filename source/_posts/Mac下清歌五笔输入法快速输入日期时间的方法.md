@@ -2,7 +2,7 @@
 title: Mac下清歌五笔输入法快速输入日期时间的方法
 tags:
   - 输入法技巧
-abbrlink: 88303a7b
+abbrlink: mac-quick-input-time
 date: 2018-09-02 00:18:54
 updated: 2018-09-02 01:11:54
 ---
@@ -19,8 +19,6 @@ updated: 2018-09-02 01:11:54
 
 清歌输入法提供用户词库功能，如下图所示。
 
-![Mac下清歌五笔输入法快速输入日期时间的方法](/pic/d22ff2eegy1fuujrh1dgaj20d90jf769.jpg)
-
-本文到此结束。
+![Mac下清歌五笔输入法快速输入日期时间的方法](/pic/mac-quick-input-time-1.jpg)
 
 <!-- more --> 

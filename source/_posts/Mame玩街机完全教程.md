@@ -1,16 +1,12 @@
 ---
 title: Mame玩街机完全教程
 date: 2017-4-5
-updated: 2017-4-5
+updated: 2020-3-16 15:42:39
 tags:
   - mame
   - 街机
-abbrlink: 8b4333c2
+abbrlink: mame-tutorial
 ---
-
-## 更新日志 ##
-
-- 2017-4-5：更新联机对战使用方法
 
 ## 街机模拟器的选择
 网上有很多类型的街机模拟器,如比较知名的mame及其分支（mameplus,mame plus! plus!,mame32 more等），winkawaks，fba shuffle ,nebula(星云模拟器)等等。

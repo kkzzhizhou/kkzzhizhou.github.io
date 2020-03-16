@@ -2,7 +2,7 @@
 title: Windows代码编辑器选择-VSCode
 date: 2019-4-14 15:12:00
 updated: 2020-3-13 16:37:45
-abbrlink: 987409d2
+abbrlink: vscode
 author: zzz
 categories:
 - [效率工具, 代码编辑器]

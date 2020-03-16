@@ -1,12 +1,23 @@
 ---
 title: 黑苹果HD5500核显输出HDMI音频
 date: 2018-3-30
-updated: 2018-4-1
+updated: 2020-3-16 15:7:56
 tags:
   - Hackintosh
   - HDMI Audio
-abbrlink: 9053bcbc
+abbrlink: hd5500-hdmi-audio
 ---
+
+## 效果图
+
+![pic1](/pic/hd5500-hdmi-audio-1.jpg)
+
+<!-- more --> 
+
+![pic2](/pic/hd5500-hdmi-audio-2.jpg)
+
+
+
 ## 驱动原理
 1. 注入的ID可以是16160002或者是16260006
 2. 在DSDT中，B0D3需要更名为HDAU,GFX0需要更名为IGPU.
@@ -131,7 +142,7 @@ DefinitionBlock ("", "SSDT", 1, "toleda", "am89hd55", 0x00003000)
 }
 ```
 **代码中注入的ID为16260006**
-<!-- more --> 
+
 ## 使用Rehabman的[config_HD5300_5500_6000.plist](https://github.com/RehabMan/OS-X-Clover-Laptop-Config)打补丁
 因为注入的ID为16260006，所以用Clover Configurator在Clover中的KextsToPatch应用以下补丁
 
@@ -148,9 +159,3 @@ Find:           02040B00 00040000 07050000
 Replace:        02040B00 00080000 82000000
 InfoPlistPatch: true
 ```
-
-## 正常驱动（如图）
-![15224087280522](https://lh3.googleusercontent.com/-lajkHLs_tvA/Wr4dqs_kDBI/AAAAAAAAdl0/fEY4DI9G10E0TiJJNOL9101-BVrFLQI-ACHMYCw/I/15224087280522.jpg)
-
-![](https://lh3.googleusercontent.com/-T_q26yoPJE8/Wr4d7DIVXHI/AAAAAAAAdl8/kuDKU1jLxWYtbfVnt6q17okKa9OZB1tHwCHMYCw/I/15224089397771.jpg)
-

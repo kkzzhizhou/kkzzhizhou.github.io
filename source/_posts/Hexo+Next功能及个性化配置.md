@@ -4,11 +4,13 @@ tags:
   - Hexo
   - Next
 categories: []
-abbrlink: e473457b
+abbrlink: hexo-next-config
 date: 2019-03-16 17:14:42
-updated: 2018-03-31 10:19:47
+updated: 2020-3-16 15:12:22
 ---
 ##  [Travis CI持续集成](https://kkzzhizhou.github.io/2019/03/16/Hexo%E4%BD%BF%E7%94%A8Travis%20CI%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
+
+<!-- more --> 
 
 ## RSS Feed
 
@@ -123,7 +125,3 @@ updated: 2018-03-31 10:19:47
 ## 社交图标
 
 Next主题使用的Fontawesome版本需要升级才能支持QQ和微信等社交图标。
-
-
-
-## <!-- more --> 

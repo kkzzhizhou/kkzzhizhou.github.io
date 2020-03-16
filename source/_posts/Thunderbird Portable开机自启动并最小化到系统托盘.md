@@ -3,20 +3,18 @@ title: Thunderbird Portable开机自启动并最小化到系统托盘
 tags:
   - Thunderbird Minimize
   - AHK应用
-abbrlink: ddc7f777
+abbrlink: thunderbird-minimized-auto-start
 date: 2018-08-31 15:28:36
 updated: 2018-08-31 15:28:36
 ---
-
-## 更新历史
-
-- 2018-8-31：第一个版本
 
 ## 问题描述
 
 1. 便携应用设置为开机启动时会自动打开主界面
 2. Thunderbird 60.0官方并不支持最小化到系统托盘
 3. Thunderbird 第三方最小化到系统托盘的插件如FireTray，最多支持到54.X，在最新版的Thunderbird中并不可用。
+
+<!-- more --> 
 
 ## 可行解决方案：AHK，全称AutoHotkey
 
@@ -89,4 +87,3 @@ Process,close,Thunderbird.exe
 ExitApp
 ```
 
-<!-- more --> 

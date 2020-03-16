@@ -3,7 +3,7 @@ title: Tampermonkey脚本推荐
 tags:
   - 效率生活
   - js脚本
-abbrlink: aeaeede9
+abbrlink: tampermonkey-scripts
 date: 2018-09-02 23:37:55
 updated: 2018-09-02 23:37:55
 ---

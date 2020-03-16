@@ -1,13 +1,14 @@
 ---
-title: GCP安装配置Hexo全过程
+title: gcp安装配置Hexo
 date: 2018-1-20
 updated: 2018-2-20
 tags:
   - VPS
   - Google Cloud Platform
   - 服务器
-abbrlink: 2f07c9ad
+abbrlink: gcp-hexo
 ---
+
 ## 原因
 1. 从2016年建立个人博客开始使用Wordpress，了解Wordpress强大的同时，也认识到Wordpress的繁琐，最烦恼的是数据库文章的问题，比如说Wordpress文章ID不连续，在使用Google Cloud Platform后数据库时不时无法连接。
 2. 相比于Wordpress,Hexo属于静态博客，所有源数据都放在本地，生成网站数据后发布到网上，虽然过程相对繁琐，但访问速度快，使用Github Pages后相当于无限流量。
@@ -19,18 +20,16 @@ abbrlink: 2f07c9ad
 
 ### 2. 创建实例
 
-![创建实例-1](https://lh3.googleusercontent.com/-a2kyWhScN3A/WnVEhy1joAI/AAAAAAAAdVQ/p_PpNPaTgHQ0rQ7AJGvwuVuus_Ypvq7uACHMYCw/s0/chrome_2018-02-03_13-10-52.png)
-![创建实例-2](https://lh3.googleusercontent.com/-qpZOKb-hbgs/WnVRI0Y5QYI/AAAAAAAAdWE/vkbLgkEe6ZAX1ELUObE1ZK1j_2jUMpJGACHMYCw/s0/chrome_2018-02-03_14-05-07.png)
+![创建实例-1](/pic/gcp-hexo-1.png)
+![创建实例-2](/pic/gcp-hexo-2.png)
 
 拉到最下面确认创建新实例，创建后自动启动实例：
 
-![实例创建成功](https://lh3.googleusercontent.com/--9_R0T4NiW0/WnVGbZ-7V9I/AAAAAAAAdVk/WMCOGu37ftUY2llV0qVTXrIyStBo1tl0wCHMYCw/s0/chrome_2018-02-03_13-19-25.png)
+![实例创建成功](/pic/gcp-hexo-3.png)
 
 启用实例的SSH：
 
-![登录VPS](https://lh3.googleusercontent.com/-EXobSRnOyRE/WnVHPZrSpSI/AAAAAAAAdVw/CNCATdG_ATYOjgN5ATL6mY_vEKkOYtKQACHMYCw/s0/chrome_2018-02-03_13-22-57.png)
-
-![登录成功](https://lh3.googleusercontent.com/-rJH8zuJdLh8/WnVHhYqej3I/AAAAAAAAdV0/8sKFGDl2A5Ej4s8tgwprl2plTgwND0xtQCHMYCw/s0/chrome_2018-02-03_13-24-02.png)
+![登录VPS](/pic/gcp-hexo-4.png)
 
 1. 使用sudo passwd设置Root密码
 ```
@@ -93,6 +92,3 @@ vi _config.yml
 hexo s
 # 启动后在浏览器的地址栏填入：ip:4000即可启动
 ```
-## 在Windows下写作
-### 使用MarkdownPad 2 Pro
-![](https://lh3.googleusercontent.com/-nenDps21_yE/Wovf1wKs8MI/AAAAAAAAdes/3OUK8YqxctYUAVwWKSqPAo303P7jVh9jgCHMYCw/s0/2018-02-20_16-44-04.png)

@@ -4,7 +4,7 @@ tags:
   - usbip
 categories:
   - openwrt
-abbrlink: bd0d1da
+abbrlink: usbip
 date: 2017-08-26 00:00:00
 updated: 2017-08-26 00:00:00
 ---

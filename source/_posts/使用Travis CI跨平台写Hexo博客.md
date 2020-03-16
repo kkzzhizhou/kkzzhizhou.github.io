@@ -1,15 +1,17 @@
 ---
-title: 使用Travis CI，同步跨平台写博客方案
+title: 使用Travis CI跨平台写Hexo博客
 author: zzz
 date: 2019-4-9 21:37:28
-update: 2019-4-9 21:37:34
+update: 2020-3-16 14:47:33
 tags: git应用,博客
-abbrlink: 91c3f927
+abbrlink: travis-ci-to-hexo
 ---
 
 ## Travis CI说明
 
 新建Source分支用于存储源文件，Master分支用于存储生成的网站文件
+
+<!-- more --> 
 
 ## 全新的电脑写博客
 

@@ -3,7 +3,7 @@ title: UEFI下实现Ubuntu To Go
 tags:
   - Ubuntu U盘
   - Ubuntu 便携
-abbrlink: be2f0191
+abbrlink: ubuntu-to-go-uefi
 date: 2018-09-02 10:00:53
 updated: 2018-09-02 10:00:53
 ---
@@ -30,24 +30,24 @@ updated: 2018-09-02 10:00:53
 
 1. 新建一个虚拟机，将默认添加的硬盘删除，具体配置如下图所示。（安装过程选择不自动更新可以加速系统安装）
 
-![](/pic/d22ff2eely1fuuzgl0gcjj208b08mt8u.jpg)
+![](/pic/ubuntu-to-go-uefi-1.jpg)
 
 ......
 <!-- more --> 
 
 2. 加载U盘到虚拟机中：虚拟机设置-添加-硬盘-SCSI-使用物理磁盘-选择U盘（一般是最后一个），添加后如下图所示。
 
-   ![](/pic/d22ff2eely1fuuzj70d5zj20kb0jq3ys.jpg)
+![](/pic/ubuntu-to-go-uefi-2.jpg)
 
 
 
 3. 设置虚拟机为UEFI启动，如下图所示
 
-![。 ](/pic/d22ff2eely1fuuzkk1bnzj20kb0jqq3r.jpg)
+![](/pic/ubuntu-to-go-uefi-3.jpg)
 
 4. 之后启动虚拟机，正常安装Ubuntu，因为VMware软件设计导致Ubuntu显示分辨率低，可以先启动到Ubuntu Live后调整分辨率再启动安装程序，如下图所示。
 
-![](/pic/d22ff2eely1fuuzs41hklj20sm0nu3yz.jpg)
+![](/pic/ubuntu-to-go-uefi-4.jpg)
 
 5. 之后就到了最关键的步骤了：安装完成之后请不要启动Ubuntu启动，先进入Ubuntu Live中。
 

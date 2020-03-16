@@ -1,20 +1,11 @@
 ---
 title: 折腾Ubuntu 16.04，从美化到常用软件安装
 tags:
-  - Linux
   - 桌面系统
-abbrlink: 2bf895cd
+abbrlink: ubuntu-desktop
 date: 2018-09-06 23:19:01
-updated: 2018-09-07 18:44:01
+updated: 2020-3-16 14:56:49
 ---
-## 更新历史
-
-2018-9-7：
-
- - 完善文章细节：常用软件安装方法
- - 增加Ubuntu自定义设置
-
-2018-9-6：分享Ubuntu 16.04的美化以及安装常用软件
 
 ## 前言
 
@@ -24,9 +15,8 @@ updated: 2018-09-07 18:44:01
 
 这篇文章针对我个人的使用情况，解决从美化到软件安装的各种需求。
 
-![](/pic/d22ff2eegy1fv0938f05lj20jg0ew42o.jpg)
+![](/pic/ubuntu-desktop.jpg)
 
-......
 <!-- more --> 
 
 ## 系统美化

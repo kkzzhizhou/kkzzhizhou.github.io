@@ -5,7 +5,7 @@ updated: 2018-4-5
 tags:
   - 云免流
   - SSR
-abbrlink: 6d2c2152
+abbrlink: ssr-mianliu
 ---
 
 ## 更新日志 ##
@@ -19,6 +19,8 @@ abbrlink: 6d2c2152
 ## 免流原理
 运营商为了给客户提供方便，提供了一些优惠政策，如：接收彩信、登陆掌厅免除流量费以及免收取流量费的其他业务。 
 运营商的计费系统为了区分用户使用的是免流量业务还是正常访问互联网会把这些免流服务的网址加入到白名单，这些白名单中的网址就是我们平常所说的免流IP了，当计费系统检测到用户访问的是白名单中的网址或接收彩信时就不会进行扣费。 
+
+<!-- more --> 
 
 ## 注意事项 ##
 
@@ -52,7 +54,7 @@ UDP代理规则：全局代理
 ## 共享SSR网络（需Root）
 在使用官方的SSR免流时，启用手机热点，其他设备是无法正常上网的。
 需要使用**ssrscriptn**这款软件来进行SSR连接。
-![ssr+](https://lh3.googleusercontent.com/-MleBy9zkIhw/WowHTKvTcGI/AAAAAAAAdfA/wWVGarjsxnkCo0YtRi-7Rl_KpsOPX8dAQCHMYCw/s0/2018-02-20_19-32-25.png)
+![ssr+](/pic/ssr-mianliu-1.png)
 
 
 
