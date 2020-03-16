@@ -35,6 +35,43 @@
       </tags>
   </entry>
   <entry>
+    <title>Home Assistant+小度智能音箱实现远程控制家电</title>
+    <url>/post/home-assistent-with-xiaodu-smart-speaker.html</url>
+    <content><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在联通营业厅更换宽带套餐时加钱买了个小度智能音箱，从一开始只是查查天气、放放歌，我现在它做得更多一些，比如说本篇教程提到的控制家里的电器。</p>
+<a id="more"></a> 
+
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>群晖DSM使用Docker下载安装homeassistant/home-assistant</li>
+<li>购买小米米家智能插座插头WiFi版</li>
+</ul>
+<h2 id="Home-Assistant配置步骤"><a href="#Home-Assistant配置步骤" class="headerlink" title="Home Assistant配置步骤"></a>Home Assistant配置步骤</h2><p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-1.png" alt="Docker使用1"></p>
+<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-2.png" alt="Docker使用2"></p>
+<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-3.png" alt="Docker使用3"></p>
+<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-4.png" alt="Docker使用4"></p>
+<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-5.png" alt="Docker使用5"></p>
+<p>应用后启动即可,配置界面连接为<a href="http://nas_ip:8123" target="_blank" rel="noopener">http://nas_ip:8123</a></p>
+<h2 id="扩展：公网Https方式访问Haome-Aassistant"><a href="#扩展：公网Https方式访问Haome-Aassistant" class="headerlink" title="扩展：公网Https方式访问Haome Aassistant"></a>扩展：公网Https方式访问Haome Aassistant</h2><p>如果需要在公网中使用Home Assistant,可以使用内网穿透工具frp。Home Assistant默认监听本地8123端口,使用Websocket连接。</p>
+<h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">    <span class="attribute">server_name</span> hass.domain.com; <span class="comment"># 修改domain为你自定义的域名</span></span><br><span class="line">    <span class="attribute">ssl_certificate</span>       /etc/nginx/ssl/domain.com.key.pem; <span class="comment"># 修改domain为你自定义的域名</span></span><br><span class="line">    <span class="attribute">ssl_certificate_key</span>   /etc/nginx/ssl/domain.com.key; <span class="comment"># 修改domain为你自定义的域名</span></span><br><span class="line">    <span class="attribute">ssl_session_timeout</span> <span class="number">5m</span>;</span><br><span class="line">    <span class="attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host  <span class="variable">$http_host</span>;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:[frp_port]; <span class="comment"># 此处修改为你的frps端口</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">location</span> /api/websocket &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:8123;</span><br><span class="line">        <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Connection <span class="string">"upgrade"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="frpc配置"><a href="#frpc配置" class="headerlink" title="frpc配置"></a>frpc配置</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">[hass-ws]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 8123</span><br><span class="line">remote_port = 8123</span><br><span class="line"></span><br><span class="line">[hass]</span><br><span class="line">type = http</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 8123</span><br><span class="line">custom_domains = hass.domain.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://post.smzdm.com/p/amm0g5qd/" target="_blank" rel="noopener">哑虎的智能家居路 篇四：小度音箱接入HomeAssistant</a></li>
+</ul>
+<h2 id="智能家居论坛"><a href="#智能家居论坛" class="headerlink" title="智能家居论坛"></a>智能家居论坛</h2><ul>
+<li><a href="https://bbs.hassbian.com/forum.php" target="_blank" rel="noopener">https://bbs.hassbian.com/forum.php</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>智能家居</category>
+      </categories>
+      <tags>
+        <tag>米家WIFI智能插座</tag>
+        <tag>智能家居开源系统</tag>
+        <tag>群晖DSM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>syncthing实现移动硬盘便携同步至NAS</title>
     <url>/post/Synchronize-Portable-External-Hard-Drive-With-NAS.html</url>
     <content><![CDATA[<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p><img src="/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png" alt="实现效果"></p>
