@@ -20,17 +20,17 @@
     var CONFIG = {"hostname":"blog.ziiyc.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="CMD123456;; 设置代理(其中sock5可以设置为http，https)set http_proxy=&quot;sock5://127.0.0.1:1080&quot;set https_proxy=&quot;sock5://127.0.0.1:1080&quot;;; 清除代理设置set http_proxy=set https_proxy=  Powershell12345678910111213141516171819">
+  <meta name="description" content="CMD123456;; 设置代理(其中sock5可以设置为http，https)set http_proxy=&quot;sock5://127.0.0.1:1080&quot;set https_proxy=&quot;sock5://127.0.0.1:1080&quot;;; 清除代理设置set http_proxy=set https_proxy=">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CMD、Powershell、Bash终端配置走代理">
 <meta property="og:url" content="http://blog.ziiyc.com/post/37a5cb72.html">
 <meta property="og:site_name" content="zzz部落格">
-<meta property="og:description" content="CMD123456;; 设置代理(其中sock5可以设置为http，https)set http_proxy=&quot;sock5://127.0.0.1:1080&quot;set https_proxy=&quot;sock5://127.0.0.1:1080&quot;;; 清除代理设置set http_proxy=set https_proxy=  Powershell12345678910111213141516171819">
+<meta property="og:description" content="CMD123456;; 设置代理(其中sock5可以设置为http，https)set http_proxy=&quot;sock5://127.0.0.1:1080&quot;set https_proxy=&quot;sock5://127.0.0.1:1080&quot;;; 清除代理设置set http_proxy=set https_proxy=">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-10-10T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CMD、Powershell、Bash终端配置走代理">
-<meta name="twitter:description" content="CMD123456;; 设置代理(其中sock5可以设置为http，https)set http_proxy=&quot;sock5://127.0.0.1:1080&quot;set https_proxy=&quot;sock5://127.0.0.1:1080&quot;;; 清除代理设置set http_proxy=set https_proxy=  Powershell12345678910111213141516171819">
+<meta name="twitter:description" content="CMD123456;; 设置代理(其中sock5可以设置为http，https)set http_proxy=&quot;sock5://127.0.0.1:1080&quot;set https_proxy=&quot;sock5://127.0.0.1:1080&quot;;; 清除代理设置set http_proxy=set https_proxy=">
 
 <link rel="canonical" href="http://blog.ziiyc.com/post/37a5cb72.html">
 
@@ -250,6 +250,8 @@
       
         <h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">;; 设置代理(其中sock5可以设置为http，https)</span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">http_proxy</span>=<span class="string">"sock5://127.0.0.1:1080"</span></span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">https_proxy</span>=<span class="string">"sock5://127.0.0.1:1080"</span></span><br><span class="line">;; 清除代理设置</span><br><span class="line"><span class="builtin-name">set</span> http_proxy=</span><br><span class="line"><span class="builtin-name">set</span> https_proxy=</span><br></pre></td></tr></table></figure>
 
+<a id="more"></a> 
+
 <h2 id="Powershell"><a href="#Powershell" class="headerlink" title="Powershell"></a>Powershell</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># NOTE: registry keys for IE 8, may vary for other versions</span></span><br><span class="line"><span class="variable">$regPath</span> = <span class="string">'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings'</span></span><br><span class="line"><span class="comment"># 清除代理设置</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clear-Proxy</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyEnable <span class="literal">-Value</span> <span class="number">0</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyServer <span class="literal">-Value</span> <span class="string">''</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyOverride <span class="literal">-Value</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'http_proxy'</span>, <span class="variable">$null</span>, <span class="string">'User'</span>)</span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'https_proxy'</span>, <span class="variable">$null</span>, <span class="string">'User'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 设置代理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Set-Proxy</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$proxy</span> = <span class="string">'sock5://127.0.0.1:1080'</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyEnable <span class="literal">-Value</span> <span class="number">1</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyServer <span class="literal">-Value</span> <span class="variable">$proxy</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyOverride <span class="literal">-Value</span> <span class="string">'&lt;local&gt;'</span></span><br><span class="line"></span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'http_proxy'</span>, <span class="variable">$proxy</span>, <span class="string">'User'</span>)</span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'https_proxy'</span>, <span class="variable">$proxy</span>, <span class="string">'User'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> ALL_PROXY=<span class="string">"socks5://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br></pre></td></tr></table></figure>
@@ -348,11 +350,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/post/987409d2.html" rel="prev" title="Windows代码编辑器选择-VSCode">
+    <a href="/post/vscode.html" rel="prev" title="Windows代码编辑器选择-VSCode">
       <i class="fa fa-chevron-left"></i> Windows代码编辑器选择-VSCode
     </a></div>
       <div class="post-nav-item">
-    <a href="/post/44641126.html" rel="next" title="推荐跨平台PDF,网页标注-Weave">
+    <a href="/post/weave.html" rel="next" title="推荐跨平台PDF,网页标注-Weave">
       推荐跨平台PDF,网页标注-Weave <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -430,20 +432,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -505,12 +507,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">76k</span>
+    <span title="站点总字数">43k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:09</span>
+    <span title="站点阅读时长">39 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
   </div>
