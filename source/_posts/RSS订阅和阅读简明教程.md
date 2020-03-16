@@ -5,7 +5,7 @@ tags:
   - 信息聚合，效率生活
 categories: []
 toc: false
-abbrlink: 9c4ec956
+abbrlink: rss-tutorial
 date: 2017-07-03 00:00:00
 ---
 
