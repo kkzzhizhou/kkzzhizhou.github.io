@@ -1,37 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Scoop-Windows包管理器教程</title>
-    <url>/post/scoop-tutorial.html</url>
-    <content><![CDATA[<h2 id="安装Scoop"><a href="#安装Scoop" class="headerlink" title="安装Scoop"></a>安装Scoop</h2><p><a href="https://scoop.sh/" target="_blank" rel="noopener">Scoop官网</a></p>
-<p><a href="https://github.com/lukesampson/scoop" target="_blank" rel="noopener">Scoop-Github</a></p>
-<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># 打开Powershell(非管理员)</span></span><br><span class="line">Set-ExecutionPolicy RemoteSigned -scope CurrentUser</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta"># 自定义Scoop安装目录</span></span><br><span class="line">$env:SCOOP=<span class="string">'D:\Scoop'</span></span><br><span class="line">[Environment]::SetEnvironmentVariable(<span class="string">'SCOOP'</span>, $env:SCOOP, <span class="string">'User'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 安装Scoop命令</span></span><br><span class="line">Invoke-Expression (New-<span class="built_in">Object</span> System.Net.WebClient).DownloadString(<span class="string">'https://get.scoop.sh'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 或者</span></span><br><span class="line">iwr -useb <span class="keyword">get</span>.scoop.sh | iex</span><br></pre></td></tr></table></figure>
+    <title>使用Travis CI跨平台写Hexo博客</title>
+    <url>/post/travis-ci-to-hexo.html</url>
+    <content><![CDATA[<h2 id="Travis-CI说明"><a href="#Travis-CI说明" class="headerlink" title="Travis CI说明"></a>Travis CI说明</h2><p>新建Source分支用于存储源文件，Master分支用于存储生成的网站文件</p>
+<a id="more"></a> 
 
-<h2 id="使用Scoop安装卸载软件"><a href="#使用Scoop安装卸载软件" class="headerlink" title="使用Scoop安装卸载软件"></a>使用Scoop安装卸载软件</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">scoop <span class="keyword">install</span> <span class="number">7</span>zip git-<span class="keyword">with</span>-openssh</span><br><span class="line">scoop <span class="keyword">uninstall</span> <span class="number">7</span>zip git-<span class="keyword">with</span>-openssh</span><br></pre></td></tr></table></figure>
+<h2 id="全新的电脑写博客"><a href="#全新的电脑写博客" class="headerlink" title="全新的电脑写博客"></a>全新的电脑写博客</h2><ul>
+<li><p>下载安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，<a href="https://github.com/gaoyoubo/hexo-client/releases" target="_blank" rel="noopener">HexoClient</a>，<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a></p>
+</li>
+<li><p>运行Git Bash</p>
+</li>
+<li><p>添加Nodejs环境配置</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">touch ~<span class="string">/.bash_profile</span></span><br><span class="line">vi ~<span class="string">/.bash_profile</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加以下内容到.bash_profile文件中，保存退出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="comment"># 添加环境变量</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:/c/Program\ Files/nodejs</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行以下命令刷新环境变量</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载安装SourceTree并登录</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">-b</span> source https://github.com/kkzzhizhou/kkzzhizhou.github.io</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载安装SourceTree并登录</p>
+</li>
+<li><p>打开本地仓库kkzzhizhou.github.io</p>
+</li>
+<li><p>修改后进行提交即可</p>
+</li>
+</ul>
+<h2 id="已经配置的电脑写博客"><a href="#已经配置的电脑写博客" class="headerlink" title="已经配置的电脑写博客"></a>已经配置的电脑写博客</h2><p>强制拉取所有更新到本地，放弃所有本地修改</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">fetch</span> <span class="comment">--all</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard origin/source</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
 
-<h2 id="使用Scoop添加移除仓库"><a href="#使用Scoop添加移除仓库" class="headerlink" title="使用Scoop添加移除仓库"></a>使用Scoop添加移除仓库</h2><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"># 查看仓库列表</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span>list</span><br><span class="line"># 查看推荐仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span>known</span><br><span class="line"># 添加推荐仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>extras</span><br><span class="line"># 添加第三方仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>[<span class="keyword">bucket-name] </span>[git-repo]</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>zapps https://github.com/kkzzhizhou/scoop-zapps</span><br><span class="line"># 移除仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span>rm [<span class="keyword">bucket-name]</span></span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">bucket </span>rm extras</span><br></pre></td></tr></table></figure>
-
-<h2 id="自建软件仓库"><a href="#自建软件仓库" class="headerlink" title="自建软件仓库"></a>自建软件仓库</h2><p><a href="https://github.com/lukesampson/scoop/wiki" target="_blank" rel="noopener">官方教程</a></p>
-<h2 id="合并多个软件仓库"><a href="#合并多个软件仓库" class="headerlink" title="合并多个软件仓库"></a>合并多个软件仓库</h2><p><a href="../attachments/28090.sh">mergebucket.sh</a></p>
-<h2 id="软件仓库自动更新"><a href="#软件仓库自动更新" class="headerlink" title="软件仓库自动更新"></a>软件仓库自动更新</h2><p><a href="https://github.com/ScoopInstaller/Excavator" target="_blank" rel="noopener">Excavator</a></p>
-<h3 id="使用Docker自动更新"><a href="#使用Docker自动更新" class="headerlink" title="使用Docker自动更新"></a>使用Docker自动更新</h3><ul>
-<li><p>修改项目bin\auto-pr.ps1中是项目名称</p>
-</li>
-<li><p>新建docker-compose.yml文件，内容如下：</p>
-  <figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">version:</span> <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">services:</span></span><br><span class="line"><span class="symbol">  bucket:</span></span><br><span class="line"><span class="symbol">    image:</span> r15ch13/excavator:latest</span><br><span class="line"><span class="symbol">    deploy:</span></span><br><span class="line"><span class="symbol">      mode:</span> global <span class="meta"># creates only one container</span></span><br><span class="line"><span class="symbol">    volumes:</span></span><br><span class="line">      - <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/scoop/</span>.ssh:<span class="meta-keyword">/root/</span>.ssh</span><br><span class="line">      - <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/scoop/</span>log:<span class="meta-keyword">/root/</span>log</span><br><span class="line"><span class="symbol">    environment:</span></span><br><span class="line"><span class="symbol">      GIT_USERNAME:</span> <span class="string">"xxx"</span></span><br><span class="line"><span class="symbol">      GIT_EMAIL:</span> <span class="string">"xxx@gmail.com"</span></span><br><span class="line"><span class="symbol">      BUCKET:</span> <span class="string">"xxx/xxx"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改environment中的变量</p>
-</li>
-<li><p>修改volumes中.ssh映射目录，将私钥放入.ssh目录中</p>
-</li>
-<li><p>启动Docker</p>
-  <figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">screen </span>-S <span class="keyword">scoop</span></span><br><span class="line"><span class="keyword">docker-compose </span>up</span><br></pre></td></tr></table></figure>
-
-</li>
+<h2 id="SourceTree发布文章"><a href="#SourceTree发布文章" class="headerlink" title="SourceTree发布文章"></a>SourceTree发布文章</h2><ul>
+<li>暂存所有，填写Commit之后提交即可</li>
 </ul>
 ]]></content>
       <tags>
-        <tag>包管理器</tag>
+        <tag>git应用,博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RSS订阅和阅读简明教程</title>
+    <url>/post/rss-tutorial.html</url>
+    <content><![CDATA[<h2 id="RSS是什么？"><a href="#RSS是什么？" class="headerlink" title="RSS是什么？"></a>RSS是什么？</h2><p><img src="/pic/rss-tutorial-1.jpg" alt></p>
+<blockquote>
+<p>RSS是一种内容信息聚合技术。简单点讲，你可以订阅自己关心的内容，例如博客，视频网站，知乎，简书，微信公众号，播客，门户网站等，当内容更新时自动同步到阅读器中，最终所有信息汇总到一个应用里查看阅读。</p>
+</blockquote>
+<a id="more"></a> 
+
+<h2 id="开始使用RSS"><a href="#开始使用RSS" class="headerlink" title="开始使用RSS"></a>开始使用RSS</h2><ol>
+<li>使用电脑端Chrome打开<a href="http://www.inoreader.com/" target="_blank" rel="noopener">inoreader</a>,注册一个账号</li>
+<li>注册成功且登录之后，点击搜索按钮，输出本博客的订阅地址：<a href="https://blog.ziiyc.com/atom.xml,如下图所示,选中之后点击右上角的订阅即可">https://blog.ziiyc.com/atom.xml,如下图所示,选中之后点击右上角的订阅即可</a></li>
+</ol>
+<p><img src="/pic/rss-tutorial-4.jpg" alt></p>
+<h2 id="在线RSS阅读软件：inoreader"><a href="#在线RSS阅读软件：inoreader" class="headerlink" title="在线RSS阅读软件：inoreader"></a>在线RSS阅读软件：<a href="http://www.inoreader.com/" target="_blank" rel="noopener">inoreader</a></h2><p>一款类似Google Reader的RSS阅读器，阅读器支持平台包括Web,Android,iOS。</p>
+<p><del>接近两年的使用inoreader，让人深刻的意识到inoreader在阅读体验上很是糟糕。</del></p>
+<p>使用inoreader接近四年，阅读体验近期有了一些改观，虽谈不上舒适，但也是可以比较正常使用了，比如添加了阅读区域手动调整功能。</p>
+<h2 id="谈谈其他RSS阅读软件使用体验"><a href="#谈谈其他RSS阅读软件使用体验" class="headerlink" title="谈谈其他RSS阅读软件使用体验"></a>谈谈其他RSS阅读软件使用体验</h2><ul>
+<li><p><a href="http://irreader.netqon.com/" target="_blank" rel="noopener">irreader</a><br>这个阅读工具近期不怎么更新了，从阅读体验上看是很不错的，但没有同步，没有手机端, 缺少信息过滤功能</p>
+</li>
+<li><p><a href="https://feedly.com/" target="_blank" rel="noopener">feedly</a><br>使用过一段时间，功能够用，界面美观，需要科学上网，缺点是收费贵。</p>
+</li>
+<li><p><a href="https://tt-rss.org/" target="_blank" rel="noopener">Tiny Tiny RSS</a><br>自建rss阅读服务器方案，从全文阅读，繁体转简体，文章过滤等功能脚本看，应有尽有，但实际阅读体验不佳，手机端可用软件匮乏，且质量不怎么样。网页端阅读使用Google Reader主题算是美观。</p>
+</li>
+<li><p><a href="https://nodetics.com/feedbro/" target="_blank" rel="noopener">feedbro</a><br>浏览器rss阅读方案，支持Chrome，Firefox主流浏览器，在阅读体验是可以说是最优秀的，因为运行环境是浏览器，所以不会出现订阅源常见的没有全文，图片显示不全的问题。遗憾的有两点，一是不支持任意形式同步，二是不支持其他终端，比如Web端、手机端。</p>
+</li>
+</ul>
+<h2 id="如何订阅RSS"><a href="#如何订阅RSS" class="headerlink" title="如何订阅RSS?"></a>如何订阅RSS?</h2><h3 id="1-Tampermonkey-RSS"><a href="#1-Tampermonkey-RSS" class="headerlink" title="1. Tampermonkey + RSS+"></a>1. Tampermonkey + RSS+</h3><p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-CN" target="_blank" rel="noopener">Tampermonkey</a></p>
+<p><a href="https://greasyfork.org/zh-CN/scripts/373252-rss-show-site-all-rss" target="_blank" rel="noopener">RSS+</a></p>
+<p><img src="/pic/rss-tutorial-2.jpg" alt="rss+"></p>
+<h3 id="2-浏览器插件：RSSHub"><a href="#2-浏览器插件：RSSHub" class="headerlink" title="2. 浏览器插件：RSSHub"></a>2. 浏览器插件：RSSHub</h3><p>支持显示RSSHub网站支持的订阅地址直接显示</p>
+<h3 id="3-第三方订阅服务"><a href="#3-第三方订阅服务" class="headerlink" title="3. 第三方订阅服务"></a>3. 第三方订阅服务</h3><ul>
+<li><a href="https://docs.rsshub.app/" target="_blank" rel="noopener">rsshub</a>: 网站集成了主流网站的订阅方式，很强大，不断更新 推荐指数：⭐️⭐️⭐️⭐️⭐️</li>
+<li>微博: <a href="https://api.izgq.net/weibo/rss/{uid}" target="_blank" rel="noopener">https://api.izgq.net/weibo/rss/{uid}</a> 推荐指数：⭐️⭐️⭐️⭐️⭐️<br>PS: uid, 用户 id, 博主主页打开控制台执行 <code>/uid=(\d+)/. exec(document.querySelector(&#39;.opt_box .btn_bed&#39;).getAttribute(&#39;action-data&#39;))[1]</code> 获取</li>
+<li>知乎: <a href="https://rss.lilydjwg.me/" target="_blank" rel="noopener">https://rss.lilydjwg.me/</a> 推荐指数：⭐️⭐️⭐️⭐️</li>
+<li>简书: <a href="http://jianshu.milkythinking.com/" target="_blank" rel="noopener">http://jianshu.milkythinking.com/</a> 推荐指数：⭐️⭐️⭐️⭐️</li>
+<li>Twitter: <a href="https://twitrss.me/twitter_user_to_rss/?user={uid}" target="_blank" rel="noopener">https://twitrss.me/twitter_user_to_rss/?user={uid}</a> 推荐指数：⭐️⭐️⭐️⭐️</li>
+<li>Facebook: <a href="https://fbfeed.github.io/" target="_blank" rel="noopener">https://fbfeed.github.io/</a> 推荐指数：⭐️⭐️⭐️⭐️</li>
+</ul>
+<h2 id="RSS进阶"><a href="#RSS进阶" class="headerlink" title="RSS进阶"></a>RSS进阶</h2><h3 id="RSS全文输出"><a href="#RSS全文输出" class="headerlink" title="RSS全文输出"></a>RSS全文输出</h3><h4 id="自建服务器方案"><a href="#自建服务器方案" class="headerlink" title="自建服务器方案"></a>自建服务器方案</h4><ul>
+<li><p><a href="https://github.com/feedocean/rss2full" target="_blank" rel="noopener">rss2full</a> 推荐指数：⭐️⭐️⭐️⭐️<br>大部分情况可以得到一个不错的全文输出效果,举例：<a href="http://www.xingkbjm.com/feed" target="_blank" rel="noopener">http://www.xingkbjm.com/feed</a></p>
+</li>
+<li><p><a href="https://tt-rss.org/" target="_blank" rel="noopener">tiny tiny rss + mercury</a> 推荐指数：⭐️⭐️<br>这种方式是通过调用mercury生成全文方式，需要搭建mercury服务端</p>
+</li>
+</ul>
+<h4 id="使用第三方服务"><a href="#使用第三方服务" class="headerlink" title="使用第三方服务"></a>使用第三方服务</h4><ol>
+<li><a href="http://fullcontentrss.com/" target="_blank" rel="noopener">fullcontentrss</a>  推荐指数：⭐️⭐️⭐️⭐️⭐️</li>
+<li><a href="http://ftr.fivefilters.org/" target="_blank" rel="noopener">Full-Text RSS</a>    推荐指数：⭐️⭐️⭐️⭐️</li>
+<li><a href="https://www.freefullrss.com/" target="_blank" rel="noopener">freefullrss</a>        推荐指数：⭐️⭐️⭐️</li>
+</ol>
+<h3 id="信息过滤"><a href="#信息过滤" class="headerlink" title="信息过滤"></a>信息过滤</h3><p>当RSS内容既包含你想要的内容，也有一些不想看到的内容，需要使用关键字过滤。</p>
+<ol>
+<li>inoreader非付费用户只能过滤一个订阅源。</li>
+<li>如果需要大量过滤，可以尝试搭建<strong>Tiny Tiny RSS</strong>。</li>
+</ol>
+<h3 id="制作RSS-Feed"><a href="#制作RSS-Feed" class="headerlink" title="制作RSS Feed"></a>制作RSS Feed</h3><h4 id="1：Feed43（免费）"><a href="#1：Feed43（免费）" class="headerlink" title="1：Feed43（免费）"></a>1：Feed43（免费）</h4><p>官网：<a href="http://feed43.com/" target="_blank" rel="noopener">http://feed43.com/</a>   </p>
+<p>推荐指数：⭐️⭐️⭐️</p>
+<p>教程：<a href="https://post.smzdm.com/p/553684/" target="_blank" rel="noopener">FEED43新手教程：为任意网页定制RSS格式订阅源</a></p>
+<h4 id="2：Fivefilters-Feed-Creator"><a href="#2：Fivefilters-Feed-Creator" class="headerlink" title="2：Fivefilters Feed Creator"></a>2：Fivefilters Feed Creator</h4><p>官网：<a href="http://createfeed.fivefilters.org/index.php" target="_blank" rel="noopener">http://createfeed.fivefilters.org/index.php</a></p>
+<p>推荐指数：⭐️⭐️⭐️⭐️</p>
+<ol>
+<li><p>“Enter web page URL”就是输入网页网址，例如<a href="https://www.ipcfun.com/" target="_blank" rel="noopener">https://www.ipcfun.com/</a></p>
+</li>
+<li><p>“Look for links inside HTML elements whose id or class attribute contains” 根据ID或Class筛选元素，例如entry-title</p>
+</li>
+<li><p>“Only keep links if link URL contains”URL过滤，仅保留包含指定字符串的链接，例如html</p>
+<p><img src="/pic/rss-tutorial-3.jpg" alt="Fivefilters Feed Creator"></p>
+</li>
+</ol>
+<h4 id="3：Fetchrss"><a href="#3：Fetchrss" class="headerlink" title="3：Fetchrss"></a>3：Fetchrss</h4><p>官网：<a href="http://fetchrss.com/" target="_blank" rel="noopener">http://fetchrss.com/</a> </p>
+<p>推荐指数：⭐️⭐️⭐️⭐️</p>
+<p>GUI界面操作，非常简单易懂。</p>
+<h3 id="inoreader使用体验提升"><a href="#inoreader使用体验提升" class="headerlink" title="inoreader使用体验提升"></a>inoreader使用体验提升</h3><h4 id="安装去广告插件AdBlock"><a href="#安装去广告插件AdBlock" class="headerlink" title="安装去广告插件AdBlock"></a>安装去广告插件<a href="https://chrome.google.com/webstore/detail/adblock-%E2%80%94-best-ad-blocker/gighmmpiobklfepjocnamgkkbiglidom" target="_blank" rel="noopener">AdBlock</a></h4><p>此浏览器插件可以解决在使用免费版Inoreader阅读文章免除广告的骚扰</p>
+<h4 id="安装油猴脚本：显示防盗链图片-for-Inoreader"><a href="#安装油猴脚本：显示防盗链图片-for-Inoreader" class="headerlink" title="安装油猴脚本：显示防盗链图片 for Inoreader"></a>安装油猴脚本：<a href="https://greasyfork.org/zh-CN/scripts/376884-%E6%98%BE%E7%A4%BA%E9%98%B2%E7%9B%97%E9%93%BE%E5%9B%BE%E7%89%87-for-inoreader" target="_blank" rel="noopener">显示防盗链图片 for Inoreader</a></h4><p>此脚本可以解决在Inoreader订阅爱稀奇时图片不能正常显示的问题</p>
+<h2 id="RSS原理延伸"><a href="#RSS原理延伸" class="headerlink" title="RSS原理延伸"></a>RSS原理延伸</h2><h3 id="1-场景一"><a href="#1-场景一" class="headerlink" title="1. 场景一"></a>1. 场景一</h3><p>在某个卖二手论坛里经常出现性价比很高的二手货，正好你最近有想买的IPad 2，你想有一个工具，当论坛里出现有想要的IPad 2的时候自动提醒你，让你能够以最快的速度入手。</p>
+<p>解决方法：<a href="https://play.google.com/store/apps/details?id=me.webalert&hl=zh-CN" target="_blank" rel="noopener">网页更新提醒工具</a></p>
+<p>使用方法：软件记录的网页操作，并到你的选定的网址中监测某些网页元素的变动，一有变动，就可以提醒。</p>
+<h4 id="2-场景二"><a href="#2-场景二" class="headerlink" title="2. 场景二"></a>2. 场景二</h4><p>在淘宝，天猫，京东等一些购物网站一些物品价格经常价格变动，我们想以比较低的价格入手，便需要了解价格的实时变动信息，并在价格低于自己预期的时候购买。</p>
+<p>解决方法：惠惠购物助手</p>
+<p>使用方法：在手机端和浏览器端安装惠惠购物助手。将自己关心的商品放入惠惠助手的购物车中，在软件中可设置价格。当价格低于某一数值时，手机端发出提醒。</p>
+<h4 id="3-场景三"><a href="#3-场景三" class="headerlink" title="3. 场景三"></a>3. 场景三</h4><p>“如果天气晴朗，提醒我晒被子。”用英语将句式提取出来就是If this then that.生活中很多这种判断，如果这种判断能用软件实现那该多好。</p>
+<p>解决方法：IFTTT(安卓，Web)</p>
+<p>使用方法：在软件添加各种条件和结果，满足条件时自动执行。</p>
+<h4 id="4-场景四"><a href="#4-场景四" class="headerlink" title="4. 场景四"></a>4. 场景四</h4><p>逢年过节，总是要抢车票。到了回家前几天，票总是被一扫而空。但心想也许会有人退票，那你可能需要一款软件能够实时检测余票，并提醒你。</p>
+<p>解决方法：智行</p>
+<p>使用方法：本地云监控，发现有余票即时提醒。</p>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
+<li>2020-3-17：</li>
+</ul>
+<ol>
+<li>更新现在的使用方式</li>
+<li>重新排版，去除一些无用的内容，删除失效的工具</li>
+<li>添加新的RSS全文输出工具：rss2full</li>
+<li>解决Inoreader显示防链接图片问题</li>
+</ol>
+<ul>
+<li>2018-9-3：<ul>
+<li>更新图片为国内图床</li>
+<li>更新比较完美的微博RSS订阅的方法：方法三</li>
+<li>完善微信公众号全文RSS订阅的方法：irreader+feed43</li>
+<li>更新Twitter全文RSS订阅的方法：twitrss.me</li>
+<li>更新irreader的简述</li>
+</ul>
+</li>
+<li>2018-8-27：更新irreader(一款本地播客，RSS阅读工具)</li>
+<li>2018-8-20：更新制作RSS Feed的方法</li>
+<li>2018-8-8：更改排版，更新提供全文输出RSS的网站，增加提供RSS生成制作的网站</li>
+<li>2018-7-7：更新RSSHub中大部分主流网站，重新排版文章，删除过时和错误的方法。</li>
+<li>2017-7-3：更新全文输出网站freefullrss</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>效率生活</tag>
       </tags>
   </entry>
   <entry>
@@ -72,241 +197,79 @@
       </tags>
   </entry>
   <entry>
-    <title>syncthing实现移动硬盘便携同步至NAS</title>
-    <url>/post/Synchronize-Portable-External-Hard-Drive-With-NAS.html</url>
-    <content><![CDATA[<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p><img src="/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png" alt="实现效果"></p>
-<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>一台黑群晖NAS设备和一个移动硬盘实现在资料自动同步</p>
-<p>先说说传统方式有几种：</p>
-<ul>
-<li>将移动硬盘插入NAS的USB接口，并使用群晖应用USB Copy进行备份(注意：这种方式只能备份至移动硬盘，不能将移动硬盘上的更改同步到NAS中)</li>
-<li>将移动硬盘插入局域网中的Windows设备，并使用samba挂载NAS文件夹，使用类似GoodSync，AllwaySync，SyncFolders等同步软件进行同步。</li>
-</ul>
-<p>我的需求：</p>
-<ul>
-<li>移动硬盘接入任何Windows设备中，在有网络的情况下（可以是局域网，可以是公网），都能直接与NAS中的文件夹进行同步。</li>
-<li>即使移动硬盘在一段时间内不使用（比如说，不接任何设备闲置几天），重新接入网络能继续与NAS中的文件夹进行同步</li>
-</ul>
-<h2 id="可行解决方案：SyncTrayzor-Syncthing-GUI"><a href="#可行解决方案：SyncTrayzor-Syncthing-GUI" class="headerlink" title="可行解决方案：SyncTrayzor(Syncthing GUI)"></a>可行解决方案：SyncTrayzor(Syncthing GUI)</h2><a id="more"></a> 
-<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><ol>
-<li><p>下载SyncTrayzor Portable版本，解压放置在移动硬盘根目录，命名为Syncthing(可以改成任何你想到的名字)</p>
-</li>
-<li><p>将硬盘盘符修改成一些不常用的的盘符，比方说P盘</p>
-</li>
-<li><p>打开Syncthing文件夹中的SyncTrayzor.exe，将设备名改成移动硬盘的盘符名（最好是有意义的）</p>
-</li>
-<li><p>添加远程设备NAS，去除勾选“作为中介”</p>
-</li>
-<li><p>将移动硬盘中的文件夹同步给ZNAS即可</p>
-</li>
-</ol>
-<h2 id="插入新设备时"><a href="#插入新设备时" class="headerlink" title="插入新设备时"></a>插入新设备时</h2><ul>
-<li>修改移动硬盘盘符为P盘（或者修改配置文件中的[盘符]:\Syncthing\data\syncthing\config.xml中的盘符位置)</li>
-<li>打开SyncTrayzor即可同步</li>
-</ul>
-<h2 id="自动修改盘符脚本"><a href="#自动修改盘符脚本" class="headerlink" title="自动修改盘符脚本"></a>自动修改盘符脚本</h2><ul>
-<li>将以下代码保存成start.ps1后打开即可</li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$script_path</span> = <span class="built_in">Split-Path</span> <span class="literal">-Parent</span> <span class="variable">$MyInvocation</span>.MyCommand.Definition</span><br><span class="line"><span class="variable">$config</span> = <span class="string">"<span class="variable">$script_path</span>\data\syncthing\config.xml"</span></span><br><span class="line"><span class="variable">$drive_letter</span> = <span class="variable">$script_path</span>.Split(<span class="string">'\'</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">write-host</span> <span class="string">"正在修改盘符..."</span> </span><br><span class="line"><span class="variable">$xml</span> = <span class="built_in">New-Object</span> <span class="literal">-TypeName</span> XML</span><br><span class="line"><span class="variable">$xml</span>.Load(<span class="variable">$config</span>)</span><br><span class="line"><span class="variable">$node</span>=<span class="variable">$xml</span>.SelectNodes(<span class="string">"/configuration/folder"</span>)</span><br><span class="line"><span class="built_in">write-host</span> <span class="string">"旧盘符为:<span class="variable">$</span>&#123;node.path&#125;"</span> </span><br><span class="line"><span class="variable">$node</span>.SetAttribute(<span class="string">"path"</span>, <span class="variable">$drive_letter</span>)</span><br><span class="line"><span class="built_in">write-host</span> <span class="string">"新盘符为:<span class="variable">$drive_letter</span>"</span></span><br><span class="line"><span class="variable">$xml</span>.Save(<span class="variable">$config</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$</span>?)&#123;</span><br><span class="line">    <span class="built_in">write-host</span> <span class="string">"正在启动SyncTrayzor"</span></span><br><span class="line">    <span class="built_in">Start-Process</span> <span class="variable">$script_path</span>\SyncTrayzor.exe</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>Scoop-Windows包管理器教程</title>
+    <url>/post/scoop-tutorial.html</url>
+    <content><![CDATA[<h2 id="安装Scoop"><a href="#安装Scoop" class="headerlink" title="安装Scoop"></a>安装Scoop</h2><p><a href="https://scoop.sh/" target="_blank" rel="noopener">Scoop官网</a></p>
+<p><a href="https://github.com/lukesampson/scoop" target="_blank" rel="noopener">Scoop-Github</a></p>
+<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># 打开Powershell(非管理员)</span></span><br><span class="line">Set-ExecutionPolicy RemoteSigned -scope CurrentUser</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta"># 自定义Scoop安装目录</span></span><br><span class="line">$env:SCOOP=<span class="string">'D:\Scoop'</span></span><br><span class="line">[Environment]::SetEnvironmentVariable(<span class="string">'SCOOP'</span>, $env:SCOOP, <span class="string">'User'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 安装Scoop命令</span></span><br><span class="line">Invoke-Expression (New-<span class="built_in">Object</span> System.Net.WebClient).DownloadString(<span class="string">'https://get.scoop.sh'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta"># 或者</span></span><br><span class="line">iwr -useb <span class="keyword">get</span>.scoop.sh | iex</span><br></pre></td></tr></table></figure>
 
+<h2 id="使用Scoop安装卸载软件"><a href="#使用Scoop安装卸载软件" class="headerlink" title="使用Scoop安装卸载软件"></a>使用Scoop安装卸载软件</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">scoop <span class="keyword">install</span> <span class="number">7</span>zip git-<span class="keyword">with</span>-openssh</span><br><span class="line">scoop <span class="keyword">uninstall</span> <span class="number">7</span>zip git-<span class="keyword">with</span>-openssh</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用Scoop添加移除仓库"><a href="#使用Scoop添加移除仓库" class="headerlink" title="使用Scoop添加移除仓库"></a>使用Scoop添加移除仓库</h2><figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"># 查看仓库列表</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span>list</span><br><span class="line"># 查看推荐仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span>known</span><br><span class="line"># 添加推荐仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>extras</span><br><span class="line"># 添加第三方仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>[<span class="keyword">bucket-name] </span>[git-repo]</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span><span class="keyword">add </span>zapps https://github.com/kkzzhizhou/scoop-zapps</span><br><span class="line"># 移除仓库</span><br><span class="line"><span class="symbol">scoop</span> <span class="keyword">bucket </span>rm [<span class="keyword">bucket-name]</span></span><br><span class="line"><span class="keyword">scoop </span><span class="keyword">bucket </span>rm extras</span><br></pre></td></tr></table></figure>
+
+<h2 id="自建软件仓库"><a href="#自建软件仓库" class="headerlink" title="自建软件仓库"></a>自建软件仓库</h2><p><a href="https://github.com/lukesampson/scoop/wiki" target="_blank" rel="noopener">官方教程</a></p>
+<h2 id="合并多个软件仓库"><a href="#合并多个软件仓库" class="headerlink" title="合并多个软件仓库"></a>合并多个软件仓库</h2><p><a href="../attachments/28090.sh">mergebucket.sh</a></p>
+<h2 id="软件仓库自动更新"><a href="#软件仓库自动更新" class="headerlink" title="软件仓库自动更新"></a>软件仓库自动更新</h2><p><a href="https://github.com/ScoopInstaller/Excavator" target="_blank" rel="noopener">Excavator</a></p>
+<h3 id="使用Docker自动更新"><a href="#使用Docker自动更新" class="headerlink" title="使用Docker自动更新"></a>使用Docker自动更新</h3><ul>
+<li><p>修改项目bin\auto-pr.ps1中是项目名称</p>
+</li>
+<li><p>新建docker-compose.yml文件，内容如下：</p>
+  <figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">version:</span> <span class="string">"3"</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">services:</span></span><br><span class="line"><span class="symbol">  bucket:</span></span><br><span class="line"><span class="symbol">    image:</span> r15ch13/excavator:latest</span><br><span class="line"><span class="symbol">    deploy:</span></span><br><span class="line"><span class="symbol">      mode:</span> global <span class="meta"># creates only one container</span></span><br><span class="line"><span class="symbol">    volumes:</span></span><br><span class="line">      - <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/scoop/</span>.ssh:<span class="meta-keyword">/root/</span>.ssh</span><br><span class="line">      - <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/scoop/</span>log:<span class="meta-keyword">/root/</span>log</span><br><span class="line"><span class="symbol">    environment:</span></span><br><span class="line"><span class="symbol">      GIT_USERNAME:</span> <span class="string">"xxx"</span></span><br><span class="line"><span class="symbol">      GIT_EMAIL:</span> <span class="string">"xxx@gmail.com"</span></span><br><span class="line"><span class="symbol">      BUCKET:</span> <span class="string">"xxx/xxx"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改environment中的变量</p>
+</li>
+<li><p>修改volumes中.ssh映射目录，将私钥放入.ssh目录中</p>
+</li>
+<li><p>启动Docker</p>
+  <figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">screen </span>-S <span class="keyword">scoop</span></span><br><span class="line"><span class="keyword">docker-compose </span>up</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 ]]></content>
+      <tags>
+        <tag>包管理器</tag>
+      </tags>
   </entry>
   <entry>
-    <title>使用OneDrive实时同步Ditto剪贴板数据（WebDav）</title>
-    <url>/post/onedrive-sync-ditto.html</url>
-    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>最近将常用的绿色软件放到Onedrive中同步，方便在自己的多个Windows设备使用。遇到一个比较棘手的问题，使用Ditto时会锁定数据库文件，此时OneDrive显示文件在使用中，无法同步。</p>
+    <title>Mame玩街机完全教程</title>
+    <url>/post/mame-tutorial.html</url>
+    <content><![CDATA[<h2 id="街机模拟器的选择"><a href="#街机模拟器的选择" class="headerlink" title="街机模拟器的选择"></a>街机模拟器的选择</h2><p>网上有很多类型的街机模拟器,如比较知名的mame及其分支（mameplus,mame plus! plus!,mame32 more等），winkawaks，fba shuffle ,nebula(星云模拟器)等等。</p>
+<p>想要实现标题中所提到的所有功能，请使用<strong>mame32 more</strong>（联机对战）或者<strong>mame plus! plus!</strong>（两个版本集成联机对战功能）</p>
+<p>我的选择：<strong>mame32 more</strong></p>
 <a id="more"></a> 
-
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>使用WebDav连接OneDrive</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>OneDrive使用WebDav的方法：</p>
+<h2 id="街机模拟器下载"><a href="#街机模拟器下载" class="headerlink" title="街机模拟器下载"></a>街机模拟器下载</h2><ol>
+<li><a href="https://emulationrealm.net/downloads/file/3169-mame32-more" target="_blank" rel="noopener">mame32 more</a></li>
+<li><a href="http://www.zophar.net/mame/mame32-plus-plus.html" target="_blank" rel="noopener">mame plus! plus!</a></li>
+</ol>
+<h2 id="BIOS及游戏ROM下载"><a href="#BIOS及游戏ROM下载" class="headerlink" title="BIOS及游戏ROM下载"></a>BIOS及游戏ROM下载</h2><p>科普：好多游戏都需要有BIOS文件的支持才能运行，比如NEOGEO的游戏都需要neogeo.zip这个BIOS文件才能玩，如果没有，MAME是不会认NEOGEO的游戏的。<br>BIOS不需要一个一个下，直接下一个游戏合集包，在模拟器\roms目录下（可能会隐藏）。<br>游戏包：<a href="http://www.game333.net/danji/oth/329677.html" target="_blank" rel="noopener">http://www.game333.net/danji/oth/329677.html</a><br>游戏ROM及BIOS下载网站：</p>
 <ol>
-<li>访问 <a href="http://onedrive.com/" target="_blank" rel="noopener">OneDrive.com</a> ，点击进入任何一个你的文件夹。</li>
-<li>看浏览器上面的地址栏，“cid”后面的一串完整的数字加大写的英文字母叫 special ID（如下图）。</li>
-<li>你的入口链接就是： special ID（如我的就是<a href="https://d.docs.live.net/F399A8134684152B），账号密码就是你微软账号的账号密码" target="_blank" rel="noopener">https://d.docs.live.net/F399A8134684152B），账号密码就是你微软账号的账号密码</a><ul>
-<li>如果你有<strong>开启两步验证</strong>功能，那么需要在<a href="https://account.live.com/proofs/AppPassword?mkt=en-us" target="_blank" rel="noopener">这里去获得一个生成的应用密码</a></li>
-<li>另外要注意的，OneDrive 的 WebDav 接口如同坚果云的一样，传输的文件大小限制在100M以下。</li>
-</ul>
-</li>
-<li>在资源管理器界面中，选择映射网络驱动器，在文件夹一栏，填入上一步得到的地址，点击完成，耐心等候，输入账号密码即可，之后可以将这个映射得到的盘符当作本地磁盘进行使用</li>
+<li><a href="http://www.doperoms.com/" target="_blank" rel="noopener">http://www.doperoms.com/</a>  （这个网站收录了大部分的游戏及全部的BIOS,某些盗版的rom没有。）</li>
+<li><a href="http://www.romnation.net/" target="_blank" rel="noopener">http://www.romnation.net/</a> </li>
 </ol>
-<p>连接后如下图所示，打开即为你网盘的文件</p>
-<p><img src="/pic/onedrive-sync-ditto-1.jpg" alt></p>
-<p>Ditto设置如下图所示，数据库使用WebDav路径即可完美解决数据同步问题</p>
-<p><img src="/pic/onedrive-sync-ditto-2.jpg" alt></p>
+<h2 id="联机对战（2017年4月5日更新）"><a href="#联机对战（2017年4月5日更新）" class="headerlink" title="联机对战（2017年4月5日更新）"></a>联机对战（2017年4月5日更新）</h2><p>联机对战使用到kaillera，在文件 -&gt; play kaillera game</p>
+<ol>
+<li>点对点模式最多支持两个人（或者说两台电脑）同时联机</li>
+<li>联机模式可支持2人以上同时进行游戏，比如说恐龙新世纪3人联机，三国战纪4人联机。</li>
+</ol>
+<p>3人至多人联机教程，简单的就以恐龙快打为例：</p>
+<ol>
+<li>局域网中需要有一台电脑用<strong>KaillerasrvGUI</strong>建立服务器。</li>
+<li>三台电脑此时可同时连接同一台服务器进行游戏。（一台电脑既是服务器，又是客户端。）</li>
+</ol>
+<p>复杂一些比如，三国战纪四人联机：</p>
+<ol>
+<li>四人同时连接服务器，进入游戏后。1P（选择游戏的人是1P）开启业务模式（Tab键-打开业务开关）</li>
+<li>按F3重装加载游戏，马上按住1P的除方向键的第一个键（比如我常用J作为我的第一个按键，一般游戏J表示轻拳）</li>
+<li>进入PGM设置，调整游戏为4人游戏。（记得是第三或者第四个设置的二级菜单里有，进去后慢慢试）</li>
+<li>关闭业务打开，按退出，重新启动游戏（按F3）。注意不是退出重连。</li>
+</ol>
+<h2 id="作弊器"><a href="#作弊器" class="headerlink" title="作弊器"></a>作弊器</h2><p>需要下载作弊文件cheat.dat,放到模拟器根目录，并在选项-杂项中启用游戏作弊功能</p>
+<h2 id="出招表"><a href="#出招表" class="headerlink" title="出招表"></a>出招表</h2><p>一般模拟器都会自带游戏出招表，在游戏过程中按住<strong>TAB</strong>调出菜单，mame32 more这款模拟器的出招表在  游戏文档-显示指令列表。而mameplus则是在第一级菜单就有。</p>
+<h2 id="存档和读档"><a href="#存档和读档" class="headerlink" title="存档和读档"></a>存档和读档</h2><p>在游戏进行到任何情况下，都可以存档和读档，对于一些游戏时间长的游戏很有用。按住<strong>TAB</strong>调出菜单，在一般选项里可以设置存档和读档的快捷键。默认是按住shift+F7然后输入一个数学或者字母存档，单按F7然后输入指定数字字母的读档。</p>
 ]]></content>
       <tags>
-        <tag>webdav应用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>推荐跨平台PDF,网页标注-Weave</title>
-    <url>/post/weave.html</url>
-    <content><![CDATA[<h2 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h2><ul>
-<li>安卓平板（电容屏）</li>
-<li>Yandex浏览器（从Google Play下载，需科学上网）</li>
-<li>Weava Highlighter（从Chrome Webstore下载安装，需科学上网）</li>
-<li>电容笔（主动式体验更好些，更接近笔的体验，需要充电）</li>
-</ul>
-<a id="more"></a> 
-
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="网页文字颜色标注"><a href="#网页文字颜色标注" class="headerlink" title="网页文字颜色标注"></a>网页文字颜色标注</h3><ul>
-<li>选中一段文字，这时候并不会出现Weava的标注工具</li>
-<li>在网页任意位置滑动就会出现标注工具，如下图所示</li>
-</ul>
-<p><img src="/pic/weave-1.jpg" alt></p>
-<h3 id="标注和浏览器菜单重叠的解决方法"><a href="#标注和浏览器菜单重叠的解决方法" class="headerlink" title="标注和浏览器菜单重叠的解决方法"></a>标注和浏览器菜单重叠的解决方法</h3><ul>
-<li>在出现标注工具后，将页面向上滑动即可，如下图所示</li>
-</ul>
-<p><img src="/pic/weave-2.jpg" alt></p>
-<h3 id="网页文字添加注释"><a href="#网页文字添加注释" class="headerlink" title="网页文字添加注释"></a>网页文字添加注释</h3><ul>
-<li>在颜色标注后，只需要再次点击该文字就会出现添加注释，如下图所示</li>
-</ul>
-<p><img src="/pic/weave-3.jpg" alt></p>
-<h3 id="为不同的颜色添加颜色注释"><a href="#为不同的颜色添加颜色注释" class="headerlink" title="为不同的颜色添加颜色注释"></a>为不同的颜色添加颜色注释</h3><ul>
-<li>在文字标注界面选择设置按钮即可</li>
-</ul>
-<p><img src="/pic/weave-4.jpg" alt></p>
-<h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p><img src="/pic/weave-5.jpg" alt></p>
-<p><img src="/pic/weave-6.jpg" alt></p>
-]]></content>
-      <categories>
-        <category>效率工具</category>
-      </categories>
-      <tags>
-        <tag>阅读辅助</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CMD、Powershell、Bash终端配置走代理</title>
-    <url>/post/37a5cb72.html</url>
-    <content><![CDATA[<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">;; 设置代理(其中sock5可以设置为http，https)</span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">http_proxy</span>=<span class="string">"sock5://127.0.0.1:1080"</span></span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">https_proxy</span>=<span class="string">"sock5://127.0.0.1:1080"</span></span><br><span class="line">;; 清除代理设置</span><br><span class="line"><span class="builtin-name">set</span> http_proxy=</span><br><span class="line"><span class="builtin-name">set</span> https_proxy=</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a> 
-
-<h2 id="Powershell"><a href="#Powershell" class="headerlink" title="Powershell"></a>Powershell</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># NOTE: registry keys for IE 8, may vary for other versions</span></span><br><span class="line"><span class="variable">$regPath</span> = <span class="string">'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings'</span></span><br><span class="line"><span class="comment"># 清除代理设置</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clear-Proxy</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyEnable <span class="literal">-Value</span> <span class="number">0</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyServer <span class="literal">-Value</span> <span class="string">''</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyOverride <span class="literal">-Value</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'http_proxy'</span>, <span class="variable">$null</span>, <span class="string">'User'</span>)</span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'https_proxy'</span>, <span class="variable">$null</span>, <span class="string">'User'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 设置代理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Set-Proxy</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$proxy</span> = <span class="string">'sock5://127.0.0.1:1080'</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyEnable <span class="literal">-Value</span> <span class="number">1</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyServer <span class="literal">-Value</span> <span class="variable">$proxy</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyOverride <span class="literal">-Value</span> <span class="string">'&lt;local&gt;'</span></span><br><span class="line"></span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'http_proxy'</span>, <span class="variable">$proxy</span>, <span class="string">'User'</span>)</span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'https_proxy'</span>, <span class="variable">$proxy</span>, <span class="string">'User'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> ALL_PROXY=<span class="string">"socks5://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>如果代理服务器需要登陆，这时可以直接把用户名和密码写进去</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http_proxy=http://userName:password@proxyAddress:port</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>Windows代码编辑器选择-VSCode</title>
-    <url>/post/vscode.html</url>
-    <content><![CDATA[<h2 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h3><p>优点：</p>
-<ul>
-<li>界面美观</li>
-<li>扩展强大</li>
-<li>代码高亮</li>
-<li>启动速度快</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>AHK中文无法对齐</li>
-<li>Alt多选需要在设置中设置为Ctrl/Command，体验极差</li>
-</ul>
-<h3 id="Notepad"><a href="#Notepad" class="headerlink" title="Notepad++"></a>Notepad++</h3><p>缺点：</p>
-<ul>
-<li>界面不美观</li>
-<li>文件不能自动关联</li>
-</ul>
-<h3 id="Sublime-Text-3"><a href="#Sublime-Text-3" class="headerlink" title="Sublime Text 3"></a>Sublime Text 3</h3><p>缺点：</p>
-<ul>
-<li>Windows不支持Alt多选</li>
-<li>闭源</li>
-</ul>
-]]></content>
-      <categories>
-        <category>效率工具</category>
-        <category>代码编辑器</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>AutoHotkey在热键体验不好的地方总结</title>
-    <url>/post/fuck-ahk.html</url>
-    <content><![CDATA[<h2 id="最开始的想法"><a href="#最开始的想法" class="headerlink" title="最开始的想法"></a>最开始的想法</h2><ul>
-<li>长按字母键打开常用应用，不影响字母输入</li>
-<li>长按鼠标中键打开指定应用，不影响鼠标中键原有功能</li>
-<li>双击Alt唤醒Wox，不影响Alt原有功能</li>
-</ul>
-<h2 id="失败后的备选方案"><a href="#失败后的备选方案" class="headerlink" title="失败后的备选方案"></a>失败后的备选方案</h2><ul>
-<li>使用RShift + 字母打开常用应用</li>
-<li>使用Wgesture，定义按下鼠标右键+单击鼠标左键打开指定应用（已实现）</li>
-<li>使用Capslock + F发送Alt+Space，实现唤醒Wox（已实现）</li>
-</ul>
-<a id="more"></a> 
-
-<h2 id="意外收获"><a href="#意外收获" class="headerlink" title="意外收获"></a>意外收获</h2><p>发现火萤酱快捷键能够设置双击Alt来唤醒，这就说明用其他语言能够完美的实现双击热键。</p>
-<h2 id="无效例子1：长按字母键影响输入"><a href="#无效例子1：长按字母键影响输入" class="headerlink" title="无效例子1：长按字母键影响输入"></a>无效例子1：长按字母键影响输入</h2><p>来源：<a href="https://www.autohotkey.com/boards/viewtopic.php?f=28&t=6082" target="_blank" rel="noopener">仅长按单键执行功能，不影响短按示例</a></p>
-<figure class="highlight autohotkey"><table><tr><td class="code"><pre><span class="line"><span class="comment">;示例代码</span></span><br><span class="line"><span class="title">$t::</span></span><br><span class="line"><span class="built_in">	KeyWait,</span> t</span><br><span class="line">	If (<span class="built_in">A_TimeSinceThisHotkey</span> &gt; <span class="number">300</span>)</span><br><span class="line"><span class="built_in">		SetTimer,</span> mainp, -<span class="number">1</span></span><br><span class="line">	Else</span><br><span class="line"><span class="built_in">		SendInput,</span> % GetKeyState(<span class="string">"CapsLock"</span>, <span class="string">"T"</span>) ? <span class="string">"T"</span> : <span class="string">"t"</span></span><br><span class="line"><span class="keyword">Return</span></span><br><span class="line"></span><br><span class="line"><span class="title">mainp:</span></span><br><span class="line"><span class="built_in">	Run,</span> http://www.baidu.com</span><br><span class="line"><span class="keyword">Return</span></span><br></pre></td></tr></table></figure>
-
-<p>从功能上我们是希望达到以下效果：</p>
-<ul>
-<li>当单击时，输入小写字母t，如果有大写锁定，则输入大写字母T</li>
-<li>当长按时，执行打开百度的操作</li>
-</ul>
-<p>但实际这有许多体验很差的地方，比如：</p>
-<ul>
-<li>当我打字比较快的时候，输入tf，结果输入的是ft，是因为t需要等待时间处理才会输出。</li>
-</ul>
-<h2 id="在对以上代码改造后"><a href="#在对以上代码改造后" class="headerlink" title="在对以上代码改造后"></a>在对以上代码改造后</h2><figure class="highlight ahk"><table><tr><td class="code"><pre><span class="line"><span class="comment">;在对以上代码改造后</span></span><br><span class="line"><span class="title">$MButton::</span></span><br><span class="line"><span class="built_in">	KeyWait,</span> MButton</span><br><span class="line">	If (<span class="built_in">A_TimeSinceThisHotkey</span> &gt; <span class="number">300</span>)</span><br><span class="line"><span class="built_in">		SetTimer,</span> mainp, -<span class="number">1</span></span><br><span class="line">	Else</span><br><span class="line"><span class="built_in">		Click,</span> M</span><br><span class="line"><span class="keyword">Return</span></span><br><span class="line"></span><br><span class="line"><span class="title">mainp:</span></span><br><span class="line"><span class="built_in">	Send,</span> &#123;F3&#125;</span><br><span class="line"><span class="keyword">Return</span></span><br></pre></td></tr></table></figure>
-
-<p>这代码不能正常工作，我希望长按中键时打开指定应用，单击时执行中键原来的功能，结果是长按鼠标中键能打开指定应用，但无法正常使用鼠标中键</p>
-<h2 id="无效例子2：按键双击检测"><a href="#无效例子2：按键双击检测" class="headerlink" title="无效例子2：按键双击检测"></a>无效例子2：按键双击检测</h2><p> 来源:<a href="https://autohotkey.com/boards/viewtopic.php?t=4286" target="_blank" rel="noopener">热键的次数与时长- AutoHotkey Community</a></p>
-<figure class="highlight autohotkey"><table><tr><td class="code"><pre><span class="line"><span class="comment">;修改原来的RControl为LAlt</span></span><br><span class="line">intInterval := <span class="number">500</span> <span class="comment">; 若两次连击在这个时间间隔中，则视为双击。</span></span><br><span class="line"><span class="title">~LAlt::</span></span><br><span class="line">if (<span class="built_in">A_PriorHotkey</span> &lt;&gt; <span class="string">"~LAlt"</span> <span class="literal">or</span> <span class="built_in">A_TimeSincePriorHotkey</span> &gt; intInterval)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">    KeyWait,</span> LAlt</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">MsgBox,</span> 您双击了左边的 LAlt 键。</span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></figure>
-
-<p>功能是希望双击左边的Alt执行打开，但问题是在编辑器长按Alt多选会出现鬼畜现象，影响Alt多行编辑的使用。</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">;修改原来的#c为LAlt</span><br><span class="line">LAlt::</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">int</span>Count &gt; <span class="number">0</span>) ; SetTimer 已经启动，这里记录键击。</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span>Count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span>Count = <span class="number">1</span></span><br><span class="line">SetTimer, KeyWinC, <span class="number">400</span> ; 在 <span class="number">400</span> 毫秒内等待更多的键击。</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">KeyWinC:</span><br><span class="line">SetTimer, KeyWinC, off</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">int</span>Count = <span class="number">1</span>) ; 此键按下了一次。</span><br><span class="line">&#123;</span><br><span class="line">    Run, m:\</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">int</span>Count = <span class="number">2</span>) ; 此键按下了两次。</span><br><span class="line">&#123;</span><br><span class="line">    Run, m:\multimedia</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">int</span>Count &gt; <span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">    MsgBox, 连击了三次或更多。</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">int</span>Count = <span class="number">0</span></span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></figure>
-
-<p>运行后会使用原来的Alt功能失效，比如Alt+Tab无法使用。</p>
-]]></content>
-      <categories>
-        <category>效率提升</category>
-      </categories>
-      <tags>
-        <tag>AHK,Hotkey</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用Travis CI跨平台写Hexo博客</title>
-    <url>/post/travis-ci-to-hexo.html</url>
-    <content><![CDATA[<h2 id="Travis-CI说明"><a href="#Travis-CI说明" class="headerlink" title="Travis CI说明"></a>Travis CI说明</h2><p>新建Source分支用于存储源文件，Master分支用于存储生成的网站文件</p>
-<a id="more"></a> 
-
-<h2 id="全新的电脑写博客"><a href="#全新的电脑写博客" class="headerlink" title="全新的电脑写博客"></a>全新的电脑写博客</h2><ul>
-<li><p>下载安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，<a href="https://github.com/gaoyoubo/hexo-client/releases" target="_blank" rel="noopener">HexoClient</a>，<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a></p>
-</li>
-<li><p>运行Git Bash</p>
-</li>
-<li><p>添加Nodejs环境配置</p>
-<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">touch ~<span class="string">/.bash_profile</span></span><br><span class="line">vi ~<span class="string">/.bash_profile</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加以下内容到.bash_profile文件中，保存退出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="comment"># 添加环境变量</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:/c/Program\ Files/nodejs</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运行以下命令刷新环境变量</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>下载安装SourceTree并登录</p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">-b</span> source https://github.com/kkzzhizhou/kkzzhizhou.github.io</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>下载安装SourceTree并登录</p>
-</li>
-<li><p>打开本地仓库kkzzhizhou.github.io</p>
-</li>
-<li><p>修改后进行提交即可</p>
-</li>
-</ul>
-<h2 id="已经配置的电脑写博客"><a href="#已经配置的电脑写博客" class="headerlink" title="已经配置的电脑写博客"></a>已经配置的电脑写博客</h2><p>强制拉取所有更新到本地，放弃所有本地修改</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">fetch</span> <span class="comment">--all</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard origin/source</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<h2 id="SourceTree发布文章"><a href="#SourceTree发布文章" class="headerlink" title="SourceTree发布文章"></a>SourceTree发布文章</h2><ul>
-<li>暂存所有，填写Commit之后提交即可</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>git应用,博客</tag>
+        <tag>mame</tag>
+        <tag>街机</tag>
       </tags>
   </entry>
   <entry>
@@ -378,54 +341,26 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo使用Travis CI持续集成</title>
-    <url>/post/hexo-with-travis-ci.html</url>
-    <content><![CDATA[<h2 id="使用CI之前"><a href="#使用CI之前" class="headerlink" title="使用CI之前:"></a>使用CI之前:</h2><ul>
-<li>使用命令行安装hexo环境</li>
-<li>还需要敲几个命令：<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></li>
-</ul>
-<h2 id="使用CI之后"><a href="#使用CI之后" class="headerlink" title="使用CI之后"></a>使用CI之后</h2><ul>
-<li>使用HexoClient直接编辑一键发布</li>
-</ul>
+    <title>黑苹果HD5500核显输出HDMI音频</title>
+    <url>/post/hd5500-hdmi-audio.html</url>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="/pic/hd5500-hdmi-audio-1.jpg" alt="pic1"></p>
 <a id="more"></a> 
 
-<h2 id="CI-为何物"><a href="#CI-为何物" class="headerlink" title="CI 为何物"></a>CI 为何物</h2><blockquote>
-<p>CI（Continuous Integration）—— 持续集成。</p>
-</blockquote>
-<p>其实光从名字其实能大致知道CI做了什么事情。硬件领域有集成模块、集成电路，软件领域也有集成概念：项目构建、自动化测试、部署等等。我的理解，每个成熟的产品从零散到成型到出品（上线）的过程，就是集成（Integration）。那么CI做的事情，就是让这个工程自动化，持续进行（Continuous）。</p>
-<h2 id="Travis-CI-又为何物"><a href="#Travis-CI-又为何物" class="headerlink" title="Travis CI 又为何物"></a>Travis CI 又为何物</h2><blockquote>
-<p>Travis CI: 在线托管的CI服务，对开源项目是免费的。(仅适用有公开仓库)</p>
-<p><em>travis</em>-<em>ci</em>.org只支持github上的公有仓库，而<em>travis</em>-<em>ci</em>.com则支持<em>私有仓库(需付费,价格不低)</em>。</p>
-</blockquote>
-<h2 id="如何配置Travis-CI"><a href="#如何配置Travis-CI" class="headerlink" title="如何配置Travis CI"></a>如何配置Travis CI</h2><h3 id="1-GitHub账号直接登录"><a href="#1-GitHub账号直接登录" class="headerlink" title="1.GitHub账号直接登录"></a>1.GitHub账号直接登录</h3><p>打开<a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a> ,使用 GitHub 第三方授权登录。</p>
-<h3 id="2-打开链接"><a href="#2-打开链接" class="headerlink" title="2. 打开链接"></a>2. 打开<a href="https://travis-ci.org/account/repositories" target="_blank" rel="noopener">链接</a></h3><ul>
-<li>勾上你的blog repo (这里我勾上了<code>kkzzhizhou.github.io</code>)，点击小齿轮，进入配置页。</li>
-</ul>
-<h3 id="3-获取Pesonal-Access-Token"><a href="#3-获取Pesonal-Access-Token" class="headerlink" title="3. 获取Pesonal Access Token"></a>3. 获取Pesonal Access Token</h3><ul>
-<li>在GitHub个人账户 <code>Setting/ Developer settings/ Personal access tokens</code>下，新建一个Token，然后在Travis CI配置中，Environment Variables，添加生成的Token。</li>
-</ul>
-<p>权限配置如下图所示:</p>
-<h3 id="4-参考我本页面的配置"><a href="#4-参考我本页面的配置" class="headerlink" title="4. 参考我本页面的配置"></a>4. 参考我本页面的配置</h3><ul>
-<li><strong>CI_TOKEN的值为上步获得的Token</strong></li>
-</ul>
-<h3 id="5-新建Source分支"><a href="#5-新建Source分支" class="headerlink" title="5. 新建Source分支"></a>5. 新建Source分支</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/kkzzhizhou/</span>kkzzhizhou.github.io <span class="regexp">//</span>换成你自己的博客仓库</span><br><span class="line">git checkout source <span class="regexp">//</span>新建source分支</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-Source分支下新建-travis-yml文件"><a href="#6-Source分支下新建-travis-yml文件" class="headerlink" title="6. Source分支下新建.travis.yml文件"></a>6. Source分支下新建.travis.yml文件</h3><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">language:</span> node_js</span><br><span class="line"><span class="symbol">node_js:</span> stable</span><br><span class="line"><span class="symbol">cache:</span></span><br><span class="line"><span class="symbol">  directories:</span></span><br><span class="line">    - node_modules</span><br><span class="line"></span><br><span class="line"><span class="meta"># S: Build Lifecycle</span></span><br><span class="line"><span class="symbol">install:</span></span><br><span class="line">  - npm install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#before_script:</span></span><br><span class="line"> <span class="meta"># - npm install -g gulp</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">script:</span></span><br><span class="line">  - hexo clean &amp;&amp; hexo g</span><br><span class="line"></span><br><span class="line"><span class="symbol">after_script:</span></span><br><span class="line">  - git clone https:<span class="comment">//$&#123;GH_REF&#125; .deploy_git</span></span><br><span class="line">  - cd .deploy_git</span><br><span class="line">  - git checkout master</span><br><span class="line">  - cd ../</span><br><span class="line">  - mv .deploy_git/.git/ .<span class="meta-keyword">/public/</span></span><br><span class="line">  - cd ./public</span><br><span class="line">  - git init</span><br><span class="line">  - git config user.name <span class="string">"zzz"</span> <span class="comment">//修改成你自己的用户名</span></span><br><span class="line">  - git config user.email <span class="string">"806508401@qq.com"</span> <span class="comment">//修改成你自己的邮箱</span></span><br><span class="line">  - git add .</span><br><span class="line">  - git commit -m <span class="string">":memo:Update by Travis CI"</span></span><br><span class="line">  - git push --force --quiet <span class="string">"https://$&#123;CI_TOKEN&#125;@$&#123;GH_REF&#125;"</span> master:master</span><br><span class="line"><span class="meta"># E: Build LifeCycle</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">branches:</span></span><br><span class="line"><span class="symbol">  only:</span></span><br><span class="line">    - source</span><br><span class="line"><span class="symbol">env:</span></span><br><span class="line"><span class="symbol"> global:</span></span><br><span class="line">   - GH_REF: github.com<span class="meta-keyword">/kkzzhizhou/</span>kkzzhizhou.github.io.git <span class="comment">//修改成你自己的仓库</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="7-上传至Source分支"><a href="#7-上传至Source分支" class="headerlink" title="7. 上传至Source分支"></a>7. 上传至Source分支</h3><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"hexo-source-upload"</span></span><br><span class="line">git <span class="keyword">push</span> origin <span class="keyword">source</span> <span class="comment">//推送到远程仓库</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="8-使用HexoClient愉快写Blog了"><a href="#8-使用HexoClient愉快写Blog了" class="headerlink" title="8. 使用HexoClient愉快写Blog了"></a>8. 使用HexoClient愉快写Blog了</h3><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章:"></a>参考文章:</h2><ol>
-<li><p><a href="https://palmer.arkstack.cn/2018/01/Travis%20CI%E5%8A%A9%E5%8A%9BBlog%E6%8C%81%E7%BB%AD%E8%BE%93%E5%87%BA/" target="_blank" rel="noopener">Travis CI助力Blog持续输出</a></p>
-</li>
-<li><p><a href="https://www.mspring.org/2018/11/29/HexoClient%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9/" target="_blank" rel="noopener">HexoClient使用帮助</a></p>
-</li>
-<li><p><a href="https://www.jianshu.com/p/157d15b388c9" target="_blank" rel="noopener">Travis-CI初体验</a></p>
-</li>
+<p><img src="/pic/hd5500-hdmi-audio-2.jpg" alt="pic2"></p>
+<h2 id="驱动原理"><a href="#驱动原理" class="headerlink" title="驱动原理"></a>驱动原理</h2><ol>
+<li>注入的ID可以是16160002或者是16260006</li>
+<li>在DSDT中，B0D3需要更名为HDAU,GFX0需要更名为IGPU.</li>
+<li>HDAU注入的音频ID为3，hda-gfx值为onboard-2,IGPU的hda-gfx值也为onboard-2。</li>
 </ol>
-]]></content>
+<h2 id="SSDT注入"><a href="#SSDT注入" class="headerlink" title="SSDT注入"></a>SSDT注入</h2><p><strong>注意：使用SSDT时，需要禁用ACPI中的change GFX0 to IGPU以及change B0D3 to HDAU,否则可能导致系统无法进入</strong><br>使用<a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/" target="_blank" rel="noopener">MaciASL</a>新建一个dsl文件，复制以下代码后，编译生成aml文件，放入Clover\ACPI\patched目录下。</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Intel ACPI Component Architecture</span></span><br><span class="line"><span class="comment"> * AML/ASL+ Disassembler version 20161210-64(RM)</span></span><br><span class="line"><span class="comment"> * Copyright (c) 2000 - 2016 Intel Corporation</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * Disassembling to non-symbolic legacy ASL operators</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Disassembly of iASL83XrKo.aml, Sun Apr  1 20:23:01 2018</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Original Table Header:</span></span><br><span class="line"><span class="comment"> *     Signature        "SSDT"</span></span><br><span class="line"><span class="comment"> *     Length           0x000001E0 (480)</span></span><br><span class="line"><span class="comment"> *     Revision         0x01</span></span><br><span class="line"><span class="comment"> *     Checksum         0xE4</span></span><br><span class="line"><span class="comment"> *     OEM ID           "toleda"</span></span><br><span class="line"><span class="comment"> *     OEM Table ID     "am89hd55"</span></span><br><span class="line"><span class="comment"> *     OEM Revision     0x00003000 (12288)</span></span><br><span class="line"><span class="comment"> *     Compiler ID      "INTL"</span></span><br><span class="line"><span class="comment"> *     Compiler Version 0x20161210 (538317328)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">DefinitionBlock (<span class="string">""</span>, <span class="string">"SSDT"</span>, <span class="number">1</span>, <span class="string">"toleda"</span>, <span class="string">"am89hd55"</span>, <span class="number">0x00003000</span>)</span><br><span class="line">&#123;</span><br><span class="line">    External (_SB_.PCI0, DeviceObj)    <span class="comment">// (from opcode)</span></span><br><span class="line">    External (<span class="module-access"><span class="module"><span class="identifier">_SB_</span>.</span><span class="module"><span class="identifier">PCI0</span>.</span><span class="module"><span class="identifier">B0D3</span>.</span><span class="module"><span class="identifier">_ADR</span>,</span></span> UnknownObj)    <span class="comment">// (from opcode)</span></span><br><span class="line">    External (<span class="module-access"><span class="module"><span class="identifier">_SB_</span>.</span><span class="module"><span class="identifier">PCI0</span>.</span><span class="module"><span class="identifier">GFX0</span>.</span><span class="module"><span class="identifier">_ADR</span>,</span></span> UnknownObj)    <span class="comment">// (from opcode)</span></span><br><span class="line"></span><br><span class="line">    Method (XOSI, <span class="number">1</span>, NotSerialized)</span><br><span class="line">    &#123;</span><br><span class="line">        Return (LEqual (Arg0, <span class="string">"Windows 2009"</span>))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Scope (\_SB.PCI0)</span><br><span class="line">    &#123;</span><br><span class="line">        Device (HDAU)</span><br><span class="line">        &#123;</span><br><span class="line">            Name (_ADR, <span class="number">0x00030000</span>)  <span class="comment">// _ADR: Address</span></span><br><span class="line">            Method (_INI, <span class="number">0</span>, NotSerialized)  <span class="comment">// _INI: Initialize</span></span><br><span class="line">            &#123;</span><br><span class="line">                Store (Zero, \<span class="module-access"><span class="module"><span class="identifier">_SB</span>.</span><span class="module"><span class="identifier">PCI0</span>.</span><span class="module"><span class="identifier">B0D3</span>.</span><span class="module"><span class="identifier">_ADR</span>)</span></span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Method (_DSM, <span class="number">4</span>, NotSerialized)  <span class="comment">// _DSM: Device-Specific Method</span></span><br><span class="line">            &#123;</span><br><span class="line">                If (LEqual (Arg2, Zero))</span><br><span class="line">                &#123;</span><br><span class="line">                    Return (Buffer (One)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0x03</span>                                           </span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Return (Package (<span class="number">0x04</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"hda-gfx"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x0A</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"onboard-2"</span></span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">"layout-id"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0x03</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                         </span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Name (<span class="module-access"><span class="module"><span class="identifier">GFX0</span>.</span><span class="module"><span class="identifier">_STA</span>,</span></span> Zero)  <span class="comment">// _STA: Status</span></span><br><span class="line">        Device (IGPU)</span><br><span class="line">        &#123;</span><br><span class="line">            Name (_ADR, <span class="number">0x00020000</span>)  <span class="comment">// _ADR: Address</span></span><br><span class="line">            Method (_INI, <span class="number">0</span>, NotSerialized)  <span class="comment">// _INI: Initialize</span></span><br><span class="line">            &#123;</span><br><span class="line">                Store (Zero, \<span class="module-access"><span class="module"><span class="identifier">_SB</span>.</span><span class="module"><span class="identifier">PCI0</span>.</span><span class="module"><span class="identifier">GFX0</span>.</span><span class="module"><span class="identifier">_ADR</span>)</span></span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Method (_DSM, <span class="number">4</span>, NotSerialized)  <span class="comment">// _DSM: Device-Specific Method</span></span><br><span class="line">            &#123;</span><br><span class="line">                If (LEqual (Arg2, Zero))</span><br><span class="line">                &#123;</span><br><span class="line">                    Return (Buffer (One)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0x03</span>                                           </span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Return (Package (<span class="number">0x06</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"AAPL,ig-platform-id"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0x06</span>, <span class="number">0x00</span>, <span class="number">0x26</span>, <span class="number">0x16</span>                         </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">"model"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x17</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"Intel HD Graphics 5500"</span></span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">"hda-gfx"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x0A</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"onboard-2"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Store (<span class="string">"ssdt-ami-8/9series_desktop_hd5500_hdmi_audio_v3.0 github.com/toleda"</span>, Debug)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码中注入的ID为16260006</strong></p>
+<h2 id="使用Rehabman的config-HD5300-5500-6000-plist打补丁"><a href="#使用Rehabman的config-HD5300-5500-6000-plist打补丁" class="headerlink" title="使用Rehabman的config_HD5300_5500_6000.plist打补丁"></a>使用Rehabman的<a href="https://github.com/RehabMan/OS-X-Clover-Laptop-Config" target="_blank" rel="noopener">config_HD5300_5500_6000.plist</a>打补丁</h2><p>因为注入的ID为16260006，所以用Clover Configurator在Clover中的KextsToPatch应用以下补丁</p>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">Name:           com.apple.driver.AppleIntelBDWGraphicsFramebuffer</span><br><span class="line">Comment:        HDMI-audio, port <span class="number">0105</span>, <span class="number">0x16120003</span> <span class="number">0x16120005</span> <span class="number">0x16120006</span> <span class="number">0x16260006</span></span><br><span class="line">Find:           <span class="number">01050B00</span> <span class="number">00040000</span> <span class="number">07050000</span></span><br><span class="line">Replace:        <span class="number">01050B00</span> <span class="number">00080000</span> <span class="number">82000000</span></span><br><span class="line">InfoPlistPatch: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">Name:           com.apple.driver.AppleIntelBDWGraphicsFramebuffer</span><br><span class="line">Comment:        HDMI-audio, port <span class="number">0204</span>, <span class="number">0x16120003</span> <span class="number">0x16120005</span> <span class="number">0x16120006</span> <span class="number">0x16260006</span></span><br><span class="line">Find:           <span class="number">02040B00</span> <span class="number">00040000</span> <span class="number">07050000</span></span><br><span class="line">Replace:        <span class="number">02040B00</span> <span class="number">00080000</span> <span class="number">82000000</span></span><br><span class="line">InfoPlistPatch: <span class="literal">true</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>Hexo</tag>
-        <tag>Travis CI</tag>
+        <tag>Hackintosh</tag>
+        <tag>HDMI Audio</tag>
       </tags>
   </entry>
   <entry>
@@ -496,6 +431,102 @@
       </tags>
   </entry>
   <entry>
+    <title>一款图表可视化，自定义强的记账软件：BlueCoins</title>
+    <url>/post/bluecoins.html</url>
+    <content><![CDATA[<h2 id="从体验记账App讲起"><a href="#从体验记账App讲起" class="headerlink" title="从体验记账App讲起"></a>从体验记账App讲起</h2><p>从高中到现在，断断续续记账，试用过不下10款App，如随手记，挖财，网易有钱，口袋记账等等，都使用过一段时间后卸载，原因各不相同，但卸载最最主要的原因是基础功能不完善，各种杂七杂八功能一堆。</p>
+<h2 id="今天的主角：BlueCoins"><a href="#今天的主角：BlueCoins" class="headerlink" title="今天的主角：BlueCoins"></a>今天的主角：BlueCoins</h2><p>正如你所想的，今天的主角的将记账这件事做到极致，没有多余的功能，强大的图表显示功能，以及便捷的记录方式。它的出现让我心甘情愿花了一晚上研究他的功能。下面讲讲这款软件的功能特色。</p>
+<a id="more"></a> 
+
+<h2 id="主角光环-强大之处"><a href="#主角光环-强大之处" class="headerlink" title="主角光环-强大之处"></a>主角光环-强大之处</h2><ol>
+<li>主面板华丽图表显示，让每日花费一目了然。</li>
+</ol>
+<p><img src="/pic/bluecoins-1.jpg" alt="APP主界面"></p>
+<ol start="2">
+<li>强大的提醒功能</li>
+</ol>
+<p><img src="/pic/bluecoins-2.png" alt="按时提醒功能"></p>
+<ol start="3">
+<li>支持多国货币并自动汇率转换</li>
+</ol>
+<p><img src="/pic/bluecoins-3.jpg" alt="自动汇率转换(需联网)"></p>
+<ol start="4">
+<li>支持与GoogleDrive同步</li>
+</ol>
+<p><img src="/pic/bluecoins-4.png" alt="GoogleDrive同步"></p>
+<ol start="5">
+<li>支持自动填充</li>
+</ol>
+<p><strong>这个功能非常实用，基本上我们每天的花费都是重复的，如果在软件中已经记录过一笔，下次再记录的时候就非常方便了，这点是我在其他软件上没看到的。</strong></p>
+<p><img src="/pic/bluecoins-5.png" alt="自动填充功能"></p>
+<h2 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h2><p>便是不能像网易有钱自动关联银行卡和支付宝进行自动记账操作，记账稍显繁琐。</p>
+<p>不过坚持记录，本来就不是一件容易的事情，即使软件再优秀，自己想偷懒，记账的好习惯也是无法养成的。</p>
+]]></content>
+      <tags>
+        <tag>记账</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用OneDrive实时同步Ditto剪贴板数据（WebDav）</title>
+    <url>/post/onedrive-sync-ditto.html</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>最近将常用的绿色软件放到Onedrive中同步，方便在自己的多个Windows设备使用。遇到一个比较棘手的问题，使用Ditto时会锁定数据库文件，此时OneDrive显示文件在使用中，无法同步。</p>
+<a id="more"></a> 
+
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>使用WebDav连接OneDrive</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>OneDrive使用WebDav的方法：</p>
+<ol>
+<li>访问 <a href="http://onedrive.com/" target="_blank" rel="noopener">OneDrive.com</a> ，点击进入任何一个你的文件夹。</li>
+<li>看浏览器上面的地址栏，“cid”后面的一串完整的数字加大写的英文字母叫 special ID（如下图）。</li>
+<li>你的入口链接就是： special ID（如我的就是<a href="https://d.docs.live.net/F399A8134684152B），账号密码就是你微软账号的账号密码" target="_blank" rel="noopener">https://d.docs.live.net/F399A8134684152B），账号密码就是你微软账号的账号密码</a><ul>
+<li>如果你有<strong>开启两步验证</strong>功能，那么需要在<a href="https://account.live.com/proofs/AppPassword?mkt=en-us" target="_blank" rel="noopener">这里去获得一个生成的应用密码</a></li>
+<li>另外要注意的，OneDrive 的 WebDav 接口如同坚果云的一样，传输的文件大小限制在100M以下。</li>
+</ul>
+</li>
+<li>在资源管理器界面中，选择映射网络驱动器，在文件夹一栏，填入上一步得到的地址，点击完成，耐心等候，输入账号密码即可，之后可以将这个映射得到的盘符当作本地磁盘进行使用</li>
+</ol>
+<p>连接后如下图所示，打开即为你网盘的文件</p>
+<p><img src="/pic/onedrive-sync-ditto-1.jpg" alt></p>
+<p>Ditto设置如下图所示，数据库使用WebDav路径即可完美解决数据同步问题</p>
+<p><img src="/pic/onedrive-sync-ditto-2.jpg" alt></p>
+]]></content>
+      <tags>
+        <tag>webdav应用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GCP申请免费一年服务并无限续用</title>
+    <url>/post/gcp-free-trial.html</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>2017年3月9日，Google Cloud试用由2个月变1年了。绑卡送300美刀，1年内使用。用最低配置来爬墙，每个月大约86GB流量，适用个人使用。<br>截止2019年9月23日，本人仍然在免费试用中，当然之后这个bug可能修复。</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>国内银联信用卡/全球付无法注册。<br>亲测 VISA 和 腾讯运通卡 可以激活。<br>没有VISA卡 ? ！可以去淘宝看看，或者去银行办理。<br>学生可以办没有额度的VISA卡。</p>
+<a id="more"></a> 
+<h2 id="申请"><a href="#申请" class="headerlink" title="申请"></a>申请</h2><p>第一步：<a href="https://cloud.google.com" target="_blank" rel="noopener">https://cloud.google.com</a> ，地区选中国，亲测可行。</p>
+<p><img src="/pic/gcp-free-trial-1.png" alt="a"><br>第二步：填写个人信息</p>
+<p><img src="/pic/gcp-free-trial-2.png" alt="b"></p>
+<p>申请成功后，会扣1美元，过一会儿会将1美元返回到信用卡。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h3><p>由于默认的防火墙限制太多，我们需要修改防火墙规则。</p>
+<p>直接访问 ： <a href="https://console.cloud.google.com/networking/firewalls/list" target="_blank" rel="noopener">https://console.cloud.google.com/networking/firewalls/list</a></p>
+<p>或者在菜单中依次点击 【网络】–&gt;  【防火墙规则】 –&gt; 【创建防火墙规则】</p>
+<p><img src="/pic/gcp-free-trial-3.png" alt="firewall"></p>
+<h3 id="申请静态IP"><a href="#申请静态IP" class="headerlink" title="申请静态IP"></a>申请静态IP</h3><p>直接访问 ： <a href="https://console.cloud.google.com/networking/addresses/list" target="_blank" rel="noopener">https://console.cloud.google.com/networking/addresses/list</a><br>或者在菜单中依次点击 【网络】–&gt;  【外部IP地址】 –&gt; 【保留静态IP】<br>区域可选亚洲东部、欧洲、美国 等地。推荐亚洲！</p>
+<p><img src="/pic/gcp-free-trial-4.png" alt="ip"></p>
+<h2 id="创建计算引擎"><a href="#创建计算引擎" class="headerlink" title="创建计算引擎"></a>创建计算引擎</h2><p>直接访问 ： <a href="https://console.cloud.google.com/compute/instances" target="_blank" rel="noopener">https://console.cloud.google.com/compute/instances</a><br>或者在菜单中依次点击 【计算引擎】–&gt;  【创建实例】</p>
+<p><img src="/pic/gcp-free-trial-5.png" alt="vm"><br>注意以下配置，配置静态IP。</p>
+<p><img src="/pic/gcp-free-trial-6.png" alt="network"></p>
+<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><ol>
+<li>点击进入“元数据”</li>
+</ol>
+<p><img src="/pic/gcp-free-trial-7.gif" alt="ssh1"><br>2. 添加SSH密钥</p>
+<p><img src="/pic/gcp-free-trial-8.gif" alt="ssh2"><br>3. 启动你的软件PuttyGen，用软件生成一个Key,生成KEY的过程要不断地移动你的鼠标。<a href="https://www.freehao123.com/dl-puttygen/" target="_blank" rel="noopener">PuttyGen下载</a></p>
+<p><img src="/pic/gcp-free-trial-9.gif" alt="puttygen"><br>4. 生成了Key后，先点击右下方的“保存私钥”，将密钥保存在本地。</p>
+<p><img src="/pic/gcp-free-trial-10.gif" alt="key"><br>5. 然后复制上面的公钥到元数据中，注意在公钥最后加上你的用户名，然后点击保存。（点击放大）</p>
+<p><img src="/pic/gcp-free-trial-11.gif" alt="key-ssh"><br>6. 现在打开Putty，填入IP地址与端口,<strong>在授权中添加刚刚保存的私钥</strong>。</p>
+<p><img src="/pic/gcp-free-trial-12.gif" alt="putty"><br>7. 如果你想使用Xshell，你需要在PuttyGen中导出为另一种Key格式（OpenSSH key）</p>
+<p><img src="/pic/gcp-free-trial-13.gif" alt="openssh key"></p>
+]]></content>
+      <tags>
+        <tag>VPS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>挂载网络硬盘为本地磁盘的方法总结</title>
     <url>/post/netdisk-mount.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有时候需要挂载网络硬盘比如谷歌网盘、Dropbox、FTP为本地磁盘，体验了之后总结如下</p>
@@ -536,129 +567,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Tampermonkey脚本推荐</title>
-    <url>/post/tampermonkey-scripts.html</url>
-    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-9-2：介绍我使用过的js脚本</p>
-<h2 id="脚本清单"><a href="#脚本清单" class="headerlink" title="脚本清单"></a>脚本清单</h2><ul>
-<li><p><a href="https://greasyfork.org/zh-CN/scripts/39504-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B-%E7%9B%B4%E9%93%BE%E5%8A%A0%E9%80%9F%E7%89%88" target="_blank" rel="noopener">百度网盘直接下载助手 直链加速版</a></p>
-<ul>
-<li>说明：百度网盘提取直链，配合IDM下载</li>
-</ul>
-</li>
-<li><p><a href="https://greasyfork.org/zh-CN/scripts/14151-baidu-tieba-no-login" target="_blank" rel="noopener">百度贴吧：不登录即可看贴</a></p>
-</li>
-<li><p><a href="https://greasyfork.org/zh-CN/scripts/1002-%E7%BD%91%E7%9B%98%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99%E6%8F%90%E5%8F%96%E5%AF%86%E7%A0%81" target="_blank" rel="noopener">网盘自动填写提取密码</a></p>
-</li>
-<li><p><a href="https://greasyfork.org/scripts/32525-%E9%97%B2%E9%B1%BC%E6%90%9C%E7%B4%A2%E6%A1%86%E6%98%BE%E7%A4%BA" target="_blank" rel="noopener">闲鱼搜索框显示</a></p>
-</li>
-<li><p><a href="https://greasyfork.org/scripts/28356-iqiyi-player-switch" target="_blank" rel="noopener">iqiyi-player-switch</a></p>
-<ul>
-<li>说明：爱奇艺flash播放器与html5播放器随意切换，改善html5播放器播放体验。 </li>
-</ul>
-</li>
-<li><p><a href="https://greasyfork.org/zh-CN/scripts/370005-%E4%B8%80%E9%94%AEvip%E8%A7%86%E9%A2%91%E8%A7%A3%E6%9E%90-%E5%8E%BB%E5%B9%BF%E5%91%8A-%E5%85%A8%E7%BD%91-%E4%B8%80%E7%AB%99%E5%BC%8F%E9%9F%B3%E4%B9%90%E6%90%9C%E7%B4%A2%E4%B8%8B%E8%BD%BD-2018-08-31-%E5%8F%AF%E7%94%A8" target="_blank" rel="noopener">一键VIP视频解析、去广告（全网）,一站式音乐搜索下载 2018-08-31 可用</a></p>
-</li>
-</ul>
-<p>本文结束。</p>
-<a id="more"></a> 
-
-
-]]></content>
-      <tags>
-        <tag>效率生活</tag>
-        <tag>js脚本</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chrome插件推荐</title>
-    <url>/post/chrome-plugin.html</url>
-    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-9-3：添加网页截图工具：Fireshot</p>
-<p>2018-9-2：介绍我当前使用的Chrome插件</p>
-<a id="more"></a> 
-
-<h2 id="插件列表"><a href="#插件列表" class="headerlink" title="插件列表"></a>插件列表</h2><ul>
-<li><p><a href="https://chrome.google.com/webstore/detail/hdokiejnpimakedhajhdlcegeplioahd" target="_blank" rel="noopener">Lastpass</a>：在线密码管理器</p>
-</li>
-<li><p><a href="https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener">Tampermonkey</a>：js脚本管理器</p>
-</li>
-<li><p><a href="https://www.yiclear.com/download/" target="_blank" rel="noopener">广告净化器</a>：广告过滤，特色功能是过滤视频广告。</p>
-</li>
-<li><p><a href="https://ypsuperkey.meek.com.cn/" target="_blank" rel="noopener">云盘万能钥匙</a>：自动获取并填写百度网盘密码（类似WiFi万能钥匙）</p>
-</li>
-<li><p><a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom" target="_blank" rel="noopener">Adblock</a>：用于去除广告净化器不能很好过滤的广告。</p>
-</li>
-<li><p><a href="https://chrome.google.com/webstore/detail/ffabmkklhbepgcgfonabamgnfafbdlkn" target="_blank" rel="noopener">Gitzip for github</a>：双击文件或者文件夹下载Github文件</p>
-</li>
-<li><p><a href="https://chrome.google.com/webstore/detail/lpleipinonnoibneeejgjnoeekmbopbc" target="_blank" rel="noopener">Extension Manager (aka switcher)</a>：快速关闭无用插件，无需进入扩展管理关闭。</p>
-</li>
-<li><p><a href="https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg" target="_blank" rel="noopener">Fireshot</a>：网页截图，支持长截图，只需截图时滚动鼠标即可。</p>
-</li>
-</ul>
-<p>本文结束。</p>
-<!-- more --> 
-
-
-]]></content>
-      <tags>
-        <tag>效率生活</tag>
-        <tag>浏览器插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>UEFI下实现Ubuntu To Go</title>
-    <url>/post/ubuntu-to-go-uefi.html</url>
-    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><ul>
-<li>2018年9月2日：讲解如何U盘中安装UEFI启动的Ubuntu To Go</li>
-</ul>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自从Windows To Go(简称WTG)变得越来越普及，于是Ubuntu To Go的尝试也越来越多，总结一下成功的经验。</p>
-<p>网上很多介绍Ubuntu To Go的方法都是基于MBR的，个人有需求在一个U盘上（256GB）中同时安装Windows To Go，Ubuntu To Go和黑苹果，MacOS要求必须在GPT分区中使用，所以有了以下的折腾。</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
-<li>虚拟机VMware Workstation(其它虚拟机如Vitualbox等应该也没问题)</li>
-<li>Ubuntu安装镜像（iso格式，不用解压）</li>
-<li>U盘一只（建议使用固态U盘，随机读写速度是普通U盘几十倍，淘宝搜Windows to go就能找到）</li>
-<li>提前使用Diskgenius将U盘转为GPT分区，并且新建一个EFI分区，和预留Ubuntu空间（不新建分区）</li>
-</ul>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ol>
-<li>新建一个虚拟机，将默认添加的硬盘删除，具体配置如下图所示。（安装过程选择不自动更新可以加速系统安装）</li>
-</ol>
-<p><img src="/pic/ubuntu-to-go-uefi-1.jpg" alt></p>
-<p>……</p>
-<a id="more"></a> 
-
-<ol start="2">
-<li>加载U盘到虚拟机中：虚拟机设置-添加-硬盘-SCSI-使用物理磁盘-选择U盘（一般是最后一个），添加后如下图所示。</li>
-</ol>
-<p><img src="/pic/ubuntu-to-go-uefi-2.jpg" alt></p>
-<ol start="3">
-<li>设置虚拟机为UEFI启动，如下图所示</li>
-</ol>
-<p><img src="/pic/ubuntu-to-go-uefi-3.jpg" alt></p>
-<ol start="4">
-<li>之后启动虚拟机，正常安装Ubuntu，因为VMware软件设计导致Ubuntu显示分辨率低，可以先启动到Ubuntu Live后调整分辨率再启动安装程序，如下图所示。</li>
-</ol>
-<p><img src="/pic/ubuntu-to-go-uefi-4.jpg" alt></p>
-<ol start="5">
-<li><p>之后就到了最关键的步骤了：安装完成之后请不要启动Ubuntu启动，先进入Ubuntu Live中。</p>
-<p>5.1 安装grub-efi，打开终端输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">apt-get install grub-efi</span><br></pre></td></tr></table></figure>
-
-<p>5.2 挂载U盘中的EFI分区和Ubuntu系统分区</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看U盘挂载目录，一般是/dev/sda</span></span><br><span class="line">df -l</span><br><span class="line">mkdir /mnt/EFI</span><br><span class="line">mkdir /mnt/Ubuntu</span><br><span class="line">mount /dev/sda1/ /mnt/EFI</span><br><span class="line">mount /dev/sda2 /mnt/Ubuntu</span><br></pre></td></tr></table></figure>
-
-<p>5.3 安装EFI便捷启动到EFI分区</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">grub-install --target=x86_64-efi --root-directory=/mnt/EFI/ --efi-directory=/mnt/EFI/Boot</span><br></pre></td></tr></table></figure>
-
-<p>5.4 将系统启动文件/mnt/Ubuntu/boot/grub.cfg复制到/mnt/EFI/boot目录下</p>
-<p>5.5 如果便携启动失败，可以尝试启动到系统后安装Grub Customizer，删除启动项后保存，再重复第五部分即可。</p>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Ubuntu U盘</tag>
-        <tag>Ubuntu 便携</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>解决使用第三方输入法在LaunchPad中无法切换中英文</title>
     <url>/post/launchpad-inputmethord-switch-problem.html</url>
     <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><ul>
@@ -681,15 +589,93 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac下清歌五笔输入法快速输入日期时间的方法</title>
-    <url>/post/mac-quick-input-time.html</url>
-    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-09-02：清歌五笔输入法自带快速输入日期时间的方法</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Windows平台下，用搜狗五笔输入法快速输入时间日期星期很舒服，一到Mac平台，Mac版搜狗五笔输入法却不提供同样的功能，实在是郁闷至极，最终发现了清歌五笔输入法能够快速输入时间日期（虽然不能快速输入星期），很赞。</p>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>清歌输入法提供用户词库功能，如下图所示。</p>
-<p><img src="/pic/mac-quick-input-time-1.jpg" alt="Mac下清歌五笔输入法快速输入日期时间的方法"></p>
-<a id="more"></a> ]]></content>
+    <title>黑苹果HD5500开机第二屏花屏解决方案</title>
+    <url>/post/hackintosh-hd5500-screen-flickering.html</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>我的电脑是i5-5200U(HD5500),注入的ID为16260006。每次开机第二屏就会闪屏，8个苹果。</p>
+<ol>
+<li>在开启CSM兼容模式时，开机第二屏会8个苹果一闪而过，不影响正常使用，但看着很烦。</li>
+<li>在关闭CSM兼容模式时，即纯UEFI模式时，开机直接花屏，屏幕分为15个竖直片段，显示很模糊。进入系统后，按睡眠后唤醒就正常。或者合盖后打开，显示正常。</li>
+</ol>
+<a id="more"></a> 
+
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li>打开Clover\Graphics,勾选Inject Intel,并注入ID:16260006，</li>
+<li>现时在Clover\Graphics勾选注入EDID(下面提取修改的EDID)。</li>
+</ol>
+<h2 id="如何提取EDID"><a href="#如何提取EDID" class="headerlink" title="如何提取EDID"></a>如何提取EDID</h2><p>我的屏幕是LG 1080P屏幕。在Windows下，使用<a href="https://pan.baidu.com/s/1sl0purF" target="_blank" rel="noopener">Deltacast EDID</a>提取EDID.</p>
+<ol>
+<li><p>从注册表中导入EDID<br><img src="/pic/hackintosh-hd5500-screen-flickering-1.png" alt><br><img src="/pic/hackintosh-hd5500-screen-flickering-2.png" alt></p>
+</li>
+<li><p>这里改水平同步宽度，我显示器是32，改为100就解决了8个苹果登录花屏的问题。如果你的显示器是100，就改为32试试。<br><img src="/pic/hackintosh-hd5500-screen-flickering-3.png" alt></p>
+</li>
+</ol>
+]]></content>
       <tags>
-        <tag>输入法技巧</tag>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>打造Windows+Mac OS X+Ubuntu+WinPE的Windows To Go维护U盘</title>
+    <url>/post/multiboot-wtg.html</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="/pic/multiboot-wtg-1.png" alt="效果图"></p>
+<p>作为一个极客，随便带一个维护PE的U盘是必需的。然而在很多时候，仅仅有一个PE，难以完成复杂的需求。我手头上有一个128G的Windows To Go U盘，想为别人安装Ubuntu时，必须要拿另外一个U盘全盘格式化后写入，麻烦，而且也浪费资源。所以这次写一篇关于U盘多启动的文章，实现标题的中效果。</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>  你得有一个不小于64GB的Windows To Go U盘。<br>  使用到的软件：</p>
+<ol>
+<li><p>DiskGenius(或PartitionGuru)</p>
+</li>
+<li><p>UEFI启动修复工具</p>
+</li>
+<li><p>XYplorer</p>
+</li>
+<li><p>Vmware Pro</p>
+</li>
+<li><p>Bootice</p>
+</li>
+<li><p>Dism++</p>
+<p>使用到的镜像：</p>
+</li>
+<li><p>Ubuntu 16.04.3安装镜像</p>
+</li>
+<li><p>Mac OS X 13.1安装镜像(dmg格式)</p>
+</li>
+<li><p>微PE</p>
+</li>
+<li><p>Windows 10 1709企业版镜像</p>
+</li>
+</ol>
+<h2 id="开始折腾"><a href="#开始折腾" class="headerlink" title="开始折腾"></a>开始折腾</h2><ol>
+<li><p>这次使用到的启动方式为GPT+EFI（使用PartitionGuru软件进行操作）。如果对启动方式不了解，在这里简单的科普一下，有两种启动方式，一种是BIOS+MBR，一种是GPT+EFI，前者复杂，后者简单。</p>
+</li>
+<li><p>进行分区操作，350MB的EFI（ESP）启动分区，5.5GB的FAT32分区（只是暂时，稍后需要在苹果系统中格式化为HFS+分区），2GB的FAT32分区用于放Ubuntu 16.04.3的安装镜像，500MB的FAT32分区用于PE（只装一个PE的话600MB即可），以及最后10的空间格式化为NTFS分区用于Windows To Go的系统及软件。<br>PS:<strong>前四个分区设置了隐藏，在电脑中不可见，不然一插进电脑就出来5个盘，不美观也不实用。</strong></p>
+<p><img src="/pic/multiboot-wtg-2.png" alt="分区展示"></p>
+</li>
+</ol>
+<h2 id="EFI分区"><a href="#EFI分区" class="headerlink" title="EFI分区"></a>EFI分区</h2><p>这个分区的用途是用于搜索和引导其他分区上的安装镜像和系统。 使用到的引导管理工具为rEFInd（主要）和Clover（黑苹果安装辅助）。关于引导管理工具的使用，这里只简单提一点：开机时进入的EFI文件是在/EFI/Boot/下。</p>
+<p><img src="/pic/multiboot-wtg-3.png" alt="EFI分区"></p>
+<h2 id="写入苹果安装镜像"><a href="#写入苹果安装镜像" class="headerlink" title="写入苹果安装镜像"></a>写入苹果安装镜像</h2><p>在虚拟机中安装苹果操作系统，具体的操作见<a href="http://www.jianshu.com/p/25d2d781bd98" target="_blank" rel="noopener">简书-Hegel_SU</a>的文章。</p>
+<p><img src="/pic/multiboot-wtg-4.png" alt="虚拟机安装Mac OS X"></p>
+<p>打开苹果的操作系统，插入U盘，磁盘工具，将5.5GB的FAT32分区格式化为HFS+分区。之后用命令行写入苹果镜像。</p>
+<p><img src="/pic/multiboot-wtg-5.jpg" alt="格式化为HFS+分区图例"></p>
+<p>命令行写入苹果DMG镜像教程：<a href="https://www.iplaysoft.com/macos-usb-install-drive.html" target="_blank" rel="noopener">iplaysoft</a></p>
+<p><img src="/pic/multiboot-wtg-6.png" alt="命令行"></p>
+<h2 id="写入Ubuntu系统镜像"><a href="#写入Ubuntu系统镜像" class="headerlink" title="写入Ubuntu系统镜像"></a>写入Ubuntu系统镜像</h2><p>将安装镜像解压至2GB的FAT32分区中，同时删除该分区目录/EFI/Boot/Bootx64.EFI即可</p>
+<p><img src="/pic/multiboot-wtg-7.png" alt="Ubuntu镜像文件"></p>
+<h2 id="写入微PE工具箱"><a href="#写入微PE工具箱" class="headerlink" title="写入微PE工具箱"></a>写入微PE工具箱</h2><p>准备另一个8GB的文章，打开微PE工具箱写入程序，选择方案二：UEFI/Legacy全能双分区方式，写入后在隐藏的引导分区中提取WEPE64.WIM，WEPE64.SDI和引导文件/EFI/Microsoft下的文件到500MB的FAT32分区中。</p>
+<p><img src="/pic/multiboot-wtg-8.png" alt="微PE工具箱"></p>
+<p><img src="/pic/multiboot-wtg-9.png" alt="方案二"></p>
+<h2 id="安装完整的Windows-to-go-Win10系统"><a href="#安装完整的Windows-to-go-Win10系统" class="headerlink" title="安装完整的Windows to go-Win10系统"></a>安装完整的Windows to go-Win10系统</h2><p>在Windows下创建一个VHD文件（建议20GB）放到最后一个分区NTFS中，（科普一下，VHD指的是Vitual Hard Disk即虚拟硬盘文件），挂载VHD后在DiskGenius中格式化VHD文件，然后用Dism++以Windows To Go方式写入Windows 10的系统镜像，之后在U盘的EFI分区中，用Bootice修复Windows 10的引导。</p>
+<p><img src="/pic/multiboot-wtg-10.png" alt="VHD"></p>
+<p><img src="/pic/multiboot-wtg-11.png" alt="格式化VHD文件"></p>
+<p><img src="/pic/multiboot-wtg-12.png" alt="释放Win10镜像"></p>
+<p><img src="/pic/multiboot-wtg-13.png" alt="释放Windows镜像"></p>
+<p><img src="/pic/multiboot-wtg-14.png" alt="修改BCD文件"></p>
+<p><img src="/pic/multiboot-wtg-15.png" alt="修改启动项"></p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>至此，一个多功能U盘打造完成，前前后后折腾了两天多，茶不思饭不想，如果你也非常想要达到这样的目的，请做好心想准备，过程将会非常的闹心,Good luck。</p>
+]]></content>
+      <tags>
+        <tag>多功能U盘</tag>
       </tags>
   </entry>
   <entry>
@@ -726,63 +712,6 @@
       <tags>
         <tag>PortableApps</tag>
         <tag>开机后台自启</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Thunderbird Portable开机自启动并最小化到系统托盘</title>
-    <url>/post/thunderbird-minimized-auto-start.html</url>
-    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ol>
-<li>便携应用设置为开机启动时会自动打开主界面</li>
-<li>Thunderbird 60.0官方并不支持最小化到系统托盘</li>
-<li>Thunderbird 第三方最小化到系统托盘的插件如FireTray，最多支持到54.X，在最新版的Thunderbird中并不可用。</li>
-</ol>
-<a id="more"></a> 
-
-<h2 id="可行解决方案：AHK，全称AutoHotkey"><a href="#可行解决方案：AHK，全称AutoHotkey" class="headerlink" title="可行解决方案：AHK，全称AutoHotkey"></a>可行解决方案：AHK，全称AutoHotkey</h2><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">;=====================================================================</span><br><span class="line">;                 Thunderbird Portable <span class="number">60.0</span>+ Tray</span><br><span class="line">;                            Author:zzz</span><br><span class="line">;                           date:<span class="number">2018</span>-<span class="number">8</span>-<span class="number">31</span></span><br><span class="line">;             使用方法：将AHK放在<span class="module-access"><span class="module"><span class="identifier">ThunderbirdPortable</span>.</span></span>exe目录中运行</span><br><span class="line">;               理论上支持所有Thunderbird版本，包括以后发布的版本</span><br><span class="line">;---------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">#NoEnv</span><br><span class="line">SendMode Input  </span><br><span class="line">SetWorkingDir %A_ScriptDir%  </span><br><span class="line"><span class="constructor">DllCall(<span class="string">"kernel32.dll\SetProcessShutdownParameters"</span>, UInt, 0x4FF, UInt, 0)</span></span><br><span class="line">#SingleInstance ignore</span><br><span class="line">menu,tray,icon,App\AppInfo\appicon.ico</span><br><span class="line">;title must contain</span><br><span class="line">SetTitleMatchMode, <span class="number">2</span></span><br><span class="line"></span><br><span class="line">Run, <span class="module-access"><span class="module"><span class="identifier">ThunderbirdPortable</span>.</span></span>exe</span><br><span class="line">WinWait, ahk_exe <span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line">;WinMinimize, ahk_exe <span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line">WinHide, ahk_exe <span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">OnExit, ExitSub</span><br><span class="line"></span><br><span class="line"><span class="constructor">OnMessage(0x404, <span class="string">"AHK_NOTIFYICON"</span>)</span></span><br><span class="line"><span class="constructor">OnMessage(0x11, <span class="string">"WM_QUERYENDSESSION"</span>)</span> </span><br><span class="line"><span class="constructor">AHK_NOTIFYICON(<span class="params">wParam</span>, <span class="params">lParam</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (lParam = <span class="number">0x202</span>) ; WM_LBUTTONUP</span><br><span class="line">	&#123;</span><br><span class="line">		WinShow, - Mozilla Thunderbird</span><br><span class="line">		WinActivate, - Mozilla Thunderbird</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="constructor">WM_QUERYENDSESSION(<span class="params">wParam</span>, <span class="params">lParam</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  ENDSESSION_LOGOFF = <span class="number">0x80000000</span></span><br><span class="line">  Process,Close,<span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line">  Process,WaitClose,<span class="module-access"><span class="module"><span class="identifier">ThunderbirdPortable</span>.</span></span>exe</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="constructor">ProcessExist(Name)</span>&#123;</span><br><span class="line">	Process,Exist,%Name%</span><br><span class="line">	return Errorlevel</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Loop</span><br><span class="line">&#123;</span><br><span class="line">	If !<span class="constructor">ProcessExist(<span class="string">"thunderbird.exe"</span>)</span></span><br><span class="line">	&#123;</span><br><span class="line">		ExitApp</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	WinGet, winState, MinMax, ahk_exe thunderbird.exe</span><br><span class="line">	<span class="keyword">if</span> (winState = -<span class="number">1</span>) &#123;</span><br><span class="line">		WinHide, - Mozilla Thunderbird</span><br><span class="line">	&#125;</span><br><span class="line">   </span><br><span class="line">	sleep <span class="number">500</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ExitSub:</span><br><span class="line">WinClose,ahk_exe thunderbird.exe</span><br><span class="line">Process,close,<span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line">ExitApp</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Thunderbird Minimize</tag>
-        <tag>AHK应用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows同步阅读Kindle个人文档方案</title>
-    <url>/post/windows-read-kindle-documents.html</url>
-    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><ul>
-<li>2018-8-31：第一个版本</li>
-</ul>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，Kindle支持在安卓和IOS设备中同步阅读个人文档，但Kindle for PC并不支持。</p>
-<h3 id="网上找到的解决方案如下："><a href="#网上找到的解决方案如下：" class="headerlink" title="网上找到的解决方案如下："></a>网上找到的解决方案如下：</h3><ol>
-<li>将书籍放到My Kindle Content中阅读</li>
-<li>Chrome ARC Welder安装Kindle</li>
-<li>使用安卓模拟器</li>
-</ol>
-<h3 id="首先分析以上三种方案"><a href="#首先分析以上三种方案" class="headerlink" title="首先分析以上三种方案"></a>首先分析以上三种方案</h3><p>方案一：可以打开并阅读书籍，但书签，笔记，阅读进度不能同步。（不可行）</p>
-<p>方案二：可以打开并登录Kindle，非常卡顿，而且在阅读界面会崩溃。（不可行）</p>
-<p>方案三：虚拟一个安卓系统，但存在一些阅读便捷性问题，我的方案主要解决的是一些阅读便捷性问题。（可行）</p>
-<a id="more"></a> 
-
-<h2 id="我的方案"><a href="#我的方案" class="headerlink" title="我的方案"></a>我的方案</h2><p>准备工具：</p>
-<ol>
-<li><a href="https://en.bignox.com/" target="_blank" rel="noopener">Nox 夜神模拟器海外版</a>，我使用的版本是6.0.5.2，这版本默认是绿色便携版，可放在U盘中使用。</li>
-<li><a href="https://autohotkey.com/" target="_blank" rel="noopener">AutoHotKey</a>，使用官方最新版</li>
-</ol>
-<p>解决的问题：</p>
-<ol>
-<li>Kindle阅读时使用鼠标滚动翻页</li>
-<li>使用鼠标中键单击返回</li>
-<li>使用鼠标中键双击最近任务</li>
-<li>使用鼠标中键长按后释放返回主页</li>
-<li>两种鼠标中键滚轮模式切换：阅读模式和常规模式</li>
-</ol>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">;=====================================================================</span><br><span class="line">;           按住右键+鼠标滚轮往上:音量加                             </span><br><span class="line">;                    鼠标滚轮往上:向上滚动                           </span><br><span class="line">;           按住右键+鼠标滚轮往下:音量减                             </span><br><span class="line">;                    鼠标滚轮往下:向下滚动                           </span><br><span class="line">;                    鼠标中键单击:返回键                             </span><br><span class="line">;                    鼠标中键双击:最近任务                           </span><br><span class="line">;                    鼠标中键长按:主页键                             </span><br><span class="line">;           按住右键+鼠标中键长按:模式切换(阅读模式和常规模式)       </span><br><span class="line">;           按住右键+鼠标中键长按:Nox全屏</span><br><span class="line">;           阅读模式:在Nox中,鼠标滚轮代表音量加减,用于翻页                </span><br><span class="line">;           常规模式:鼠标滚轮为正常上下滚动   </span><br><span class="line">;                      zzz<span class="number">-2018.08</span><span class="number">.31</span>                                </span><br><span class="line">;---------------------------------------------------------------------                                                                                  </span><br><span class="line">#IfWinActive ahk_exe Nox.exe                                         </span><br><span class="line">&#123;                                                                    </span><br><span class="line">Flag:=<span class="literal">false</span>                                                          </span><br><span class="line">MButton::                                                            </span><br><span class="line"><span class="keyword">if</span> pressesCount &gt; <span class="number">0</span> ; ＞<span class="number">0</span>说明SetTimer 已经启动了，按键次数递增       </span><br><span class="line">&#123;                                                                    </span><br><span class="line">    pressesCount += <span class="number">1</span>                                                </span><br><span class="line">    <span class="keyword">return</span>                                                           </span><br><span class="line">&#125;                                                                    </span><br><span class="line">;否则，这是新一系列按键的首次按键。将计数设重置为 <span class="number">1</span> ，并启动定时器： </span><br><span class="line">pressesCount = <span class="number">1</span>                                                     </span><br><span class="line">SetTimer, WaitKey, <span class="number">500</span> ;在 <span class="number">500</span> 毫秒内等待更多的按键。                </span><br><span class="line"><span class="keyword">return</span>                                                               </span><br><span class="line">                                                                     </span><br><span class="line">WaitKey:                                                             </span><br><span class="line">KeyWait, MButton                                                     </span><br><span class="line">If (A_TimeSinceThisHotkey &gt; <span class="number">500</span>)                                     </span><br><span class="line">	&#123;                                                                </span><br><span class="line">	send,&#123;Home&#125;                                                      </span><br><span class="line">	SetTimer, WaitKey, off                                           </span><br><span class="line">	pressesCount = <span class="number">0</span>                                                 </span><br><span class="line">	<span class="keyword">return</span>                                                           </span><br><span class="line">	&#125;                                                                </span><br><span class="line">SetTimer, WaitKey, off                                               </span><br><span class="line"><span class="keyword">if</span> pressesCount = <span class="number">1</span> ;该键已按过一次。                                </span><br><span class="line">&#123;                                                                    </span><br><span class="line">    Gosub singleClick                                                </span><br><span class="line">&#125;                                                                    </span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> pressesCount = <span class="number">2</span> ;该键已按过两次。                           </span><br><span class="line">&#123;                                                                    </span><br><span class="line">	Gosub <span class="built_in">double</span>Click                                                </span><br><span class="line">&#125;                                                                     </span><br><span class="line">;不论上面哪个动作被触发，将计数复位以备下一系列的按键：              </span><br><span class="line">pressesCount = <span class="number">0</span>                                                     </span><br><span class="line"><span class="keyword">return</span>                                                               </span><br><span class="line">                                                                     </span><br><span class="line">singleClick:                                                         </span><br><span class="line"><span class="keyword">if</span> GetKeyState(<span class="string">"RButton"</span>) = <span class="number">0</span>                                        </span><br><span class="line">	Send, &#123;ESC&#125;                                                      </span><br><span class="line"><span class="keyword">else</span>                                                                 </span><br><span class="line">&#123;                                                                    </span><br><span class="line">	<span class="keyword">if</span>(Flag:=!Flag)                                                  </span><br><span class="line">	&#123;                                                                </span><br><span class="line">		wheelup::                                                    </span><br><span class="line">		<span class="keyword">if</span> GetKeyState(<span class="string">"RButton"</span>) = Flag                             </span><br><span class="line">			Send, &#123;wheelup&#125;                                          </span><br><span class="line">		<span class="keyword">else</span>                                                         </span><br><span class="line">			send, ^<span class="number">6</span>                                                 </span><br><span class="line">		<span class="keyword">return</span>                                                       </span><br><span class="line">		wheeldown::                                                  </span><br><span class="line">		<span class="keyword">if</span> GetKeyState(<span class="string">"RButton"</span>) = Flag                             </span><br><span class="line">			Send, &#123;wheeldown&#125;                                        </span><br><span class="line">		<span class="keyword">else</span>                                                         </span><br><span class="line">			send, ^<span class="number">7</span>                                                 </span><br><span class="line">		<span class="keyword">return</span>                                                       </span><br><span class="line">	&#125;                                                                </span><br><span class="line">&#125;                                                                    </span><br><span class="line"><span class="keyword">return</span>                                                               </span><br><span class="line">                                                                     </span><br><span class="line"><span class="built_in">double</span>Click:                                                         </span><br><span class="line"><span class="keyword">if</span> GetKeyState(<span class="string">"RButton"</span>) = <span class="number">0</span>                                        </span><br><span class="line">	Send, &#123;End&#125;                                                      </span><br><span class="line"><span class="keyword">else</span>                                                                 </span><br><span class="line">	send, ^<span class="number">5</span>                                                         </span><br><span class="line"><span class="keyword">return</span>                                                               </span><br><span class="line">                                                                     </span><br><span class="line">&#125;                                                                    </span><br><span class="line">;---------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>AHK应用</tag>
-        <tag>Kinlde个人文档</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -826,48 +755,224 @@
       </tags>
   </entry>
   <entry>
-    <title>解决谷歌日历提醒Bug：日历找不到请求的活动</title>
-    <url>/post/google-calendar-bug.html</url>
-    <content><![CDATA[<h2 id="bug描述"><a href="#bug描述" class="headerlink" title="bug描述"></a>bug描述</h2><p>今天解决一件非常恼人的问题，问题删除谷歌日历中的提醒，提醒日历找不到请求的活动。如图所示，在手机无法删除。</p>
-<a id="more"></a>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
-<li><p>登录网页版<a href="https://calendar.google.com/" target="_blank" rel="noopener">谷歌日历</a>，</p>
+    <title>syncthing实现移动硬盘便携同步至NAS</title>
+    <url>/post/Synchronize-Portable-External-Hard-Drive-With-NAS.html</url>
+    <content><![CDATA[<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p><img src="/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png" alt="实现效果"></p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>一台黑群晖NAS设备和一个移动硬盘实现在资料自动同步</p>
+<p>先说说传统方式有几种：</p>
+<ul>
+<li>将移动硬盘插入NAS的USB接口，并使用群晖应用USB Copy进行备份(注意：这种方式只能备份至移动硬盘，不能将移动硬盘上的更改同步到NAS中)</li>
+<li>将移动硬盘插入局域网中的Windows设备，并使用samba挂载NAS文件夹，使用类似GoodSync，AllwaySync，SyncFolders等同步软件进行同步。</li>
+</ul>
+<p>我的需求：</p>
+<ul>
+<li>移动硬盘接入任何Windows设备中，在有网络的情况下（可以是局域网，可以是公网），都能直接与NAS中的文件夹进行同步。</li>
+<li>即使移动硬盘在一段时间内不使用（比如说，不接任何设备闲置几天），重新接入网络能继续与NAS中的文件夹进行同步</li>
+</ul>
+<h2 id="可行解决方案：SyncTrayzor-Syncthing-GUI"><a href="#可行解决方案：SyncTrayzor-Syncthing-GUI" class="headerlink" title="可行解决方案：SyncTrayzor(Syncthing GUI)"></a>可行解决方案：SyncTrayzor(Syncthing GUI)</h2><a id="more"></a> 
+<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><ol>
+<li><p>下载SyncTrayzor Portable版本，解压放置在移动硬盘根目录，命名为Syncthing(可以改成任何你想到的名字)</p>
 </li>
-<li><p>在左栏的我的日历，设置Tasks，切换到“提醒”，然后在网页端将提醒删除即可。如图：<br><img src="/pic/google-calendar-bug-1.jpg" alt></p>
+<li><p>将硬盘盘符修改成一些不常用的的盘符，比方说P盘</p>
 </li>
-<li><p>手机再同步一次，提醒就消失了。</p>
+<li><p>打开Syncthing文件夹中的SyncTrayzor.exe，将设备名改成移动硬盘的盘符名（最好是有意义的）</p>
+</li>
+<li><p>添加远程设备NAS，去除勾选“作为中介”</p>
+</li>
+<li><p>将移动硬盘中的文件夹同步给ZNAS即可</p>
 </li>
 </ol>
+<h2 id="插入新设备时"><a href="#插入新设备时" class="headerlink" title="插入新设备时"></a>插入新设备时</h2><ul>
+<li>修改移动硬盘盘符为P盘（或者修改配置文件中的[盘符]:\Syncthing\data\syncthing\config.xml中的盘符位置)</li>
+<li>打开SyncTrayzor即可同步</li>
+</ul>
+<h2 id="自动修改盘符脚本"><a href="#自动修改盘符脚本" class="headerlink" title="自动修改盘符脚本"></a>自动修改盘符脚本</h2><ul>
+<li>将以下代码保存成start.ps1后打开即可</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$script_path</span> = <span class="built_in">Split-Path</span> <span class="literal">-Parent</span> <span class="variable">$MyInvocation</span>.MyCommand.Definition</span><br><span class="line"><span class="variable">$config</span> = <span class="string">"<span class="variable">$script_path</span>\data\syncthing\config.xml"</span></span><br><span class="line"><span class="variable">$drive_letter</span> = <span class="variable">$script_path</span>.Split(<span class="string">'\'</span>)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">write-host</span> <span class="string">"正在修改盘符..."</span> </span><br><span class="line"><span class="variable">$xml</span> = <span class="built_in">New-Object</span> <span class="literal">-TypeName</span> XML</span><br><span class="line"><span class="variable">$xml</span>.Load(<span class="variable">$config</span>)</span><br><span class="line"><span class="variable">$node</span>=<span class="variable">$xml</span>.SelectNodes(<span class="string">"/configuration/folder"</span>)</span><br><span class="line"><span class="built_in">write-host</span> <span class="string">"旧盘符为:<span class="variable">$</span>&#123;node.path&#125;"</span> </span><br><span class="line"><span class="variable">$node</span>.SetAttribute(<span class="string">"path"</span>, <span class="variable">$drive_letter</span>)</span><br><span class="line"><span class="built_in">write-host</span> <span class="string">"新盘符为:<span class="variable">$drive_letter</span>"</span></span><br><span class="line"><span class="variable">$xml</span>.Save(<span class="variable">$config</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$</span>?)&#123;</span><br><span class="line">    <span class="built_in">write-host</span> <span class="string">"正在启动SyncTrayzor"</span></span><br><span class="line">    <span class="built_in">Start-Process</span> <span class="variable">$script_path</span>\SyncTrayzor.exe</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
+  </entry>
+  <entry>
+    <title>Windows代码编辑器选择-VSCode</title>
+    <url>/post/vscode.html</url>
+    <content><![CDATA[<h2 id="Windows平台"><a href="#Windows平台" class="headerlink" title="Windows平台"></a>Windows平台</h2><h3 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h3><p>优点：</p>
+<ul>
+<li>界面美观</li>
+<li>扩展强大</li>
+<li>代码高亮</li>
+<li>启动速度快</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>AHK中文无法对齐</li>
+<li>Alt多选需要在设置中设置为Ctrl/Command，体验极差</li>
+</ul>
+<h3 id="Notepad"><a href="#Notepad" class="headerlink" title="Notepad++"></a>Notepad++</h3><p>缺点：</p>
+<ul>
+<li>界面不美观</li>
+<li>文件不能自动关联</li>
+</ul>
+<h3 id="Sublime-Text-3"><a href="#Sublime-Text-3" class="headerlink" title="Sublime Text 3"></a>Sublime Text 3</h3><p>缺点：</p>
+<ul>
+<li>Windows不支持Alt多选</li>
+<li>闭源</li>
+</ul>
+]]></content>
+      <categories>
+        <category>效率工具</category>
+        <category>代码编辑器</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CMD、Powershell、Bash终端配置走代理</title>
+    <url>/post/37a5cb72.html</url>
+    <content><![CDATA[<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">;; 设置代理(其中sock5可以设置为http，https)</span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">http_proxy</span>=<span class="string">"sock5://127.0.0.1:1080"</span></span><br><span class="line"><span class="builtin-name">set</span> <span class="attribute">https_proxy</span>=<span class="string">"sock5://127.0.0.1:1080"</span></span><br><span class="line">;; 清除代理设置</span><br><span class="line"><span class="builtin-name">set</span> http_proxy=</span><br><span class="line"><span class="builtin-name">set</span> https_proxy=</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a> 
+
+<h2 id="Powershell"><a href="#Powershell" class="headerlink" title="Powershell"></a>Powershell</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># NOTE: registry keys for IE 8, may vary for other versions</span></span><br><span class="line"><span class="variable">$regPath</span> = <span class="string">'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings'</span></span><br><span class="line"><span class="comment"># 清除代理设置</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clear-Proxy</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyEnable <span class="literal">-Value</span> <span class="number">0</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyServer <span class="literal">-Value</span> <span class="string">''</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyOverride <span class="literal">-Value</span> <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'http_proxy'</span>, <span class="variable">$null</span>, <span class="string">'User'</span>)</span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'https_proxy'</span>, <span class="variable">$null</span>, <span class="string">'User'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 设置代理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Set-Proxy</span></span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$proxy</span> = <span class="string">'sock5://127.0.0.1:1080'</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyEnable <span class="literal">-Value</span> <span class="number">1</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyServer <span class="literal">-Value</span> <span class="variable">$proxy</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="variable">$regPath</span> <span class="literal">-Name</span> ProxyOverride <span class="literal">-Value</span> <span class="string">'&lt;local&gt;'</span></span><br><span class="line"></span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'http_proxy'</span>, <span class="variable">$proxy</span>, <span class="string">'User'</span>)</span><br><span class="line">    [<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">'https_proxy'</span>, <span class="variable">$proxy</span>, <span class="string">'User'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> ALL_PROXY=<span class="string">"socks5://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://127.0.0.1:1080"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>如果代理服务器需要登陆，这时可以直接把用户名和密码写进去</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http_proxy=http://userName:password@proxyAddress:port</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>推荐跨平台PDF,网页标注-Weave</title>
+    <url>/post/weave.html</url>
+    <content><![CDATA[<h2 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h2><ul>
+<li>安卓平板（电容屏）</li>
+<li>Yandex浏览器（从Google Play下载，需科学上网）</li>
+<li>Weava Highlighter（从Chrome Webstore下载安装，需科学上网）</li>
+<li>电容笔（主动式体验更好些，更接近笔的体验，需要充电）</li>
+</ul>
+<a id="more"></a> 
+
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="网页文字颜色标注"><a href="#网页文字颜色标注" class="headerlink" title="网页文字颜色标注"></a>网页文字颜色标注</h3><ul>
+<li>选中一段文字，这时候并不会出现Weava的标注工具</li>
+<li>在网页任意位置滑动就会出现标注工具，如下图所示</li>
+</ul>
+<p><img src="/pic/weave-1.jpg" alt></p>
+<h3 id="标注和浏览器菜单重叠的解决方法"><a href="#标注和浏览器菜单重叠的解决方法" class="headerlink" title="标注和浏览器菜单重叠的解决方法"></a>标注和浏览器菜单重叠的解决方法</h3><ul>
+<li>在出现标注工具后，将页面向上滑动即可，如下图所示</li>
+</ul>
+<p><img src="/pic/weave-2.jpg" alt></p>
+<h3 id="网页文字添加注释"><a href="#网页文字添加注释" class="headerlink" title="网页文字添加注释"></a>网页文字添加注释</h3><ul>
+<li>在颜色标注后，只需要再次点击该文字就会出现添加注释，如下图所示</li>
+</ul>
+<p><img src="/pic/weave-3.jpg" alt></p>
+<h3 id="为不同的颜色添加颜色注释"><a href="#为不同的颜色添加颜色注释" class="headerlink" title="为不同的颜色添加颜色注释"></a>为不同的颜色添加颜色注释</h3><ul>
+<li>在文字标注界面选择设置按钮即可</li>
+</ul>
+<p><img src="/pic/weave-4.jpg" alt></p>
+<h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p><img src="/pic/weave-5.jpg" alt></p>
+<p><img src="/pic/weave-6.jpg" alt></p>
+]]></content>
+      <categories>
+        <category>效率工具</category>
+      </categories>
       <tags>
-        <tag>谷歌日历</tag>
-        <tag>Bug</tag>
+        <tag>阅读辅助</tag>
       </tags>
   </entry>
   <entry>
-    <title>黑苹果HD5500开机第二屏花屏解决方案</title>
-    <url>/post/hackintosh-hd5500-screen-flickering.html</url>
-    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>我的电脑是i5-5200U(HD5500),注入的ID为16260006。每次开机第二屏就会闪屏，8个苹果。</p>
-<ol>
-<li>在开启CSM兼容模式时，开机第二屏会8个苹果一闪而过，不影响正常使用，但看着很烦。</li>
-<li>在关闭CSM兼容模式时，即纯UEFI模式时，开机直接花屏，屏幕分为15个竖直片段，显示很模糊。进入系统后，按睡眠后唤醒就正常。或者合盖后打开，显示正常。</li>
-</ol>
+    <title>AutoHotkey在热键体验不好的地方总结</title>
+    <url>/post/fuck-ahk.html</url>
+    <content><![CDATA[<h2 id="最开始的想法"><a href="#最开始的想法" class="headerlink" title="最开始的想法"></a>最开始的想法</h2><ul>
+<li>长按字母键打开常用应用，不影响字母输入</li>
+<li>长按鼠标中键打开指定应用，不影响鼠标中键原有功能</li>
+<li>双击Alt唤醒Wox，不影响Alt原有功能</li>
+</ul>
+<h2 id="失败后的备选方案"><a href="#失败后的备选方案" class="headerlink" title="失败后的备选方案"></a>失败后的备选方案</h2><ul>
+<li>使用RShift + 字母打开常用应用</li>
+<li>使用Wgesture，定义按下鼠标右键+单击鼠标左键打开指定应用（已实现）</li>
+<li>使用Capslock + F发送Alt+Space，实现唤醒Wox（已实现）</li>
+</ul>
 <a id="more"></a> 
 
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
-<li>打开Clover\Graphics,勾选Inject Intel,并注入ID:16260006，</li>
-<li>现时在Clover\Graphics勾选注入EDID(下面提取修改的EDID)。</li>
-</ol>
-<h2 id="如何提取EDID"><a href="#如何提取EDID" class="headerlink" title="如何提取EDID"></a>如何提取EDID</h2><p>我的屏幕是LG 1080P屏幕。在Windows下，使用<a href="https://pan.baidu.com/s/1sl0purF" target="_blank" rel="noopener">Deltacast EDID</a>提取EDID.</p>
-<ol>
-<li><p>从注册表中导入EDID<br><img src="/pic/hackintosh-hd5500-screen-flickering-1.png" alt><br><img src="/pic/hackintosh-hd5500-screen-flickering-2.png" alt></p>
+<h2 id="意外收获"><a href="#意外收获" class="headerlink" title="意外收获"></a>意外收获</h2><p>发现火萤酱快捷键能够设置双击Alt来唤醒，这就说明用其他语言能够完美的实现双击热键。</p>
+<h2 id="无效例子1：长按字母键影响输入"><a href="#无效例子1：长按字母键影响输入" class="headerlink" title="无效例子1：长按字母键影响输入"></a>无效例子1：长按字母键影响输入</h2><p>来源：<a href="https://www.autohotkey.com/boards/viewtopic.php?f=28&t=6082" target="_blank" rel="noopener">仅长按单键执行功能，不影响短按示例</a></p>
+<figure class="highlight autohotkey"><table><tr><td class="code"><pre><span class="line"><span class="comment">;示例代码</span></span><br><span class="line"><span class="title">$t::</span></span><br><span class="line"><span class="built_in">	KeyWait,</span> t</span><br><span class="line">	If (<span class="built_in">A_TimeSinceThisHotkey</span> &gt; <span class="number">300</span>)</span><br><span class="line"><span class="built_in">		SetTimer,</span> mainp, -<span class="number">1</span></span><br><span class="line">	Else</span><br><span class="line"><span class="built_in">		SendInput,</span> % GetKeyState(<span class="string">"CapsLock"</span>, <span class="string">"T"</span>) ? <span class="string">"T"</span> : <span class="string">"t"</span></span><br><span class="line"><span class="keyword">Return</span></span><br><span class="line"></span><br><span class="line"><span class="title">mainp:</span></span><br><span class="line"><span class="built_in">	Run,</span> http://www.baidu.com</span><br><span class="line"><span class="keyword">Return</span></span><br></pre></td></tr></table></figure>
+
+<p>从功能上我们是希望达到以下效果：</p>
+<ul>
+<li>当单击时，输入小写字母t，如果有大写锁定，则输入大写字母T</li>
+<li>当长按时，执行打开百度的操作</li>
+</ul>
+<p>但实际这有许多体验很差的地方，比如：</p>
+<ul>
+<li>当我打字比较快的时候，输入tf，结果输入的是ft，是因为t需要等待时间处理才会输出。</li>
+</ul>
+<h2 id="在对以上代码改造后"><a href="#在对以上代码改造后" class="headerlink" title="在对以上代码改造后"></a>在对以上代码改造后</h2><figure class="highlight ahk"><table><tr><td class="code"><pre><span class="line"><span class="comment">;在对以上代码改造后</span></span><br><span class="line"><span class="title">$MButton::</span></span><br><span class="line"><span class="built_in">	KeyWait,</span> MButton</span><br><span class="line">	If (<span class="built_in">A_TimeSinceThisHotkey</span> &gt; <span class="number">300</span>)</span><br><span class="line"><span class="built_in">		SetTimer,</span> mainp, -<span class="number">1</span></span><br><span class="line">	Else</span><br><span class="line"><span class="built_in">		Click,</span> M</span><br><span class="line"><span class="keyword">Return</span></span><br><span class="line"></span><br><span class="line"><span class="title">mainp:</span></span><br><span class="line"><span class="built_in">	Send,</span> &#123;F3&#125;</span><br><span class="line"><span class="keyword">Return</span></span><br></pre></td></tr></table></figure>
+
+<p>这代码不能正常工作，我希望长按中键时打开指定应用，单击时执行中键原来的功能，结果是长按鼠标中键能打开指定应用，但无法正常使用鼠标中键</p>
+<h2 id="无效例子2：按键双击检测"><a href="#无效例子2：按键双击检测" class="headerlink" title="无效例子2：按键双击检测"></a>无效例子2：按键双击检测</h2><p> 来源:<a href="https://autohotkey.com/boards/viewtopic.php?t=4286" target="_blank" rel="noopener">热键的次数与时长- AutoHotkey Community</a></p>
+<figure class="highlight autohotkey"><table><tr><td class="code"><pre><span class="line"><span class="comment">;修改原来的RControl为LAlt</span></span><br><span class="line">intInterval := <span class="number">500</span> <span class="comment">; 若两次连击在这个时间间隔中，则视为双击。</span></span><br><span class="line"><span class="title">~LAlt::</span></span><br><span class="line">if (<span class="built_in">A_PriorHotkey</span> &lt;&gt; <span class="string">"~LAlt"</span> <span class="literal">or</span> <span class="built_in">A_TimeSincePriorHotkey</span> &gt; intInterval)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">    KeyWait,</span> LAlt</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">MsgBox,</span> 您双击了左边的 LAlt 键。</span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<p>功能是希望双击左边的Alt执行打开，但问题是在编辑器长按Alt多选会出现鬼畜现象，影响Alt多行编辑的使用。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">;修改原来的#c为LAlt</span><br><span class="line">LAlt::</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">int</span>Count &gt; <span class="number">0</span>) ; SetTimer 已经启动，这里记录键击。</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span>Count += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span>Count = <span class="number">1</span></span><br><span class="line">SetTimer, KeyWinC, <span class="number">400</span> ; 在 <span class="number">400</span> 毫秒内等待更多的键击。</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">KeyWinC:</span><br><span class="line">SetTimer, KeyWinC, off</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">int</span>Count = <span class="number">1</span>) ; 此键按下了一次。</span><br><span class="line">&#123;</span><br><span class="line">    Run, m:\</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">int</span>Count = <span class="number">2</span>) ; 此键按下了两次。</span><br><span class="line">&#123;</span><br><span class="line">    Run, m:\multimedia</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">int</span>Count &gt; <span class="number">2</span>)</span><br><span class="line">&#123;</span><br><span class="line">    MsgBox, 连击了三次或更多。</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">int</span>Count = <span class="number">0</span></span><br><span class="line"><span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<p>运行后会使用原来的Alt功能失效，比如Alt+Tab无法使用。</p>
+]]></content>
+      <categories>
+        <category>效率提升</category>
+      </categories>
+      <tags>
+        <tag>AHK,Hotkey</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo使用Travis CI持续集成</title>
+    <url>/post/hexo-with-travis-ci.html</url>
+    <content><![CDATA[<h2 id="使用CI之前"><a href="#使用CI之前" class="headerlink" title="使用CI之前:"></a>使用CI之前:</h2><ul>
+<li>使用命令行安装hexo环境</li>
+<li>还需要敲几个命令：<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></li>
+</ul>
+<h2 id="使用CI之后"><a href="#使用CI之后" class="headerlink" title="使用CI之后"></a>使用CI之后</h2><ul>
+<li>使用HexoClient直接编辑一键发布</li>
+</ul>
+<a id="more"></a> 
+
+<h2 id="CI-为何物"><a href="#CI-为何物" class="headerlink" title="CI 为何物"></a>CI 为何物</h2><blockquote>
+<p>CI（Continuous Integration）—— 持续集成。</p>
+</blockquote>
+<p>其实光从名字其实能大致知道CI做了什么事情。硬件领域有集成模块、集成电路，软件领域也有集成概念：项目构建、自动化测试、部署等等。我的理解，每个成熟的产品从零散到成型到出品（上线）的过程，就是集成（Integration）。那么CI做的事情，就是让这个工程自动化，持续进行（Continuous）。</p>
+<h2 id="Travis-CI-又为何物"><a href="#Travis-CI-又为何物" class="headerlink" title="Travis CI 又为何物"></a>Travis CI 又为何物</h2><blockquote>
+<p>Travis CI: 在线托管的CI服务，对开源项目是免费的。(仅适用有公开仓库)</p>
+<p><em>travis</em>-<em>ci</em>.org只支持github上的公有仓库，而<em>travis</em>-<em>ci</em>.com则支持<em>私有仓库(需付费,价格不低)</em>。</p>
+</blockquote>
+<h2 id="如何配置Travis-CI"><a href="#如何配置Travis-CI" class="headerlink" title="如何配置Travis CI"></a>如何配置Travis CI</h2><h3 id="1-GitHub账号直接登录"><a href="#1-GitHub账号直接登录" class="headerlink" title="1.GitHub账号直接登录"></a>1.GitHub账号直接登录</h3><p>打开<a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a> ,使用 GitHub 第三方授权登录。</p>
+<h3 id="2-打开链接"><a href="#2-打开链接" class="headerlink" title="2. 打开链接"></a>2. 打开<a href="https://travis-ci.org/account/repositories" target="_blank" rel="noopener">链接</a></h3><ul>
+<li>勾上你的blog repo (这里我勾上了<code>kkzzhizhou.github.io</code>)，点击小齿轮，进入配置页。</li>
+</ul>
+<h3 id="3-获取Pesonal-Access-Token"><a href="#3-获取Pesonal-Access-Token" class="headerlink" title="3. 获取Pesonal Access Token"></a>3. 获取Pesonal Access Token</h3><ul>
+<li>在GitHub个人账户 <code>Setting/ Developer settings/ Personal access tokens</code>下，新建一个Token，然后在Travis CI配置中，Environment Variables，添加生成的Token。</li>
+</ul>
+<p>权限配置如下图所示:</p>
+<h3 id="4-参考我本页面的配置"><a href="#4-参考我本页面的配置" class="headerlink" title="4. 参考我本页面的配置"></a>4. 参考我本页面的配置</h3><ul>
+<li><strong>CI_TOKEN的值为上步获得的Token</strong></li>
+</ul>
+<h3 id="5-新建Source分支"><a href="#5-新建Source分支" class="headerlink" title="5. 新建Source分支"></a>5. 新建Source分支</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/kkzzhizhou/</span>kkzzhizhou.github.io <span class="regexp">//</span>换成你自己的博客仓库</span><br><span class="line">git checkout source <span class="regexp">//</span>新建source分支</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-Source分支下新建-travis-yml文件"><a href="#6-Source分支下新建-travis-yml文件" class="headerlink" title="6. Source分支下新建.travis.yml文件"></a>6. Source分支下新建.travis.yml文件</h3><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">language:</span> node_js</span><br><span class="line"><span class="symbol">node_js:</span> stable</span><br><span class="line"><span class="symbol">cache:</span></span><br><span class="line"><span class="symbol">  directories:</span></span><br><span class="line">    - node_modules</span><br><span class="line"></span><br><span class="line"><span class="meta"># S: Build Lifecycle</span></span><br><span class="line"><span class="symbol">install:</span></span><br><span class="line">  - npm install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#before_script:</span></span><br><span class="line"> <span class="meta"># - npm install -g gulp</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">script:</span></span><br><span class="line">  - hexo clean &amp;&amp; hexo g</span><br><span class="line"></span><br><span class="line"><span class="symbol">after_script:</span></span><br><span class="line">  - git clone https:<span class="comment">//$&#123;GH_REF&#125; .deploy_git</span></span><br><span class="line">  - cd .deploy_git</span><br><span class="line">  - git checkout master</span><br><span class="line">  - cd ../</span><br><span class="line">  - mv .deploy_git/.git/ .<span class="meta-keyword">/public/</span></span><br><span class="line">  - cd ./public</span><br><span class="line">  - git init</span><br><span class="line">  - git config user.name <span class="string">"zzz"</span> <span class="comment">//修改成你自己的用户名</span></span><br><span class="line">  - git config user.email <span class="string">"806508401@qq.com"</span> <span class="comment">//修改成你自己的邮箱</span></span><br><span class="line">  - git add .</span><br><span class="line">  - git commit -m <span class="string">":memo:Update by Travis CI"</span></span><br><span class="line">  - git push --force --quiet <span class="string">"https://$&#123;CI_TOKEN&#125;@$&#123;GH_REF&#125;"</span> master:master</span><br><span class="line"><span class="meta"># E: Build LifeCycle</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">branches:</span></span><br><span class="line"><span class="symbol">  only:</span></span><br><span class="line">    - source</span><br><span class="line"><span class="symbol">env:</span></span><br><span class="line"><span class="symbol"> global:</span></span><br><span class="line">   - GH_REF: github.com<span class="meta-keyword">/kkzzhizhou/</span>kkzzhizhou.github.io.git <span class="comment">//修改成你自己的仓库</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="7-上传至Source分支"><a href="#7-上传至Source分支" class="headerlink" title="7. 上传至Source分支"></a>7. 上传至Source分支</h3><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"hexo-source-upload"</span></span><br><span class="line">git <span class="keyword">push</span> origin <span class="keyword">source</span> <span class="comment">//推送到远程仓库</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-使用HexoClient愉快写Blog了"><a href="#8-使用HexoClient愉快写Blog了" class="headerlink" title="8. 使用HexoClient愉快写Blog了"></a>8. 使用HexoClient愉快写Blog了</h3><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章:"></a>参考文章:</h2><ol>
+<li><p><a href="https://palmer.arkstack.cn/2018/01/Travis%20CI%E5%8A%A9%E5%8A%9BBlog%E6%8C%81%E7%BB%AD%E8%BE%93%E5%87%BA/" target="_blank" rel="noopener">Travis CI助力Blog持续输出</a></p>
 </li>
-<li><p>这里改水平同步宽度，我显示器是32，改为100就解决了8个苹果登录花屏的问题。如果你的显示器是100，就改为32试试。<br><img src="/pic/hackintosh-hd5500-screen-flickering-3.png" alt></p>
+<li><p><a href="https://www.mspring.org/2018/11/29/HexoClient%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9/" target="_blank" rel="noopener">HexoClient使用帮助</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/157d15b388c9" target="_blank" rel="noopener">Travis-CI初体验</a></p>
 </li>
 </ol>
 ]]></content>
       <tags>
-        <tag>Hackintosh</tag>
+        <tag>Hexo</tag>
+        <tag>Travis CI</tag>
       </tags>
   </entry>
   <entry>
@@ -1006,26 +1111,255 @@
       </tags>
   </entry>
   <entry>
-    <title>黑苹果HD5500核显输出HDMI音频</title>
-    <url>/post/hd5500-hdmi-audio.html</url>
-    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="/pic/hd5500-hdmi-audio-1.jpg" alt="pic1"></p>
+    <title>Tampermonkey脚本推荐</title>
+    <url>/post/tampermonkey-scripts.html</url>
+    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-9-2：介绍我使用过的js脚本</p>
+<h2 id="脚本清单"><a href="#脚本清单" class="headerlink" title="脚本清单"></a>脚本清单</h2><ul>
+<li><p><a href="https://greasyfork.org/zh-CN/scripts/39504-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B-%E7%9B%B4%E9%93%BE%E5%8A%A0%E9%80%9F%E7%89%88" target="_blank" rel="noopener">百度网盘直接下载助手 直链加速版</a></p>
+<ul>
+<li>说明：百度网盘提取直链，配合IDM下载</li>
+</ul>
+</li>
+<li><p><a href="https://greasyfork.org/zh-CN/scripts/14151-baidu-tieba-no-login" target="_blank" rel="noopener">百度贴吧：不登录即可看贴</a></p>
+</li>
+<li><p><a href="https://greasyfork.org/zh-CN/scripts/1002-%E7%BD%91%E7%9B%98%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%86%99%E6%8F%90%E5%8F%96%E5%AF%86%E7%A0%81" target="_blank" rel="noopener">网盘自动填写提取密码</a></p>
+</li>
+<li><p><a href="https://greasyfork.org/scripts/32525-%E9%97%B2%E9%B1%BC%E6%90%9C%E7%B4%A2%E6%A1%86%E6%98%BE%E7%A4%BA" target="_blank" rel="noopener">闲鱼搜索框显示</a></p>
+</li>
+<li><p><a href="https://greasyfork.org/scripts/28356-iqiyi-player-switch" target="_blank" rel="noopener">iqiyi-player-switch</a></p>
+<ul>
+<li>说明：爱奇艺flash播放器与html5播放器随意切换，改善html5播放器播放体验。 </li>
+</ul>
+</li>
+<li><p><a href="https://greasyfork.org/zh-CN/scripts/370005-%E4%B8%80%E9%94%AEvip%E8%A7%86%E9%A2%91%E8%A7%A3%E6%9E%90-%E5%8E%BB%E5%B9%BF%E5%91%8A-%E5%85%A8%E7%BD%91-%E4%B8%80%E7%AB%99%E5%BC%8F%E9%9F%B3%E4%B9%90%E6%90%9C%E7%B4%A2%E4%B8%8B%E8%BD%BD-2018-08-31-%E5%8F%AF%E7%94%A8" target="_blank" rel="noopener">一键VIP视频解析、去广告（全网）,一站式音乐搜索下载 2018-08-31 可用</a></p>
+</li>
+</ul>
+<p>本文结束。</p>
 <a id="more"></a> 
 
-<p><img src="/pic/hd5500-hdmi-audio-2.jpg" alt="pic2"></p>
-<h2 id="驱动原理"><a href="#驱动原理" class="headerlink" title="驱动原理"></a>驱动原理</h2><ol>
-<li>注入的ID可以是16160002或者是16260006</li>
-<li>在DSDT中，B0D3需要更名为HDAU,GFX0需要更名为IGPU.</li>
-<li>HDAU注入的音频ID为3，hda-gfx值为onboard-2,IGPU的hda-gfx值也为onboard-2。</li>
-</ol>
-<h2 id="SSDT注入"><a href="#SSDT注入" class="headerlink" title="SSDT注入"></a>SSDT注入</h2><p><strong>注意：使用SSDT时，需要禁用ACPI中的change GFX0 to IGPU以及change B0D3 to HDAU,否则可能导致系统无法进入</strong><br>使用<a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/" target="_blank" rel="noopener">MaciASL</a>新建一个dsl文件，复制以下代码后，编译生成aml文件，放入Clover\ACPI\patched目录下。</p>
-<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Intel ACPI Component Architecture</span></span><br><span class="line"><span class="comment"> * AML/ASL+ Disassembler version 20161210-64(RM)</span></span><br><span class="line"><span class="comment"> * Copyright (c) 2000 - 2016 Intel Corporation</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * Disassembling to non-symbolic legacy ASL operators</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Disassembly of iASL83XrKo.aml, Sun Apr  1 20:23:01 2018</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Original Table Header:</span></span><br><span class="line"><span class="comment"> *     Signature        "SSDT"</span></span><br><span class="line"><span class="comment"> *     Length           0x000001E0 (480)</span></span><br><span class="line"><span class="comment"> *     Revision         0x01</span></span><br><span class="line"><span class="comment"> *     Checksum         0xE4</span></span><br><span class="line"><span class="comment"> *     OEM ID           "toleda"</span></span><br><span class="line"><span class="comment"> *     OEM Table ID     "am89hd55"</span></span><br><span class="line"><span class="comment"> *     OEM Revision     0x00003000 (12288)</span></span><br><span class="line"><span class="comment"> *     Compiler ID      "INTL"</span></span><br><span class="line"><span class="comment"> *     Compiler Version 0x20161210 (538317328)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">DefinitionBlock (<span class="string">""</span>, <span class="string">"SSDT"</span>, <span class="number">1</span>, <span class="string">"toleda"</span>, <span class="string">"am89hd55"</span>, <span class="number">0x00003000</span>)</span><br><span class="line">&#123;</span><br><span class="line">    External (_SB_.PCI0, DeviceObj)    <span class="comment">// (from opcode)</span></span><br><span class="line">    External (<span class="module-access"><span class="module"><span class="identifier">_SB_</span>.</span><span class="module"><span class="identifier">PCI0</span>.</span><span class="module"><span class="identifier">B0D3</span>.</span><span class="module"><span class="identifier">_ADR</span>,</span></span> UnknownObj)    <span class="comment">// (from opcode)</span></span><br><span class="line">    External (<span class="module-access"><span class="module"><span class="identifier">_SB_</span>.</span><span class="module"><span class="identifier">PCI0</span>.</span><span class="module"><span class="identifier">GFX0</span>.</span><span class="module"><span class="identifier">_ADR</span>,</span></span> UnknownObj)    <span class="comment">// (from opcode)</span></span><br><span class="line"></span><br><span class="line">    Method (XOSI, <span class="number">1</span>, NotSerialized)</span><br><span class="line">    &#123;</span><br><span class="line">        Return (LEqual (Arg0, <span class="string">"Windows 2009"</span>))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Scope (\_SB.PCI0)</span><br><span class="line">    &#123;</span><br><span class="line">        Device (HDAU)</span><br><span class="line">        &#123;</span><br><span class="line">            Name (_ADR, <span class="number">0x00030000</span>)  <span class="comment">// _ADR: Address</span></span><br><span class="line">            Method (_INI, <span class="number">0</span>, NotSerialized)  <span class="comment">// _INI: Initialize</span></span><br><span class="line">            &#123;</span><br><span class="line">                Store (Zero, \<span class="module-access"><span class="module"><span class="identifier">_SB</span>.</span><span class="module"><span class="identifier">PCI0</span>.</span><span class="module"><span class="identifier">B0D3</span>.</span><span class="module"><span class="identifier">_ADR</span>)</span></span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Method (_DSM, <span class="number">4</span>, NotSerialized)  <span class="comment">// _DSM: Device-Specific Method</span></span><br><span class="line">            &#123;</span><br><span class="line">                If (LEqual (Arg2, Zero))</span><br><span class="line">                &#123;</span><br><span class="line">                    Return (Buffer (One)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0x03</span>                                           </span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Return (Package (<span class="number">0x04</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"hda-gfx"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x0A</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"onboard-2"</span></span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">"layout-id"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0x03</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                         </span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Name (<span class="module-access"><span class="module"><span class="identifier">GFX0</span>.</span><span class="module"><span class="identifier">_STA</span>,</span></span> Zero)  <span class="comment">// _STA: Status</span></span><br><span class="line">        Device (IGPU)</span><br><span class="line">        &#123;</span><br><span class="line">            Name (_ADR, <span class="number">0x00020000</span>)  <span class="comment">// _ADR: Address</span></span><br><span class="line">            Method (_INI, <span class="number">0</span>, NotSerialized)  <span class="comment">// _INI: Initialize</span></span><br><span class="line">            &#123;</span><br><span class="line">                Store (Zero, \<span class="module-access"><span class="module"><span class="identifier">_SB</span>.</span><span class="module"><span class="identifier">PCI0</span>.</span><span class="module"><span class="identifier">GFX0</span>.</span><span class="module"><span class="identifier">_ADR</span>)</span></span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Method (_DSM, <span class="number">4</span>, NotSerialized)  <span class="comment">// _DSM: Device-Specific Method</span></span><br><span class="line">            &#123;</span><br><span class="line">                If (LEqual (Arg2, Zero))</span><br><span class="line">                &#123;</span><br><span class="line">                    Return (Buffer (One)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0x03</span>                                           </span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                Return (Package (<span class="number">0x06</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"AAPL,ig-platform-id"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0x06</span>, <span class="number">0x00</span>, <span class="number">0x26</span>, <span class="number">0x16</span>                         </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">"model"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x17</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"Intel HD Graphics 5500"</span></span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">"hda-gfx"</span>, </span><br><span class="line">                    Buffer (<span class="number">0x0A</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"onboard-2"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Store (<span class="string">"ssdt-ami-8/9series_desktop_hd5500_hdmi_audio_v3.0 github.com/toleda"</span>, Debug)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>代码中注入的ID为16260006</strong></p>
-<h2 id="使用Rehabman的config-HD5300-5500-6000-plist打补丁"><a href="#使用Rehabman的config-HD5300-5500-6000-plist打补丁" class="headerlink" title="使用Rehabman的config_HD5300_5500_6000.plist打补丁"></a>使用Rehabman的<a href="https://github.com/RehabMan/OS-X-Clover-Laptop-Config" target="_blank" rel="noopener">config_HD5300_5500_6000.plist</a>打补丁</h2><p>因为注入的ID为16260006，所以用Clover Configurator在Clover中的KextsToPatch应用以下补丁</p>
-<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">Name:           com.apple.driver.AppleIntelBDWGraphicsFramebuffer</span><br><span class="line">Comment:        HDMI-audio, port <span class="number">0105</span>, <span class="number">0x16120003</span> <span class="number">0x16120005</span> <span class="number">0x16120006</span> <span class="number">0x16260006</span></span><br><span class="line">Find:           <span class="number">01050B00</span> <span class="number">00040000</span> <span class="number">07050000</span></span><br><span class="line">Replace:        <span class="number">01050B00</span> <span class="number">00080000</span> <span class="number">82000000</span></span><br><span class="line">InfoPlistPatch: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">Name:           com.apple.driver.AppleIntelBDWGraphicsFramebuffer</span><br><span class="line">Comment:        HDMI-audio, port <span class="number">0204</span>, <span class="number">0x16120003</span> <span class="number">0x16120005</span> <span class="number">0x16120006</span> <span class="number">0x16260006</span></span><br><span class="line">Find:           <span class="number">02040B00</span> <span class="number">00040000</span> <span class="number">07050000</span></span><br><span class="line">Replace:        <span class="number">02040B00</span> <span class="number">00080000</span> <span class="number">82000000</span></span><br><span class="line">InfoPlistPatch: <span class="literal">true</span></span><br></pre></td></tr></table></figure>]]></content>
+]]></content>
       <tags>
-        <tag>Hackintosh</tag>
-        <tag>HDMI Audio</tag>
+        <tag>效率生活</tag>
+        <tag>js脚本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chrome插件推荐</title>
+    <url>/post/chrome-plugin.html</url>
+    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-9-3：添加网页截图工具：Fireshot</p>
+<p>2018-9-2：介绍我当前使用的Chrome插件</p>
+<a id="more"></a> 
+
+<h2 id="插件列表"><a href="#插件列表" class="headerlink" title="插件列表"></a>插件列表</h2><ul>
+<li><p><a href="https://chrome.google.com/webstore/detail/hdokiejnpimakedhajhdlcegeplioahd" target="_blank" rel="noopener">Lastpass</a>：在线密码管理器</p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" rel="noopener">Tampermonkey</a>：js脚本管理器</p>
+</li>
+<li><p><a href="https://www.yiclear.com/download/" target="_blank" rel="noopener">广告净化器</a>：广告过滤，特色功能是过滤视频广告。</p>
+</li>
+<li><p><a href="https://ypsuperkey.meek.com.cn/" target="_blank" rel="noopener">云盘万能钥匙</a>：自动获取并填写百度网盘密码（类似WiFi万能钥匙）</p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom" target="_blank" rel="noopener">Adblock</a>：用于去除广告净化器不能很好过滤的广告。</p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/ffabmkklhbepgcgfonabamgnfafbdlkn" target="_blank" rel="noopener">Gitzip for github</a>：双击文件或者文件夹下载Github文件</p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/lpleipinonnoibneeejgjnoeekmbopbc" target="_blank" rel="noopener">Extension Manager (aka switcher)</a>：快速关闭无用插件，无需进入扩展管理关闭。</p>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg" target="_blank" rel="noopener">Fireshot</a>：网页截图，支持长截图，只需截图时滚动鼠标即可。</p>
+</li>
+</ul>
+<p>本文结束。</p>
+<!-- more --> 
+
+
+]]></content>
+      <tags>
+        <tag>效率生活</tag>
+        <tag>浏览器插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UEFI下实现Ubuntu To Go</title>
+    <url>/post/ubuntu-to-go-uefi.html</url>
+    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><ul>
+<li>2018年9月2日：讲解如何U盘中安装UEFI启动的Ubuntu To Go</li>
+</ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自从Windows To Go(简称WTG)变得越来越普及，于是Ubuntu To Go的尝试也越来越多，总结一下成功的经验。</p>
+<p>网上很多介绍Ubuntu To Go的方法都是基于MBR的，个人有需求在一个U盘上（256GB）中同时安装Windows To Go，Ubuntu To Go和黑苹果，MacOS要求必须在GPT分区中使用，所以有了以下的折腾。</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>虚拟机VMware Workstation(其它虚拟机如Vitualbox等应该也没问题)</li>
+<li>Ubuntu安装镜像（iso格式，不用解压）</li>
+<li>U盘一只（建议使用固态U盘，随机读写速度是普通U盘几十倍，淘宝搜Windows to go就能找到）</li>
+<li>提前使用Diskgenius将U盘转为GPT分区，并且新建一个EFI分区，和预留Ubuntu空间（不新建分区）</li>
+</ul>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ol>
+<li>新建一个虚拟机，将默认添加的硬盘删除，具体配置如下图所示。（安装过程选择不自动更新可以加速系统安装）</li>
+</ol>
+<p><img src="/pic/ubuntu-to-go-uefi-1.jpg" alt></p>
+<p>……</p>
+<a id="more"></a> 
+
+<ol start="2">
+<li>加载U盘到虚拟机中：虚拟机设置-添加-硬盘-SCSI-使用物理磁盘-选择U盘（一般是最后一个），添加后如下图所示。</li>
+</ol>
+<p><img src="/pic/ubuntu-to-go-uefi-2.jpg" alt></p>
+<ol start="3">
+<li>设置虚拟机为UEFI启动，如下图所示</li>
+</ol>
+<p><img src="/pic/ubuntu-to-go-uefi-3.jpg" alt></p>
+<ol start="4">
+<li>之后启动虚拟机，正常安装Ubuntu，因为VMware软件设计导致Ubuntu显示分辨率低，可以先启动到Ubuntu Live后调整分辨率再启动安装程序，如下图所示。</li>
+</ol>
+<p><img src="/pic/ubuntu-to-go-uefi-4.jpg" alt></p>
+<ol start="5">
+<li><p>之后就到了最关键的步骤了：安装完成之后请不要启动Ubuntu启动，先进入Ubuntu Live中。</p>
+<p>5.1 安装grub-efi，打开终端输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">apt-get install grub-efi</span><br></pre></td></tr></table></figure>
+
+<p>5.2 挂载U盘中的EFI分区和Ubuntu系统分区</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看U盘挂载目录，一般是/dev/sda</span></span><br><span class="line">df -l</span><br><span class="line">mkdir /mnt/EFI</span><br><span class="line">mkdir /mnt/Ubuntu</span><br><span class="line">mount /dev/sda1/ /mnt/EFI</span><br><span class="line">mount /dev/sda2 /mnt/Ubuntu</span><br></pre></td></tr></table></figure>
+
+<p>5.3 安装EFI便捷启动到EFI分区</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">grub-install --target=x86_64-efi --root-directory=/mnt/EFI/ --efi-directory=/mnt/EFI/Boot</span><br></pre></td></tr></table></figure>
+
+<p>5.4 将系统启动文件/mnt/Ubuntu/boot/grub.cfg复制到/mnt/EFI/boot目录下</p>
+<p>5.5 如果便携启动失败，可以尝试启动到系统后安装Grub Customizer，删除启动项后保存，再重复第五部分即可。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Ubuntu U盘</tag>
+        <tag>Ubuntu 便携</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac下清歌五笔输入法快速输入日期时间的方法</title>
+    <url>/post/mac-quick-input-time.html</url>
+    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-09-02：清歌五笔输入法自带快速输入日期时间的方法</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Windows平台下，用搜狗五笔输入法快速输入时间日期星期很舒服，一到Mac平台，Mac版搜狗五笔输入法却不提供同样的功能，实在是郁闷至极，最终发现了清歌五笔输入法能够快速输入时间日期（虽然不能快速输入星期），很赞。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>清歌输入法提供用户词库功能，如下图所示。</p>
+<p><img src="/pic/mac-quick-input-time-1.jpg" alt="Mac下清歌五笔输入法快速输入日期时间的方法"></p>
+<a id="more"></a> ]]></content>
+      <tags>
+        <tag>输入法技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Thunderbird Portable开机自启动并最小化到系统托盘</title>
+    <url>/post/thunderbird-minimized-auto-start.html</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><ol>
+<li>便携应用设置为开机启动时会自动打开主界面</li>
+<li>Thunderbird 60.0官方并不支持最小化到系统托盘</li>
+<li>Thunderbird 第三方最小化到系统托盘的插件如FireTray，最多支持到54.X，在最新版的Thunderbird中并不可用。</li>
+</ol>
+<a id="more"></a> 
+
+<h2 id="可行解决方案：AHK，全称AutoHotkey"><a href="#可行解决方案：AHK，全称AutoHotkey" class="headerlink" title="可行解决方案：AHK，全称AutoHotkey"></a>可行解决方案：AHK，全称AutoHotkey</h2><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">;=====================================================================</span><br><span class="line">;                 Thunderbird Portable <span class="number">60.0</span>+ Tray</span><br><span class="line">;                            Author:zzz</span><br><span class="line">;                           date:<span class="number">2018</span>-<span class="number">8</span>-<span class="number">31</span></span><br><span class="line">;             使用方法：将AHK放在<span class="module-access"><span class="module"><span class="identifier">ThunderbirdPortable</span>.</span></span>exe目录中运行</span><br><span class="line">;               理论上支持所有Thunderbird版本，包括以后发布的版本</span><br><span class="line">;---------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">#NoEnv</span><br><span class="line">SendMode Input  </span><br><span class="line">SetWorkingDir %A_ScriptDir%  </span><br><span class="line"><span class="constructor">DllCall(<span class="string">"kernel32.dll\SetProcessShutdownParameters"</span>, UInt, 0x4FF, UInt, 0)</span></span><br><span class="line">#SingleInstance ignore</span><br><span class="line">menu,tray,icon,App\AppInfo\appicon.ico</span><br><span class="line">;title must contain</span><br><span class="line">SetTitleMatchMode, <span class="number">2</span></span><br><span class="line"></span><br><span class="line">Run, <span class="module-access"><span class="module"><span class="identifier">ThunderbirdPortable</span>.</span></span>exe</span><br><span class="line">WinWait, ahk_exe <span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line">;WinMinimize, ahk_exe <span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line">WinHide, ahk_exe <span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">OnExit, ExitSub</span><br><span class="line"></span><br><span class="line"><span class="constructor">OnMessage(0x404, <span class="string">"AHK_NOTIFYICON"</span>)</span></span><br><span class="line"><span class="constructor">OnMessage(0x11, <span class="string">"WM_QUERYENDSESSION"</span>)</span> </span><br><span class="line"><span class="constructor">AHK_NOTIFYICON(<span class="params">wParam</span>, <span class="params">lParam</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (lParam = <span class="number">0x202</span>) ; WM_LBUTTONUP</span><br><span class="line">	&#123;</span><br><span class="line">		WinShow, - Mozilla Thunderbird</span><br><span class="line">		WinActivate, - Mozilla Thunderbird</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="constructor">WM_QUERYENDSESSION(<span class="params">wParam</span>, <span class="params">lParam</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  ENDSESSION_LOGOFF = <span class="number">0x80000000</span></span><br><span class="line">  Process,Close,<span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line">  Process,WaitClose,<span class="module-access"><span class="module"><span class="identifier">ThunderbirdPortable</span>.</span></span>exe</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="constructor">ProcessExist(Name)</span>&#123;</span><br><span class="line">	Process,Exist,%Name%</span><br><span class="line">	return Errorlevel</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Loop</span><br><span class="line">&#123;</span><br><span class="line">	If !<span class="constructor">ProcessExist(<span class="string">"thunderbird.exe"</span>)</span></span><br><span class="line">	&#123;</span><br><span class="line">		ExitApp</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	WinGet, winState, MinMax, ahk_exe thunderbird.exe</span><br><span class="line">	<span class="keyword">if</span> (winState = -<span class="number">1</span>) &#123;</span><br><span class="line">		WinHide, - Mozilla Thunderbird</span><br><span class="line">	&#125;</span><br><span class="line">   </span><br><span class="line">	sleep <span class="number">500</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ExitSub:</span><br><span class="line">WinClose,ahk_exe thunderbird.exe</span><br><span class="line">Process,close,<span class="module-access"><span class="module"><span class="identifier">Thunderbird</span>.</span></span>exe</span><br><span class="line">ExitApp</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Thunderbird Minimize</tag>
+        <tag>AHK应用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows同步阅读Kindle个人文档方案</title>
+    <url>/post/windows-read-kindle-documents.html</url>
+    <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><ul>
+<li>2018-8-31：第一个版本</li>
+</ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，Kindle支持在安卓和IOS设备中同步阅读个人文档，但Kindle for PC并不支持。</p>
+<h3 id="网上找到的解决方案如下："><a href="#网上找到的解决方案如下：" class="headerlink" title="网上找到的解决方案如下："></a>网上找到的解决方案如下：</h3><ol>
+<li>将书籍放到My Kindle Content中阅读</li>
+<li>Chrome ARC Welder安装Kindle</li>
+<li>使用安卓模拟器</li>
+</ol>
+<h3 id="首先分析以上三种方案"><a href="#首先分析以上三种方案" class="headerlink" title="首先分析以上三种方案"></a>首先分析以上三种方案</h3><p>方案一：可以打开并阅读书籍，但书签，笔记，阅读进度不能同步。（不可行）</p>
+<p>方案二：可以打开并登录Kindle，非常卡顿，而且在阅读界面会崩溃。（不可行）</p>
+<p>方案三：虚拟一个安卓系统，但存在一些阅读便捷性问题，我的方案主要解决的是一些阅读便捷性问题。（可行）</p>
+<a id="more"></a> 
+
+<h2 id="我的方案"><a href="#我的方案" class="headerlink" title="我的方案"></a>我的方案</h2><p>准备工具：</p>
+<ol>
+<li><a href="https://en.bignox.com/" target="_blank" rel="noopener">Nox 夜神模拟器海外版</a>，我使用的版本是6.0.5.2，这版本默认是绿色便携版，可放在U盘中使用。</li>
+<li><a href="https://autohotkey.com/" target="_blank" rel="noopener">AutoHotKey</a>，使用官方最新版</li>
+</ol>
+<p>解决的问题：</p>
+<ol>
+<li>Kindle阅读时使用鼠标滚动翻页</li>
+<li>使用鼠标中键单击返回</li>
+<li>使用鼠标中键双击最近任务</li>
+<li>使用鼠标中键长按后释放返回主页</li>
+<li>两种鼠标中键滚轮模式切换：阅读模式和常规模式</li>
+</ol>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">;=====================================================================</span><br><span class="line">;           按住右键+鼠标滚轮往上:音量加                             </span><br><span class="line">;                    鼠标滚轮往上:向上滚动                           </span><br><span class="line">;           按住右键+鼠标滚轮往下:音量减                             </span><br><span class="line">;                    鼠标滚轮往下:向下滚动                           </span><br><span class="line">;                    鼠标中键单击:返回键                             </span><br><span class="line">;                    鼠标中键双击:最近任务                           </span><br><span class="line">;                    鼠标中键长按:主页键                             </span><br><span class="line">;           按住右键+鼠标中键长按:模式切换(阅读模式和常规模式)       </span><br><span class="line">;           按住右键+鼠标中键长按:Nox全屏</span><br><span class="line">;           阅读模式:在Nox中,鼠标滚轮代表音量加减,用于翻页                </span><br><span class="line">;           常规模式:鼠标滚轮为正常上下滚动   </span><br><span class="line">;                      zzz<span class="number">-2018.08</span><span class="number">.31</span>                                </span><br><span class="line">;---------------------------------------------------------------------                                                                                  </span><br><span class="line">#IfWinActive ahk_exe Nox.exe                                         </span><br><span class="line">&#123;                                                                    </span><br><span class="line">Flag:=<span class="literal">false</span>                                                          </span><br><span class="line">MButton::                                                            </span><br><span class="line"><span class="keyword">if</span> pressesCount &gt; <span class="number">0</span> ; ＞<span class="number">0</span>说明SetTimer 已经启动了，按键次数递增       </span><br><span class="line">&#123;                                                                    </span><br><span class="line">    pressesCount += <span class="number">1</span>                                                </span><br><span class="line">    <span class="keyword">return</span>                                                           </span><br><span class="line">&#125;                                                                    </span><br><span class="line">;否则，这是新一系列按键的首次按键。将计数设重置为 <span class="number">1</span> ，并启动定时器： </span><br><span class="line">pressesCount = <span class="number">1</span>                                                     </span><br><span class="line">SetTimer, WaitKey, <span class="number">500</span> ;在 <span class="number">500</span> 毫秒内等待更多的按键。                </span><br><span class="line"><span class="keyword">return</span>                                                               </span><br><span class="line">                                                                     </span><br><span class="line">WaitKey:                                                             </span><br><span class="line">KeyWait, MButton                                                     </span><br><span class="line">If (A_TimeSinceThisHotkey &gt; <span class="number">500</span>)                                     </span><br><span class="line">	&#123;                                                                </span><br><span class="line">	send,&#123;Home&#125;                                                      </span><br><span class="line">	SetTimer, WaitKey, off                                           </span><br><span class="line">	pressesCount = <span class="number">0</span>                                                 </span><br><span class="line">	<span class="keyword">return</span>                                                           </span><br><span class="line">	&#125;                                                                </span><br><span class="line">SetTimer, WaitKey, off                                               </span><br><span class="line"><span class="keyword">if</span> pressesCount = <span class="number">1</span> ;该键已按过一次。                                </span><br><span class="line">&#123;                                                                    </span><br><span class="line">    Gosub singleClick                                                </span><br><span class="line">&#125;                                                                    </span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> pressesCount = <span class="number">2</span> ;该键已按过两次。                           </span><br><span class="line">&#123;                                                                    </span><br><span class="line">	Gosub <span class="built_in">double</span>Click                                                </span><br><span class="line">&#125;                                                                     </span><br><span class="line">;不论上面哪个动作被触发，将计数复位以备下一系列的按键：              </span><br><span class="line">pressesCount = <span class="number">0</span>                                                     </span><br><span class="line"><span class="keyword">return</span>                                                               </span><br><span class="line">                                                                     </span><br><span class="line">singleClick:                                                         </span><br><span class="line"><span class="keyword">if</span> GetKeyState(<span class="string">"RButton"</span>) = <span class="number">0</span>                                        </span><br><span class="line">	Send, &#123;ESC&#125;                                                      </span><br><span class="line"><span class="keyword">else</span>                                                                 </span><br><span class="line">&#123;                                                                    </span><br><span class="line">	<span class="keyword">if</span>(Flag:=!Flag)                                                  </span><br><span class="line">	&#123;                                                                </span><br><span class="line">		wheelup::                                                    </span><br><span class="line">		<span class="keyword">if</span> GetKeyState(<span class="string">"RButton"</span>) = Flag                             </span><br><span class="line">			Send, &#123;wheelup&#125;                                          </span><br><span class="line">		<span class="keyword">else</span>                                                         </span><br><span class="line">			send, ^<span class="number">6</span>                                                 </span><br><span class="line">		<span class="keyword">return</span>                                                       </span><br><span class="line">		wheeldown::                                                  </span><br><span class="line">		<span class="keyword">if</span> GetKeyState(<span class="string">"RButton"</span>) = Flag                             </span><br><span class="line">			Send, &#123;wheeldown&#125;                                        </span><br><span class="line">		<span class="keyword">else</span>                                                         </span><br><span class="line">			send, ^<span class="number">7</span>                                                 </span><br><span class="line">		<span class="keyword">return</span>                                                       </span><br><span class="line">	&#125;                                                                </span><br><span class="line">&#125;                                                                    </span><br><span class="line"><span class="keyword">return</span>                                                               </span><br><span class="line">                                                                     </span><br><span class="line"><span class="built_in">double</span>Click:                                                         </span><br><span class="line"><span class="keyword">if</span> GetKeyState(<span class="string">"RButton"</span>) = <span class="number">0</span>                                        </span><br><span class="line">	Send, &#123;End&#125;                                                      </span><br><span class="line"><span class="keyword">else</span>                                                                 </span><br><span class="line">	send, ^<span class="number">5</span>                                                         </span><br><span class="line"><span class="keyword">return</span>                                                               </span><br><span class="line">                                                                     </span><br><span class="line">&#125;                                                                    </span><br><span class="line">;---------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>AHK应用</tag>
+        <tag>Kinlde个人文档</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中国联通广东地区SSR云免流教程</title>
+    <url>/post/ssr-mianliu.html</url>
+    <content><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
+<li>2018-4-5： 使用参数<strong>short.weixin.qq.com</strong>使用的是微信定向流量</li>
+<li>2018-3-30：免流参数<strong>ylsh.gd10010.cn</strong>失效</li>
+<li>2018-2-20：更新注意事项,配置参数,ssrscriptn使用方法</li>
+<li>2018-1-11：免流参数<strong>ylsh.gd10010.cn</strong>可用</li>
+<li>2017-11-7：免流参数<strong>aop.gd10010.cn</strong>失效</li>
+</ul>
+<h2 id="免流原理"><a href="#免流原理" class="headerlink" title="免流原理"></a>免流原理</h2><p>运营商为了给客户提供方便，提供了一些优惠政策，如：接收彩信、登陆掌厅免除流量费以及免收取流量费的其他业务。<br>运营商的计费系统为了区分用户使用的是免流量业务还是正常访问互联网会把这些免流服务的网址加入到白名单，这些白名单中的网址就是我们平常所说的免流IP了，当计费系统检测到用户访问的是白名单中的网址或接收彩信时就不会进行扣费。 </p>
+<a id="more"></a> 
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li><strong>如果服务器长时间高速免流下载，联通会采取封IP的措施，切记</strong></li>
+<li><strong>此次分享是中国联通免流的教程，中国移动，中国电信不可用</strong></li>
+</ul>
+<!-- more --> 
+
+<h2 id="免流教程"><a href="#免流教程" class="headerlink" title="免流教程"></a>免流教程</h2><ol>
+<li><p>首先，你得有一台VPS，<del>带宽建议大于100M</del>，如果需要免流顺带科学上网，可以考虑购买国外的VPS。</p>
+</li>
+<li><p>用SSH软件（如xshell,putty等）登录VPS。执行一键安装脚本</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">wget http:<span class="comment">//cdn.yunmaopt.cc/jiaoben.sh &amp;&amp; bash jiaoben.sh</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在提示界面中安装<strong>SSR一键安装</strong>，端口选择<strong>443</strong></p>
+</li>
+<li><p>在提示界面中安装 <strong>Gost一键安装</strong>，密码和端口自定义。</p>
+</li>
+<li><p>手机端使用SSR时，正常配置SSR连接，还需要在混淆插件（OSBF为http_simple）下配置混淆参数为<del>aop.gd10010.cn</del>  <strong>ylsh.gd10010.cn</strong>，配置SSR为<strong>全局模式以及UDP转发</strong>。</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">SSR+关键配置如下（其余参数默认即可）：</span><br><span class="line">服务器：填写服务器IP地址</span><br><span class="line">远程端口：<span class="number">443</span></span><br><span class="line">密码：SSR密码</span><br><span class="line">加密方式：chacha20</span><br><span class="line">协议：auth_sha1_v4</span><br><span class="line">混淆方式：http_simple</span><br><span class="line">混淆参数：ylsh.gd10010.cn</span><br><span class="line">UDP代理方式：通过TCP转发</span><br><span class="line">UDP代理规则：全局代理</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="共享SSR网络（需Root）"><a href="#共享SSR网络（需Root）" class="headerlink" title="共享SSR网络（需Root）"></a>共享SSR网络（需Root）</h2><p>在使用官方的SSR免流时，启用手机热点，其他设备是无法正常上网的。<br>需要使用<strong>ssrscriptn</strong>这款软件来进行SSR连接。<br><img src="/pic/ssr-mianliu-1.png" alt="ssr+"></p>
+]]></content>
+      <tags>
+        <tag>云免流</tag>
+        <tag>SSR</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决谷歌日历提醒Bug：日历找不到请求的活动</title>
+    <url>/post/google-calendar-bug.html</url>
+    <content><![CDATA[<h2 id="bug描述"><a href="#bug描述" class="headerlink" title="bug描述"></a>bug描述</h2><p>今天解决一件非常恼人的问题，问题删除谷歌日历中的提醒，提醒日历找不到请求的活动。如图所示，在手机无法删除。</p>
+<a id="more"></a>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li><p>登录网页版<a href="https://calendar.google.com/" target="_blank" rel="noopener">谷歌日历</a>，</p>
+</li>
+<li><p>在左栏的我的日历，设置Tasks，切换到“提醒”，然后在网页端将提醒删除即可。如图：<br><img src="/pic/google-calendar-bug-1.jpg" alt></p>
+</li>
+<li><p>手机再同步一次，提醒就消失了。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>谷歌日历</tag>
+        <tag>Bug</tag>
       </tags>
   </entry>
   <entry>
@@ -1081,180 +1415,6 @@
       </tags>
   </entry>
   <entry>
-    <title>打造Windows+Mac OS X+Ubuntu+WinPE的Windows To Go维护U盘</title>
-    <url>/post/multiboot-wtg.html</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="/pic/multiboot-wtg-1.png" alt="效果图"></p>
-<p>作为一个极客，随便带一个维护PE的U盘是必需的。然而在很多时候，仅仅有一个PE，难以完成复杂的需求。我手头上有一个128G的Windows To Go U盘，想为别人安装Ubuntu时，必须要拿另外一个U盘全盘格式化后写入，麻烦，而且也浪费资源。所以这次写一篇关于U盘多启动的文章，实现标题的中效果。</p>
-<a id="more"></a>
-
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>  你得有一个不小于64GB的Windows To Go U盘。<br>  使用到的软件：</p>
-<ol>
-<li><p>DiskGenius(或PartitionGuru)</p>
-</li>
-<li><p>UEFI启动修复工具</p>
-</li>
-<li><p>XYplorer</p>
-</li>
-<li><p>Vmware Pro</p>
-</li>
-<li><p>Bootice</p>
-</li>
-<li><p>Dism++</p>
-<p>使用到的镜像：</p>
-</li>
-<li><p>Ubuntu 16.04.3安装镜像</p>
-</li>
-<li><p>Mac OS X 13.1安装镜像(dmg格式)</p>
-</li>
-<li><p>微PE</p>
-</li>
-<li><p>Windows 10 1709企业版镜像</p>
-</li>
-</ol>
-<h2 id="开始折腾"><a href="#开始折腾" class="headerlink" title="开始折腾"></a>开始折腾</h2><ol>
-<li><p>这次使用到的启动方式为GPT+EFI（使用PartitionGuru软件进行操作）。如果对启动方式不了解，在这里简单的科普一下，有两种启动方式，一种是BIOS+MBR，一种是GPT+EFI，前者复杂，后者简单。</p>
-</li>
-<li><p>进行分区操作，350MB的EFI（ESP）启动分区，5.5GB的FAT32分区（只是暂时，稍后需要在苹果系统中格式化为HFS+分区），2GB的FAT32分区用于放Ubuntu 16.04.3的安装镜像，500MB的FAT32分区用于PE（只装一个PE的话600MB即可），以及最后10的空间格式化为NTFS分区用于Windows To Go的系统及软件。<br>PS:<strong>前四个分区设置了隐藏，在电脑中不可见，不然一插进电脑就出来5个盘，不美观也不实用。</strong></p>
-<p><img src="/pic/multiboot-wtg-2.png" alt="分区展示"></p>
-</li>
-</ol>
-<h2 id="EFI分区"><a href="#EFI分区" class="headerlink" title="EFI分区"></a>EFI分区</h2><p>这个分区的用途是用于搜索和引导其他分区上的安装镜像和系统。 使用到的引导管理工具为rEFInd（主要）和Clover（黑苹果安装辅助）。关于引导管理工具的使用，这里只简单提一点：开机时进入的EFI文件是在/EFI/Boot/下。</p>
-<p><img src="/pic/multiboot-wtg-3.png" alt="EFI分区"></p>
-<h2 id="写入苹果安装镜像"><a href="#写入苹果安装镜像" class="headerlink" title="写入苹果安装镜像"></a>写入苹果安装镜像</h2><p>在虚拟机中安装苹果操作系统，具体的操作见<a href="http://www.jianshu.com/p/25d2d781bd98" target="_blank" rel="noopener">简书-Hegel_SU</a>的文章。</p>
-<p><img src="/pic/multiboot-wtg-4.png" alt="虚拟机安装Mac OS X"></p>
-<p>打开苹果的操作系统，插入U盘，磁盘工具，将5.5GB的FAT32分区格式化为HFS+分区。之后用命令行写入苹果镜像。</p>
-<p><img src="/pic/multiboot-wtg-5.jpg" alt="格式化为HFS+分区图例"></p>
-<p>命令行写入苹果DMG镜像教程：<a href="https://www.iplaysoft.com/macos-usb-install-drive.html" target="_blank" rel="noopener">iplaysoft</a></p>
-<p><img src="/pic/multiboot-wtg-6.png" alt="命令行"></p>
-<h2 id="写入Ubuntu系统镜像"><a href="#写入Ubuntu系统镜像" class="headerlink" title="写入Ubuntu系统镜像"></a>写入Ubuntu系统镜像</h2><p>将安装镜像解压至2GB的FAT32分区中，同时删除该分区目录/EFI/Boot/Bootx64.EFI即可</p>
-<p><img src="/pic/multiboot-wtg-7.png" alt="Ubuntu镜像文件"></p>
-<h2 id="写入微PE工具箱"><a href="#写入微PE工具箱" class="headerlink" title="写入微PE工具箱"></a>写入微PE工具箱</h2><p>准备另一个8GB的文章，打开微PE工具箱写入程序，选择方案二：UEFI/Legacy全能双分区方式，写入后在隐藏的引导分区中提取WEPE64.WIM，WEPE64.SDI和引导文件/EFI/Microsoft下的文件到500MB的FAT32分区中。</p>
-<p><img src="/pic/multiboot-wtg-8.png" alt="微PE工具箱"></p>
-<p><img src="/pic/multiboot-wtg-9.png" alt="方案二"></p>
-<h2 id="安装完整的Windows-to-go-Win10系统"><a href="#安装完整的Windows-to-go-Win10系统" class="headerlink" title="安装完整的Windows to go-Win10系统"></a>安装完整的Windows to go-Win10系统</h2><p>在Windows下创建一个VHD文件（建议20GB）放到最后一个分区NTFS中，（科普一下，VHD指的是Vitual Hard Disk即虚拟硬盘文件），挂载VHD后在DiskGenius中格式化VHD文件，然后用Dism++以Windows To Go方式写入Windows 10的系统镜像，之后在U盘的EFI分区中，用Bootice修复Windows 10的引导。</p>
-<p><img src="/pic/multiboot-wtg-10.png" alt="VHD"></p>
-<p><img src="/pic/multiboot-wtg-11.png" alt="格式化VHD文件"></p>
-<p><img src="/pic/multiboot-wtg-12.png" alt="释放Win10镜像"></p>
-<p><img src="/pic/multiboot-wtg-13.png" alt="释放Windows镜像"></p>
-<p><img src="/pic/multiboot-wtg-14.png" alt="修改BCD文件"></p>
-<p><img src="/pic/multiboot-wtg-15.png" alt="修改启动项"></p>
-<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>至此，一个多功能U盘打造完成，前前后后折腾了两天多，茶不思饭不想，如果你也非常想要达到这样的目的，请做好心想准备，过程将会非常的闹心,Good luck。</p>
-]]></content>
-      <tags>
-        <tag>多功能U盘</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GCP申请免费一年服务并无限续用</title>
-    <url>/post/gcp-free-trial.html</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>2017年3月9日，Google Cloud试用由2个月变1年了。绑卡送300美刀，1年内使用。用最低配置来爬墙，每个月大约86GB流量，适用个人使用。<br>截止2019年9月23日，本人仍然在免费试用中，当然之后这个bug可能修复。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>国内银联信用卡/全球付无法注册。<br>亲测 VISA 和 腾讯运通卡 可以激活。<br>没有VISA卡 ? ！可以去淘宝看看，或者去银行办理。<br>学生可以办没有额度的VISA卡。</p>
-<a id="more"></a> 
-<h2 id="申请"><a href="#申请" class="headerlink" title="申请"></a>申请</h2><p>第一步：<a href="https://cloud.google.com" target="_blank" rel="noopener">https://cloud.google.com</a> ，地区选中国，亲测可行。</p>
-<p><img src="/pic/gcp-free-trial-1.png" alt="a"><br>第二步：填写个人信息</p>
-<p><img src="/pic/gcp-free-trial-2.png" alt="b"></p>
-<p>申请成功后，会扣1美元，过一会儿会将1美元返回到信用卡。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h3><p>由于默认的防火墙限制太多，我们需要修改防火墙规则。</p>
-<p>直接访问 ： <a href="https://console.cloud.google.com/networking/firewalls/list" target="_blank" rel="noopener">https://console.cloud.google.com/networking/firewalls/list</a></p>
-<p>或者在菜单中依次点击 【网络】–&gt;  【防火墙规则】 –&gt; 【创建防火墙规则】</p>
-<p><img src="/pic/gcp-free-trial-3.png" alt="firewall"></p>
-<h3 id="申请静态IP"><a href="#申请静态IP" class="headerlink" title="申请静态IP"></a>申请静态IP</h3><p>直接访问 ： <a href="https://console.cloud.google.com/networking/addresses/list" target="_blank" rel="noopener">https://console.cloud.google.com/networking/addresses/list</a><br>或者在菜单中依次点击 【网络】–&gt;  【外部IP地址】 –&gt; 【保留静态IP】<br>区域可选亚洲东部、欧洲、美国 等地。推荐亚洲！</p>
-<p><img src="/pic/gcp-free-trial-4.png" alt="ip"></p>
-<h2 id="创建计算引擎"><a href="#创建计算引擎" class="headerlink" title="创建计算引擎"></a>创建计算引擎</h2><p>直接访问 ： <a href="https://console.cloud.google.com/compute/instances" target="_blank" rel="noopener">https://console.cloud.google.com/compute/instances</a><br>或者在菜单中依次点击 【计算引擎】–&gt;  【创建实例】</p>
-<p><img src="/pic/gcp-free-trial-5.png" alt="vm"><br>注意以下配置，配置静态IP。</p>
-<p><img src="/pic/gcp-free-trial-6.png" alt="network"></p>
-<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><ol>
-<li>点击进入“元数据”</li>
-</ol>
-<p><img src="/pic/gcp-free-trial-7.gif" alt="ssh1"><br>2. 添加SSH密钥</p>
-<p><img src="/pic/gcp-free-trial-8.gif" alt="ssh2"><br>3. 启动你的软件PuttyGen，用软件生成一个Key,生成KEY的过程要不断地移动你的鼠标。<a href="https://www.freehao123.com/dl-puttygen/" target="_blank" rel="noopener">PuttyGen下载</a></p>
-<p><img src="/pic/gcp-free-trial-9.gif" alt="puttygen"><br>4. 生成了Key后，先点击右下方的“保存私钥”，将密钥保存在本地。</p>
-<p><img src="/pic/gcp-free-trial-10.gif" alt="key"><br>5. 然后复制上面的公钥到元数据中，注意在公钥最后加上你的用户名，然后点击保存。（点击放大）</p>
-<p><img src="/pic/gcp-free-trial-11.gif" alt="key-ssh"><br>6. 现在打开Putty，填入IP地址与端口,<strong>在授权中添加刚刚保存的私钥</strong>。</p>
-<p><img src="/pic/gcp-free-trial-12.gif" alt="putty"><br>7. 如果你想使用Xshell，你需要在PuttyGen中导出为另一种Key格式（OpenSSH key）</p>
-<p><img src="/pic/gcp-free-trial-13.gif" alt="openssh key"></p>
-]]></content>
-      <tags>
-        <tag>VPS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一款图表可视化，自定义强的记账软件：BlueCoins</title>
-    <url>/post/bluecoins.html</url>
-    <content><![CDATA[<h2 id="从体验记账App讲起"><a href="#从体验记账App讲起" class="headerlink" title="从体验记账App讲起"></a>从体验记账App讲起</h2><p>从高中到现在，断断续续记账，试用过不下10款App，如随手记，挖财，网易有钱，口袋记账等等，都使用过一段时间后卸载，原因各不相同，但卸载最最主要的原因是基础功能不完善，各种杂七杂八功能一堆。</p>
-<h2 id="今天的主角：BlueCoins"><a href="#今天的主角：BlueCoins" class="headerlink" title="今天的主角：BlueCoins"></a>今天的主角：BlueCoins</h2><p>正如你所想的，今天的主角的将记账这件事做到极致，没有多余的功能，强大的图表显示功能，以及便捷的记录方式。它的出现让我心甘情愿花了一晚上研究他的功能。下面讲讲这款软件的功能特色。</p>
-<a id="more"></a> 
-
-<h2 id="主角光环-强大之处"><a href="#主角光环-强大之处" class="headerlink" title="主角光环-强大之处"></a>主角光环-强大之处</h2><ol>
-<li>主面板华丽图表显示，让每日花费一目了然。</li>
-</ol>
-<p><img src="/pic/bluecoins-1.jpg" alt="APP主界面"></p>
-<ol start="2">
-<li>强大的提醒功能</li>
-</ol>
-<p><img src="/pic/bluecoins-2.png" alt="按时提醒功能"></p>
-<ol start="3">
-<li>支持多国货币并自动汇率转换</li>
-</ol>
-<p><img src="/pic/bluecoins-3.jpg" alt="自动汇率转换(需联网)"></p>
-<ol start="4">
-<li>支持与GoogleDrive同步</li>
-</ol>
-<p><img src="/pic/bluecoins-4.png" alt="GoogleDrive同步"></p>
-<ol start="5">
-<li>支持自动填充</li>
-</ol>
-<p><strong>这个功能非常实用，基本上我们每天的花费都是重复的，如果在软件中已经记录过一笔，下次再记录的时候就非常方便了，这点是我在其他软件上没看到的。</strong></p>
-<p><img src="/pic/bluecoins-5.png" alt="自动填充功能"></p>
-<h2 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h2><p>便是不能像网易有钱自动关联银行卡和支付宝进行自动记账操作，记账稍显繁琐。</p>
-<p>不过坚持记录，本来就不是一件容易的事情，即使软件再优秀，自己想偷懒，记账的好习惯也是无法养成的。</p>
-]]></content>
-      <tags>
-        <tag>记账</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>中国联通广东地区SSR云免流教程</title>
-    <url>/post/ssr-mianliu.html</url>
-    <content><![CDATA[<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
-<li>2018-4-5： 使用参数<strong>short.weixin.qq.com</strong>使用的是微信定向流量</li>
-<li>2018-3-30：免流参数<strong>ylsh.gd10010.cn</strong>失效</li>
-<li>2018-2-20：更新注意事项,配置参数,ssrscriptn使用方法</li>
-<li>2018-1-11：免流参数<strong>ylsh.gd10010.cn</strong>可用</li>
-<li>2017-11-7：免流参数<strong>aop.gd10010.cn</strong>失效</li>
-</ul>
-<h2 id="免流原理"><a href="#免流原理" class="headerlink" title="免流原理"></a>免流原理</h2><p>运营商为了给客户提供方便，提供了一些优惠政策，如：接收彩信、登陆掌厅免除流量费以及免收取流量费的其他业务。<br>运营商的计费系统为了区分用户使用的是免流量业务还是正常访问互联网会把这些免流服务的网址加入到白名单，这些白名单中的网址就是我们平常所说的免流IP了，当计费系统检测到用户访问的是白名单中的网址或接收彩信时就不会进行扣费。 </p>
-<a id="more"></a> 
-
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li><strong>如果服务器长时间高速免流下载，联通会采取封IP的措施，切记</strong></li>
-<li><strong>此次分享是中国联通免流的教程，中国移动，中国电信不可用</strong></li>
-</ul>
-<!-- more --> 
-
-<h2 id="免流教程"><a href="#免流教程" class="headerlink" title="免流教程"></a>免流教程</h2><ol>
-<li><p>首先，你得有一台VPS，<del>带宽建议大于100M</del>，如果需要免流顺带科学上网，可以考虑购买国外的VPS。</p>
-</li>
-<li><p>用SSH软件（如xshell,putty等）登录VPS。执行一键安装脚本</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">wget http:<span class="comment">//cdn.yunmaopt.cc/jiaoben.sh &amp;&amp; bash jiaoben.sh</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在提示界面中安装<strong>SSR一键安装</strong>，端口选择<strong>443</strong></p>
-</li>
-<li><p>在提示界面中安装 <strong>Gost一键安装</strong>，密码和端口自定义。</p>
-</li>
-<li><p>手机端使用SSR时，正常配置SSR连接，还需要在混淆插件（OSBF为http_simple）下配置混淆参数为<del>aop.gd10010.cn</del>  <strong>ylsh.gd10010.cn</strong>，配置SSR为<strong>全局模式以及UDP转发</strong>。</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">SSR+关键配置如下（其余参数默认即可）：</span><br><span class="line">服务器：填写服务器IP地址</span><br><span class="line">远程端口：<span class="number">443</span></span><br><span class="line">密码：SSR密码</span><br><span class="line">加密方式：chacha20</span><br><span class="line">协议：auth_sha1_v4</span><br><span class="line">混淆方式：http_simple</span><br><span class="line">混淆参数：ylsh.gd10010.cn</span><br><span class="line">UDP代理方式：通过TCP转发</span><br><span class="line">UDP代理规则：全局代理</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="共享SSR网络（需Root）"><a href="#共享SSR网络（需Root）" class="headerlink" title="共享SSR网络（需Root）"></a>共享SSR网络（需Root）</h2><p>在使用官方的SSR免流时，启用手机热点，其他设备是无法正常上网的。<br>需要使用<strong>ssrscriptn</strong>这款软件来进行SSR连接。<br><img src="/pic/ssr-mianliu-1.png" alt="ssr+"></p>
-]]></content>
-      <tags>
-        <tag>云免流</tag>
-        <tag>SSR</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>USBIP实现路由器连接打印机，可打印可扫描</title>
     <url>/post/usbip.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，智能路由器的USB接口能够连接打印机，让没有网络功能的路由器实现网络打印。可惜的是，打印机连接路由器后提只能打印不能扫描，这很不方便。在寻找中发现一项<strong>USB over IP</strong> 技术（又称 USB over Ethernet 或者 USB over Internet），这个技术能够解决以上的问题，并能扩展出不少应用场景。</p>
@@ -1304,124 +1464,6 @@
       </categories>
       <tags>
         <tag>usbip</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>RSS订阅和阅读简明教程</title>
-    <url>/post/rss-tutorial.html</url>
-    <content><![CDATA[<h2 id="RSS是什么？"><a href="#RSS是什么？" class="headerlink" title="RSS是什么？"></a>RSS是什么？</h2><p><img src="/pic/rss-tutorial-1.jpg" alt></p>
-<blockquote>
-<p>RSS是一种内容信息聚合技术。简单点讲，你可以订阅自己关心的内容，例如博客，视频网站，知乎，简书，微信公众号，播客，门户网站等，当内容更新时自动同步到阅读器中，最终所有信息汇总到一个应用里查看阅读。</p>
-</blockquote>
-<a id="more"></a> 
-
-<h2 id="开始使用RSS"><a href="#开始使用RSS" class="headerlink" title="开始使用RSS"></a>开始使用RSS</h2><ol>
-<li>使用电脑端Chrome打开<a href="http://www.inoreader.com/" target="_blank" rel="noopener">inoreader</a>,注册一个账号</li>
-<li>注册成功且登录之后，点击搜索按钮，输出本博客的订阅地址：<a href="https://blog.ziiyc.com/atom.xml,如下图所示,选中之后点击右上角的订阅即可">https://blog.ziiyc.com/atom.xml,如下图所示,选中之后点击右上角的订阅即可</a></li>
-</ol>
-<p><img src="/pic/rss-tutorial-4.jpg" alt></p>
-<h2 id="在线RSS阅读软件：inoreader"><a href="#在线RSS阅读软件：inoreader" class="headerlink" title="在线RSS阅读软件：inoreader"></a>在线RSS阅读软件：<a href="http://www.inoreader.com/" target="_blank" rel="noopener">inoreader</a></h2><p>一款类似Google Reader的RSS阅读器，阅读器支持平台包括Web,Android,iOS。</p>
-<p><del>接近两年的使用inoreader，让人深刻的意识到inoreader在阅读体验上很是糟糕。</del></p>
-<p>使用inoreader接近四年，阅读体验近期有了一些改观，虽谈不上舒适，但也是可以比较正常使用了，比如添加了阅读区域手动调整功能。</p>
-<h2 id="谈谈其他RSS阅读软件使用体验"><a href="#谈谈其他RSS阅读软件使用体验" class="headerlink" title="谈谈其他RSS阅读软件使用体验"></a>谈谈其他RSS阅读软件使用体验</h2><ul>
-<li><p><a href="http://irreader.netqon.com/" target="_blank" rel="noopener">irreader</a><br>这个阅读工具近期不怎么更新了，从阅读体验上看是很不错的，但没有同步，没有手机端, 缺少信息过滤功能</p>
-</li>
-<li><p><a href="https://feedly.com/" target="_blank" rel="noopener">feedly</a><br>使用过一段时间，功能够用，界面美观，需要科学上网，缺点是收费贵。</p>
-</li>
-<li><p><a href="https://tt-rss.org/" target="_blank" rel="noopener">Tiny Tiny RSS</a><br>自建rss阅读服务器方案，从全文阅读，繁体转简体，文章过滤等功能脚本看，应有尽有，但实际阅读体验不佳，手机端可用软件匮乏，且质量不怎么样。网页端阅读使用Google Reader主题算是美观。</p>
-</li>
-<li><p><a href="https://nodetics.com/feedbro/" target="_blank" rel="noopener">feedbro</a><br>浏览器rss阅读方案，支持Chrome，Firefox主流浏览器，在阅读体验是可以说是最优秀的，因为运行环境是浏览器，所以不会出现订阅源常见的没有全文，图片显示不全的问题。遗憾的有两点，一是不支持任意形式同步，二是不支持其他终端，比如Web端、手机端。</p>
-</li>
-</ul>
-<h2 id="如何订阅RSS"><a href="#如何订阅RSS" class="headerlink" title="如何订阅RSS?"></a>如何订阅RSS?</h2><h3 id="1-Tampermonkey-RSS"><a href="#1-Tampermonkey-RSS" class="headerlink" title="1. Tampermonkey + RSS+"></a>1. Tampermonkey + RSS+</h3><p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-CN" target="_blank" rel="noopener">Tampermonkey</a></p>
-<p><a href="https://greasyfork.org/zh-CN/scripts/373252-rss-show-site-all-rss" target="_blank" rel="noopener">RSS+</a></p>
-<p><img src="/pic/rss-tutorial-2.jpg" alt="rss+"></p>
-<h3 id="2-浏览器插件：RSSHub"><a href="#2-浏览器插件：RSSHub" class="headerlink" title="2. 浏览器插件：RSSHub"></a>2. 浏览器插件：RSSHub</h3><p>支持显示RSSHub网站支持的订阅地址直接显示</p>
-<h3 id="3-第三方订阅服务"><a href="#3-第三方订阅服务" class="headerlink" title="3. 第三方订阅服务"></a>3. 第三方订阅服务</h3><ul>
-<li><a href="https://docs.rsshub.app/" target="_blank" rel="noopener">rsshub</a>: 网站集成了主流网站的订阅方式，很强大，不断更新 推荐指数：⭐️⭐️⭐️⭐️⭐️</li>
-<li>微博: <a href="https://api.izgq.net/weibo/rss/{uid}" target="_blank" rel="noopener">https://api.izgq.net/weibo/rss/{uid}</a> 推荐指数：⭐️⭐️⭐️⭐️⭐️<br>PS: uid, 用户 id, 博主主页打开控制台执行 <code>/uid=(\d+)/. exec(document.querySelector(&#39;.opt_box .btn_bed&#39;).getAttribute(&#39;action-data&#39;))[1]</code> 获取</li>
-<li>知乎: <a href="https://rss.lilydjwg.me/" target="_blank" rel="noopener">https://rss.lilydjwg.me/</a> 推荐指数：⭐️⭐️⭐️⭐️</li>
-<li>简书: <a href="http://jianshu.milkythinking.com/" target="_blank" rel="noopener">http://jianshu.milkythinking.com/</a> 推荐指数：⭐️⭐️⭐️⭐️</li>
-<li>Twitter: <a href="https://twitrss.me/twitter_user_to_rss/?user={uid}" target="_blank" rel="noopener">https://twitrss.me/twitter_user_to_rss/?user={uid}</a> 推荐指数：⭐️⭐️⭐️⭐️</li>
-<li>Facebook: <a href="https://fbfeed.github.io/" target="_blank" rel="noopener">https://fbfeed.github.io/</a> 推荐指数：⭐️⭐️⭐️⭐️</li>
-</ul>
-<h2 id="RSS进阶"><a href="#RSS进阶" class="headerlink" title="RSS进阶"></a>RSS进阶</h2><h3 id="RSS全文输出"><a href="#RSS全文输出" class="headerlink" title="RSS全文输出"></a>RSS全文输出</h3><h4 id="自建服务器方案"><a href="#自建服务器方案" class="headerlink" title="自建服务器方案"></a>自建服务器方案</h4><ul>
-<li><p><a href="https://github.com/feedocean/rss2full" target="_blank" rel="noopener">rss2full</a> 推荐指数：⭐️⭐️⭐️⭐️<br>大部分情况可以得到一个不错的全文输出效果,举例：<a href="http://www.xingkbjm.com/feed" target="_blank" rel="noopener">http://www.xingkbjm.com/feed</a></p>
-</li>
-<li><p><a href="https://tt-rss.org/" target="_blank" rel="noopener">tiny tiny rss + mercury</a> 推荐指数：⭐️⭐️<br>这种方式是通过调用mercury生成全文方式，需要搭建mercury服务端</p>
-</li>
-</ul>
-<h4 id="使用第三方服务"><a href="#使用第三方服务" class="headerlink" title="使用第三方服务"></a>使用第三方服务</h4><ol>
-<li><a href="http://fullcontentrss.com/" target="_blank" rel="noopener">fullcontentrss</a>  推荐指数：⭐️⭐️⭐️⭐️⭐️</li>
-<li><a href="http://ftr.fivefilters.org/" target="_blank" rel="noopener">Full-Text RSS</a>    推荐指数：⭐️⭐️⭐️⭐️</li>
-<li><a href="https://www.freefullrss.com/" target="_blank" rel="noopener">freefullrss</a>        推荐指数：⭐️⭐️⭐️</li>
-</ol>
-<h3 id="信息过滤"><a href="#信息过滤" class="headerlink" title="信息过滤"></a>信息过滤</h3><p>当RSS内容既包含你想要的内容，也有一些不想看到的内容，需要使用关键字过滤。</p>
-<ol>
-<li>inoreader非付费用户只能过滤一个订阅源。</li>
-<li>如果需要大量过滤，可以尝试搭建<strong>Tiny Tiny RSS</strong>。</li>
-</ol>
-<h3 id="制作RSS-Feed"><a href="#制作RSS-Feed" class="headerlink" title="制作RSS Feed"></a>制作RSS Feed</h3><h4 id="1：Feed43（免费）"><a href="#1：Feed43（免费）" class="headerlink" title="1：Feed43（免费）"></a>1：Feed43（免费）</h4><p>官网：<a href="http://feed43.com/" target="_blank" rel="noopener">http://feed43.com/</a>   </p>
-<p>推荐指数：⭐️⭐️⭐️</p>
-<p>教程：<a href="https://post.smzdm.com/p/553684/" target="_blank" rel="noopener">FEED43新手教程：为任意网页定制RSS格式订阅源</a></p>
-<h4 id="2：Fivefilters-Feed-Creator"><a href="#2：Fivefilters-Feed-Creator" class="headerlink" title="2：Fivefilters Feed Creator"></a>2：Fivefilters Feed Creator</h4><p>官网：<a href="http://createfeed.fivefilters.org/index.php" target="_blank" rel="noopener">http://createfeed.fivefilters.org/index.php</a></p>
-<p>推荐指数：⭐️⭐️⭐️⭐️</p>
-<ol>
-<li><p>“Enter web page URL”就是输入网页网址，例如<a href="https://www.ipcfun.com/" target="_blank" rel="noopener">https://www.ipcfun.com/</a></p>
-</li>
-<li><p>“Look for links inside HTML elements whose id or class attribute contains” 根据ID或Class筛选元素，例如entry-title</p>
-</li>
-<li><p>“Only keep links if link URL contains”URL过滤，仅保留包含指定字符串的链接，例如html</p>
-<p><img src="/pic/rss-tutorial-3.jpg" alt="Fivefilters Feed Creator"></p>
-</li>
-</ol>
-<h4 id="3：Fetchrss"><a href="#3：Fetchrss" class="headerlink" title="3：Fetchrss"></a>3：Fetchrss</h4><p>官网：<a href="http://fetchrss.com/" target="_blank" rel="noopener">http://fetchrss.com/</a> </p>
-<p>推荐指数：⭐️⭐️⭐️⭐️</p>
-<p>GUI界面操作，非常简单易懂。</p>
-<h3 id="inoreader使用体验提升"><a href="#inoreader使用体验提升" class="headerlink" title="inoreader使用体验提升"></a>inoreader使用体验提升</h3><h4 id="安装去广告插件AdBlock"><a href="#安装去广告插件AdBlock" class="headerlink" title="安装去广告插件AdBlock"></a>安装去广告插件<a href="https://chrome.google.com/webstore/detail/adblock-%E2%80%94-best-ad-blocker/gighmmpiobklfepjocnamgkkbiglidom" target="_blank" rel="noopener">AdBlock</a></h4><p>此浏览器插件可以解决在使用免费版Inoreader阅读文章免除广告的骚扰</p>
-<h4 id="安装油猴脚本：显示防盗链图片-for-Inoreader"><a href="#安装油猴脚本：显示防盗链图片-for-Inoreader" class="headerlink" title="安装油猴脚本：显示防盗链图片 for Inoreader"></a>安装油猴脚本：<a href="https://greasyfork.org/zh-CN/scripts/376884-%E6%98%BE%E7%A4%BA%E9%98%B2%E7%9B%97%E9%93%BE%E5%9B%BE%E7%89%87-for-inoreader" target="_blank" rel="noopener">显示防盗链图片 for Inoreader</a></h4><p>此脚本可以解决在Inoreader订阅爱稀奇时图片不能正常显示的问题</p>
-<h2 id="RSS原理延伸"><a href="#RSS原理延伸" class="headerlink" title="RSS原理延伸"></a>RSS原理延伸</h2><h3 id="1-场景一"><a href="#1-场景一" class="headerlink" title="1. 场景一"></a>1. 场景一</h3><p>在某个卖二手论坛里经常出现性价比很高的二手货，正好你最近有想买的IPad 2，你想有一个工具，当论坛里出现有想要的IPad 2的时候自动提醒你，让你能够以最快的速度入手。</p>
-<p>解决方法：<a href="https://play.google.com/store/apps/details?id=me.webalert&hl=zh-CN" target="_blank" rel="noopener">网页更新提醒工具</a></p>
-<p>使用方法：软件记录的网页操作，并到你的选定的网址中监测某些网页元素的变动，一有变动，就可以提醒。</p>
-<h4 id="2-场景二"><a href="#2-场景二" class="headerlink" title="2. 场景二"></a>2. 场景二</h4><p>在淘宝，天猫，京东等一些购物网站一些物品价格经常价格变动，我们想以比较低的价格入手，便需要了解价格的实时变动信息，并在价格低于自己预期的时候购买。</p>
-<p>解决方法：惠惠购物助手</p>
-<p>使用方法：在手机端和浏览器端安装惠惠购物助手。将自己关心的商品放入惠惠助手的购物车中，在软件中可设置价格。当价格低于某一数值时，手机端发出提醒。</p>
-<h4 id="3-场景三"><a href="#3-场景三" class="headerlink" title="3. 场景三"></a>3. 场景三</h4><p>“如果天气晴朗，提醒我晒被子。”用英语将句式提取出来就是If this then that.生活中很多这种判断，如果这种判断能用软件实现那该多好。</p>
-<p>解决方法：IFTTT(安卓，Web)</p>
-<p>使用方法：在软件添加各种条件和结果，满足条件时自动执行。</p>
-<h4 id="4-场景四"><a href="#4-场景四" class="headerlink" title="4. 场景四"></a>4. 场景四</h4><p>逢年过节，总是要抢车票。到了回家前几天，票总是被一扫而空。但心想也许会有人退票，那你可能需要一款软件能够实时检测余票，并提醒你。</p>
-<p>解决方法：智行</p>
-<p>使用方法：本地云监控，发现有余票即时提醒。</p>
-<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><ul>
-<li>2020-3-17：</li>
-</ul>
-<ol>
-<li>更新现在的使用方式</li>
-<li>重新排版，去除一些无用的内容，删除失效的工具</li>
-<li>添加新的RSS全文输出工具：rss2full</li>
-<li>解决Inoreader显示防链接图片问题</li>
-</ol>
-<ul>
-<li>2018-9-3：<ul>
-<li>更新图片为国内图床</li>
-<li>更新比较完美的微博RSS订阅的方法：方法三</li>
-<li>完善微信公众号全文RSS订阅的方法：irreader+feed43</li>
-<li>更新Twitter全文RSS订阅的方法：twitrss.me</li>
-<li>更新irreader的简述</li>
-</ul>
-</li>
-<li>2018-8-27：更新irreader(一款本地播客，RSS阅读工具)</li>
-<li>2018-8-20：更新制作RSS Feed的方法</li>
-<li>2018-8-8：更改排版，更新提供全文输出RSS的网站，增加提供RSS生成制作的网站</li>
-<li>2018-7-7：更新RSSHub中大部分主流网站，重新排版文章，删除过时和错误的方法。</li>
-<li>2017-7-3：更新全文输出网站freefullrss</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>效率生活</tag>
       </tags>
   </entry>
   <entry>
@@ -1496,48 +1538,6 @@
 ]]></content>
       <tags>
         <tag>Resilio Sync</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mame玩街机完全教程</title>
-    <url>/post/mame-tutorial.html</url>
-    <content><![CDATA[<h2 id="街机模拟器的选择"><a href="#街机模拟器的选择" class="headerlink" title="街机模拟器的选择"></a>街机模拟器的选择</h2><p>网上有很多类型的街机模拟器,如比较知名的mame及其分支（mameplus,mame plus! plus!,mame32 more等），winkawaks，fba shuffle ,nebula(星云模拟器)等等。</p>
-<p>想要实现标题中所提到的所有功能，请使用<strong>mame32 more</strong>（联机对战）或者<strong>mame plus! plus!</strong>（两个版本集成联机对战功能）</p>
-<p>我的选择：<strong>mame32 more</strong></p>
-<a id="more"></a> 
-<h2 id="街机模拟器下载"><a href="#街机模拟器下载" class="headerlink" title="街机模拟器下载"></a>街机模拟器下载</h2><ol>
-<li><a href="https://emulationrealm.net/downloads/file/3169-mame32-more" target="_blank" rel="noopener">mame32 more</a></li>
-<li><a href="http://www.zophar.net/mame/mame32-plus-plus.html" target="_blank" rel="noopener">mame plus! plus!</a></li>
-</ol>
-<h2 id="BIOS及游戏ROM下载"><a href="#BIOS及游戏ROM下载" class="headerlink" title="BIOS及游戏ROM下载"></a>BIOS及游戏ROM下载</h2><p>科普：好多游戏都需要有BIOS文件的支持才能运行，比如NEOGEO的游戏都需要neogeo.zip这个BIOS文件才能玩，如果没有，MAME是不会认NEOGEO的游戏的。<br>BIOS不需要一个一个下，直接下一个游戏合集包，在模拟器\roms目录下（可能会隐藏）。<br>游戏包：<a href="http://www.game333.net/danji/oth/329677.html" target="_blank" rel="noopener">http://www.game333.net/danji/oth/329677.html</a><br>游戏ROM及BIOS下载网站：</p>
-<ol>
-<li><a href="http://www.doperoms.com/" target="_blank" rel="noopener">http://www.doperoms.com/</a>  （这个网站收录了大部分的游戏及全部的BIOS,某些盗版的rom没有。）</li>
-<li><a href="http://www.romnation.net/" target="_blank" rel="noopener">http://www.romnation.net/</a> </li>
-</ol>
-<h2 id="联机对战（2017年4月5日更新）"><a href="#联机对战（2017年4月5日更新）" class="headerlink" title="联机对战（2017年4月5日更新）"></a>联机对战（2017年4月5日更新）</h2><p>联机对战使用到kaillera，在文件 -&gt; play kaillera game</p>
-<ol>
-<li>点对点模式最多支持两个人（或者说两台电脑）同时联机</li>
-<li>联机模式可支持2人以上同时进行游戏，比如说恐龙新世纪3人联机，三国战纪4人联机。</li>
-</ol>
-<p>3人至多人联机教程，简单的就以恐龙快打为例：</p>
-<ol>
-<li>局域网中需要有一台电脑用<strong>KaillerasrvGUI</strong>建立服务器。</li>
-<li>三台电脑此时可同时连接同一台服务器进行游戏。（一台电脑既是服务器，又是客户端。）</li>
-</ol>
-<p>复杂一些比如，三国战纪四人联机：</p>
-<ol>
-<li>四人同时连接服务器，进入游戏后。1P（选择游戏的人是1P）开启业务模式（Tab键-打开业务开关）</li>
-<li>按F3重装加载游戏，马上按住1P的除方向键的第一个键（比如我常用J作为我的第一个按键，一般游戏J表示轻拳）</li>
-<li>进入PGM设置，调整游戏为4人游戏。（记得是第三或者第四个设置的二级菜单里有，进去后慢慢试）</li>
-<li>关闭业务打开，按退出，重新启动游戏（按F3）。注意不是退出重连。</li>
-</ol>
-<h2 id="作弊器"><a href="#作弊器" class="headerlink" title="作弊器"></a>作弊器</h2><p>需要下载作弊文件cheat.dat,放到模拟器根目录，并在选项-杂项中启用游戏作弊功能</p>
-<h2 id="出招表"><a href="#出招表" class="headerlink" title="出招表"></a>出招表</h2><p>一般模拟器都会自带游戏出招表，在游戏过程中按住<strong>TAB</strong>调出菜单，mame32 more这款模拟器的出招表在  游戏文档-显示指令列表。而mameplus则是在第一级菜单就有。</p>
-<h2 id="存档和读档"><a href="#存档和读档" class="headerlink" title="存档和读档"></a>存档和读档</h2><p>在游戏进行到任何情况下，都可以存档和读档，对于一些游戏时间长的游戏很有用。按住<strong>TAB</strong>调出菜单，在一般选项里可以设置存档和读档的快捷键。默认是按住shift+F7然后输入一个数学或者字母存档，单按F7然后输入指定数字字母的读档。</p>
-]]></content>
-      <tags>
-        <tag>mame</tag>
-        <tag>街机</tag>
       </tags>
   </entry>
 </search>
