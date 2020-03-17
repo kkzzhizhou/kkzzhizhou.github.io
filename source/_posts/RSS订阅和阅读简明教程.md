@@ -20,7 +20,7 @@ updated: 2020-3-17 11:49:49
 ## 开始使用RSS
 
 1. 使用电脑端Chrome打开[inoreader](http://www.inoreader.com/),注册一个账号
-2. 注册成功且登录之后，点击搜索按钮，输出本博客的订阅地址：https://blog.ziiyc.com/atom.xml,如下图所示,选中之后点击右上角的订阅即可
+2. 注册成功且登录之后，点击搜索按钮，输出本博客的订阅地址：https://blog.ziiyc.com/atom.xml, 如下图所示,选中之后点击右上角的订阅即可
 
 ![](/pic/rss-tutorial-4.jpg)
 
