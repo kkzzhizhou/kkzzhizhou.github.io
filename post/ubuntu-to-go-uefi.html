@@ -28,15 +28,15 @@
 <meta property="og:site_name" content="zzz部落格">
 <meta property="og:description" content="更新历史 2018年9月2日：讲解如何U盘中安装UEFI启动的Ubuntu To Go  前言自从Windows To Go(简称WTG)变得越来越普及，于是Ubuntu To Go的尝试也越来越多，总结一下成功的经验。 网上很多介绍Ubuntu To Go的方法都是基于MBR的，个人有需求在一个U盘上（256GB）中同时安装Windows To Go，Ubuntu To Go和黑苹果，MacOS">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/ubuntu-to-go-uefi-1.jpg">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/ubuntu-to-go-uefi-2.jpg">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/ubuntu-to-go-uefi-3.jpg">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/ubuntu-to-go-uefi-4.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-4.jpg">
 <meta property="og:updated_time" content="2018-09-02T02:00:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UEFI下实现Ubuntu To Go">
 <meta name="twitter:description" content="更新历史 2018年9月2日：讲解如何U盘中安装UEFI启动的Ubuntu To Go  前言自从Windows To Go(简称WTG)变得越来越普及，于是Ubuntu To Go的尝试也越来越多，总结一下成功的经验。 网上很多介绍Ubuntu To Go的方法都是基于MBR的，个人有需求在一个U盘上（256GB）中同时安装Windows To Go，Ubuntu To Go和黑苹果，MacOS">
-<meta name="twitter:image" content="http://blog.ziiyc.com/pic/ubuntu-to-go-uefi-1.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-1.jpg">
 
 <link rel="canonical" href="http://blog.ziiyc.com/post/ubuntu-to-go-uefi.html">
 
@@ -261,23 +261,23 @@
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ol>
 <li>新建一个虚拟机，将默认添加的硬盘删除，具体配置如下图所示。（安装过程选择不自动更新可以加速系统安装）</li>
 </ol>
-<p><img src="/pic/ubuntu-to-go-uefi-1.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-1.jpg" alt="ubuntu-to-go-uefi-1.jpg"></p>
 <p>……</p>
 <a id="more"></a> 
 
-<ol start="2">
+<ol>
 <li>加载U盘到虚拟机中：虚拟机设置-添加-硬盘-SCSI-使用物理磁盘-选择U盘（一般是最后一个），添加后如下图所示。</li>
 </ol>
-<p><img src="/pic/ubuntu-to-go-uefi-2.jpg" alt></p>
-<ol start="3">
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-2.jpg" alt="ubuntu-to-go-uefi-2.jpg"></p>
+<ol start="2">
 <li>设置虚拟机为UEFI启动，如下图所示</li>
 </ol>
-<p><img src="/pic/ubuntu-to-go-uefi-3.jpg" alt></p>
-<ol start="4">
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-3.jpg" alt="ubuntu-to-go-uefi-3.jpg"></p>
+<ol start="3">
 <li>之后启动虚拟机，正常安装Ubuntu，因为VMware软件设计导致Ubuntu显示分辨率低，可以先启动到Ubuntu Live后调整分辨率再启动安装程序，如下图所示。</li>
 </ol>
-<p><img src="/pic/ubuntu-to-go-uefi-4.jpg" alt></p>
-<ol start="5">
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-4.jpg" alt="ubuntu-to-go-uefi-4.jpg"></p>
+<ol start="4">
 <li><p>之后就到了最关键的步骤了：安装完成之后请不要启动Ubuntu启动，先进入Ubuntu Live中。</p>
 <p>5.1 安装grub-efi，打开终端输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">apt-get install grub-efi</span><br></pre></td></tr></table></figure>

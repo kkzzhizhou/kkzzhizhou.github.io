@@ -28,15 +28,15 @@
 <meta property="og:site_name" content="zzz部落格">
 <meta property="og:description" content="原因 从2016年建立个人博客开始使用Wordpress，了解Wordpress强大的同时，也认识到Wordpress的繁琐，最烦恼的是数据库文章的问题，比如说Wordpress文章ID不连续，在使用Google Cloud Platform后数据库时不时无法连接。 相比于Wordpress,Hexo属于静态博客，所有源数据都放在本地，生成网站数据后发布到网上，虽然过程相对繁琐，但访问速度快，使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/gcp-hexo-1.png">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/gcp-hexo-2.png">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/gcp-hexo-3.png">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/gcp-hexo-4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-4.png">
 <meta property="og:updated_time" content="2018-02-19T16:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gcp安装配置Hexo">
 <meta name="twitter:description" content="原因 从2016年建立个人博客开始使用Wordpress，了解Wordpress强大的同时，也认识到Wordpress的繁琐，最烦恼的是数据库文章的问题，比如说Wordpress文章ID不连续，在使用Google Cloud Platform后数据库时不时无法连接。 相比于Wordpress,Hexo属于静态博客，所有源数据都放在本地，生成网站数据后发布到网上，虽然过程相对繁琐，但访问速度快，使用">
-<meta name="twitter:image" content="http://blog.ziiyc.com/pic/gcp-hexo-1.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-1.png">
 
 <link rel="canonical" href="http://blog.ziiyc.com/post/gcp-hexo.html">
 
@@ -260,11 +260,12 @@
 </ol>
 <a id="more"></a> 
 
-<h2 id="搭建Hexo博客"><a href="#搭建Hexo博客" class="headerlink" title="搭建Hexo博客"></a>搭建Hexo博客</h2><h3 id="1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接"><a href="#1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接" class="headerlink" title="1. 登录Google Cloud Platform（即GCP）:Compute Engine(链接)"></a>1. 登录Google Cloud Platform（即GCP）:<a href="https://console.cloud.google.com/compute/" target="_blank" rel="noopener">Compute Engine(链接)</a></h3><h3 id="2-创建实例"><a href="#2-创建实例" class="headerlink" title="2. 创建实例"></a>2. 创建实例</h3><p><img src="/pic/gcp-hexo-1.png" alt="创建实例-1"><br><img src="/pic/gcp-hexo-2.png" alt="创建实例-2"></p>
+<h2 id="搭建Hexo博客"><a href="#搭建Hexo博客" class="headerlink" title="搭建Hexo博客"></a>搭建Hexo博客</h2><h3 id="1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接"><a href="#1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接" class="headerlink" title="1. 登录Google Cloud Platform（即GCP）:Compute Engine(链接)"></a>1. 登录Google Cloud Platform（即GCP）:<a href="https://console.cloud.google.com/compute/" target="_blank" rel="noopener">Compute Engine(链接)</a></h3><h3 id="2-创建实例"><a href="#2-创建实例" class="headerlink" title="2. 创建实例"></a>2. 创建实例</h3><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-1.png" alt="gcp-hexo-1.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-2.png" alt="gcp-hexo-2.png"></p>
 <p>拉到最下面确认创建新实例，创建后自动启动实例：</p>
-<p><img src="/pic/gcp-hexo-3.png" alt="实例创建成功"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-3.png" alt="gcp-hexo-3.png"></p>
 <p>启用实例的SSH：</p>
-<p><img src="/pic/gcp-hexo-4.png" alt="登录VPS"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-4.png" alt="gcp-hexo-4.png"></p>
 <ol>
 <li><p>使用sudo passwd设置Root密码</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd <span class="comment">//设置Root密码</span></span><br></pre></td></tr></table></figure>

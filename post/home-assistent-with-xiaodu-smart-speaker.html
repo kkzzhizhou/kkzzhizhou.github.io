@@ -28,16 +28,16 @@
 <meta property="og:site_name" content="zzz部落格">
 <meta property="og:description" content="引言在联通营业厅更换宽带套餐时加钱买了个小度智能音箱，从一开始只是查查天气、放放歌，我现在它做得更多一些，比如说本篇教程提到的控制家里的电器。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/home-assistent-with-xiaodu-smart-speaker-1.png">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/home-assistent-with-xiaodu-smart-speaker-2.png">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/home-assistent-with-xiaodu-smart-speaker-3.png">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/home-assistent-with-xiaodu-smart-speaker-4.png">
-<meta property="og:image" content="http://blog.ziiyc.com/pic/home-assistent-with-xiaodu-smart-speaker-5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-5.png">
 <meta property="og:updated_time" content="2020-03-16T09:47:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Home Assistant+小度智能音箱实现远程控制家电">
 <meta name="twitter:description" content="引言在联通营业厅更换宽带套餐时加钱买了个小度智能音箱，从一开始只是查查天气、放放歌，我现在它做得更多一些，比如说本篇教程提到的控制家里的电器。">
-<meta name="twitter:image" content="http://blog.ziiyc.com/pic/home-assistent-with-xiaodu-smart-speaker-1.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-1.png">
 
 <link rel="canonical" href="http://blog.ziiyc.com/post/home-assistent-with-xiaodu-smart-speaker.html">
 
@@ -264,11 +264,11 @@
 <li>群晖DSM使用Docker下载安装homeassistant/home-assistant</li>
 <li>购买小米米家智能插座插头WiFi版</li>
 </ul>
-<h2 id="Home-Assistant配置步骤"><a href="#Home-Assistant配置步骤" class="headerlink" title="Home Assistant配置步骤"></a>Home Assistant配置步骤</h2><p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-1.png" alt="Docker使用1"></p>
-<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-2.png" alt="Docker使用2"></p>
-<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-3.png" alt="Docker使用3"></p>
-<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-4.png" alt="Docker使用4"></p>
-<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-5.png" alt="Docker使用5"></p>
+<h2 id="Home-Assistant配置步骤"><a href="#Home-Assistant配置步骤" class="headerlink" title="Home Assistant配置步骤"></a>Home Assistant配置步骤</h2><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-1.png" alt="home-assistent-with-xiaodu-smart-speaker-1.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-2.png" alt="home-assistent-with-xiaodu-smart-speaker-2.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-3.png" alt="home-assistent-with-xiaodu-smart-speaker-3.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-4.png" alt="home-assistent-with-xiaodu-smart-speaker-4.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-5.png" alt="home-assistent-with-xiaodu-smart-speaker-5.png"></p>
 <p>应用后启动即可,配置界面连接为<a href="http://nas_ip:8123" target="_blank" rel="noopener">http://nas_ip:8123</a></p>
 <h2 id="扩展：公网Https方式访问Haome-Aassistant"><a href="#扩展：公网Https方式访问Haome-Aassistant" class="headerlink" title="扩展：公网Https方式访问Haome Aassistant"></a>扩展：公网Https方式访问Haome Aassistant</h2><p>如果需要在公网中使用Home Assistant,可以使用内网穿透工具frp。Home Assistant默认监听本地8123端口,使用Websocket连接。</p>
 <h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">    <span class="attribute">server_name</span> hass.domain.com; <span class="comment"># 修改domain为你自定义的域名</span></span><br><span class="line">    <span class="attribute">ssl_certificate</span>       /etc/nginx/ssl/domain.com.key.pem; <span class="comment"># 修改domain为你自定义的域名</span></span><br><span class="line">    <span class="attribute">ssl_certificate_key</span>   /etc/nginx/ssl/domain.com.key; <span class="comment"># 修改domain为你自定义的域名</span></span><br><span class="line">    <span class="attribute">ssl_session_timeout</span> <span class="number">5m</span>;</span><br><span class="line">    <span class="attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host  <span class="variable">$http_host</span>;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:[frp_port]; <span class="comment"># 此处修改为你的frps端口</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">location</span> /api/websocket &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:8123;</span><br><span class="line">        <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Connection <span class="string">"upgrade"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

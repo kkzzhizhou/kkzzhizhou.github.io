@@ -74,7 +74,7 @@
   <entry>
     <title>RSS订阅和阅读简明教程</title>
     <url>/post/rss-tutorial.html</url>
-    <content><![CDATA[<h2 id="RSS是什么？"><a href="#RSS是什么？" class="headerlink" title="RSS是什么？"></a>RSS是什么？</h2><p><img src="/pic/rss-tutorial-1.jpg" alt></p>
+    <content><![CDATA[<h2 id="RSS是什么？"><a href="#RSS是什么？" class="headerlink" title="RSS是什么？"></a>RSS是什么？</h2><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/rss-tutorial-1.jpg" alt="rss-tutorial-1.jpg"></p>
 <blockquote>
 <p>RSS是一种内容信息聚合技术。简单点讲，你可以订阅自己关心的内容，例如博客，视频网站，知乎，简书，微信公众号，播客，门户网站等，当内容更新时自动同步到阅读器中，最终所有信息汇总到一个应用里查看阅读。</p>
 </blockquote>
@@ -84,7 +84,7 @@
 <li>使用电脑端Chrome打开<a href="http://www.inoreader.com/" target="_blank" rel="noopener">inoreader</a>,注册一个账号</li>
 <li>注册成功且登录之后，点击搜索按钮，输出本博客的订阅地址：<a href="https://blog.ziiyc.com/atom.xml">https://blog.ziiyc.com/atom.xml</a>, 如下图所示,选中之后点击右上角的订阅即可</li>
 </ol>
-<p><img src="/pic/rss-tutorial-4.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/rss-tutorial-4.jpg" alt="rss-tutorial-4.jpg"></p>
 <h2 id="在线RSS阅读软件：inoreader"><a href="#在线RSS阅读软件：inoreader" class="headerlink" title="在线RSS阅读软件：inoreader"></a>在线RSS阅读软件：<a href="http://www.inoreader.com/" target="_blank" rel="noopener">inoreader</a></h2><p>一款类似Google Reader的RSS阅读器，阅读器支持平台包括Web,Android,iOS。</p>
 <p><del>接近两年的使用inoreader，让人深刻的意识到inoreader在阅读体验上很是糟糕。</del></p>
 <p>使用inoreader接近四年，阅读体验近期有了一些改观，虽谈不上舒适，但也是可以比较正常使用了，比如添加了阅读区域手动调整功能。</p>
@@ -100,7 +100,7 @@
 </ul>
 <h2 id="如何订阅RSS"><a href="#如何订阅RSS" class="headerlink" title="如何订阅RSS?"></a>如何订阅RSS?</h2><h3 id="1-Tampermonkey-RSS"><a href="#1-Tampermonkey-RSS" class="headerlink" title="1. Tampermonkey + RSS+"></a>1. Tampermonkey + RSS+</h3><p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-CN" target="_blank" rel="noopener">Tampermonkey</a></p>
 <p><a href="https://greasyfork.org/zh-CN/scripts/373252-rss-show-site-all-rss" target="_blank" rel="noopener">RSS+</a></p>
-<p><img src="/pic/rss-tutorial-2.jpg" alt="rss+"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/rss-tutorial-2.jpg" alt="rss-tutorial-2.jpg"></p>
 <h3 id="2-浏览器插件：RSSHub"><a href="#2-浏览器插件：RSSHub" class="headerlink" title="2. 浏览器插件：RSSHub"></a>2. 浏览器插件：RSSHub</h3><p>支持显示RSSHub网站支持的订阅地址直接显示</p>
 <h3 id="3-第三方订阅服务"><a href="#3-第三方订阅服务" class="headerlink" title="3. 第三方订阅服务"></a>3. 第三方订阅服务</h3><ul>
 <li><a href="https://docs.rsshub.app/" target="_blank" rel="noopener">rsshub</a>: 网站集成了主流网站的订阅方式，很强大，不断更新 推荐指数：⭐️⭐️⭐️⭐️⭐️</li>
@@ -137,9 +137,9 @@
 <li><p>“Look for links inside HTML elements whose id or class attribute contains” 根据ID或Class筛选元素，例如entry-title</p>
 </li>
 <li><p>“Only keep links if link URL contains”URL过滤，仅保留包含指定字符串的链接，例如html</p>
-<p><img src="/pic/rss-tutorial-3.jpg" alt="Fivefilters Feed Creator"></p>
 </li>
 </ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/rss-tutorial-3.jpg" alt="rss-tutorial-3.jpg"></p>
 <h4 id="3：Fetchrss"><a href="#3：Fetchrss" class="headerlink" title="3：Fetchrss"></a>3：Fetchrss</h4><p>官网：<a href="http://fetchrss.com/" target="_blank" rel="noopener">http://fetchrss.com/</a> </p>
 <p>推荐指数：⭐️⭐️⭐️⭐️</p>
 <p>GUI界面操作，非常简单易懂。</p>
@@ -199,11 +199,11 @@
 <li>群晖DSM使用Docker下载安装homeassistant/home-assistant</li>
 <li>购买小米米家智能插座插头WiFi版</li>
 </ul>
-<h2 id="Home-Assistant配置步骤"><a href="#Home-Assistant配置步骤" class="headerlink" title="Home Assistant配置步骤"></a>Home Assistant配置步骤</h2><p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-1.png" alt="Docker使用1"></p>
-<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-2.png" alt="Docker使用2"></p>
-<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-3.png" alt="Docker使用3"></p>
-<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-4.png" alt="Docker使用4"></p>
-<p><img src="/pic/home-assistent-with-xiaodu-smart-speaker-5.png" alt="Docker使用5"></p>
+<h2 id="Home-Assistant配置步骤"><a href="#Home-Assistant配置步骤" class="headerlink" title="Home Assistant配置步骤"></a>Home Assistant配置步骤</h2><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-1.png" alt="home-assistent-with-xiaodu-smart-speaker-1.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-2.png" alt="home-assistent-with-xiaodu-smart-speaker-2.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-3.png" alt="home-assistent-with-xiaodu-smart-speaker-3.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-4.png" alt="home-assistent-with-xiaodu-smart-speaker-4.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-5.png" alt="home-assistent-with-xiaodu-smart-speaker-5.png"></p>
 <p>应用后启动即可,配置界面连接为<a href="http://nas_ip:8123" target="_blank" rel="noopener">http://nas_ip:8123</a></p>
 <h2 id="扩展：公网Https方式访问Haome-Aassistant"><a href="#扩展：公网Https方式访问Haome-Aassistant" class="headerlink" title="扩展：公网Https方式访问Haome Aassistant"></a>扩展：公网Https方式访问Haome Aassistant</h2><p>如果需要在公网中使用Home Assistant,可以使用内网穿透工具frp。Home Assistant默认监听本地8123端口,使用Websocket连接。</p>
 <h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">    <span class="attribute">server_name</span> hass.domain.com; <span class="comment"># 修改domain为你自定义的域名</span></span><br><span class="line">    <span class="attribute">ssl_certificate</span>       /etc/nginx/ssl/domain.com.key.pem; <span class="comment"># 修改domain为你自定义的域名</span></span><br><span class="line">    <span class="attribute">ssl_certificate_key</span>   /etc/nginx/ssl/domain.com.key; <span class="comment"># 修改domain为你自定义的域名</span></span><br><span class="line">    <span class="attribute">ssl_session_timeout</span> <span class="number">5m</span>;</span><br><span class="line">    <span class="attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">    <span class="attribute">ssl_protocols</span> TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">ssl_prefer_server_ciphers</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host  <span class="variable">$http_host</span>;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:[frp_port]; <span class="comment"># 此处修改为你的frps端口</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">location</span> /api/websocket &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:8123;</span><br><span class="line">        <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Connection <span class="string">"upgrade"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -373,10 +373,10 @@
   <entry>
     <title>黑苹果HD5500核显输出HDMI音频</title>
     <url>/post/hd5500-hdmi-audio.html</url>
-    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="/pic/hd5500-hdmi-audio-1.jpg" alt="pic1"></p>
+    <content><![CDATA[<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/hd5500-hdmi-audio-1.jpg" alt="hd5500-hdmi-audio-1.jpg"></p>
 <a id="more"></a> 
 
-<p><img src="/pic/hd5500-hdmi-audio-2.jpg" alt="pic2"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/hd5500-hdmi-audio-2.jpg" alt="hd5500-hdmi-audio-2.jpg"></p>
 <h2 id="驱动原理"><a href="#驱动原理" class="headerlink" title="驱动原理"></a>驱动原理</h2><ol>
 <li>注入的ID可以是16160002或者是16260006</li>
 <li>在DSDT中，B0D3需要更名为HDAU,GFX0需要更名为IGPU.</li>
@@ -399,7 +399,7 @@
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>根据2018年2月桌面操作系统市场占比(下图)，Linux虽拥有众多桌面版本分支，如Ubuntu，Deepin，Kubuntu等，却仅仅占桌面操作系统全球市场份额的1.46%。</p>
 <p>这其中原因有很多，对于个人的选择来说，影响最大是两个因素，一是使用界面，二是软件数量和质量。</p>
 <p>这篇文章针对我个人的使用情况，解决从美化到软件安装的各种需求。</p>
-<p><img src="/pic/ubuntu-desktop.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-desktop.jpg" alt="ubuntu-desktop.jpg"></p>
 <a id="more"></a> 
 
 <h2 id="系统美化"><a href="#系统美化" class="headerlink" title="系统美化"></a>系统美化</h2><h3 id="安装主题：Arc-GTK"><a href="#安装主题：Arc-GTK" class="headerlink" title="安装主题：Arc GTK"></a>安装主题：Arc GTK</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sh -c <span class="string">"echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' &gt;&gt; /etc/apt/sources.list.d/arc-theme.list"</span></span><br><span class="line">wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key</span><br><span class="line">sudo apt-key add - &lt; Release.key</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install arc-theme</span><br></pre></td></tr></table></figure>
@@ -470,24 +470,24 @@
 <h2 id="主角光环-强大之处"><a href="#主角光环-强大之处" class="headerlink" title="主角光环-强大之处"></a>主角光环-强大之处</h2><ol>
 <li>主面板华丽图表显示，让每日花费一目了然。</li>
 </ol>
-<p><img src="/pic/bluecoins-1.jpg" alt="APP主界面"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-1.jpg" alt="bluecoins-1.jpg"></p>
 <ol start="2">
 <li>强大的提醒功能</li>
 </ol>
-<p><img src="/pic/bluecoins-2.png" alt="按时提醒功能"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-2.png" alt="bluecoins-2.png"></p>
 <ol start="3">
 <li>支持多国货币并自动汇率转换</li>
 </ol>
-<p><img src="/pic/bluecoins-3.jpg" alt="自动汇率转换(需联网)"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-3.jpg" alt="bluecoins-3.jpg"></p>
 <ol start="4">
 <li>支持与GoogleDrive同步</li>
 </ol>
-<p><img src="/pic/bluecoins-4.png" alt="GoogleDrive同步"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-4.png" alt="bluecoins-4.png"></p>
 <ol start="5">
 <li>支持自动填充</li>
 </ol>
 <p><strong>这个功能非常实用，基本上我们每天的花费都是重复的，如果在软件中已经记录过一笔，下次再记录的时候就非常方便了，这点是我在其他软件上没看到的。</strong></p>
-<p><img src="/pic/bluecoins-5.png" alt="自动填充功能"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-5.png" alt="bluecoins-5.png"></p>
 <h2 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h2><p>便是不能像网易有钱自动关联银行卡和支付宝进行自动记账操作，记账稍显繁琐。</p>
 <p>不过坚持记录，本来就不是一件容易的事情，即使软件再优秀，自己想偷懒，记账的好习惯也是无法养成的。</p>
 ]]></content>
@@ -514,9 +514,9 @@
 <li>在资源管理器界面中，选择映射网络驱动器，在文件夹一栏，填入上一步得到的地址，点击完成，耐心等候，输入账号密码即可，之后可以将这个映射得到的盘符当作本地磁盘进行使用</li>
 </ol>
 <p>连接后如下图所示，打开即为你网盘的文件</p>
-<p><img src="/pic/onedrive-sync-ditto-1.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/onedrive-sync-ditto-1.jpg" alt="onedrive-sync-ditto-1.jpg"></p>
 <p>Ditto设置如下图所示，数据库使用WebDav路径即可完美解决数据同步问题</p>
-<p><img src="/pic/onedrive-sync-ditto-2.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/onedrive-sync-ditto-2.jpg" alt="onedrive-sync-ditto-2.jpg"></p>
 ]]></content>
       <tags>
         <tag>webdav应用</tag>
@@ -529,28 +529,48 @@
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>国内银联信用卡/全球付无法注册。<br>亲测 VISA 和 腾讯运通卡 可以激活。<br>没有VISA卡 ? ！可以去淘宝看看，或者去银行办理。<br>学生可以办没有额度的VISA卡。</p>
 <a id="more"></a> 
 <h2 id="申请"><a href="#申请" class="headerlink" title="申请"></a>申请</h2><p>第一步：<a href="https://cloud.google.com" target="_blank" rel="noopener">https://cloud.google.com</a> ，地区选中国，亲测可行。</p>
-<p><img src="/pic/gcp-free-trial-1.png" alt="a"><br>第二步：填写个人信息</p>
-<p><img src="/pic/gcp-free-trial-2.png" alt="b"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-1.png" alt="gcp-free-trial-1.png"></p>
+<p>第二步：填写个人信息</p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-2.png" alt="gcp-free-trial-2.png"></p>
 <p>申请成功后，会扣1美元，过一会儿会将1美元返回到信用卡。</p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h3><p>由于默认的防火墙限制太多，我们需要修改防火墙规则。</p>
 <p>直接访问 ： <a href="https://console.cloud.google.com/networking/firewalls/list" target="_blank" rel="noopener">https://console.cloud.google.com/networking/firewalls/list</a></p>
 <p>或者在菜单中依次点击 【网络】–&gt;  【防火墙规则】 –&gt; 【创建防火墙规则】</p>
-<p><img src="/pic/gcp-free-trial-3.png" alt="firewall"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-3.png" alt="gcp-free-trial-3.png"></p>
 <h3 id="申请静态IP"><a href="#申请静态IP" class="headerlink" title="申请静态IP"></a>申请静态IP</h3><p>直接访问 ： <a href="https://console.cloud.google.com/networking/addresses/list" target="_blank" rel="noopener">https://console.cloud.google.com/networking/addresses/list</a><br>或者在菜单中依次点击 【网络】–&gt;  【外部IP地址】 –&gt; 【保留静态IP】<br>区域可选亚洲东部、欧洲、美国 等地。推荐亚洲！</p>
-<p><img src="/pic/gcp-free-trial-4.png" alt="ip"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-4.png" alt="gcp-free-trial-4.png"></p>
 <h2 id="创建计算引擎"><a href="#创建计算引擎" class="headerlink" title="创建计算引擎"></a>创建计算引擎</h2><p>直接访问 ： <a href="https://console.cloud.google.com/compute/instances" target="_blank" rel="noopener">https://console.cloud.google.com/compute/instances</a><br>或者在菜单中依次点击 【计算引擎】–&gt;  【创建实例】</p>
-<p><img src="/pic/gcp-free-trial-5.png" alt="vm"><br>注意以下配置，配置静态IP。</p>
-<p><img src="/pic/gcp-free-trial-6.png" alt="network"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-5.png" alt="gcp-free-trial-5.png"></p>
+<p>注意以下配置，配置静态IP。</p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-6.png" alt="gcp-free-trial-6.png"></p>
 <h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><ol>
 <li>点击进入“元数据”</li>
 </ol>
-<p><img src="/pic/gcp-free-trial-7.gif" alt="ssh1"><br>2. 添加SSH密钥</p>
-<p><img src="/pic/gcp-free-trial-8.gif" alt="ssh2"><br>3. 启动你的软件PuttyGen，用软件生成一个Key,生成KEY的过程要不断地移动你的鼠标。<a href="https://www.freehao123.com/dl-puttygen/" target="_blank" rel="noopener">PuttyGen下载</a></p>
-<p><img src="/pic/gcp-free-trial-9.gif" alt="puttygen"><br>4. 生成了Key后，先点击右下方的“保存私钥”，将密钥保存在本地。</p>
-<p><img src="/pic/gcp-free-trial-10.gif" alt="key"><br>5. 然后复制上面的公钥到元数据中，注意在公钥最后加上你的用户名，然后点击保存。（点击放大）</p>
-<p><img src="/pic/gcp-free-trial-11.gif" alt="key-ssh"><br>6. 现在打开Putty，填入IP地址与端口,<strong>在授权中添加刚刚保存的私钥</strong>。</p>
-<p><img src="/pic/gcp-free-trial-12.gif" alt="putty"><br>7. 如果你想使用Xshell，你需要在PuttyGen中导出为另一种Key格式（OpenSSH key）</p>
-<p><img src="/pic/gcp-free-trial-13.gif" alt="openssh key"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-7.gif" alt="gcp-free-trial-7.gif"></p>
+<ol start="2">
+<li>添加SSH密钥</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-8.gif" alt="gcp-free-trial-8.gif"></p>
+<ol start="3">
+<li>启动你的软件PuttyGen，用软件生成一个Key,生成KEY的过程要不断地移动你的鼠标。<a href="https://www.freehao123.com/dl-puttygen/" target="_blank" rel="noopener">PuttyGen下载</a></li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-9.gif" alt="gcp-free-trial-9.gif"></p>
+<ol start="4">
+<li>生成了Key后，先点击右下方的“保存私钥”，将密钥保存在本地。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-10.gif" alt="gcp-free-trial-10.gif"></p>
+<ol start="5">
+<li>然后复制上面的公钥到元数据中，注意在公钥最后加上你的用户名，然后点击保存。（点击放大）</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-11.gif" alt="gcp-free-trial-11.gif"></p>
+<ol start="6">
+<li>现在打开Putty，填入IP地址与端口,<strong>在授权中添加刚刚保存的私钥</strong>。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-12.gif" alt="gcp-free-trial-12.gif"></p>
+<ol start="7">
+<li>如果你想使用Xshell，你需要在PuttyGen中导出为另一种Key格式（OpenSSH key）</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-13.gif" alt="gcp-free-trial-13.gif"></p>
 ]]></content>
       <tags>
         <tag>VPS</tag>
@@ -610,7 +630,7 @@
 <li>触发方式设置为Hot Key Trigger，条件为打开Launchpad的快捷键</li>
 <li>程序如下图所示</li>
 </ol>
-<p><img src="/pic/launchpad-inputmethord-switch-problem-1.jpg" alt="程序截图"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/launchpad-inputmethord-switch-problem-1.jpg" alt="launchpad-inputmethord-switch-problem-1.jpg"></p>
 <p>本文到此结束。</p>
 ]]></content>
       <tags>
@@ -627,16 +647,16 @@
 <li>在关闭CSM兼容模式时，即纯UEFI模式时，开机直接花屏，屏幕分为15个竖直片段，显示很模糊。进入系统后，按睡眠后唤醒就正常。或者合盖后打开，显示正常。</li>
 </ol>
 <a id="more"></a> 
-
+<p>s</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
 <li>打开Clover\Graphics,勾选Inject Intel,并注入ID:16260006，</li>
 <li>现时在Clover\Graphics勾选注入EDID(下面提取修改的EDID)。</li>
 </ol>
 <h2 id="如何提取EDID"><a href="#如何提取EDID" class="headerlink" title="如何提取EDID"></a>如何提取EDID</h2><p>我的屏幕是LG 1080P屏幕。在Windows下，使用<a href="https://pan.baidu.com/s/1sl0purF" target="_blank" rel="noopener">Deltacast EDID</a>提取EDID.</p>
 <ol>
-<li><p>从注册表中导入EDID<br><img src="/pic/hackintosh-hd5500-screen-flickering-1.png" alt><br><img src="/pic/hackintosh-hd5500-screen-flickering-2.png" alt></p>
+<li><p>从注册表中导入EDID<br><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/hackintosh-hd5500-screen-flickering-1.png" alt="hackintosh-hd5500-screen-flickering-1.png"><br><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/hackintosh-hd5500-screen-flickering-2.png" alt="hackintosh-hd5500-screen-flickering-2.png"></p>
 </li>
-<li><p>这里改水平同步宽度，我显示器是32，改为100就解决了8个苹果登录花屏的问题。如果你的显示器是100，就改为32试试。<br><img src="/pic/hackintosh-hd5500-screen-flickering-3.png" alt></p>
+<li><p>这里改水平同步宽度，我显示器是32，改为100就解决了8个苹果登录花屏的问题。如果你的显示器是100，就改为32试试。<br><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/hackintosh-hd5500-screen-flickering-3.png" alt="hackintosh-hd5500-screen-flickering-3.png"></p>
 </li>
 </ol>
 ]]></content>
@@ -647,7 +667,7 @@
   <entry>
     <title>打造Windows+Mac OS X+Ubuntu+WinPE的Windows To Go维护U盘</title>
     <url>/post/multiboot-wtg.html</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="/pic/multiboot-wtg-1.png" alt="效果图"></p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-1.png" alt="multiboot-wtg-1.png"></p>
 <p>作为一个极客，随便带一个维护PE的U盘是必需的。然而在很多时候，仅仅有一个PE，难以完成复杂的需求。我手头上有一个128G的Windows To Go U盘，想为别人安装Ubuntu时，必须要拿另外一个U盘全盘格式化后写入，麻烦，而且也浪费资源。所以这次写一篇关于U盘多启动的文章，实现标题的中效果。</p>
 <a id="more"></a>
 
@@ -676,32 +696,30 @@
 </li>
 </ol>
 <h2 id="开始折腾"><a href="#开始折腾" class="headerlink" title="开始折腾"></a>开始折腾</h2><ol>
-<li><p>这次使用到的启动方式为GPT+EFI（使用PartitionGuru软件进行操作）。如果对启动方式不了解，在这里简单的科普一下，有两种启动方式，一种是BIOS+MBR，一种是GPT+EFI，前者复杂，后者简单。</p>
-</li>
-<li><p>进行分区操作，350MB的EFI（ESP）启动分区，5.5GB的FAT32分区（只是暂时，稍后需要在苹果系统中格式化为HFS+分区），2GB的FAT32分区用于放Ubuntu 16.04.3的安装镜像，500MB的FAT32分区用于PE（只装一个PE的话600MB即可），以及最后10的空间格式化为NTFS分区用于Windows To Go的系统及软件。<br>PS:<strong>前四个分区设置了隐藏，在电脑中不可见，不然一插进电脑就出来5个盘，不美观也不实用。</strong></p>
-<p><img src="/pic/multiboot-wtg-2.png" alt="分区展示"></p>
-</li>
+<li>这次使用到的启动方式为GPT+EFI（使用PartitionGuru软件进行操作）。如果对启动方式不了解，在这里简单的科普一下，有两种启动方式，一种是BIOS+MBR，一种是GPT+EFI，前者复杂，后者简单。</li>
+<li>进行分区操作，350MB的EFI（ESP）启动分区，5.5GB的FAT32分区（只是暂时，稍后需要在苹果系统中格式化为HFS+分区），2GB的FAT32分区用于放Ubuntu 16.04.3的安装镜像，500MB的FAT32分区用于PE（只装一个PE的话600MB即可），以及最后10的空间格式化为NTFS分区用于Windows To Go的系统及软件。<br>PS:<strong>前四个分区设置了隐藏，在电脑中不可见，不然一插进电脑就出来5个盘，不美观也不实用。</strong></li>
 </ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-2.png" alt="multiboot-wtg-2.png"></p>
 <h2 id="EFI分区"><a href="#EFI分区" class="headerlink" title="EFI分区"></a>EFI分区</h2><p>这个分区的用途是用于搜索和引导其他分区上的安装镜像和系统。 使用到的引导管理工具为rEFInd（主要）和Clover（黑苹果安装辅助）。关于引导管理工具的使用，这里只简单提一点：开机时进入的EFI文件是在/EFI/Boot/下。</p>
-<p><img src="/pic/multiboot-wtg-3.png" alt="EFI分区"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-3.png" alt="multiboot-wtg-3.png"></p>
 <h2 id="写入苹果安装镜像"><a href="#写入苹果安装镜像" class="headerlink" title="写入苹果安装镜像"></a>写入苹果安装镜像</h2><p>在虚拟机中安装苹果操作系统，具体的操作见<a href="http://www.jianshu.com/p/25d2d781bd98" target="_blank" rel="noopener">简书-Hegel_SU</a>的文章。</p>
-<p><img src="/pic/multiboot-wtg-4.png" alt="虚拟机安装Mac OS X"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-4.png" alt="multiboot-wtg-4.png"></p>
 <p>打开苹果的操作系统，插入U盘，磁盘工具，将5.5GB的FAT32分区格式化为HFS+分区。之后用命令行写入苹果镜像。</p>
-<p><img src="/pic/multiboot-wtg-5.jpg" alt="格式化为HFS+分区图例"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-5.jpg" alt="multiboot-wtg-5.jpg"></p>
 <p>命令行写入苹果DMG镜像教程：<a href="https://www.iplaysoft.com/macos-usb-install-drive.html" target="_blank" rel="noopener">iplaysoft</a></p>
-<p><img src="/pic/multiboot-wtg-6.png" alt="命令行"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-6.jpg" alt="multiboot-wtg-6.jpg"></p>
 <h2 id="写入Ubuntu系统镜像"><a href="#写入Ubuntu系统镜像" class="headerlink" title="写入Ubuntu系统镜像"></a>写入Ubuntu系统镜像</h2><p>将安装镜像解压至2GB的FAT32分区中，同时删除该分区目录/EFI/Boot/Bootx64.EFI即可</p>
-<p><img src="/pic/multiboot-wtg-7.png" alt="Ubuntu镜像文件"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-7.png" alt="multiboot-wtg-7.png"></p>
 <h2 id="写入微PE工具箱"><a href="#写入微PE工具箱" class="headerlink" title="写入微PE工具箱"></a>写入微PE工具箱</h2><p>准备另一个8GB的文章，打开微PE工具箱写入程序，选择方案二：UEFI/Legacy全能双分区方式，写入后在隐藏的引导分区中提取WEPE64.WIM，WEPE64.SDI和引导文件/EFI/Microsoft下的文件到500MB的FAT32分区中。</p>
-<p><img src="/pic/multiboot-wtg-8.png" alt="微PE工具箱"></p>
-<p><img src="/pic/multiboot-wtg-9.png" alt="方案二"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-8.png" alt="multiboot-wtg-8.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-9.png" alt="multiboot-wtg-9.png"></p>
 <h2 id="安装完整的Windows-to-go-Win10系统"><a href="#安装完整的Windows-to-go-Win10系统" class="headerlink" title="安装完整的Windows to go-Win10系统"></a>安装完整的Windows to go-Win10系统</h2><p>在Windows下创建一个VHD文件（建议20GB）放到最后一个分区NTFS中，（科普一下，VHD指的是Vitual Hard Disk即虚拟硬盘文件），挂载VHD后在DiskGenius中格式化VHD文件，然后用Dism++以Windows To Go方式写入Windows 10的系统镜像，之后在U盘的EFI分区中，用Bootice修复Windows 10的引导。</p>
-<p><img src="/pic/multiboot-wtg-10.png" alt="VHD"></p>
-<p><img src="/pic/multiboot-wtg-11.png" alt="格式化VHD文件"></p>
-<p><img src="/pic/multiboot-wtg-12.png" alt="释放Win10镜像"></p>
-<p><img src="/pic/multiboot-wtg-13.png" alt="释放Windows镜像"></p>
-<p><img src="/pic/multiboot-wtg-14.png" alt="修改BCD文件"></p>
-<p><img src="/pic/multiboot-wtg-15.png" alt="修改启动项"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-10.png" alt="multiboot-wtg-10.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-11.png" alt="multiboot-wtg-11.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-12.png" alt="multiboot-wtg-12.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-13.png" alt="multiboot-wtg-13.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-14.png" alt="multiboot-wtg-14.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/multiboot-wtg-15.png" alt="multiboot-wtg-15.png"></p>
 <h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>至此，一个多功能U盘打造完成，前前后后折腾了两天多，茶不思饭不想，如果你也非常想要达到这样的目的，请做好心想准备，过程将会非常的闹心,Good luck。</p>
 ]]></content>
       <tags>
@@ -750,7 +768,7 @@
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>有一台闲置的安卓的平板，想作为PC(Mac)的扩展屏幕，有线和无线都能连接，在网上寻找到一些解决方法,使用结论如下：</p>
 <a id="more"></a> 
 
-<h2 id="Twomon"><a href="#Twomon" class="headerlink" title="Twomon"></a>Twomon</h2><p><img src="/pic/use-android-tablet-as-extended-display-1.jpg" alt></p>
+<h2 id="Twomon"><a href="#Twomon" class="headerlink" title="Twomon"></a>Twomon</h2><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/use-android-tablet-as-extended-display-1.jpg" alt="use-android-tablet-as-extended-display-1.jpg"></p>
 <ul>
 <li>官网：<a href="http://www.easynlight.com/en/twomonusb/" target="_blank" rel="noopener">http://www.easynlight.com/en/twomonusb/</a></li>
 <li>支持的客户端：Mac,Win,Android,iOS，其中，Android和iOS端需要付费购买</li>
@@ -787,7 +805,7 @@
   <entry>
     <title>syncthing实现移动硬盘便携同步至NAS</title>
     <url>/post/Synchronize-Portable-External-Hard-Drive-With-NAS.html</url>
-    <content><![CDATA[<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p><img src="/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png" alt="实现效果"></p>
+    <content><![CDATA[<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png" alt="Synchronize-Portable-External-Hard-Drive-With-NAS-1.png"></p>
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>一台黑群晖NAS设备和一个移动硬盘实现在资料自动同步</p>
 <p>先说说传统方式有几种：</p>
 <ul>
@@ -885,21 +903,21 @@
 <li>选中一段文字，这时候并不会出现Weava的标注工具</li>
 <li>在网页任意位置滑动就会出现标注工具，如下图所示</li>
 </ul>
-<p><img src="/pic/weave-1.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-1.jpg" alt="weave-1.jpg"></p>
 <h3 id="标注和浏览器菜单重叠的解决方法"><a href="#标注和浏览器菜单重叠的解决方法" class="headerlink" title="标注和浏览器菜单重叠的解决方法"></a>标注和浏览器菜单重叠的解决方法</h3><ul>
 <li>在出现标注工具后，将页面向上滑动即可，如下图所示</li>
 </ul>
-<p><img src="/pic/weave-2.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-2.jpg" alt="weave-2.jpg"></p>
 <h3 id="网页文字添加注释"><a href="#网页文字添加注释" class="headerlink" title="网页文字添加注释"></a>网页文字添加注释</h3><ul>
 <li>在颜色标注后，只需要再次点击该文字就会出现添加注释，如下图所示</li>
 </ul>
-<p><img src="/pic/weave-3.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-3.jpg" alt="weave-3.jpg"></p>
 <h3 id="为不同的颜色添加颜色注释"><a href="#为不同的颜色添加颜色注释" class="headerlink" title="为不同的颜色添加颜色注释"></a>为不同的颜色添加颜色注释</h3><ul>
 <li>在文字标注界面选择设置按钮即可</li>
 </ul>
-<p><img src="/pic/weave-4.jpg" alt></p>
-<h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p><img src="/pic/weave-5.jpg" alt></p>
-<p><img src="/pic/weave-6.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-4.jpg" alt="weave-4.jpg"></p>
+<h2 id="使用效果"><a href="#使用效果" class="headerlink" title="使用效果"></a>使用效果</h2><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-5.jpg" alt="weave-5.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-6.jpg" alt="weave-6.jpg"></p>
 ]]></content>
       <categories>
         <category>效率工具</category>
@@ -1226,23 +1244,23 @@
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ol>
 <li>新建一个虚拟机，将默认添加的硬盘删除，具体配置如下图所示。（安装过程选择不自动更新可以加速系统安装）</li>
 </ol>
-<p><img src="/pic/ubuntu-to-go-uefi-1.jpg" alt></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-1.jpg" alt="ubuntu-to-go-uefi-1.jpg"></p>
 <p>……</p>
 <a id="more"></a> 
 
-<ol start="2">
+<ol>
 <li>加载U盘到虚拟机中：虚拟机设置-添加-硬盘-SCSI-使用物理磁盘-选择U盘（一般是最后一个），添加后如下图所示。</li>
 </ol>
-<p><img src="/pic/ubuntu-to-go-uefi-2.jpg" alt></p>
-<ol start="3">
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-2.jpg" alt="ubuntu-to-go-uefi-2.jpg"></p>
+<ol start="2">
 <li>设置虚拟机为UEFI启动，如下图所示</li>
 </ol>
-<p><img src="/pic/ubuntu-to-go-uefi-3.jpg" alt></p>
-<ol start="4">
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-3.jpg" alt="ubuntu-to-go-uefi-3.jpg"></p>
+<ol start="3">
 <li>之后启动虚拟机，正常安装Ubuntu，因为VMware软件设计导致Ubuntu显示分辨率低，可以先启动到Ubuntu Live后调整分辨率再启动安装程序，如下图所示。</li>
 </ol>
-<p><img src="/pic/ubuntu-to-go-uefi-4.jpg" alt></p>
-<ol start="5">
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-4.jpg" alt="ubuntu-to-go-uefi-4.jpg"></p>
+<ol start="4">
 <li><p>之后就到了最关键的步骤了：安装完成之后请不要启动Ubuntu启动，先进入Ubuntu Live中。</p>
 <p>5.1 安装grub-efi，打开终端输入</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -s</span><br><span class="line">apt-get install grub-efi</span><br></pre></td></tr></table></figure>
@@ -1269,7 +1287,7 @@
     <content><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-09-02：清歌五笔输入法自带快速输入日期时间的方法</p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Windows平台下，用搜狗五笔输入法快速输入时间日期星期很舒服，一到Mac平台，Mac版搜狗五笔输入法却不提供同样的功能，实在是郁闷至极，最终发现了清歌五笔输入法能够快速输入时间日期（虽然不能快速输入星期），很赞。</p>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>清歌输入法提供用户词库功能，如下图所示。</p>
-<p><img src="/pic/mac-quick-input-time-1.jpg" alt="Mac下清歌五笔输入法快速输入日期时间的方法"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/mac-quick-input-time-1.jpg" alt="mac-quick-input-time-1.jpg"></p>
 <a id="more"></a> ]]></content>
       <tags>
         <tag>输入法技巧</tag>
@@ -1366,7 +1384,8 @@
 
 </li>
 </ol>
-<h2 id="共享SSR网络（需Root）"><a href="#共享SSR网络（需Root）" class="headerlink" title="共享SSR网络（需Root）"></a>共享SSR网络（需Root）</h2><p>在使用官方的SSR免流时，启用手机热点，其他设备是无法正常上网的。<br>需要使用<strong>ssrscriptn</strong>这款软件来进行SSR连接。<br><img src="/pic/ssr-mianliu-1.png" alt="ssr+"></p>
+<h2 id="共享SSR网络（需Root）"><a href="#共享SSR网络（需Root）" class="headerlink" title="共享SSR网络（需Root）"></a>共享SSR网络（需Root）</h2><p>在使用官方的SSR免流时，启用手机热点，其他设备是无法正常上网的。<br>需要使用<strong>ssrscriptn</strong>这款软件来进行SSR连接。</p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ssr-mianliu-1.png" alt="ssr-mianliu-1.png"></p>
 ]]></content>
       <tags>
         <tag>云免流</tag>
@@ -1381,7 +1400,7 @@
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
 <li><p>登录网页版<a href="https://calendar.google.com/" target="_blank" rel="noopener">谷歌日历</a>，</p>
 </li>
-<li><p>在左栏的我的日历，设置Tasks，切换到“提醒”，然后在网页端将提醒删除即可。如图：<br><img src="/pic/google-calendar-bug-1.jpg" alt></p>
+<li><p>在左栏的我的日历，设置Tasks，切换到“提醒”，然后在网页端将提醒删除即可。如图：<br><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/google-calendar-bug-1.jpg" alt="google-calendar-bug-1.jpg"></p>
 </li>
 <li><p>手机再同步一次，提醒就消失了。</p>
 </li>
@@ -1401,11 +1420,12 @@
 </ol>
 <a id="more"></a> 
 
-<h2 id="搭建Hexo博客"><a href="#搭建Hexo博客" class="headerlink" title="搭建Hexo博客"></a>搭建Hexo博客</h2><h3 id="1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接"><a href="#1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接" class="headerlink" title="1. 登录Google Cloud Platform（即GCP）:Compute Engine(链接)"></a>1. 登录Google Cloud Platform（即GCP）:<a href="https://console.cloud.google.com/compute/" target="_blank" rel="noopener">Compute Engine(链接)</a></h3><h3 id="2-创建实例"><a href="#2-创建实例" class="headerlink" title="2. 创建实例"></a>2. 创建实例</h3><p><img src="/pic/gcp-hexo-1.png" alt="创建实例-1"><br><img src="/pic/gcp-hexo-2.png" alt="创建实例-2"></p>
+<h2 id="搭建Hexo博客"><a href="#搭建Hexo博客" class="headerlink" title="搭建Hexo博客"></a>搭建Hexo博客</h2><h3 id="1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接"><a href="#1-登录Google-Cloud-Platform（即GCP）-Compute-Engine-链接" class="headerlink" title="1. 登录Google Cloud Platform（即GCP）:Compute Engine(链接)"></a>1. 登录Google Cloud Platform（即GCP）:<a href="https://console.cloud.google.com/compute/" target="_blank" rel="noopener">Compute Engine(链接)</a></h3><h3 id="2-创建实例"><a href="#2-创建实例" class="headerlink" title="2. 创建实例"></a>2. 创建实例</h3><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-1.png" alt="gcp-hexo-1.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-2.png" alt="gcp-hexo-2.png"></p>
 <p>拉到最下面确认创建新实例，创建后自动启动实例：</p>
-<p><img src="/pic/gcp-hexo-3.png" alt="实例创建成功"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-3.png" alt="gcp-hexo-3.png"></p>
 <p>启用实例的SSH：</p>
-<p><img src="/pic/gcp-hexo-4.png" alt="登录VPS"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-4.png" alt="gcp-hexo-4.png"></p>
 <ol>
 <li><p>使用sudo passwd设置Root密码</p>
 <figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">sudo passwd <span class="comment">//设置Root密码</span></span><br></pre></td></tr></table></figure>
@@ -1539,13 +1559,20 @@
 <li>下载安装包：<a href="https://download-cdn.resilio.com/stable/windows64/Resilio-Sync_x64.exe" target="_blank" rel="noopener">https://download-cdn.resilio.com/stable/windows64/Resilio-Sync_x64.exe</a></li>
 <li>如下图所示，按下一步</li>
 </ol>
-<p><img src="/pic/resilio-sync-tutorial-1.png" alt="安装"><br>3. 安装成功后，如下图所示</p>
-<p><img src="/pic/resilio-sync-tutorial-2.png" alt="安装成功"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/resilio-sync-tutorial-1.png" alt="resilio-sync-tutorial-1.png"></p>
+<ol start="3">
+<li>安装成功后，如下图所示</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/resilio-sync-tutorial-2.png" alt="resilio-sync-tutorial-2.png"></p>
 <ol start="4">
 <li>添加密钥</li>
 </ol>
-<p><img src="/pic/resilio-sync-tutorial-3.png" alt="添加密钥"></p>
-<p><img src="/pic/resilio-sync-tutorial-4.png" alt="选择性同步"><br><strong>PS:选择性同步仅同步你想要同步的文件，关闭的情况下同步所有的文件</strong><br>5. 选择保存路径，文件就可以自己同步。</p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/resilio-sync-tutorial-3.png" alt="resilio-sync-tutorial-3.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/resilio-sync-tutorial-4.png" alt="resilio-sync-tutorial-4.png"></p>
+<p><strong>PS:选择性同步仅同步你想要同步的文件，关闭的情况下同步所有的文件</strong></p>
+<ol>
+<li>选择保存路径，文件就可以自己同步。</li>
+</ol>
 <h2 id="无限试用方法"><a href="#无限试用方法" class="headerlink" title="无限试用方法"></a>无限试用方法</h2><ol>
 <li>安装 Resilio Sync （废话）</li>
 <li>点击“试用 Pro 版 30 天”</li>
