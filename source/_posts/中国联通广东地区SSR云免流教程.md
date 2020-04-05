@@ -54,8 +54,8 @@ UDP代理规则：全局代理
 ## 共享SSR网络（需Root）
 在使用官方的SSR免流时，启用手机热点，其他设备是无法正常上网的。
 需要使用**ssrscriptn**这款软件来进行SSR连接。
-![ssr+](/pic/ssr-mianliu-1.png)
 
+![ssr-mianliu-1.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ssr-mianliu-1.png)
 
 
 

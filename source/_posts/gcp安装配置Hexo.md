@@ -20,16 +20,17 @@ abbrlink: gcp-hexo
 
 ### 2. 创建实例
 
-![创建实例-1](/pic/gcp-hexo-1.png)
-![创建实例-2](/pic/gcp-hexo-2.png)
+![gcp-hexo-1.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-1.png)
+
+![gcp-hexo-2.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-2.png)
 
 拉到最下面确认创建新实例，创建后自动启动实例：
 
-![实例创建成功](/pic/gcp-hexo-3.png)
+![gcp-hexo-3.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-3.png)
 
 启用实例的SSH：
 
-![登录VPS](/pic/gcp-hexo-4.png)
+![gcp-hexo-4.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-hexo-4.png)
 
 1. 使用sudo passwd设置Root密码
 ```

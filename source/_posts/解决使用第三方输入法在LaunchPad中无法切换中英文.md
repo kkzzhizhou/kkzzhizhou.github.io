@@ -24,6 +24,6 @@ updated: 2020-3-16 14:00:23
 2. 触发方式设置为Hot Key Trigger，条件为打开Launchpad的快捷键
 3. 程序如下图所示
 
-![程序截图](/pic/launchpad-inputmethord-switch-problem-1.jpg)
+![launchpad-inputmethord-switch-problem-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/launchpad-inputmethord-switch-problem-1.jpg)
 
 本文到此结束。

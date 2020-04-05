@@ -10,7 +10,7 @@ abbrlink: Synchronize-Portable-External-Hard-Drive-With-NAS
 
 ## 实现效果
 
-![实现效果](/pic/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png)
+![Synchronize-Portable-External-Hard-Drive-With-NAS-1.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/Synchronize-Portable-External-Hard-Drive-With-NAS-1.png)
 
 ## 需求
 

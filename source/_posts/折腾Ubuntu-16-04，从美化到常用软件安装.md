@@ -15,7 +15,7 @@ updated: 2020-3-16 14:56:49
 
 这篇文章针对我个人的使用情况，解决从美化到软件安装的各种需求。
 
-![](/pic/ubuntu-desktop.jpg)
+![ubuntu-desktop.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-desktop.jpg)
 
 <!-- more --> 
 

@@ -16,7 +16,7 @@ updated: 2018-04-02 16:13:47
 ## 解决方法
 1. 登录网页版[谷歌日历](https://calendar.google.com/)，
 2. 在左栏的我的日历，设置Tasks，切换到“提醒”，然后在网页端将提醒删除即可。如图：
-![](/pic/google-calendar-bug-1.jpg)
+![google-calendar-bug-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/google-calendar-bug-1.jpg)
 
 3. 手机再同步一次，提醒就消失了。
 

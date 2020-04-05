@@ -10,11 +10,11 @@ abbrlink: hd5500-hdmi-audio
 
 ## 效果图
 
-![pic1](/pic/hd5500-hdmi-audio-1.jpg)
+![hd5500-hdmi-audio-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/hd5500-hdmi-audio-1.jpg)
 
 <!-- more --> 
 
-![pic2](/pic/hd5500-hdmi-audio-2.jpg)
+![hd5500-hdmi-audio-2.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/hd5500-hdmi-audio-2.jpg)
 
 
 

@@ -20,10 +20,11 @@ updated: 2020-3-16 14:34:21
 ## 申请
 第一步：https://cloud.google.com ，地区选中国，亲测可行。
 
-![a](/pic/gcp-free-trial-1.png)
+![gcp-free-trial-1.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-1.png)
+
 第二步：填写个人信息
 
-![b](/pic/gcp-free-trial-2.png)
+![gcp-free-trial-2.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-2.png)
 
 申请成功后，会扣1美元，过一会儿会将1美元返回到信用卡。
 
@@ -35,42 +36,51 @@ updated: 2020-3-16 14:34:21
 
 或者在菜单中依次点击 【网络】–>  【防火墙规则】 –> 【创建防火墙规则】
 
-![firewall](/pic/gcp-free-trial-3.png)
+![gcp-free-trial-3.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-3.png)
 
 ### 申请静态IP
 直接访问 ： https://console.cloud.google.com/networking/addresses/list
 或者在菜单中依次点击 【网络】–>  【外部IP地址】 –> 【保留静态IP】
 区域可选亚洲东部、欧洲、美国 等地。推荐亚洲！
 
-![ip](/pic/gcp-free-trial-4.png)
+![gcp-free-trial-4.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-4.png)
 
 ## 创建计算引擎
 直接访问 ： https://console.cloud.google.com/compute/instances
 或者在菜单中依次点击 【计算引擎】–>  【创建实例】
 
-![vm](/pic/gcp-free-trial-5.png)
+![gcp-free-trial-5.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-5.png)
+
 注意以下配置，配置静态IP。
 
-![network](/pic/gcp-free-trial-6.png)
+![gcp-free-trial-6.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-6.png)
+
 ### 配置SSH
 1. 点击进入“元数据”
 
-![ssh1](/pic/gcp-free-trial-7.gif)
+![gcp-free-trial-7.gif](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-7.gif)
+
 2. 添加SSH密钥
 
-![ssh2](/pic/gcp-free-trial-8.gif)
+![gcp-free-trial-8.gif](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-8.gif)
+
 3. 启动你的软件PuttyGen，用软件生成一个Key,生成KEY的过程要不断地移动你的鼠标。[PuttyGen下载](https://www.freehao123.com/dl-puttygen/)
 
-![puttygen](/pic/gcp-free-trial-9.gif)
+![gcp-free-trial-9.gif](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-9.gif)
+
+
 4. 生成了Key后，先点击右下方的“保存私钥”，将密钥保存在本地。
 
-![key](/pic/gcp-free-trial-10.gif)
+![gcp-free-trial-10.gif](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-10.gif)
+
 5. 然后复制上面的公钥到元数据中，注意在公钥最后加上你的用户名，然后点击保存。（点击放大）
 
-![key-ssh](/pic/gcp-free-trial-11.gif)
+![gcp-free-trial-11.gif](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-11.gif)
+
 6. 现在打开Putty，填入IP地址与端口,**在授权中添加刚刚保存的私钥**。
 
-![putty](/pic/gcp-free-trial-12.gif)
+![gcp-free-trial-12.gif](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-12.gif)
+
 7. 如果你想使用Xshell，你需要在PuttyGen中导出为另一种Key格式（OpenSSH key）
 
-![openssh key](/pic/gcp-free-trial-13.gif)
+![gcp-free-trial-13.gif](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/gcp-free-trial-13.gif)

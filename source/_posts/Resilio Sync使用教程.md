@@ -21,18 +21,20 @@ abbrlink: resilio-sync-tutorial
 1. 下载安装包：https://download-cdn.resilio.com/stable/windows64/Resilio-Sync_x64.exe
 2. 如下图所示，按下一步
 
-![安装](/pic/resilio-sync-tutorial-1.png)
+![resilio-sync-tutorial-1.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/resilio-sync-tutorial-1.png)
+
 3. 安装成功后，如下图所示
 
-![安装成功](/pic/resilio-sync-tutorial-2.png)
+![resilio-sync-tutorial-2.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/resilio-sync-tutorial-2.png)
 
 4. 添加密钥
 
-![添加密钥](/pic/resilio-sync-tutorial-3.png)
+![resilio-sync-tutorial-3.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/resilio-sync-tutorial-3.png)
 
-![选择性同步](/pic/resilio-sync-tutorial-4.png)
+![resilio-sync-tutorial-4.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/resilio-sync-tutorial-4.png)
+
 **PS:选择性同步仅同步你想要同步的文件，关闭的情况下同步所有的文件**
-5. 选择保存路径，文件就可以自己同步。
+1. 选择保存路径，文件就可以自己同步。
 
 ## 无限试用方法
 

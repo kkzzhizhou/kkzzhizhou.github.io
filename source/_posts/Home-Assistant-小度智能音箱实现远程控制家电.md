@@ -25,15 +25,15 @@ abbrlink: home-assistent-with-xiaodu-smart-speaker
 
 ## Home Assistant配置步骤
 
-![Docker使用1](/pic/home-assistent-with-xiaodu-smart-speaker-1.png)
+![home-assistent-with-xiaodu-smart-speaker-1.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-1.png)
 
-![Docker使用2](/pic/home-assistent-with-xiaodu-smart-speaker-2.png)
+![home-assistent-with-xiaodu-smart-speaker-2.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-2.png)
 
-![Docker使用3](/pic/home-assistent-with-xiaodu-smart-speaker-3.png)
+![home-assistent-with-xiaodu-smart-speaker-3.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-3.png)
 
-![Docker使用4](/pic/home-assistent-with-xiaodu-smart-speaker-4.png)
+![home-assistent-with-xiaodu-smart-speaker-4.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-4.png)
 
-![Docker使用5](/pic/home-assistent-with-xiaodu-smart-speaker-5.png)
+![home-assistent-with-xiaodu-smart-speaker-5.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/home-assistent-with-xiaodu-smart-speaker-5.png)
 
 应用后启动即可,配置界面连接为http://nas_ip:8123
 

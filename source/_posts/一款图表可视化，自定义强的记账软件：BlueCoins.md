@@ -19,25 +19,25 @@ updated: 2020-3-16 14:51:52
 
 1. 主面板华丽图表显示，让每日花费一目了然。
 
-![APP主界面](/pic/bluecoins-1.jpg)
+![bluecoins-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-1.jpg)
 
 2. 强大的提醒功能
 
-![按时提醒功能](/pic/bluecoins-2.png)
+![bluecoins-2.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-2.png)
 
 3. 支持多国货币并自动汇率转换
 
-![自动汇率转换(需联网)](/pic/bluecoins-3.jpg)
+![bluecoins-3.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-3.jpg)
 
 4. 支持与GoogleDrive同步
 
-![GoogleDrive同步](/pic/bluecoins-4.png)
+![bluecoins-4.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-4.png)
 
 5. 支持自动填充
 
 **这个功能非常实用，基本上我们每天的花费都是重复的，如果在软件中已经记录过一笔，下次再记录的时候就非常方便了，这点是我在其他软件上没看到的。**
 
-![自动填充功能](/pic/bluecoins-5.png)
+![bluecoins-5.png](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/imgs/bluecoins-5.png)
 
 
 ## 不足之处

@@ -29,8 +29,8 @@ OneDrive使用WebDav的方法：
 
 连接后如下图所示，打开即为你网盘的文件
 
-![](/pic/onedrive-sync-ditto-1.jpg)
+![onedrive-sync-ditto-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/onedrive-sync-ditto-1.jpg)
 
 Ditto设置如下图所示，数据库使用WebDav路径即可完美解决数据同步问题
 
-![](/pic/onedrive-sync-ditto-2.jpg)
+![onedrive-sync-ditto-2.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/onedrive-sync-ditto-2.jpg)

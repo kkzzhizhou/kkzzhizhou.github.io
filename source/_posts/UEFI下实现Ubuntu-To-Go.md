@@ -30,26 +30,26 @@ updated: 2018-09-02 10:00:53
 
 1. 新建一个虚拟机，将默认添加的硬盘删除，具体配置如下图所示。（安装过程选择不自动更新可以加速系统安装）
 
-![](/pic/ubuntu-to-go-uefi-1.jpg)
+![ubuntu-to-go-uefi-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-1.jpg)
 
 ......
 <!-- more --> 
 
-2. 加载U盘到虚拟机中：虚拟机设置-添加-硬盘-SCSI-使用物理磁盘-选择U盘（一般是最后一个），添加后如下图所示。
+1. 加载U盘到虚拟机中：虚拟机设置-添加-硬盘-SCSI-使用物理磁盘-选择U盘（一般是最后一个），添加后如下图所示。
 
-![](/pic/ubuntu-to-go-uefi-2.jpg)
+![ubuntu-to-go-uefi-2.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-2.jpg)
 
 
 
-3. 设置虚拟机为UEFI启动，如下图所示
+2. 设置虚拟机为UEFI启动，如下图所示
 
-![](/pic/ubuntu-to-go-uefi-3.jpg)
+![ubuntu-to-go-uefi-3.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-3.jpg)
 
-4. 之后启动虚拟机，正常安装Ubuntu，因为VMware软件设计导致Ubuntu显示分辨率低，可以先启动到Ubuntu Live后调整分辨率再启动安装程序，如下图所示。
+3. 之后启动虚拟机，正常安装Ubuntu，因为VMware软件设计导致Ubuntu显示分辨率低，可以先启动到Ubuntu Live后调整分辨率再启动安装程序，如下图所示。
 
-![](/pic/ubuntu-to-go-uefi-4.jpg)
+![ubuntu-to-go-uefi-4.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/ubuntu-to-go-uefi-4.jpg)
 
-5. 之后就到了最关键的步骤了：安装完成之后请不要启动Ubuntu启动，先进入Ubuntu Live中。
+4. 之后就到了最关键的步骤了：安装完成之后请不要启动Ubuntu启动，先进入Ubuntu Live中。
 
    5.1 安装grub-efi，打开终端输入
 

@@ -19,6 +19,6 @@ updated: 2018-09-02 01:11:54
 
 清歌输入法提供用户词库功能，如下图所示。
 
-![Mac下清歌五笔输入法快速输入日期时间的方法](/pic/mac-quick-input-time-1.jpg)
+![mac-quick-input-time-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/mac-quick-input-time-1.jpg)
 
 <!-- more --> 

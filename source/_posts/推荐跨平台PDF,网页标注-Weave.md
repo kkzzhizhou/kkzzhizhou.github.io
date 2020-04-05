@@ -23,28 +23,28 @@ abbrlink: weave
 - 选中一段文字，这时候并不会出现Weava的标注工具
 - 在网页任意位置滑动就会出现标注工具，如下图所示
 
-![](/pic/weave-1.jpg)
+![weave-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-1.jpg)
 
 ### 标注和浏览器菜单重叠的解决方法
 
 - 在出现标注工具后，将页面向上滑动即可，如下图所示
 
-![](/pic/weave-2.jpg)
+![weave-2.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-2.jpg)
 
 ### 网页文字添加注释
 
 - 在颜色标注后，只需要再次点击该文字就会出现添加注释，如下图所示
 
-![](/pic/weave-3.jpg)
+![weave-3.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-3.jpg)
 
 ### 为不同的颜色添加颜色注释
 
 - 在文字标注界面选择设置按钮即可
 
-![](/pic/weave-4.jpg)
+![weave-4.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-4.jpg)
 
 ## 使用效果
 
-![](/pic/weave-5.jpg)
+![weave-5.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-5.jpg)
 
-![](/pic/weave-6.jpg)
+![weave-6.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/weave-6.jpg)

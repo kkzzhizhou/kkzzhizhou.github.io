@@ -12,7 +12,8 @@ updated: 2020-3-17 11:49:49
 
 ## RSS是什么？
 
-![](/pic/rss-tutorial-1.jpg)
+![rss-tutorial-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/rss-tutorial-1.jpg)
+
 > RSS是一种内容信息聚合技术。简单点讲，你可以订阅自己关心的内容，例如博客，视频网站，知乎，简书，微信公众号，播客，门户网站等，当内容更新时自动同步到阅读器中，最终所有信息汇总到一个应用里查看阅读。
 
 <!-- more --> 
@@ -22,7 +23,7 @@ updated: 2020-3-17 11:49:49
 1. 使用电脑端Chrome打开[inoreader](http://www.inoreader.com/),注册一个账号
 2. 注册成功且登录之后，点击搜索按钮，输出本博客的订阅地址：https://blog.ziiyc.com/atom.xml, 如下图所示,选中之后点击右上角的订阅即可
 
-![](/pic/rss-tutorial-4.jpg)
+![rss-tutorial-4.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/rss-tutorial-4.jpg)
 
 ## 在线RSS阅读软件：[inoreader](http://www.inoreader.com/) 
 
@@ -54,7 +55,7 @@ updated: 2020-3-17 11:49:49
 
 [RSS+](https://greasyfork.org/zh-CN/scripts/373252-rss-show-site-all-rss)
 
-![rss+](/pic/rss-tutorial-2.jpg)
+![rss-tutorial-2.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/rss-tutorial-2.jpg)
 
 ### 2. 浏览器插件：RSSHub
 
@@ -117,7 +118,7 @@ PS: uid, 用户 id, 博主主页打开控制台执行 `/uid=(\d+)/. exec(documen
 
 3. “Only keep links if link URL contains”URL过滤，仅保留包含指定字符串的链接，例如html
 
-   ![Fivefilters Feed Creator](/pic/rss-tutorial-3.jpg)
+![rss-tutorial-3.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/rss-tutorial-3.jpg)
 
 #### 3：Fetchrss
 

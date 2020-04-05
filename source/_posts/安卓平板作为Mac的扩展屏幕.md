@@ -5,6 +5,7 @@ abbrlink: use-android-tablet-as-extended-display
 date: 2018-04-04 12:17:41
 updated: 2020-3-16 11:43:35
 ---
+
 ## 问题
 
 有一台闲置的安卓的平板，想作为PC(Mac)的扩展屏幕，有线和无线都能连接，在网上寻找到一些解决方法,使用结论如下：
@@ -12,7 +13,7 @@ updated: 2020-3-16 11:43:35
 <!-- more --> 
 
 ## Twomon
-![](/pic/use-android-tablet-as-extended-display-1.jpg)
+![use-android-tablet-as-extended-display-1.jpg](https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/use-android-tablet-as-extended-display-1.jpg)
 
 - 官网：http://www.easynlight.com/en/twomonusb/
 - 支持的客户端：Mac,Win,Android,iOS，其中，Android和iOS端需要付费购买
