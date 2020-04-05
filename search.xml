@@ -42,6 +42,38 @@
       </tags>
   </entry>
   <entry>
+    <title>VSCode使用Github作为图床</title>
+    <url>/post/vscode-use-github-as-pic-bed.html</url>
+    <content><![CDATA[<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p>使用VSCode插件PicGo上传图片至Github博客（比如kkzzhizho.github.io)的images分支。</p>
+<h2 id="博客仓库原先状态"><a href="#博客仓库原先状态" class="headerlink" title="博客仓库原先状态"></a>博客仓库原先状态</h2><p>一共有两个分支：source（博客源文件）和master（Hexo博客生成文件)</p>
+<a id="more"></a> 
+
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="新建一个远程空白分支：images"><a href="#新建一个远程空白分支：images" class="headerlink" title="新建一个远程空白分支：images"></a>新建一个远程空白分支：images</h3><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将项目克隆到本地</span></span><br><span class="line"><span class="attr">git</span> <span class="string">clone xxx</span></span><br><span class="line"><span class="attr">cd</span> <span class="string">xxx</span></span><br><span class="line"><span class="comment"># 新建一个空白images</span></span><br><span class="line"><span class="attr">git</span> <span class="string">checkout --orphan images</span></span><br><span class="line"><span class="comment"># 清空当前项目</span></span><br><span class="line"><span class="attr">git</span> <span class="string">rm -rf .</span></span><br><span class="line"><span class="comment"># 新建一个README.md文件（因为分支文件为空时不能推送到远端）</span></span><br><span class="line"><span class="attr">echo</span> <span class="string">"This is a imgaes branch" &gt; README&gt;.md</span></span><br><span class="line"><span class="comment"># 提交到远端</span></span><br><span class="line"><span class="attr">git</span> <span class="string">add -A</span></span><br><span class="line"><span class="attr">git</span> <span class="string">commit -m "Initial images branch"</span></span><br><span class="line"><span class="attr">git</span> <span class="string">push origin images</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="安装并配置VSCode插件：PicGo"><a href="#安装并配置VSCode插件：PicGo" class="headerlink" title="安装并配置VSCode插件：PicGo"></a>安装并配置VSCode插件：PicGo</h3><ol>
+<li>安装PicGo插件</li>
+</ol>
+<p>需要用到Picgo这个插件，直接在vscode中搜索安装就行。</p>
+<ol start="2">
+<li>配置PicGo插件</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-1.png" alt="vscode-use-github-as-pic-bed-1.png"></p>
+<ol start="3">
+<li>申请Github Token</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-2.png" alt="vscode-use-github-as-pic-bed-2.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-3.png" alt="vscode-use-github-as-pic-bed-3.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-4.png" alt="vscode-use-github-as-pic-bed-4.png"></p>
+<p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-5.png" alt="vscode-use-github-as-pic-bed-5.png"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows中硬链接、软链接、符号链接区别与使用场景</title>
     <url>/post/windows-links.html</url>
     <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>

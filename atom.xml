@@ -40,6 +40,29 @@
   </entry>
   
   <entry>
+    <title>VSCode使用Github作为图床</title>
+    <link href="http://blog.ziiyc.com/post/vscode-use-github-as-pic-bed.html"/>
+    <id>http://blog.ziiyc.com/post/vscode-use-github-as-pic-bed.html</id>
+    <published>2020-04-05T04:47:00.000Z</published>
+    <updated>2020-04-05T06:29:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p>使用VSCode插件PicGo上传图片至Github博客（比如kkzzhizho.github.io)的images分支。</p><h2 id="博客仓库原先状态"><a href="#博客仓库原先状态" class="headerlink" title="博客仓库原先状态"></a>博客仓库原先状态</h2><p>一共有两个分支：source（博客源文件）和master（Hexo博客生成文件)</p><a id="more"></a> <h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="新建一个远程空白分支：images"><a href="#新建一个远程空白分支：images" class="headerlink" title="新建一个远程空白分支：images"></a>新建一个远程空白分支：images</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将项目克隆到本地</span></span><br><span class="line"><span class="attr">git</span> <span class="string">clone xxx</span></span><br><span class="line"><span class="attr">cd</span> <span class="string">xxx</span></span><br><span class="line"><span class="comment"># 新建一个空白images</span></span><br><span class="line"><span class="attr">git</span> <span class="string">checkout --orphan images</span></span><br><span class="line"><span class="comment"># 清空当前项目</span></span><br><span class="line"><span class="attr">git</span> <span class="string">rm -rf .</span></span><br><span class="line"><span class="comment"># 新建一个README.md文件（因为分支文件为空时不能推送到远端）</span></span><br><span class="line"><span class="attr">echo</span> <span class="string">"This is a imgaes branch" &gt; README&gt;.md</span></span><br><span class="line"><span class="comment"># 提交到远端</span></span><br><span class="line"><span class="attr">git</span> <span class="string">add -A</span></span><br><span class="line"><span class="attr">git</span> <span class="string">commit -m "Initial images branch"</span></span><br><span class="line"><span class="attr">git</span> <span class="string">push origin images</span></span><br></pre></td></tr></table></figure><h3 id="安装并配置VSCode插件：PicGo"><a href="#安装并配置VSCode插件：PicGo" class="headerlink" title="安装并配置VSCode插件：PicGo"></a>安装并配置VSCode插件：PicGo</h3><ol><li>安装PicGo插件</li></ol><p>需要用到Picgo这个插件，直接在vscode中搜索安装就行。</p><ol start="2"><li>配置PicGo插件</li></ol><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-1.png" alt="vscode-use-github-as-pic-bed-1.png"></p><ol start="3"><li>申请Github Token</li></ol><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-2.png" alt="vscode-use-github-as-pic-bed-2.png"></p><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-3.png" alt="vscode-use-github-as-pic-bed-3.png"></p><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-4.png" alt="vscode-use-github-as-pic-bed-4.png"></p><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/vscode-use-github-as-pic-bed-5.png" alt="vscode-use-github-as-pic-bed-5.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;最终效果&quot;&gt;&lt;a href=&quot;#最终效果&quot; class=&quot;headerlink&quot; title=&quot;最终效果&quot;&gt;&lt;/a&gt;最终效果&lt;/h2&gt;&lt;p&gt;使用VSCode插件PicGo上传图片至Github博客（比如kkzzhizho.github.io)的images分支。&lt;/p&gt;
+&lt;h2 id=&quot;博客仓库原先状态&quot;&gt;&lt;a href=&quot;#博客仓库原先状态&quot; class=&quot;headerlink&quot; title=&quot;博客仓库原先状态&quot;&gt;&lt;/a&gt;博客仓库原先状态&lt;/h2&gt;&lt;p&gt;一共有两个分支：source（博客源文件）和master（Hexo博客生成文件)&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://blog.ziiyc.com/categories/Hexo/"/>
+    
+    
+      <category term="图床" scheme="http://blog.ziiyc.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Windows中硬链接、软链接、符号链接区别与使用场景</title>
     <link href="http://blog.ziiyc.com/post/windows-links.html"/>
     <id>http://blog.ziiyc.com/post/windows-links.html</id>
@@ -250,7 +273,7 @@
     <link href="http://blog.ziiyc.com/post/travis-ci-to-hexo.html"/>
     <id>http://blog.ziiyc.com/post/travis-ci-to-hexo.html</id>
     <published>2019-04-09T13:37:28.000Z</published>
-    <updated>2020-04-05T04:16:12.607Z</updated>
+    <updated>2020-04-05T06:35:03.923Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Travis-CI说明"><a href="#Travis-CI说明" class="headerlink" title="Travis CI说明"></a>Travis CI说明</h2><p>新建Source分支用于存储源文件，Master分支用于存储生成的网站文件</p><a id="more"></a> <h2 id="全新的电脑写博客"><a href="#全新的电脑写博客" class="headerlink" title="全新的电脑写博客"></a>全新的电脑写博客</h2><ul><li><p>下载安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>，<a href="https://github.com/gaoyoubo/hexo-client/releases" target="_blank" rel="noopener">HexoClient</a>，<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">Node.js</a></p></li><li><p>运行Git Bash</p></li><li><p>添加Nodejs环境配置</p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch ~<span class="string">/.bash_profile</span></span><br><span class="line">vi ~<span class="string">/.bash_profile</span></span><br></pre></td></tr></table></figure></li><li><p>添加以下内容到.bash_profile文件中，保存退出</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"><span class="comment"># 添加环境变量</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:/c/Program\ Files/nodejs</span><br></pre></td></tr></table></figure></li><li><p>运行以下命令刷新环境变量</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure></li><li><p>下载安装SourceTree并登录</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">-b</span> source https://github.com/kkzzhizhou/kkzzhizhou.github.io</span><br></pre></td></tr></table></figure></li><li><p>下载安装SourceTree并登录</p></li><li><p>打开本地仓库kkzzhizhou.github.io</p></li><li><p>修改后进行提交即可</p></li></ul><h2 id="已经配置的电脑写博客"><a href="#已经配置的电脑写博客" class="headerlink" title="已经配置的电脑写博客"></a>已经配置的电脑写博客</h2><p>强制拉取所有更新到本地，放弃所有本地修改</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">fetch</span> <span class="comment">--all</span></span><br><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard origin/source</span></span><br><span class="line">git pull</span><br></pre></td></tr></table></figure><h2 id="SourceTree发布文章"><a href="#SourceTree发布文章" class="headerlink" title="SourceTree发布文章"></a>SourceTree发布文章</h2><ul><li>暂存所有，填写Commit之后提交即可</li></ul>]]></content>
     
@@ -503,29 +526,6 @@
       <category term="MacOS_Bug" scheme="http://blog.ziiyc.com/tags/MacOS-Bug/"/>
     
       <category term="Keyboard Maestro应用" scheme="http://blog.ziiyc.com/tags/Keyboard-Maestro%E5%BA%94%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac下清歌五笔输入法快速输入日期时间的方法</title>
-    <link href="http://blog.ziiyc.com/post/mac-quick-input-time.html"/>
-    <id>http://blog.ziiyc.com/post/mac-quick-input-time.html</id>
-    <published>2018-09-01T16:18:54.000Z</published>
-    <updated>2018-09-01T17:11:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><p>2018-09-02：清歌五笔输入法自带快速输入日期时间的方法</p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Windows平台下，用搜狗五笔输入法快速输入时间日期星期很舒服，一到Mac平台，Mac版搜狗五笔输入法却不提供同样的功能，实在是郁闷至极，最终发现了清歌五笔输入法能够快速输入时间日期（虽然不能快速输入星期），很赞。</p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>清歌输入法提供用户词库功能，如下图所示。</p><p><img src="https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/mac-quick-input-time-1.jpg" alt="mac-quick-input-time-1.jpg"></p><a id="more"></a> ]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;更新历史&quot;&gt;&lt;a href=&quot;#更新历史&quot; class=&quot;headerlink&quot; title=&quot;更新历史&quot;&gt;&lt;/a&gt;更新历史&lt;/h2&gt;&lt;p&gt;2018-09-02：清歌五笔输入法自带快速输入日期时间的方法&lt;/p&gt;
-&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在Windows平台下，用搜狗五笔输入法快速输入时间日期星期很舒服，一到Mac平台，Mac版搜狗五笔输入法却不提供同样的功能，实在是郁闷至极，最终发现了清歌五笔输入法能够快速输入时间日期（虽然不能快速输入星期），很赞。&lt;/p&gt;
-&lt;h2 id=&quot;使用方法&quot;&gt;&lt;a href=&quot;#使用方法&quot; class=&quot;headerlink&quot; title=&quot;使用方法&quot;&gt;&lt;/a&gt;使用方法&lt;/h2&gt;&lt;p&gt;清歌输入法提供用户词库功能，如下图所示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/mac-quick-input-time-1.jpg&quot; alt=&quot;mac-quick-input-time-1.jpg&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="输入法技巧" scheme="http://blog.ziiyc.com/tags/%E8%BE%93%E5%85%A5%E6%B3%95%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
