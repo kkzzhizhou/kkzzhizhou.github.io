@@ -170,7 +170,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: /images/avatar.png
+  url: https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/avatar.png
   # If true, the avatar will be dispalyed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
@@ -275,8 +275,8 @@ reward_settings:
   #comment: Donate comment here.
 
 reward:
-  wechatpay: /pic/wechatpay.png
-  alipay: /pic/alipay.jpg
+  wechatpay: https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/wechatpay.png
+  alipay: https://raw.githubusercontent.com/kkzzhizhou/kkzzhizhou.github.io/images/Alipay.jpg
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
 
