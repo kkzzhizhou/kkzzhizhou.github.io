@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.ziiyc.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="浅水是喧哗的，深水是沉默的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zzz部落格">
+<meta property="og:url" content="http://blog.ziiyc.com/index.html">
+<meta property="og:site_name" content="zzz部落格">
+<meta property="og:description" content="浅水是喧哗的，深水是沉默的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="zzz">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://blog.ziiyc.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false
+  };
+</script>
+
+  <title>zzz部落格</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="zzz部落格" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zzz部落格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">知识服务于生活</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/windows-hyperv-sunshine.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="浅水是喧哗的，深水是沉默的">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/post/windows-hyperv-sunshine.html" class="post-title-link" itemprop="url">Windows HyperV搭建Sunshine游戏串流服务</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-02-28 09:00:00 / 修改时间：10:17:00" itemprop="dateCreated datePublished" datetime="2025-02-28T09:00:00+08:00">2025-02-28</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>工作电脑是台式机，7x24开机，加装了48G内存(共64G)，1TB固态，并替换显卡为1660S，希望通过虚拟机隔离工作和游戏环境，充分利用硬件资源，所以研究了这个方案，已经稳定运行半年了。</p>
+<p>宿主基本情况：</p>
+<ul>
+<li><p>CPU：i5-10400</p>
+</li>
+<li><p>内存：64G</p>
+</li>
+<li><p>显卡：GTX 1660S 6G</p>
+</li>
+<li><p>驱动版本：566.14</p>
+</li>
+<li><p>系统： Win11 23H2 Pro</p>
+<h2 id="虚拟机配置"><a href="#虚拟机配置" class="headerlink" title="虚拟机配置"></a>虚拟机配置</h2></li>
+<li><p>CPU：6核</p>
+</li>
+<li><p>内存：8G</p>
+</li>
+<li><p>显卡：<a target="_blank" rel="noopener" href="https://lingkang.top/archives/hyper-v-gpu">hyper-v共享宿主显卡</a></p>
+</li>
+<li><p>系统：Win11 23H2 Pro</p>
+<h3 id="软件环境搭建"><a href="#软件环境搭建" class="headerlink" title="软件环境搭建"></a>软件环境搭建</h3></li>
+<li><p>系统激活：<a target="_blank" rel="noopener" href="https://massgrave.dev/">massgrave.dev</a></p>
+</li>
+<li><p>安装游戏运行库：<a target="_blank" rel="noopener" href="https://www.mefcl.com/grlpackage.html">游戏常用运行库合集</a></p>
+</li>
+<li><p>串流服务端 <a target="_blank" rel="noopener" href="https://github.com/LizardByte/Sunshine">LizardByte/Sunshine</a></p>
+<ul>
+<li>使用虚拟声卡：VBCable驱动</li>
+<li>！！！不要使用虚拟显示器：使用虚拟显示器进行串流会导致GPU识别异常（详情见FAQ）</li>
+<li>修改版服务端：<a target="_blank" rel="noopener" href="https://github.com/qiin2333/Sunshine-Foundation">qiin2333/Sunshine-Foundation</a> </li>
+</ul>
+</li>
+<li><p>[可选]frp实现公网串流: <a target="_blank" rel="noopener" href="https://github.com/koho/frpmgr">koko/frpmgr</a></p>
+<ul>
+<li>端口<ul>
+<li>udp 47999 48000 48002 48010</li>
+<li>tcp 47984 47989 48010</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>[可选]开启OpenSSH Server</p>
+</li>
+<li><p>[可选]串流时共享宿主键鼠 <a target="_blank" rel="noopener" href="https://github.com/deskflow/deskflow">deskflow</a></p>
+</li>
+<li><p>[可选]使用沙盒工具：避免运行一些恶意程序导致系统异常 <a target="_blank" rel="noopener" href="https://github.com/sandboxie-plus/Sandboxie">sandboxie-plus/Sandboxie</a> </p>
+</li>
+<li><p>[可选] 关闭Defender</p>
+<ul>
+<li>关闭：Windows 安全中心 -&gt; 主页 -&gt; 防火墙和网络保护（全部关闭）</li>
+<li>使用工具 <a target="_blank" rel="noopener" href="https://www.sordum.org/9480/defender-control-v2-1/">defender-control</a> 禁用Defender</li>
+<li>禁用安全中心通知：打开组策略 -&gt; 计算机配置 -&gt; 管理模板 -&gt; Windows 组件 -&gt; Windows 安全中心 -&gt; 通知  -&gt; 启用：隐藏所有通知</li>
+</ul>
+</li>
+<li><p>[可选]Steam</p>
+</li>
+</ul>
+<h3 id="串流客户端工具列表"><a href="#串流客户端工具列表" class="headerlink" title="串流客户端工具列表"></a>串流客户端工具列表</h3><ul>
+<li>Windows<ul>
+<li>官方版 <a target="_blank" rel="noopener" href="https://github.com/moonlight-stream/moonlight-qt">moonlight-stream/moonlight-qt</a></li>
+</ul>
+</li>
+<li>Android<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Axixi2233/moonlight-android">Axixi2233/moonlight-android</a> 目前在用，能够实现键盘原生输入（通过无障碍），界面比原版更加美观</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/qiin2333/moonlight-android">qiin2333/moonlight-android</a> 威力加强版，加了不少特性并且是二次元图标和界面（不能修改图片、壁纸，个人不是很喜欢）</li>
+<li>官方版 <a target="_blank" rel="noopener" href="https://github.com/moonlight-stream/moonlight-android">moonlight-stream/moonlight-android</a><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2></li>
+</ul>
+</li>
+</ul>
+<h3 id="24H2运行部分破解游戏运行闪退"><a href="#24H2运行部分破解游戏运行闪退" class="headerlink" title="24H2运行部分破解游戏运行闪退"></a>24H2运行部分破解游戏运行闪退</h3><p>已知游戏列表：</p>
+<ul>
+<li>霍格沃茨之遗</li>
+</ul>
+<p>原因：24H2系统问题，使用23H2正常运行</p>
+<h3 id="Yuzu、Ryujinx等Switch模拟器无法识别到GPU"><a href="#Yuzu、Ryujinx等Switch模拟器无法识别到GPU" class="headerlink" title="Yuzu、Ryujinx等Switch模拟器无法识别到GPU"></a>Yuzu、Ryujinx等Switch模拟器无法识别到GPU</h3><ul>
+<li>需要使用原版Sunshine</li>
+<li>如果任务管理器没有出现GPU，则需要退出所有远程会话的情况下重新添加GPU</li>
+</ul>
+<h3 id="串流画面卡住但有声音，能操作"><a href="#串流画面卡住但有声音，能操作" class="headerlink" title="串流画面卡住但有声音，能操作"></a>串流画面卡住但有声音，能操作</h3><p>情况说明：</p>
+<ul>
+<li>宿主通过smb3通过<strong>专用虚拟交换机</strong>共享游戏目录到HyperV虚拟机，使用共享目录打开游戏</li>
+</ul>
+<p>解决方式：</p>
+<ul>
+<li>宿主机关闭硬件加速gpu –&gt; 延长了问题出现的时间，有效果，但没有解决</li>
+<li><strong>不使用网络共享，使用独立VHDX虚拟磁盘 –&gt; 改用后cpu占用率下降明显，并且玩了半小时多没有复现问题</strong></li>
+</ul>
+<h3 id="RDP后无法使用串流服务的问题"><a href="#RDP后无法使用串流服务的问题" class="headerlink" title="RDP后无法使用串流服务的问题"></a>RDP后无法使用串流服务的问题</h3><p>建议：不要使用远程桌面，可以考虑用RustDesk替代，相关文章：<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv16102714/">远程控制 解决RDP后无法使用moonlight等服务的问题 RDP断开时解锁主机</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/obsidian-dashboard-publish.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="浅水是喧哗的，深水是沉默的">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/post/obsidian-dashboard-publish.html" class="post-title-link" itemprop="url">Obsidian+Hexo实现仪表盘及更新博客</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-07-04 08:14:00 / 修改时间：08:46:00" itemprop="dateCreated datePublished" datetime="2024-07-04T08:14:00+08:00">2024-07-04</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>看了一篇<a target="_blank" rel="noopener" href="https://blog.zhangyingwei.com/posts/2022m4d12h13m13s22/">Obsidian + Hugo 最佳配置推荐</a>文章，做了一个Obsidian+Hexo博客仪表盘，配合之前的Hexo发布脚本，基本上在仅使用Obsidian的情况下完成博客的更新发布流程。先看效果图：</p>
+<p><img src="https://blog.ziiyc.com/images/lc0t1l2q.pd4.png"></p>
+<p><img src="https://blog.ziiyc.com/images/uqy5wnju.cdm.png"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/obsidian-dashboard-publish.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/vscode-debug-python2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="浅水是喧哗的，深水是沉默的">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/post/vscode-debug-python2.html" class="post-title-link" itemprop="url">VSCode调试Python2.7代码</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-05-16 15:44:00 / 修改时间：16:33:00" itemprop="dateCreated datePublished" datetime="2024-05-16T15:44:00+08:00">2024-05-16</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>VSCode使用最新版本Python插件，调试Python2代码无反应</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Python插件调试时需要调用 <a target="_blank" rel="noopener" href="https://github.com/microsoft/debugpy">debugpy</a>，debugpy在2022-03-25发布v1.6.0后不再支持调试Python 2</p>
+<p><img src="https://blog.ziiyc.com/images/20240516154929.png"></p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/vscode-debug-python2.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/chrome-plugin.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="浅水是喧哗的，深水是沉默的">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/post/chrome-plugin.html" class="post-title-link" itemprop="url">Chrome插件推荐</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-09-02 23:29:47" itemprop="dateCreated datePublished" datetime="2018-09-02T23:29:47+08:00">2018-09-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-04-30 09:49:47" itemprop="dateModified" datetime="2024-04-30T09:49:47+08:00">2024-04-30</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>226</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="插件列表"><a href="#插件列表" class="headerlink" title="插件列表"></a>插件列表</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/bitwarden-%E5%85%8D%E8%B4%B9%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%99%A8/nngceckbapebfimnlniiiahkandclblb">Bitwarden</a>：密码管理器</li>
+<li><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a>：js脚本管理器</li>
+<li><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/cjpalhdlnbpafiamejdnhcphjbkeiagm">uBlock Origin</a>：广告过滤</li>
+<li><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/padekgcemlokbadohgkifijomclgjgif">Proxy SwitchyOmega</a> 配置http/socks5代理</li>
+<li><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/fnaicdffflnofjppbagibeoednhnbjhg">floccus bookmarks sync</a> 书签同步，实现与手机Kiwi浏览器同步</li>
+<li><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/pncfbmialoiaghdehhbnbhkkgmjanfhe">uBlacklist</a> 屏蔽谷歌内容农场</li>
+<li><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/kefjpfngnndepjbopdmoebkipbgkggaa">RSSHub</a> 查找RSS</li>
+<li><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/mpiodijhokgodhhofbcjdecpffjipkle">SingleFile</a> 将网页保存成单个HTML</li>
+<li><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/mpkodccbngfoacfalldjimigbofkhgjn">Aria2 Explorer</a> 管理远程Aria2实例</li>
+<li><a target="_blank" rel="noopener" href="https://chromewebstore.google.com/detail/mjdbhokoopacimoekfgkcoogikbfgngb">Trancy</a> AI双语字幕和网页沉浸翻译</li>
+</ul>
+<p>本文结束。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/chrome-plugin.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/use-android-tablet-as-extended-display.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="浅水是喧哗的，深水是沉默的">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/post/use-android-tablet-as-extended-display.html" class="post-title-link" itemprop="url">安卓平板作为PC扩展屏幕</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-04-04 12:17:41" itemprop="dateCreated datePublished" datetime="2018-04-04T12:17:41+08:00">2018-04-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-04-29 11:03:00" itemprop="dateModified" datetime="2024-04-29T11:03:00+08:00">2024-04-29</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>有一台闲置的安卓的平板，想作为PC(Windows、MacOS)的扩展屏幕，有线和无线都能连接，在网上寻找到一些解决方法,使用结论如下：</p>
+<ul>
+<li>场景1：使用Windows，推荐spacedesk的有线模式</li>
+<li>场景2：使用MacOS，推荐Twomon</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/use-android-tablet-as-extended-display.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zzz"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">zzz</p>
+  <div class="site-description" itemprop="description">浅水是喧哗的，深水是沉默的</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kkzzhizhou" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kkzzhizhou" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kkzzhizhou@gmail.com" title="E-Mail → mailto:kkzzhizhou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备19154125号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zzz</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">59k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">54 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.2
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

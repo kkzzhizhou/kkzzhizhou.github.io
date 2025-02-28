@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.ziiyc.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="看了一篇Obsidian + Hugo 最佳配置推荐文章，做了一个Obsidian+Hexo博客仪表盘，配合之前的Hexo发布脚本，基本上在仅使用Obsidian的情况下完成博客的更新发布流程。先看效果图：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Obsidian+Hexo实现仪表盘及更新博客">
+<meta property="og:url" content="http://blog.ziiyc.com/post/obsidian-dashboard-publish.html">
+<meta property="og:site_name" content="zzz部落格">
+<meta property="og:description" content="看了一篇Obsidian + Hugo 最佳配置推荐文章，做了一个Obsidian+Hexo博客仪表盘，配合之前的Hexo发布脚本，基本上在仅使用Obsidian的情况下完成博客的更新发布流程。先看效果图：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.ziiyc.com/images/lc0t1l2q.pd4.png">
+<meta property="og:image" content="https://blog.ziiyc.com/images/uqy5wnju.cdm.png">
+<meta property="article:published_time" content="2024-07-04T00:14:00.000Z">
+<meta property="article:modified_time" content="2024-07-04T00:46:00.000Z">
+<meta property="article:author" content="zzz">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.ziiyc.com/images/lc0t1l2q.pd4.png">
+
+<link rel="canonical" href="http://blog.ziiyc.com/post/obsidian-dashboard-publish.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>Obsidian+Hexo实现仪表盘及更新博客 | zzz部落格</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="zzz部落格" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zzz部落格</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">知识服务于生活</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.ziiyc.com/post/obsidian-dashboard-publish.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="zzz">
+      <meta itemprop="description" content="浅水是喧哗的，深水是沉默的">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzz部落格">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Obsidian+Hexo实现仪表盘及更新博客
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-07-04 08:14:00 / 修改时间：08:46:00" itemprop="dateCreated datePublished" datetime="2024-07-04T08:14:00+08:00">2024-07-04</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>看了一篇<a target="_blank" rel="noopener" href="https://blog.zhangyingwei.com/posts/2022m4d12h13m13s22/">Obsidian + Hugo 最佳配置推荐</a>文章，做了一个Obsidian+Hexo博客仪表盘，配合之前的Hexo发布脚本，基本上在仅使用Obsidian的情况下完成博客的更新发布流程。先看效果图：</p>
+<p><img src="https://blog.ziiyc.com/images/lc0t1l2q.pd4.png"></p>
+<p><img src="https://blog.ziiyc.com/images/uqy5wnju.cdm.png"></p>
+<span id="more"></span> 
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>Obsidian插件<ul>
+<li>Charts</li>
+<li>Dataview</li>
+<li>Homepage(可选）</li>
+</ul>
+</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
+<li>安装好上述插件</li>
+<li>在你当前vaults下创建一个blog目录，用于管理博客的原始文件</li>
+<li>使用Homepage或者创建一个空白的md文件，输入以下仪表盘代码(需要去掉开头的<code>\\</code>)</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> ```dataviewjs</span><br><span class="line">\\ let la = [&quot;未发布&quot;,&quot;已发布&quot;]</span><br><span class="line">\\ let da = []</span><br><span class="line">\\ const draftPage = dv.pages(`<span class="string">&quot;blog&quot;</span>`).filter(p =&gt; p.draft).length</span><br><span class="line">\\ const notDraftPage = dv.pages(`<span class="string">&quot;blog&quot;</span>`).filter(p =&gt; !p.draft).length</span><br><span class="line">\\ da[0] = notDraftPage</span><br><span class="line">\\ da[1] = draftPage</span><br><span class="line">\\ </span><br><span class="line">\\ </span><br><span class="line">\\ dv.paragraph(`<span class="punctuation">\</span>`\`\`chart</span><br><span class="line">\\ type: pie</span><br><span class="line">\\ labels: [&quot;未发布&quot;,&quot;已发布&quot;]</span><br><span class="line">\\ series:</span><br><span class="line">\\     - title: none</span><br><span class="line">\\       data: [$&#123;da&#125;]</span><br><span class="line">\\ width: 25%</span><br><span class="line">\\ legendPosition: left</span><br><span class="line">\\ labelColors: true</span><br><span class="line">\\ \`\`\`</span><br><span class="line">\\ `<span class="punctuation">)</span>;</span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> ```</span><br><span class="line">\\ </span><br><span class="line">\\ ### 草稿箱</span><br><span class="line">\\ </span><br><span class="line">\\ ```dataview</span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> table updated AS <span class="string">&quot;更新时间&quot;</span><span class="punctuation">,</span>date AS <span class="string">&quot;创建时间&quot;</span></span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> from <span class="string">&quot;blog&quot;</span></span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> where draft<span class="operator">=</span>true</span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> sort updated desc</span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> ```</span><br><span class="line">\\ ### 已发布</span><br><span class="line">\\ </span><br><span class="line">\\ ```dataview</span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> table updated AS <span class="string">&quot;更新时间&quot;</span><span class="punctuation">,</span>date AS <span class="string">&quot;创建时间&quot;</span></span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> from <span class="string">&quot;blog&quot;</span></span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> where draft<span class="operator">=</span>false or <span class="operator">!</span>draft</span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> sort updated desc</span><br><span class="line"><span class="punctuation">\</span><span class="punctuation">\</span> ```</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配合以下的RunJS发布Hexo脚本，原理：将原文档上传到Hexo源码仓库，触发Github Actions更新博客</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@RunJS</span> hexo/publish</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// setting</span></span><br><span class="line"><span class="keyword">const</span> token = <span class="string">&#x27;xxx&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> owner = <span class="string">&#x27;xxx&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> repo = <span class="string">&#x27;xxx&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> remote_image_path = <span class="string">&#x27;source/images&#x27;</span></span><br><span class="line"><span class="keyword">const</span> action = <span class="string">&#x27;deploy.yml&#x27;</span></span><br><span class="line"><span class="keyword">const</span> attachment_path = <span class="string">&#x27;media/image&#x27;</span></span><br><span class="line"><span class="keyword">const</span> image_map_path = <span class="string">&#x27;media/script/data/image-map.json&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">readJsonFile</span>(<span class="params">filePath</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 使用vault的read方法读取文件内容</span></span><br><span class="line">        <span class="keyword">const</span> fileContent = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">vault</span>.<span class="title function_">read</span>(<span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">vault</span>.<span class="title function_">getAbstractFileByPath</span>(filePath));</span><br><span class="line">        <span class="comment">// 将读取到的内容解析为JSON对象</span></span><br><span class="line">        <span class="keyword">const</span> jsonData = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(fileContent);</span><br><span class="line">        <span class="comment">// console.log(jsonData);</span></span><br><span class="line">        <span class="keyword">return</span> jsonData;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;Error reading JSON file:&quot;</span>, error);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">arrayBufferToBase64</span>(<span class="params">buffer</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> binary = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="keyword">const</span> bytes = <span class="keyword">new</span> <span class="title class_">Uint8Array</span>(buffer);</span><br><span class="line">    <span class="keyword">const</span> len = bytes.<span class="property">byteLength</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        binary += <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(bytes[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 使用 btoa 函数将二进制字符串转换为 Base64 字符串</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">window</span>.<span class="title function_">btoa</span>(binary);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">readImageAsDataURL</span>(<span class="params">img, fileExt</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 使用vault的readBinary方法读取二进制文件内容</span></span><br><span class="line">        <span class="keyword">const</span> fileContent = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">vault</span>.<span class="title function_">readBinary</span>(img);</span><br><span class="line">        <span class="comment">// 创建一个Blob对象</span></span><br><span class="line">        <span class="keyword">const</span> blob = <span class="keyword">new</span> <span class="title class_">Blob</span>([fileContent], &#123; <span class="attr">type</span>: <span class="string">`image/<span class="subst">$&#123;fileExt&#125;</span>`</span> &#125;); <span class="comment">// 假设图片是PNG格式</span></span><br><span class="line">        <span class="keyword">return</span> blob</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;Error reading image file:&quot;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getFileSha</span>(<span class="params">owner, repo, path</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">`https://api.github.com/repos/<span class="subst">$&#123;owner&#125;</span>/<span class="subst">$&#123;repo&#125;</span>/contents/<span class="subst">$&#123;path&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">const</span> requestUrlParam = &#123;</span><br><span class="line">        <span class="attr">url</span>: url,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">        <span class="attr">headers</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;Authorization&#x27;</span>: <span class="string">`token <span class="subst">$&#123;token&#125;</span>`</span>,</span><br><span class="line">            <span class="string">&#x27;Accept&#x27;</span>: <span class="string">&#x27;application/vnd.github.v3+json&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">requestUrl</span>(requestUrlParam);</span><br><span class="line">        <span class="keyword">if</span> (response.<span class="property">status</span> === <span class="number">200</span> || response.<span class="property">status</span> === <span class="number">201</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> response.<span class="property">json</span>.<span class="property">sha</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;失败&#x27;</span>, response.<span class="property">status</span>, response.<span class="property">text</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`异常: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">base64EncodeUnicode</span>(<span class="params">str</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">btoa</span>(<span class="built_in">encodeURIComponent</span>(str).<span class="title function_">replace</span>(<span class="regexp">/%([0-9A-F]&#123;2&#125;)/g</span>, <span class="keyword">function</span> (<span class="params">match, p1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(<span class="string">&#x27;0x&#x27;</span> + p1);</span><br><span class="line">    &#125;));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">updateFile</span>(<span class="params">owner, repo, path, content, sha, message = <span class="string">&quot;update via Obsidian&quot;</span></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">`https://api.github.com/repos/<span class="subst">$&#123;owner&#125;</span>/<span class="subst">$&#123;repo&#125;</span>/contents/<span class="subst">$&#123;path&#125;</span>`</span>;</span><br><span class="line">    requestUrlParam = &#123;</span><br><span class="line">        <span class="attr">url</span>: url,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;PUT&#x27;</span>,</span><br><span class="line">        <span class="attr">headers</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;Authorization&#x27;</span>: <span class="string">`token <span class="subst">$&#123;token&#125;</span>`</span>,</span><br><span class="line">            <span class="string">&#x27;Accept&#x27;</span>: <span class="string">&#x27;application/vnd.github.v3+json&#x27;</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;</span><br><span class="line">            message,</span><br><span class="line">            <span class="attr">content</span>: content,</span><br><span class="line">            sha</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">requestUrl</span>(requestUrlParam);</span><br><span class="line">        <span class="keyword">if</span> (response.<span class="property">status</span> === <span class="number">200</span> || response.<span class="property">status</span> === <span class="number">201</span>) &#123;</span><br><span class="line">            <span class="comment">// console.log(response.json)</span></span><br><span class="line">            <span class="keyword">return</span> response.<span class="property">json</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;失败&#x27;</span>, response.<span class="property">status</span>, response.<span class="property">text</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Notice</span>(<span class="string">`异常: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">uploadFileToGitHub</span>(<span class="params">owner, repo, path, content</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> sha = <span class="keyword">await</span> <span class="title function_">getFileSha</span>(owner, repo, path);</span><br><span class="line">        <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="title function_">updateFile</span>(owner, repo, path, content, sha, <span class="string">&quot;Update via Obsidian&quot;</span>);</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;文件更新成功:&quot;</span>, result);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;更新文件时发生错误:&quot;</span>, error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">isUrl</span>(<span class="params">link</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Boolean</span>(<span class="keyword">new</span> <span class="title function_">URL</span>(link));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (_) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">triggerHexoDeploy</span>(<span class="params">owner, repo, action</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">`https://api.github.com/repos/<span class="subst">$&#123;owner&#125;</span>/<span class="subst">$&#123;repo&#125;</span>/actions/workflows/<span class="subst">$&#123;action&#125;</span>/dispatches`</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(url)</span><br><span class="line">    <span class="keyword">const</span> requestUrlParam = &#123;</span><br><span class="line">        <span class="attr">url</span>: url,</span><br><span class="line">        <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">        <span class="attr">headers</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;Authorization&#x27;</span>: <span class="string">`token <span class="subst">$&#123;token&#125;</span>`</span>,</span><br><span class="line">            <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">body</span>: <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;</span><br><span class="line">            <span class="attr">ref</span>: <span class="string">&quot;master&quot;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="title function_">requestUrl</span>(requestUrlParam);</span><br><span class="line">        <span class="keyword">if</span> (response.<span class="property">status</span> === <span class="number">204</span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;触发博客更新成功&#x27;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&#x27;触发博客更新失败&#x27;</span>, response.<span class="property">status</span>, response.<span class="property">text</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Notice</span>(<span class="string">`触发博客更新请求异常: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main</span></span><br><span class="line"><span class="keyword">const</span> activeFile = <span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">workspace</span>.<span class="title function_">getActiveFile</span>();</span><br><span class="line"><span class="keyword">if</span> (!activeFile) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;No file is currently active.&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(activeFile)</span><br><span class="line"><span class="keyword">let</span> content = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">vault</span>.<span class="title function_">read</span>(activeFile)</span><br><span class="line"><span class="keyword">let</span> image_map = <span class="keyword">await</span> <span class="title function_">readJsonFile</span>(image_map_path)</span><br><span class="line"><span class="comment">// 图片上传</span></span><br><span class="line"><span class="keyword">const</span> imageRegex = <span class="regexp">/!\[[^$].*?\]\(([^$].*?)\)|!\[\[([^$].*?)\]\]/g</span>;</span><br><span class="line"><span class="comment">// const imageRegex2 = /!\[\[(.*?)\]\]/g</span></span><br><span class="line"><span class="keyword">const</span> images = []</span><br><span class="line"><span class="keyword">let</span> match</span><br><span class="line"><span class="keyword">let</span> img</span><br><span class="line"><span class="keyword">let</span> img_name</span><br><span class="line"><span class="keyword">let</span> img_content</span><br><span class="line"><span class="keyword">while</span> ((match = imageRegex.<span class="title function_">exec</span>(content)) !== <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (match[<span class="number">1</span>] || match[<span class="number">2</span>]) &#123;</span><br><span class="line">        img_name = match[<span class="number">1</span>] || match[<span class="number">2</span>]</span><br><span class="line">        images.<span class="title function_">push</span>(name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(img_name)</span><br><span class="line">    <span class="keyword">if</span> (!<span class="title function_">isUrl</span>(img_name)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (match[<span class="number">1</span>]) &#123;</span><br><span class="line">            img = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">vault</span>.<span class="title function_">getAbstractFileByPath</span>(img_name);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            img = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">vault</span>.<span class="title function_">getAbstractFileByPath</span>(<span class="string">`<span class="subst">$&#123;attachment_path&#125;</span>/<span class="subst">$&#123;img_name&#125;</span>`</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(img)</span><br><span class="line">        <span class="keyword">if</span> (!image_map.<span class="title function_">hasOwnProperty</span>(img.<span class="property">name</span>)) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`upload: <span class="subst">$&#123;img.name&#125;</span>`</span>)</span><br><span class="line">            img_content = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">vault</span>.<span class="title function_">readBinary</span>(img);</span><br><span class="line">            img_content = <span class="title function_">arrayBufferToBase64</span>(img_content);</span><br><span class="line">            <span class="keyword">await</span> <span class="title function_">uploadFileToGitHub</span>(owner, repo, <span class="string">`<span class="subst">$&#123;remote_image_path&#125;</span>/<span class="subst">$&#123;img.name&#125;</span>`</span>, img_content)</span><br><span class="line">            image_map[img.<span class="property">name</span>] = <span class="string">`https://blog.ziiyc.com/images/<span class="subst">$&#123;img.name&#125;</span>`</span></span><br><span class="line">            <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">vault</span>.<span class="property">adapter</span>.<span class="title function_">write</span>(image_map_path, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(image_map, <span class="literal">null</span>, <span class="number">2</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (match[<span class="number">1</span>]) &#123;</span><br><span class="line">            content = content.<span class="title function_">replace</span>(img_name, image_map[img.<span class="property">name</span>])</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (match[<span class="number">2</span>]) &#123;</span><br><span class="line">            content = content.<span class="title function_">replace</span>(<span class="string">`![[<span class="subst">$&#123;img_name&#125;</span>]]`</span>, <span class="string">`![](<span class="subst">$&#123;image_map[img.name]&#125;</span>)`</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">content = content.<span class="title function_">replaceAll</span>(<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(content)</span><br><span class="line"><span class="keyword">const</span> path = <span class="string">`source/_posts/<span class="subst">$&#123;activeFile.name&#125;</span>`</span>;</span><br><span class="line"><span class="keyword">await</span> <span class="title function_">uploadFileToGitHub</span>(owner, repo, path, <span class="title function_">base64EncodeUnicode</span>(content))</span><br><span class="line"><span class="keyword">await</span> <span class="title function_">triggerHexoDeploy</span>(owner, repo, action)</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Notice</span>(<span class="string">&quot;博客更新成功&quot;</span>)</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="zzz 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="zzz 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>zzz
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.ziiyc.com/post/obsidian-dashboard-publish.html" title="Obsidian+Hexo实现仪表盘及更新博客">http://blog.ziiyc.com/post/obsidian-dashboard-publish.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+            <div class="social-item">
+              <a target="_blank" class="social-link" href="/atom.xml">
+                <span class="icon">
+                  <i class="fa fa-rss"></i>
+                </span>
+
+                <span class="label">RSS</span>
+              </a>
+            </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/vscode-debug-python2.html" rel="prev" title="VSCode调试Python2.7代码">
+      <i class="fa fa-chevron-left"></i> VSCode调试Python2.7代码
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/windows-hyperv-sunshine.html" rel="next" title="Windows HyperV搭建Sunshine游戏串流服务">
+      Windows HyperV搭建Sunshine游戏串流服务 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="zzz"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">zzz</p>
+  <div class="site-description" itemprop="description">浅水是喧哗的，深水是沉默的</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kkzzhizhou" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kkzzhizhou" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kkzzhizhou@gmail.com" title="E-Mail → mailto:kkzzhizhou@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener" target="_blank">粤ICP备19154125号 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zzz</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">59k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">54 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v5.4.2
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
